@@ -76,6 +76,7 @@ h1 {
 h1 .accent {
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-lime));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -90,10 +91,10 @@ h1 .accent {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
-    max-width: 900px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
@@ -619,6 +620,20 @@ h1 .accent {
     letter-spacing: 0.1em;
 }
 
+.gauge-desc {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--accent-lime);
+    font-weight: 500;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.gauge:has(.accent-purple) + .gauge-info .gauge-desc {
+    color: var(--accent-primary);
+}
+
 .controls {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -703,10 +718,6 @@ h1 .accent {
 @media (max-width: 850px) {
     h1 {
         font-size: 3.5rem;
-    }
-    
-    .visual-row {
-        /* Already vertical by default now */
     }
     
     .grid {
@@ -885,79 +896,148 @@ h1 .accent {
 /* PRINT STYLES - Crucial for PDF output */
 
 @media print {
+    :root {
+        --bg-color: #ffffff;
+        --text-primary: #000000;
+        --text-secondary: #334155;
+        --border-color: #cbd5e1;
+        --accent-primary: #4f46e5;
+        --accent-lime: #16a34a;
+        --accent-purple: #7c3aed;
+    }
+
     body {
-        background: white;
-        color: black;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+        background: white !important;
+        color: black !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .container {
-        padding: 1rem;
+        padding: 0;
+        max-width: 100%;
     }
 
-    .glass {
-        background: #f8fafc;
-        border: 1px solid #e2e8f0;
-        box-shadow: none;
-        backdrop-filter: none;
-        break-inside: avoid;
+    header {
+        margin-bottom: 2rem;
     }
 
-    .radar-grid, .radar-axis {
-        stroke: #cbd5e1;
-    }
-
-    .radar-data {
-        fill: rgba(139, 92, 246, 0.1);
-        stroke: #4f46e5;
-    }
-
-    .radar-label {
-        fill: #475569;
-    }
-
-    .gauge-bg {
-        stroke: #e2e8f0;
-    }
-
-    .gauge-value {
-        color: #0f172a;
-    }
-
-    .gauge-name {
-        color: #64748b;
-    }
-
-    .skill-map-section {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .skill-map-section .card-header h2 {
-        justify-content: center;
-    }
-
-    .badges {
-        justify-content: center;
-    }
-
-    .radar-chart {
-        max-width: 300px;
-    }
-
-    .radar-label {
-        font-size: 11px; /* Slightly larger on mobile for readability */
-    }
-
-    .export-banner, .controls, .print-btn {
-        display: none;
+    h1 {
+        color: black !important;
     }
 
     h1 .accent {
-        background: none;
-        color: #4f46e5;
-        -webkit-text-fill-color: #4f46e5;
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: var(--accent-primary) !important;
+    }
+
+    .contact-grid {
+        background: none !important;
+        border: 1px solid #e2e8f0;
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+
+    .contact-item i {
+        color: var(--accent-primary) !important;
+    }
+
+    .glass {
+        background: white !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        border-radius: 12px !important;
+        padding: 1.5rem !important;
+        break-inside: avoid;
+    }
+
+    .card:hover {
+        transform: none !important;
+    }
+
+    .quote {
+        background: #f8fafc !important;
+        border-left: 4px solid var(--accent-lime) !important;
+        color: #475569 !important;
+    }
+
+    .timeline::before {
+        box-shadow: none !important;
+    }
+
+    .badge {
+        background: #f1f5f9 !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #334155 !important;
+    }
+
+    .edu-item {
+        background: #f8fafc !important;
+        border-left-width: 4px !important;
+    }
+
+    .edu-item.highlight {
+        background: #f0fdf4 !important;
+    }
+
+    /* Radar Chart Adjustments */
+    .radar-grid, .radar-axis {
+        stroke: #cbd5e1 !important;
+    }
+
+    .radar-data {
+        fill: rgba(79, 70, 229, 0.1) !important;
+        stroke: var(--accent-primary) !important;
+        filter: none !important;
+    }
+
+    .radar-label {
+        fill: #334155 !important;
+        stroke: white !important; /* Help labels pop on grid */
+        stroke-width: 2px !important;
+    }
+
+    /* Gauge Adjustments */
+    .gauge-bg {
+        stroke: #e2e8f0 !important;
+    }
+
+    .gauge-fill {
+        filter: none !important;
+    }
+
+    .gauge-value {
+        color: black !important;
+    }
+
+    .gauge-name {
+        color: #64748b !important;
+    }
+
+    .carousel-container {
+        overflow: visible !important;
+    }
+
+    .gauge-grid.carousel {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Hide non-printable elements */
+    .export-banner, 
+    .controls, 
+    .print-btn, 
+    .carousel-container::-webkit-scrollbar,
+    .sr-only {
+        display: none !important;
+    }
+
+    /* Prevent breaking inside cards */
+    .card, .timeline-item, .edu-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 }
