@@ -161,9 +161,12 @@ if (container) {
 
     // Cerrar manualmente resetea el pin y el sprite activo
     if (tooltipClose) {
-        tooltipClose.addEventListener('click', () => {
+        tooltipClose.addEventListener('click', (e) => {
+            e.stopPropagation();
             tooltipPinned = false;
             tooltip.style.display = 'none';
+            // Sacar el raycaster fuera del canvas para que el loop no reabra el tooltip
+            mouse.set(-9999, -9999);
             if (hoveredSprite) {
                 hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
                 const match = skills.find(s => s.name === hoveredSprite.userData.name);
