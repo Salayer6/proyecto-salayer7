@@ -46,39 +46,48 @@
                 <p class="subtitle">Ingeniero de Programación y Control | BI & Data Analytics</p>
             </div>
 
-            <div class="contact-grid">
-                <a class="contact-item" href="tel:+56976331648" title="Llamar">
+            <div class="contact-section">
+                <button class="contact-item main-toggle" onclick="document.getElementById('contact-details').classList.toggle('open'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-up'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-down');" title="Ver datos de contacto">
                     <i class="fa-solid fa-id-card"></i>
-                    <span>19.057.525-K</span>
-                </a>
-                <a class="contact-item" href="tel:+56976331648" title="Llamar">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+569 7633 1648 <small>(Móvil)</small></span>
-                </a>
-                <a class="contact-item" href="https://maps.google.com/?q=Santiago,Chile" target="_blank" rel="noopener"
-                    title="Ver en Google Maps">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Santiago, Chile</span>
-                </a>
-                <a class="contact-item" href="https://www.sernac.cl/portal/604/w3-article-62593.html" target="_blank"
-                    rel="noopener" title="Info licencias">
-                    <i class="fa-solid fa-car"></i>
-                    <span>Licencia B/C | Viajes OK</span>
-                </a>
-                <a class="contact-item" href="https://linkedin.com/in/ignacio-salas-vega" target="_blank" rel="noopener"
-                    title="LinkedIn">
-                    <i class="fa-solid fa-language"></i>
-                    <span>Inglés Bilingüe</span>
-                </a>
-                <a class="contact-item" href="mailto:i.salasv@duocuc.cl" title="Enviar email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>i.salasv@duocuc.cl</span>
-                </a>
-                <a class="contact-item" href="https://instagram.com/ceotempleinfinito" target="_blank" rel="noopener"
-                    title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>@ceotempleinfinito</span>
-                </a>
+                    <span>19.057.525-K <i class="fa-solid fa-chevron-down toggle-icon" style="margin-left: 5px; font-size: 0.8em;"></i></span>
+                </button>
+                
+                <div class="contact-grid collapsible-content" id="contact-details">
+                    <a class="contact-item" href="tel:+56976331648" title="Llamar">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+569 7633 1648 <small>(Móvil)</small></span>
+                    </a>
+                    <a class="contact-item" href="https://maps.google.com/?q=Santiago,Chile" target="_blank" rel="noopener"
+                        title="Ver en Google Maps">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Avenida Diez de julio Huamachuco #750, casa 5, Santiago</span>
+                    </a>
+                    
+                    <!-- Licencia con cuadro informativo en hover -->
+                    <div class="contact-item contact-item-tooltip" tabindex="0">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Licencia B/C | Viajes OK</span>
+                        <div class="custom-tooltip">
+                            Tengo experiencia manejando todo tipo de vehículos, tengo aprobado el curso para obtener licencia de conducir profesional clase A2 y A4, faltándome solo obtenerla.
+                        </div>
+                    </div>
+
+                    <!-- Inglés sin link por el momento -->
+                    <div class="contact-item">
+                        <i class="fa-solid fa-language"></i>
+                        <span>Inglés Bilingüe</span>
+                    </div>
+
+                    <a class="contact-item" href="mailto:i.salasv@duocuc.cl" title="Enviar email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>i.salasv@duocuc.cl</span>
+                    </a>
+                    <a class="contact-item" href="https://instagram.com/ceotempleinfinito?utm_source=portfolio&utm_medium=cv&utm_campaign=contact" target="_blank" rel="noopener"
+                        title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@ceotempleinfinito</span>
+                    </a>
+                </div>
             </div>
         </header>
 
