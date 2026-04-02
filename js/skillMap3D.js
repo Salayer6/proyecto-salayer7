@@ -166,8 +166,15 @@ if (container) {
         autoRotate = false;
         
         if (tooltip && hoveredSprite) {
-            tooltip.style.left = (event.clientX + 15) + 'px';
-            tooltip.style.top = (event.clientY + 15) + 'px';
+            let tx = event.clientX + 15;
+            let ty = event.clientY + 15;
+            
+            // Boundary detection para evitar clipping en mobile/esquinas
+            if (tx + 240 > window.innerWidth) tx = event.clientX - 240;
+            if (ty + 130 > window.innerHeight) ty = event.clientY - 130;
+            
+            tooltip.style.left = tx + 'px';
+            tooltip.style.top = ty + 'px';
         }
     });
 
