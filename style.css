@@ -340,17 +340,41 @@ h1 .accent {
     opacity: 1;
 }
 
+.contact-grid.collapsible-content {
+    margin-top: 0.5rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: transparent;
+    transition: all 0.4s ease-out;
+}
+
+.contact-grid.collapsible-content.open {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-color: var(--border-color);
+}
+
+.contact-section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
 /* Inline Informative Box for Contact Items */
 .contact-item-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     cursor: pointer;
     background: transparent;
     border: none;
     padding: 0;
     width: auto;
-    text-align: left;
+    text-align: center;
 }
 
 .contact-item-header {
@@ -382,7 +406,7 @@ h1 .accent {
     overflow: hidden;
     opacity: 0;
     transition: all 0.3s ease;
-    margin-left: 48px; /* lines up with text, offset by icon 32px + 16px gap */
+    margin-left: 0;
 }
 
 .contact-item-wrapper.active .contact-item-body {
