@@ -148,122 +148,123 @@
                             <p>Condicionantes operativos bio-mecánicos e infraestructura base</p>
                         </div>
                         <div class="carousel-container">
+                            <!-- SVG Gradients for Custom Gauges -->
+                            <svg width="0" height="0" style="position: absolute;">
+                                <defs>
+                                    <linearGradient id="affection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#f472b6" />
+                                        <stop offset="100%" stop-color="#38bdf8" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
                             <div class="gauge-grid carousel">
                                 <!-- 1. Basic food and hydration: 60% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-red">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 25.12;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">60%</span><span
-                                            class="gauge-name">Basic
-                                            Food</span><!--<span class="gauge-desc">Hydration</span>-->
+                                            class="gauge-name">Basic Food</span><span class="gauge-desc">Atención Requerida</span>
                                     </div>
                                 </div>
                                 <!-- 2. Homeostasis: 90% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 6.28;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">90%</span><span
-                                            class="gauge-name">Homeostasis</span><!--<span class="gauge-desc">Stable</span>-->
+                                            class="gauge-name">Homeostasis</span><span class="gauge-desc">Sistema Óptimo</span>
                                     </div>
                                 </div>
                                 <!-- 3. Weather shelter: 67% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-red">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill accent-purple"
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 20.72;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">67%</span><span
-                                            class="gauge-name">Weather
-                                            Shelter</span><!--<span class="gauge-desc">Optimal</span>-->
+                                            class="gauge-name">Weather Shelter</span><span class="gauge-desc">Mejorable</span>
                                     </div>
                                 </div>
                                 <!-- 4. Working & connected terminal: 100% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill accent-purple"
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">100%</span><span
-                                            class="gauge-name">Terminal</span><!--<span class="gauge-desc">Connected</span>-->
+                                            class="gauge-name">Terminal</span><span class="gauge-desc">Conectado y Estable</span>
                                     </div>
                                 </div>
                                 <!-- 5. Attended mental health: 85% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 9.42;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">85%</span><span
-                                            class="gauge-name">Mental
-                                            Health</span><!--<span class="gauge-desc">Attended</span>-->
+                                            class="gauge-name">Mental Health</span><span class="gauge-desc">Bajo Control</span>
                                     </div>
                                 </div>
                                 <!-- 6. Coffee/Coke: 20% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-coffee">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24; stroke:#ff9800; filter:drop-shadow(0 0 5px #ff9800);" />
-                                    </svg>
-                                    <div class="gauge-info"><span class="gauge-value">20%</span><span
-                                            class="gauge-name">Coffee /
-                                            Coke</span><!--<span class="gauge-desc">Fuel</span>-->
-                                    </div>
-                                </div>
-                                <!-- 7. Superior food and hydration: 75% -->
-                                <div class="gauge-item">
-                                    <svg viewBox="0 0 100 100" class="gauge">
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill accent-purple"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
-                                    </svg>
-                                    <div class="gauge-info"><span class="gauge-value">75%</span><span
-                                            class="gauge-name">Superior
-                                            Food</span><!--<span class="gauge-desc">Premium</span>--></div>
-                                </div>
-                                <!-- 8. Affection, entertainment & therapy: 20% -->
-                                <div class="gauge-item">
-                                    <svg viewBox="0 0 100 100" class="gauge">
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill accent-purple"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">20%</span><span
-                                            class="gauge-name">Affection &
-                                            Ent.</span><!--<span class="gauge-desc">Therapy</span>-->
+                                            class="gauge-name">Coffee / Coke</span><span class="gauge-desc">Reserva Crítica</span>
                                     </div>
                                 </div>
-                                <!-- 9. Rest and healthy habits: 75% -->
-                                <div class="gauge-item">
+                                <!-- 7. Superior food and hydration: 75% -->
+                                <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70; stroke:#e91e63; filter:drop-shadow(0 0 5px #e91e63);" />
+                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">75%</span><span
-                                            class="gauge-name">Rest &
-                                            Habits</span><!--<span class="gauge-desc">Needs work</span>-->
+                                            class="gauge-name">Superior Food</span><span class="gauge-desc">Adecuado</span></div>
+                                </div>
+                                <!-- 8. Affection, entertainment & therapy: 20% -->
+                                <div class="gauge-item color-affection">
+                                    <svg viewBox="0 0 100 100" class="gauge">
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill gauge-fill-affection"
+                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
+                                    </svg>
+                                    <div class="gauge-info"><span class="gauge-value">20%</span><span
+                                            class="gauge-name">Affection & Ent.</span><span class="gauge-desc">Déficit de Interacción</span>
+                                    </div>
+                                </div>
+                                <!-- 9. Rest and healthy habits: 75% -->
+                                <div class="gauge-item color-nps-yellow">
+                                    <svg viewBox="0 0 100 100" class="gauge">
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
+                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
+                                    </svg>
+                                    <div class="gauge-info"><span class="gauge-value">75%</span><span
+                                            class="gauge-name">Rest & Habits</span><span class="gauge-desc">En Desarrollo</span>
                                     </div>
                                 </div>
                                 <!-- 10. Higher connection / Medicine: 100% -->
-                                <div class="gauge-item">
+                                <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill accent-purple"
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">100%</span><span
-                                            class="gauge-name">Higher
-                                            Conn.</span><!--<span class="gauge-desc">Medicine</span>--></div>
+                                            class="gauge-name">Higher Conn.</span><span class="gauge-desc">Sintonizado</span></div>
                                 </div>
                             </div>
                         </div>
@@ -319,11 +320,13 @@
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Introducción a Faena Minera (8 cursos)</h3>
                             <span class="edu-org">mine-class.com</span>
+                            <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general, Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación estratégica del negocio minero.</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Ruta Profesional: Data Engineer</h3>
-                            <span class="edu-org">Platzi Academy</span>
+                            <span class="edu-org">Platzi Academy (12 Cursos completados)</span>
+                            <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server, MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake), Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform (GCP).</p>
                         </div>
                         <div class="edu-item highlight">
                             <span class="edu-date">2023 - 2024</span>
