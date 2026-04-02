@@ -156,6 +156,28 @@ if (container) {
     const tooltipType = document.getElementById('tooltip-type');
     const tooltipTime = document.getElementById('tooltip-time');
     const tooltipDetail = document.getElementById('tooltip-detail');
+    const tooltipClose = document.getElementById('tooltip-close');
+    let tooltipPinned = false; // true when user explicitly clicked to keep it open
+
+    // Cerrar manualmente resetea el pin y el sprite activo
+    if (tooltipClose) {
+        tooltipClose.addEventListener('click', () => {
+            tooltipPinned = false;
+            tooltip.style.display = 'none';
+            if (hoveredSprite) {
+                hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
+                const match = skills.find(s => s.name === hoveredSprite.userData.name);
+                if (match) hoveredSprite.material.color.setHex(match.color);
+                hoveredSprite = null;
+            }
+        });
+    }
+
+    // Si el cursor entra al tooltip, se "pinna" para no cerrarse
+    if (tooltip) {
+        tooltip.addEventListener('mouseenter', () => { tooltipPinned = true; });
+        tooltip.addEventListener('mouseleave', () => { tooltipPinned = false; });
+    }
 
     container.addEventListener('mousemove', (event) => {
         const rect = container.getBoundingClientRect();
@@ -270,7 +292,7 @@ if (container) {
                 container.style.cursor = 'pointer';
             }
         } else {
-            if (hoveredSprite) {
+            if (hoveredSprite && !tooltipPinned) {
                 hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
                 
                 // Restaurar color nativo
@@ -278,7 +300,7 @@ if (container) {
                 if(match) hoveredSprite.material.color.setHex(match.color);
                 
                 hoveredSprite = null;
-                if(tooltip) {
+                if(tooltip && !tooltipPinned) {
                     tooltip.style.display = 'none';
                 }
                 container.style.cursor = 'grab';
