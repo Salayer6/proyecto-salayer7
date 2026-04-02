@@ -115,9 +115,19 @@
                         </div>
 
                         <!-- Bubble Map Wrapper -->
-                        <div class="skill-map-wrapper" style="position: relative; width: 100%; min-height: 400px; padding: 0;">
+                        <div class="skill-map-wrapper">
                             <!-- 3D Canvas Anchor -->
                             <div id="skill-map-3d-canvas"></div>
+                            
+                            <!-- 3D Map Interactivity UI -->
+                            <div class="map-3d-ui">
+                                <span class="map-hint"><i class="fa-solid fa-arrows-turn-to-dots"></i> Arrastra para orbitar</span>
+                                <div class="map-zoom-controls">
+                                    <button onclick="window.zoomMapIn()" class="btn-zoom" title="Acercar"><i class="fa-solid fa-plus"></i></button>
+                                    <button onclick="window.zoomMapOut()" class="btn-zoom" title="Alejar"><i class="fa-solid fa-minus"></i></button>
+                                </div>
+                            </div>
+
                             <!-- 3D HTML Tooltip (Fixed Overlay) -->
                             <div id="skill-tooltip-html" class="html-tooltip" style="display:none; position: fixed; z-index: 1000; pointer-events: none; background: rgba(20, 20, 30, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; backdrop-filter: blur(10px); color: #fff; font-family: 'Inter', sans-serif; box-shadow: 0 8px 32px rgba(0,0,0,0.5); width: 220px; transition: opacity 0.2s;">
                                 <h4 id="tooltip-name" style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: var(--accent-cyan);"></h4>

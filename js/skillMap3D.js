@@ -27,7 +27,7 @@ if (container) {
     controls.enableDamping = true;
     controls.dampingFactor = 0.015; // Inercia súper pesada
     controls.rotateSpeed = 0.5;
-    controls.enableZoom = true;
+    controls.enableZoom = false; // Desactiva scroll nativo para no asfixiar el layout al scrollear
     controls.enablePan = false;
     controls.minDistance = 100;
     controls.maxDistance = 800;
@@ -203,6 +203,23 @@ if (container) {
     const tHyb = createTextSprite("HÍBRIDAS", "#965fd4");
     tHyb.position.set(0, -30, 200);
     targetGroup.add(tHyb);
+
+    // Zoom Functions for Global UI (HTML integration)
+    window.zoomMapIn = () => {
+        const dist = camera.position.distanceTo(controls.target);
+        const targetDist = Math.max(controls.minDistance, dist - 150);
+        const direction = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
+        camera.position.copy(controls.target).add(direction.multiplyScalar(targetDist));
+        controls.update();
+    };
+
+    window.zoomMapOut = () => {
+        const dist = camera.position.distanceTo(controls.target);
+        const targetDist = Math.min(controls.maxDistance, dist + 150);
+        const direction = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
+        camera.position.copy(controls.target).add(direction.multiplyScalar(targetDist));
+        controls.update();
+    };
 
     function animate() {
         requestAnimationFrame(animate);
