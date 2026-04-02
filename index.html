@@ -136,8 +136,30 @@
                                             class="fa-solid fa-minus"></i></button>
                                 </div>
                             </div>
+                        </div>
 
-
+                        <!-- Radar Map for Print Version -->
+                        <div class="radar-container">
+                            <svg viewBox="0 0 400 400" class="radar-chart">
+                                <g transform="translate(200, 200)">
+                                    <polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60" class="radar-grid" />
+                                    <polygon points="0,-80 69,-40 69,40 0,80 -69,40 -69,-40" class="radar-grid" />
+                                    <polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20" class="radar-grid" />
+                                    <line x1="0" y1="-120" x2="0" y2="120" class="radar-axis" />
+                                    <line x1="-104" y1="-60" x2="104" y2="60" class="radar-axis" />
+                                    <line x1="-104" y1="60" x2="104" y2="-60" class="radar-axis" />
+                                    <polygon id="radar-shape" points="0,-115 90,-50 100,55 0,110 -90,55 -85,-55"
+                                        class="radar-data" />
+                                    <g class="radar-labels">
+                                        <text x="0" y="-140" class="radar-label">Control P6 <tspan class="radar-icon">&#xf0e8;</tspan></text>
+                                        <text x="120" y="-60" class="radar-label" text-anchor="start">Python / R <tspan class="radar-icon">&#xf3e2;</tspan></text>
+                                        <text x="120" y="80" class="radar-label" text-anchor="start">BI / DAX <tspan class="radar-icon">&#xf080;</tspan></text>
+                                        <text x="0" y="155" class="radar-label">Agile <tspan class="radar-icon">&#xf46d;</tspan></text>
+                                        <text x="-120" y="80" class="radar-label" text-anchor="end">Cloud / Ops <tspan class="radar-icon">&#xf0c2;</tspan></text>
+                                        <text x="-120" y="-60" class="radar-label" text-anchor="end">SQL / ETL <tspan class="radar-icon">&#xf1c0;</tspan></text>
+                                    </g>
+                                </g>
+                            </svg>
                         </div>
                     </section>
 

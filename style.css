@@ -752,10 +752,63 @@ h1 .accent {
     font-style: italic;
 }
 
-/* Legacy radar classes kept for print fallback */
-.radar-grid, .radar-axis, .radar-data, .radar-point,
-.radar-label, .radar-icon, .radar-chart {
+/* Radar Chart Component (Print Fallback) */
+.radar-container {
     display: none;
+}
+
+.radar-chart {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
+}
+
+.radar-grid {
+    fill: none;
+    stroke: var(--border-color);
+    stroke-width: 0.5px;
+}
+
+.radar-axis {
+    stroke: var(--border-color);
+    stroke-width: 0.5px;
+    stroke-dasharray: 2;
+}
+
+.radar-data {
+    fill: rgba(139, 212, 80, 0.15);
+    stroke: var(--accent-lime);
+    stroke-width: 2px;
+}
+
+.radar-point {
+    fill: var(--accent-primary);
+}
+
+.radar-label {
+    fill: var(--text-primary);
+    font-size: 10px;
+    font-family: var(--font-header);
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-anchor: middle;
+    paint-order: stroke;
+    stroke: var(--bg-color);
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.radar-icon {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    fill: var(--accent-lime);
+    margin-left: 5px;
+    font-size: 11px;
 }
 
 
@@ -1268,18 +1321,36 @@ path.gauge-fill-affection {
         background: #f0fdf4 !important;
     }
 
-    /* Bubble Map Adjustments for Print */
-    .skill-bubble-soft { fill: rgba(79, 70, 229, 0.12) !important; stroke: #4f46e5 !important; filter: none !important; }
-    .skill-bubble-hard { fill: rgba(22, 163, 74, 0.12) !important; stroke: #16a34a !important; filter: none !important; }
-    .skill-bubble-hybrid { fill: rgba(6, 182, 212, 0.12) !important; stroke: #0891b2 !important; filter: none !important; }
-    .skill-bubble-hybrid-hard { fill: rgba(16, 185, 129, 0.12) !important; stroke: #059669 !important; filter: none !important; }
-    .skill-bubble-group:hover { filter: none !important; }
-    .skill-zone-soft { fill: rgba(79,70,229,0.04) !important; }
-    .skill-zone-hybrid { fill: rgba(6,182,212,0.03) !important; }
-    .skill-zone-hard { fill: rgba(22,163,74,0.04) !important; }
-    .bubble-label { stroke: white !important; fill: #1e293b !important; }
-    .skill-map-legend .legend-dot { box-shadow: none !important; }
-    .skill-tooltip-group { display: none !important; }
+    /* Radar Chart Adjustments for Print */
+    .radar-container {
+        display: block !important;
+    }
+
+    .radar-grid, .radar-axis {
+        stroke: #cbd5e1 !important;
+        stroke-width: 1px !important;
+    }
+
+    .radar-data {
+        fill: rgba(79, 70, 229, 0.1) !important;
+        stroke: var(--accent-primary) !important;
+        filter: none !important;
+    }
+
+    .radar-label {
+        fill: #334155 !important;
+        stroke: white !important;
+        stroke-width: 2px !important;
+    }
+    
+    .radar-icon {
+        fill: #334155 !important;
+    }
+
+    /* Hide 3D Map and elements on Print */
+    .skill-map-wrapper, .skill-map-legend {
+        display: none !important;
+    }
 
     /* Gauge Adjustments */
     .gauge-bg {
