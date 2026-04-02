@@ -802,20 +802,42 @@ h1 .accent {
     stroke-linecap: round;
 }
 
-.gauge-fill {
-    fill: none;
-    stroke: var(--accent-lime);
-    stroke-width: 12;
-    stroke-linecap: round;
-    /* stroke-dasharray for 90 deg path (len is approx 62.8) */
-    transform-origin: 50px 50px;
-    filter: drop-shadow(0 0 5px var(--accent-lime));
+/* Custom Gauge Colors (NPS and Specials) */
+.color-nps-red {
+    --gauge-color: #ef4444; /* Rojo para detractores / bajo */
+}
+.color-nps-yellow {
+    --gauge-color: #f59e0b; /* Amarillo/Naranja para pasivos / medio */
+}
+.color-nps-green {
+    --gauge-color: #10b981; /* Verde para promotores / alto */
+}
+.color-coffee {
+    --gauge-color: #ff9800; /* Naranja propio */
+}
+.color-affection {
+    /* Usamos un color solido como fallback, el gradiente va directo en el SVG o via text-fill */
+    --gauge-color: #f472b6;
 }
 
-.accent-purple {
-    stroke: var(--accent-primary);
-    filter: drop-shadow(0 0 5px var(--accent-primary));
+.gauge-fill {
+    fill: none;
+    stroke: var(--gauge-color, var(--accent-lime));
+    stroke-width: 12;
+    stroke-linecap: round;
+    transform-origin: 50px 50px;
+    filter: drop-shadow(0 0 5px var(--gauge-color, var(--accent-lime)));
 }
+
+/* Excepcion para Affection en stroke SVG ya que es gradiente, 
+   lo pasamos directo por url(#affection-gradient) en el path. */
+path.gauge-fill-affection {
+    stroke: url(#affection-gradient) !important;
+    filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.6)) !important;
+}
+
+/* Remover obsoletos accent-purple pero lo mantenemos vacio por si rompe otro file */
+.accent-purple {}
 
 .gauge-needle {
     stroke: var(--text-primary);
@@ -853,15 +875,18 @@ h1 .accent {
 .gauge-desc {
     display: block;
     font-size: 0.75rem;
-    color: var(--accent-lime);
+    color: var(--gauge-color, var(--accent-lime));
     font-weight: 500;
     margin-top: 0.25rem;
     opacity: 0.8;
     font-style: italic;
 }
 
-.gauge:has(.accent-purple) + .gauge-info .gauge-desc {
-    color: var(--accent-primary);
+.color-affection .gauge-desc {
+    background: linear-gradient(90deg, #f472b6, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .controls {

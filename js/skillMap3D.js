@@ -58,23 +58,23 @@ if (container) {
 
     const skills = [
         // BLANDAS (-X, -Z)
-        { name: "Control de Gestión", type: "Blanda", time: "Diplomado FEN", detail: "Alta especialización, ~54 meses equiv.", vector: [-1, -0.6], dist: 160, color: 0x4fc3f7, size: 26 },
-        { name: "Liderazgo / PMBOK", type: "Blanda", time: "Directivo", detail: "Maxwell, Willingham, PMBOK, ~48 meses equiv.", vector: [-0.9, -0.9], dist: 120, color: 0x81d4fa, size: 22 },
-        { name: "Investigación Social", type: "Blanda", time: "Analítico", detail: "Técnicas de investigación, ~44 meses equiv.", vector: [-0.6, -1], dist: 90, color: 0xb3e5fc, size: 18 },
+        { name: "Investigación Social", type: "Blanda Fundacional", time: "Técnicas Base", detail: "Aporta rigor metodológico para el análisis inferencial y validación de datos.", vector: [-0.7, -0.3], dist: 80, color: 0xb3e5fc, size: 20 },
+        { name: "Liderazgo / PMBOK", type: "Blanda Intermedia", time: "Gestión Práctica", detail: "Gestión proactiva y dirección de equipos en proyectos tecnológicos e industriales.", vector: [-0.9, -0.8], dist: 130, color: 0x81d4fa, size: 25 },
+        { name: "Control de Gestión", type: "Blanda Ultra-Específica", time: "Diplomado FEN", detail: "Núcleo estratégico. Diseño de KPIs, monitoreo de flujos y análisis de procesos.", vector: [-0.5, -1], dist: 190, color: 0x4fc3f7, size: 32 },
         
         // DURAS (+X, -Z)
-        { name: "Bash / Linux", type: "Dura", time: "Especialista Máximo", detail: "Habilidad más desarrollada actualmente", vector: [1, -0.5], dist: 190, color: 0x66bb6a, size: 30 },
-        { name: "Power BI / DAX", type: "Dura", time: "Analista BI", detail: "Dashboards ejecutivos de alta producción", vector: [0.8, -0.8], dist: 170, color: 0x81c784, size: 28 },
-        { name: "SQL / BigQuery", type: "Dura", time: "Queries", detail: "ETL y modelos de datos relacionales", vector: [0.6, -1.1], dist: 140, color: 0xaed581, size: 24 },
-        { name: "Oracle P6", type: "Dura", time: "Planeamiento", detail: "Control de proyectos, cronogramas y mallas CPM", vector: [0.95, -0.2], dist: 130, color: 0xc5e1a5, size: 22 },
-        { name: "Cloud / Ops", type: "Dura", time: "DevOps Basic", detail: "AWS, GCP, contenedores básicos", vector: [1, -1.0], dist: 110, color: 0xdcedc8, size: 20 },
-        { name: "Excel", type: "Dura", time: "Generalista", detail: "Cercanía al centro nominal", vector: [0.5, -0.5], dist: 40, color: 0xffffff, size: 15 },
+        { name: "Excel", type: "Dura Transversal", time: "Modelado Base", detail: "Herramienta analítica esencial para el modelado rápido y control de procesos.", vector: [0.5, -0.3], dist: 60, color: 0xffffff, size: 26 },
+        { name: "Bash / Linux", type: "Dura Fundacional", time: "Fundamento (10%)", detail: "Manejo base de SO y terminal, fundamental para comprender entornos e infraestructura.", vector: [0.9, -0.2], dist: 90, color: 0x81c784, size: 18 },
+        { name: "SQL / BigQuery", type: "Dura Intermedia", time: "Manejo de Datos", detail: "Extracción y transformación de datos a gran escala para arquitecturas de BI.", vector: [0.7, -0.7], dist: 140, color: 0xaed581, size: 30 },
+        { name: "Cloud / Ops", type: "Dura Complementaria", time: "DevOps Básico", detail: "Soporte de despliegue en la nube y comprensión de ecosistemas de datos modernos.", vector: [1, -0.8], dist: 160, color: 0xdcedc8, size: 22 },
+        { name: "Power BI / DAX", type: "Dura Específica", time: "Analista BI", detail: "Desarrollo de cuadros de mando gerenciales y modelado tabular complejo.", vector: [0.5, -0.9], dist: 180, color: 0x66bb6a, size: 32 },
+        { name: "Oracle P6", type: "Dura Hiper-Específica", time: "Planeamiento", detail: "Dominio indispensable para la planificación rotunda y control de faena.", vector: [0.8, -1.0], dist: 220, color: 0xc5e1a5, size: 28 },
         
         // HÍBRIDAS (0, +Z)
-        { name: "IA Generativa", type: "Híbrida-Dura", time: "A la vanguardia", detail: "Flujos AI, automatización con LLMs", vector: [0.3, 1], dist: 180, color: 0xba68c8, size: 28 },
-        { name: "Python / R", type: "Híbrida-Dura", time: "Developer", detail: "Data Engineering, limpieza de estadística", vector: [0.5, 0.8], dist: 150, color: 0xce93d8, size: 25 },
-        { name: "Agile / Scrum", type: "Híbrida-Blanda", time: "Agile", detail: "Sprint planning / Product Owner", vector: [-0.4, 0.9], dist: 130, color: 0xf06292, size: 22 },
-        { name: "Faena Minera", type: "Híbrida", time: "Terreno", detail: "Conformidad a normas y operaciones", vector: [-0.15, 0.7], dist: 100, color: 0xffb74d, size: 20 },
+        { name: "Python / R", type: "Híbrida Básica", time: "Data & Stats", detail: "Procesamiento avanzado de datos, econometría y scripts de análisis exploratorio.", vector: [0.2, 0.8], dist: 110, color: 0xce93d8, size: 28 },
+        { name: "Agile / Scrum", type: "Híbrida Gestión", time: "Marcos Ágiles", detail: "Garantía de entrega continua de valor en el desarrollo de soluciones analíticas.", vector: [-0.5, 0.7], dist: 150, color: 0xf06292, size: 26 },
+        { name: "Faena Minera", type: "Híbrida Entorno", time: "Operaciones", detail: "Entendimiento del negocio core, operación logística y normativas del sector minero.", vector: [-0.8, 0.5], dist: 180, color: 0xffb74d, size: 25 },
+        { name: "IA Generativa", type: "Híbrida Avanzada", time: "Vanguardia", detail: "Optimización DataOps, aceleración procedural y asistencia estructurada en la nube.", vector: [0.2, 1.0], dist: 220, color: 0xba68c8, size: 26 },
     ];
 
     const targetGroup = new THREE.Group();
