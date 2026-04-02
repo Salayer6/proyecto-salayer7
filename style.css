@@ -908,10 +908,92 @@ h1 .accent {
     font-style: italic;
 }
 
-/* Radar Chart Component (Print Fallback) */
+/* Bubble Chart 2D (Print Fallback) */
+.bubble-container {
+    display: none; /* hidden on screen, shown in print */
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.bubble-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hub center */
+.hub-circle {
+    fill: none;
+    stroke: rgba(255,255,255,0.35);
+    stroke-width: 2px;
+}
+.hub-dot {
+    fill: rgba(255,255,255,0.8);
+}
+
+/* Connector lines */
+.conn-line {
+    stroke-width: 1px;
+    stroke-dasharray: 4 4;
+    opacity: 0.5;
+}
+.conn-soft   { stroke: #965fd4; }
+.conn-hard   { stroke: #8bd450; }
+.conn-hybrid { stroke: #22d3ee; }
+
+/* Bubble nodes */
+.bnode {
+    stroke-width: 2px;
+}
+.bnode-soft {
+    fill: rgba(150, 95, 212, 0.20);
+    stroke: #965fd4;
+}
+.bnode-hard {
+    fill: rgba(139, 212, 80, 0.18);
+    stroke: #8bd450;
+}
+.bnode-hybrid {
+    fill: rgba(34, 211, 238, 0.15);
+    stroke: #22d3ee;
+}
+.bnode-hybrid-warm {
+    fill: rgba(255, 183, 77, 0.18);
+    stroke: #ffb74d;
+}
+.bnode-big {
+    stroke-width: 3px;
+}
+
+/* Labels on bubbles */
+.blabel {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 7.5px;
+    font-weight: 600;
+    fill: #e2e8f0;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+/* Zone labels */
+.zone-label {
+    font-family: var(--font-header, 'Barlow Condensed', sans-serif);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+.zone-soft   { fill: #965fd4; }
+.zone-hard   { fill: #8bd450; }
+.zone-hybrid { fill: #22d3ee; }
+
+/* Keep radar container hidden */
 .radar-container {
     display: none;
 }
+
 
 .radar-chart {
     width: 100%;
@@ -1477,30 +1559,31 @@ path.gauge-fill-affection {
         background: #f0fdf4 !important;
     }
 
-    /* Radar Chart Adjustments for Print */
-    .radar-container {
+    /* Bubble Map 2D for Print */
+    .bubble-container {
         display: block !important;
     }
 
-    .radar-grid, .radar-axis {
-        stroke: #cbd5e1 !important;
-        stroke-width: 1px !important;
-    }
+    .hub-circle { stroke: #334155 !important; }
+    .hub-dot    { fill: #334155 !important; }
 
-    .radar-data {
-        fill: rgba(79, 70, 229, 0.1) !important;
-        stroke: var(--accent-primary) !important;
-        filter: none !important;
-    }
+    .conn-soft   { stroke: #6d28d9 !important; opacity: 0.4 !important; }
+    .conn-hard   { stroke: #4d7c0f !important; opacity: 0.4 !important; }
+    .conn-hybrid { stroke: #0e7490 !important; opacity: 0.4 !important; }
 
-    .radar-label {
-        fill: #334155 !important;
-        stroke: white !important;
-        stroke-width: 2px !important;
-    }
-    
-    .radar-icon {
-        fill: #334155 !important;
+    .bnode-soft         { fill: rgba(109, 40, 217, 0.08) !important; stroke: #6d28d9 !important; }
+    .bnode-hard         { fill: rgba(77, 124, 15, 0.08)  !important; stroke: #4d7c0f !important; }
+    .bnode-hybrid       { fill: rgba(14, 116, 144, 0.08) !important; stroke: #0e7490 !important; }
+    .bnode-hybrid-warm  { fill: rgba(180, 83, 9, 0.08)   !important; stroke: #b45309 !important; }
+
+    .blabel      { fill: #1e293b !important; }
+    .zone-soft   { fill: #6d28d9 !important; }
+    .zone-hard   { fill: #4d7c0f !important; }
+    .zone-hybrid { fill: #0e7490 !important; }
+
+    /* Radar (ahora legacy) sigue oculto */
+    .radar-container {
+        display: none !important;
     }
 
     /* Hide 3D Map and elements on Print */
