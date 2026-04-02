@@ -247,12 +247,12 @@ h1 .accent {
     position: absolute;
     left: -1.5rem;
     top: 0.5rem;
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     background: var(--accent-primary);
     border-radius: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 10px var(--accent-primary);
+    box-shadow: 0 0 6px var(--accent-primary);
 }
 
 .timeline-date {
