@@ -550,6 +550,22 @@ h1 .accent {
     pointer-events: none;
 }
 
+.triangle-border {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.triangle-divider {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
 .skill-axis-line {
     stroke: rgba(255,255,255,0.12);
     stroke-width: 1;

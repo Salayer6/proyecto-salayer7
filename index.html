@@ -109,131 +109,116 @@
                         <div class="skill-map-wrapper">
                             <svg id="skill-bubble-map" viewBox="0 0 620 380" class="skill-bubble-svg" role="img" aria-label="Mapa de habilidades blandas y duras">
 
-                                <!-- Zone backgrounds (Centered around X=310) -->
-                                <!-- Soft zone (left) -->
-                                <rect x="20" y="20" width="180" height="340" rx="16" class="skill-zone skill-zone-soft"/>
-                                <!-- Hybrid zone (middle) -->
-                                <rect x="200" y="20" width="220" height="340" rx="16" class="skill-zone skill-zone-hybrid"/>
-                                <!-- Hard zone (right) -->
-                                <rect x="420" y="20" width="180" height="340" rx="16" class="skill-zone skill-zone-hard"/>
+                                <!-- Zone backgrounds (Inverted Triangle Split) -->
+                                <!-- Soft zone (Top Left Kite) -->
+                                <polygon points="60,40 310,40 310,160 185,200" class="skill-zone skill-zone-soft"/>
+                                <!-- Hard zone (Top Right Kite) -->
+                                <polygon points="310,40 560,40 435,200 310,160" class="skill-zone skill-zone-hard"/>
+                                <!-- Hybrid zone (Bottom Kite) -->
+                                <polygon points="185,200 310,160 435,200 310,360" class="skill-zone skill-zone-hybrid"/>
 
-                                <!-- Cartesian Rings -->
-                                <circle cx="310" cy="190" r="50" class="cartesian-ring" />
-                                <circle cx="310" cy="190" r="100" class="cartesian-ring" />
-                                <circle cx="310" cy="190" r="150" class="cartesian-ring" />
-                                <circle cx="310" cy="190" r="200" class="cartesian-ring" />
-                                <circle cx="310" cy="190" r="250" class="cartesian-ring" />
+                                <!-- Dividers -->
+                                <line x1="310" y1="160" x2="310" y2="40" class="triangle-divider"/>
+                                <line x1="310" y1="160" x2="185" y2="200" class="triangle-divider"/>
+                                <line x1="310" y1="160" x2="435" y2="200" class="triangle-divider"/>
 
-                                <!-- Zone labels top -->
-                                <text x="110" y="44" class="skill-zone-label soft-label">BLANDAS</text>
-                                <text x="310" y="44" class="skill-zone-label hybrid-label">HÍBRIDAS</text>
-                                <text x="510" y="44" class="skill-zone-label hard-label">DURAS</text>
+                                <!-- Concentric Triangles for scale (Especialización) -->
+                                <polygon points="60,40 560,40 310,360" class="triangle-border"/>
+                                <polygon points="122.5,70 497.5,70 310,310" class="triangle-border cartesian-ring"/>
+                                <polygon points="185,100 435,100 310,260" class="triangle-border cartesian-ring"/>
+                                <polygon points="247.5,130 372.5,130 310,210" class="triangle-border cartesian-ring"/>
 
-                                <!-- Y Axis (Vertical) -->
-                                <line x1="310" y1="20" x2="310" y2="360" class="skill-axis-line"/>
-                                <polygon points="306,30 310,20 314,30" class="skill-axis-arrow"/>
-                                <polygon points="306,350 310,360 314,350" class="skill-axis-arrow"/>
-                                
-                                <!-- X Axis (Horizontal) -->
-                                <line x1="30" y1="190" x2="590" y2="190" class="skill-axis-line"/>
-                                <polygon points="580,186 590,190 580,194" class="skill-axis-arrow"/>
-                                <polygon points="40,186 30,190 40,194" class="skill-axis-arrow"/>
-                                <text x="30" y="205" class="skill-axis-text" text-anchor="start">← Blandas</text>
-                                <text x="590" y="205" class="skill-axis-text" text-anchor="end">Duras →</text>
+                                <!-- Center Badge / Node -->
+                                <circle cx="310" cy="160" r="4" fill="var(--text-primary)" opacity="0.5"/>
+
+                                <!-- Zone labels -->
+                                <text x="185" y="32" class="skill-zone-label soft-label">BLANDAS</text>
+                                <text x="435" y="32" class="skill-zone-label hard-label">DURAS</text>
+                                <text x="310" y="375" class="skill-zone-label hybrid-label">HÍBRIDAS</text>
+
+                                <!-- Axes text (Specialization Marker) -->
+                                <text x="310" y="152" class="skill-axis-text" text-anchor="middle" font-size="7">ORIGEN</text>
 
                                 <!-- ═══════════════ SKILL BUBBLES ═══════════════ -->
 
-                                <!-- BLANDAS (Left) -->
-                                <!-- Control de Gestión (cx=180, cy=190) -->
+                                <!-- BLANDAS (Top Left) -->
                                 <g class="skill-bubble-group" data-skill="Control de Gestión" data-type="Blanda" data-time="Diplomado FEN" data-detail="Alta especialización, ~54 meses equiv.">
-                                    <circle cx="180" cy="190" r="22" class="skill-bubble skill-bubble-soft"/>
-                                    <text x="180" y="186" class="bubble-label">Control</text>
-                                    <text x="180" y="199" class="bubble-label">Gestión</text>
+                                    <circle cx="140" cy="60" r="22" class="skill-bubble skill-bubble-soft"/>
+                                    <text x="140" y="56" class="bubble-label">Control</text>
+                                    <text x="140" y="69" class="bubble-label">Gestión</text>
                                 </g>
 
-                                <!-- Liderazgo/PMBOK (cx=211, cy=247) -->
                                 <g class="skill-bubble-group" data-skill="Liderazgo / PMBOK" data-type="Blanda" data-time="Directivo" data-detail="Maxwell, Willingham, PMBOK, ~48 meses equiv.">
-                                    <circle cx="211" cy="247" r="20" class="skill-bubble skill-bubble-soft"/>
-                                    <text x="211" y="243" class="bubble-label">Liderazgo</text>
-                                    <text x="211" y="256" class="bubble-label">PMBOK</text>
+                                    <circle cx="210" cy="100" r="20" class="skill-bubble skill-bubble-soft"/>
+                                    <text x="210" y="96" class="bubble-label">Liderazgo</text>
+                                    <text x="210" y="109" class="bubble-label">PMBOK</text>
                                 </g>
 
-                                <!-- Investigación Social (cx=220, cy=138) -->
                                 <g class="skill-bubble-group" data-skill="Investigación Social" data-type="Blanda" data-time="Analítico" data-detail="Técnicas de investigación, ~44 meses equiv.">
-                                    <circle cx="220" cy="138" r="18" class="skill-bubble skill-bubble-soft"/>
-                                    <text x="220" y="134" class="bubble-label">Invest.</text>
-                                    <text x="220" y="146" class="bubble-label">Social</text>
+                                    <circle cx="250" cy="70" r="18" class="skill-bubble skill-bubble-soft"/>
+                                    <text x="250" y="66" class="bubble-label">Invest.</text>
+                                    <text x="250" y="78" class="bubble-label">Social</text>
                                 </g>
 
-                                <!-- HÍBRIDAS (Middle) -->
-                                <!-- Agile/Scrum (cx=218, cy=282) -->
-                                <g class="skill-bubble-group" data-skill="Agile / Scrum" data-type="Híbrida-Blanda" data-time="Agile" data-detail="Práctica laboral en startups, sprint planning">
-                                    <circle cx="218" cy="282" r="20" class="skill-bubble skill-bubble-hybrid"/>
-                                    <text x="218" y="278" class="bubble-label">Agile</text>
-                                    <text x="218" y="291" class="bubble-label">Scrum</text>
-                                </g>
-
-                                <!-- Faena Minera (cx=310, cy=290) -->
-                                <g class="skill-bubble-group" data-skill="Faena Minera" data-type="Híbrida" data-time="Terreno" data-detail="Conformidad a normas y operaciones">
-                                    <circle cx="310" cy="290" r="20" class="skill-bubble skill-bubble-hybrid"/>
-                                    <text x="310" y="286" class="bubble-label">Faena</text>
-                                    <text x="310" y="299" class="bubble-label">Minera</text>
-                                </g>
-
-                                <!-- IA Generativa (cx=347, cy=51) -->
-                                <g class="skill-bubble-group" data-skill="IA Generativa" data-type="Híbrida-Dura" data-time="A la vanguardia" data-detail="Flujos AI, automatización con LLMs (Top especialización)">
-                                    <circle cx="347" cy="51" r="24" class="skill-bubble skill-bubble-hybrid-hard"/>
-                                    <text x="347" y="47" class="bubble-label">IA</text>
-                                    <text x="347" y="60" class="bubble-label">Generativa</text>
-                                </g>
-
-                                <!-- Python/R (cx=495, cy=141) -->
-                                <g class="skill-bubble-group" data-skill="Python / R" data-type="Híbrida-Dura" data-time="Developer" data-detail="Data Engineering, limpieza de datos, y scripts estadísticos">
-                                    <circle cx="495" cy="141" r="22" class="skill-bubble skill-bubble-hybrid-hard"/>
-                                    <text x="495" y="137" class="bubble-label">Python</text>
-                                    <text x="495" y="150" class="bubble-label">/ R</text>
-                                </g>
-
-                                <!-- DURAS (Right) -->
-                                <!-- Bash / Linux (cx=560, cy=190) -->
+                                <!-- DURAS (Top Right) -->
                                 <g class="skill-bubble-group" data-skill="Bash / Linux" data-type="Dura" data-time="Especialista Máximo" data-detail="Habilidad más desarrollada actualmente">
-                                    <circle cx="560" cy="190" r="26" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="560" y="186" class="bubble-label">Bash /</text>
-                                    <text x="560" y="199" class="bubble-label">Linux</text>
+                                    <circle cx="530" cy="60" r="26" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="530" y="56" class="bubble-label">Bash /</text>
+                                    <text x="530" y="69" class="bubble-label">Linux</text>
                                 </g>
 
-                                <!-- Power BI / DAX (cx=514, cy=47) -->
                                 <g class="skill-bubble-group" data-skill="Power BI / DAX" data-type="Dura" data-time="Analista BI" data-detail="Dashboards ejecutivos de alta producción">
-                                    <circle cx="514" cy="47" r="24" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="514" y="43" class="bubble-label">Power BI</text>
-                                    <text x="514" y="56" class="bubble-label">/ DAX</text>
+                                    <circle cx="470" cy="100" r="24" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="470" y="96" class="bubble-label">Power BI</text>
+                                    <text x="470" y="109" class="bubble-label">/ DAX</text>
                                 </g>
 
-                                <!-- Oracle P6 (cx=384, cy=264) -->
-                                <g class="skill-bubble-group" data-skill="Oracle P6" data-type="Dura" data-time="Planeamiento" data-detail="Control de proyectos, cronogramas y mallas CPM">
-                                    <circle cx="384" cy="264" r="20" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="384" y="260" class="bubble-label">Oracle</text>
-                                    <text x="384" y="273" class="bubble-label">P6</text>
-                                </g>
-
-                                <!-- SQL / BigQuery (cx=370, cy=104) -->
                                 <g class="skill-bubble-group" data-skill="SQL / BigQuery" data-type="Dura" data-time="Queries" data-detail="ETL y modelos de datos relacionales">
-                                    <circle cx="370" cy="104" r="20" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="370" y="100" class="bubble-label">SQL /</text>
-                                    <text x="370" y="113" class="bubble-label">BigQuery</text>
+                                    <circle cx="420" cy="60" r="20" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="420" y="56" class="bubble-label">SQL /</text>
+                                    <text x="420" y="69" class="bubble-label">BigQuery</text>
                                 </g>
 
-                                <!-- Cloud / Ops (cx=405, cy=234) -->
                                 <g class="skill-bubble-group" data-skill="Cloud / Ops" data-type="Dura" data-time="DevOps Basic" data-detail="AWS, GCP, contenedores básicos">
-                                    <circle cx="405" cy="234" r="18" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="405" y="230" class="bubble-label">Cloud</text>
-                                    <text x="405" y="242" class="bubble-label">Ops</text>
+                                    <circle cx="380" cy="120" r="18" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="380" y="116" class="bubble-label">Cloud</text>
+                                    <text x="380" y="128" class="bubble-label">Ops</text>
                                 </g>
 
-                                <!-- Excel (cx=315, cy=190) -->
-                                <g class="skill-bubble-group" data-skill="Excel" data-type="Dura" data-time="Generalista" data-detail="Habilidad desplazada por herramientas superiores, cercanía al centro nominal">
-                                    <circle cx="320" cy="190" r="14" class="skill-bubble skill-bubble-hard"/>
-                                    <text x="320" y="193" class="bubble-label" style="font-size: 8px;">Excel</text>
+                                <g class="skill-bubble-group" data-skill="Oracle P6" data-type="Dura" data-time="Planeamiento" data-detail="Control de proyectos, cronogramas y mallas CPM">
+                                    <circle cx="360" cy="100" r="20" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="360" y="96" class="bubble-label">Oracle</text>
+                                    <text x="360" y="109" class="bubble-label">P6</text>
+                                </g>
+                                
+                                <g class="skill-bubble-group" data-skill="Excel" data-type="Dura" data-time="Generalista" data-detail="Habilidad desplazada por herramientas superiores, cercanía al centro">
+                                    <circle cx="330" cy="150" r="14" class="skill-bubble skill-bubble-hard"/>
+                                    <text x="330" y="153" class="bubble-label" style="font-size: 8px;">Excel</text>
+                                </g>
+
+                                <!-- HÍBRIDAS (Bottom) -->
+                                <g class="skill-bubble-group" data-skill="IA Generativa" data-type="Híbrida-Dura" data-time="A la vanguardia" data-detail="Flujos AI, automatización con LLMs (Top especialización)">
+                                    <circle cx="310" cy="270" r="24" class="skill-bubble skill-bubble-hybrid-hard"/>
+                                    <text x="310" y="266" class="bubble-label">IA</text>
+                                    <text x="310" y="279" class="bubble-label">Generativa</text>
+                                </g>
+
+                                <g class="skill-bubble-group" data-skill="Python / R" data-type="Híbrida-Dura" data-time="Developer" data-detail="Data Engineering, limpieza de datos, y scripts estadísticos">
+                                    <circle cx="360" cy="240" r="22" class="skill-bubble skill-bubble-hybrid-hard"/>
+                                    <text x="360" y="236" class="bubble-label">Python</text>
+                                    <text x="360" y="249" class="bubble-label">/ R</text>
+                                </g>
+
+                                <g class="skill-bubble-group" data-skill="Agile / Scrum" data-type="Híbrida-Blanda" data-time="Agile" data-detail="Práctica laboral en startups, sprint planning">
+                                    <circle cx="240" cy="260" r="20" class="skill-bubble skill-bubble-hybrid"/>
+                                    <text x="240" y="256" class="bubble-label">Agile</text>
+                                    <text x="240" y="269" class="bubble-label">Scrum</text>
+                                </g>
+
+                                <g class="skill-bubble-group" data-skill="Faena Minera" data-type="Híbrida" data-time="Terreno" data-detail="Conformidad a normas y operaciones">
+                                    <circle cx="270" cy="220" r="20" class="skill-bubble skill-bubble-hybrid"/>
+                                    <text x="270" y="216" class="bubble-label">Faena</text>
+                                    <text x="270" y="229" class="bubble-label">Minera</text>
                                 </g>
 
                                 <!-- ═══════════════ TOOLTIP ═══════════════ -->
