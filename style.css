@@ -539,6 +539,24 @@ h1 .accent {
     text-transform: uppercase;
 }
 
+.map-hint.icon-only {
+    padding: 8px 12px;
+    border-radius: 50%;
+    color: var(--accent-lime);
+    font-size: 16px;
+}
+
+@keyframes swipe {
+    0% { transform: translateX(-15px) rotate(-15deg); opacity: 0.6; }
+    50% { transform: translateX(15px) rotate(15deg); opacity: 1; filter: drop-shadow(0 0 8px var(--accent-lime)); }
+    100% { transform: translateX(-15px) rotate(-15deg); opacity: 0.6; }
+}
+
+.swipe-animation {
+    display: inline-block;
+    animation: swipe 2s ease-in-out infinite;
+}
+
 .map-zoom-controls {
     display: flex;
     flex-direction: column;
