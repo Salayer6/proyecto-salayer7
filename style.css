@@ -542,6 +542,14 @@ h1 .accent {
 .hard-label { fill: var(--accent-lime); opacity: 0.6; }
 
 /* Axis */
+.cartesian-ring {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.06);
+    stroke-width: 1px;
+    stroke-dasharray: 4 6;
+    pointer-events: none;
+}
+
 .skill-axis-line {
     stroke: rgba(255,255,255,0.12);
     stroke-width: 1;
