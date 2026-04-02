@@ -47,30 +47,38 @@
             </div>
 
             <div class="contact-section">
-                <button class="contact-item main-toggle" onclick="document.getElementById('contact-details').classList.toggle('open'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-up'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-down');" title="Ver datos de contacto">
+                <button class="contact-item main-toggle"
+                    onclick="document.getElementById('contact-details').classList.toggle('open'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-up'); this.querySelector('.toggle-icon').classList.toggle('fa-chevron-down');"
+                    title="Ver datos de contacto">
                     <i class="fa-solid fa-id-card"></i>
-                    <span>19.057.525-K <i class="fa-solid fa-chevron-down toggle-icon" style="margin-left: 5px; font-size: 0.8em;"></i></span>
+                    <span>19.057.525-K <i class="fa-solid fa-chevron-down toggle-icon"
+                            style="margin-left: 5px; font-size: 0.8em;"></i></span>
                 </button>
-                
+
                 <div class="contact-grid collapsible-content" id="contact-details">
                     <a class="contact-item" href="tel:+56976331648" title="Llamar">
                         <i class="fa-solid fa-phone"></i>
                         <span>+569 7633 1648 <small>(Móvil)</small></span>
                     </a>
-                    <a class="contact-item" href="https://maps.google.com/?q=Santiago,Chile" target="_blank" rel="noopener"
-                        title="Ver en Google Maps">
+                    <a class="contact-item"
+                        href="https://maps.google.com/?q=Avenida+Diez+de+julio+Huamachuco+750,+Santiago" target="_blank"
+                        rel="noopener" title="Ver en Google Maps">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span>Avenida Diez de julio Huamachuco #750, casa 5, Santiago</span>
+                        <span>Santiago, Chile</span>
                     </a>
-                    
-                    <!-- Licencia con cuadro informativo en hover -->
-                    <div class="contact-item contact-item-tooltip" tabindex="0">
-                        <i class="fa-solid fa-car"></i>
-                        <span>Licencia B/C | Viajes OK</span>
-                        <div class="custom-tooltip">
-                            Tengo experiencia manejando todo tipo de vehículos, tengo aprobado el curso para obtener licencia de conducir profesional clase A2 y A4, faltándome solo obtenerla.
+
+                    <!-- Licencia con cuadro informativo (Expansible inline) -->
+                    <button class="contact-item-wrapper" onclick="this.classList.toggle('active')" title="Haz clic para leer más" aria-expanded="false">
+                        <div class="contact-item-header">
+                            <i class="fa-solid fa-car"></i>
+                            <span>Licencia B/C | Viajes OK</span>
                         </div>
-                    </div>
+                        <div class="contact-item-body">
+                            <div class="contact-info-box">
+                                Tengo experiencia manejando todo tipo de vehículos, tengo aprobado el curso para obtener licencia de conducir profesional clase A2 y A4, faltándome solo obtenerla.
+                            </div>
+                        </div>
+                    </button>
 
                     <!-- Inglés sin link por el momento -->
                     <div class="contact-item">
@@ -82,8 +90,9 @@
                         <i class="fa-solid fa-envelope"></i>
                         <span>i.salasv@duocuc.cl</span>
                     </a>
-                    <a class="contact-item" href="https://instagram.com/ceotempleinfinito?utm_source=portfolio&utm_medium=cv&utm_campaign=contact" target="_blank" rel="noopener"
-                        title="Instagram">
+                    <a class="contact-item"
+                        href="https://instagram.com/ceotempleinfinito?utm_source=portfolio&utm_medium=cv&utm_campaign=contact"
+                        target="_blank" rel="noopener" title="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                         <span>@ceotempleinfinito</span>
                     </a>
@@ -117,7 +126,8 @@
                     <section class="card glass skill-map-section">
                         <div class="card-header">
                             <h2><i class="fa-solid fa-diagram-project"></i> Mapa de Skills</h2>
-                            <p>Posición horizontal: naturaleza de la habilidad · Tamaño: Relevancia para el Rol (BI & Control)</p>
+                            <p>Posición horizontal: naturaleza de la habilidad · Tamaño: Relevancia para el Rol (BI &
+                                Control)</p>
                         </div>
 
                         <!-- Skill Map Legend -->
@@ -136,7 +146,8 @@
 
                             <!-- 3D Map Interactivity UI -->
                             <div class="map-3d-ui">
-                                <span class="map-hint icon-only" title="Arrastra para orbitar"><i class="fa-solid fa-hand-pointer swipe-animation"></i></span>
+                                <span class="map-hint icon-only" title="Arrastra para orbitar"><i
+                                        class="fa-solid fa-hand-pointer swipe-animation"></i></span>
                                 <div class="map-zoom-controls">
                                     <button onclick="window.zoomMapIn()" class="btn-zoom" title="Acercar"><i
                                             class="fa-solid fa-plus"></i></button>
@@ -159,12 +170,18 @@
                                     <polygon id="radar-shape" points="0,-115 90,-50 100,55 0,110 -90,55 -85,-55"
                                         class="radar-data" />
                                     <g class="radar-labels">
-                                        <text x="0" y="-140" class="radar-label">Control P6 <tspan class="radar-icon">&#xf0e8;</tspan></text>
-                                        <text x="120" y="-60" class="radar-label" text-anchor="start">Python / R <tspan class="radar-icon">&#xf3e2;</tspan></text>
-                                        <text x="120" y="80" class="radar-label" text-anchor="start">BI / DAX <tspan class="radar-icon">&#xf080;</tspan></text>
-                                        <text x="0" y="155" class="radar-label">Agile <tspan class="radar-icon">&#xf46d;</tspan></text>
-                                        <text x="-120" y="80" class="radar-label" text-anchor="end">Cloud / Ops <tspan class="radar-icon">&#xf0c2;</tspan></text>
-                                        <text x="-120" y="-60" class="radar-label" text-anchor="end">SQL / ETL <tspan class="radar-icon">&#xf1c0;</tspan></text>
+                                        <text x="0" y="-140" class="radar-label">Control P6 <tspan class="radar-icon">
+                                                &#xf0e8;</tspan></text>
+                                        <text x="120" y="-60" class="radar-label" text-anchor="start">Python / R <tspan
+                                                class="radar-icon">&#xf3e2;</tspan></text>
+                                        <text x="120" y="80" class="radar-label" text-anchor="start">BI / DAX <tspan
+                                                class="radar-icon">&#xf080;</tspan></text>
+                                        <text x="0" y="155" class="radar-label">Agile <tspan class="radar-icon">&#xf46d;
+                                            </tspan></text>
+                                        <text x="-120" y="80" class="radar-label" text-anchor="end">Cloud / Ops <tspan
+                                                class="radar-icon">&#xf0c2;</tspan></text>
+                                        <text x="-120" y="-60" class="radar-label" text-anchor="end">SQL / ETL <tspan
+                                                class="radar-icon">&#xf1c0;</tspan></text>
                                     </g>
                                 </g>
                             </svg>
@@ -196,7 +213,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 25.12;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">60%</span><span
-                                            class="gauge-name">Basic Food</span><span class="gauge-desc">Atención Requerida</span>
+                                            class="gauge-name">Basic Food</span><span class="gauge-desc">Atención
+                                            Requerida</span>
                                     </div>
                                 </div>
                                 <!-- 2. Homeostasis: 90% -->
@@ -207,7 +225,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 6.28;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">90%</span><span
-                                            class="gauge-name">Homeostasis</span><span class="gauge-desc">Sistema Óptimo</span>
+                                            class="gauge-name">Homeostasis</span><span class="gauge-desc">Sistema
+                                            Óptimo</span>
                                     </div>
                                 </div>
                                 <!-- 3. Weather shelter: 67% -->
@@ -218,7 +237,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 20.72;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">67%</span><span
-                                            class="gauge-name">Weather Shelter</span><span class="gauge-desc">Mejorable</span>
+                                            class="gauge-name">Weather Shelter</span><span
+                                            class="gauge-desc">Mejorable</span>
                                     </div>
                                 </div>
                                 <!-- 4. Working & connected terminal: 100% -->
@@ -229,7 +249,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">100%</span><span
-                                            class="gauge-name">Terminal</span><span class="gauge-desc">Conectado y Estable</span>
+                                            class="gauge-name">Terminal</span><span class="gauge-desc">Conectado y
+                                            Estable</span>
                                     </div>
                                 </div>
                                 <!-- 5. Attended mental health: 85% -->
@@ -240,7 +261,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 9.42;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">85%</span><span
-                                            class="gauge-name">Mental Health</span><span class="gauge-desc">Bajo Control</span>
+                                            class="gauge-name">Mental Health</span><span class="gauge-desc">Bajo
+                                            Control</span>
                                     </div>
                                 </div>
                                 <!-- 6. Coffee/Coke: 20% -->
@@ -251,7 +273,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">20%</span><span
-                                            class="gauge-name">Coffee / Coke</span><span class="gauge-desc">Reserva Crítica</span>
+                                            class="gauge-name">Coffee / Coke</span><span class="gauge-desc">Reserva
+                                            Crítica</span>
                                     </div>
                                 </div>
                                 <!-- 7. Superior food and hydration: 75% -->
@@ -262,7 +285,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">75%</span><span
-                                            class="gauge-name">Superior Food</span><span class="gauge-desc">Adecuado</span></div>
+                                            class="gauge-name">Superior Food</span><span
+                                            class="gauge-desc">Adecuado</span></div>
                                 </div>
                                 <!-- 8. Affection, entertainment & therapy: 20% -->
                                 <div class="gauge-item color-affection">
@@ -272,7 +296,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">20%</span><span
-                                            class="gauge-name">Affection & Ent.</span><span class="gauge-desc">Déficit de Interacción</span>
+                                            class="gauge-name">Affection & Ent.</span><span class="gauge-desc">Déficit
+                                            de Interacción</span>
                                     </div>
                                 </div>
                                 <!-- 9. Rest and healthy habits: 75% -->
@@ -283,7 +308,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">75%</span><span
-                                            class="gauge-name">Rest & Habits</span><span class="gauge-desc">En Desarrollo</span>
+                                            class="gauge-name">Rest & Habits</span><span class="gauge-desc">En
+                                            Desarrollo</span>
                                     </div>
                                 </div>
                                 <!-- 10. Higher connection / Medicine: 100% -->
@@ -294,7 +320,8 @@
                                             style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
                                     <div class="gauge-info"><span class="gauge-value">100%</span><span
-                                            class="gauge-name">Higher Conn.</span><span class="gauge-desc">Sintonizado</span></div>
+                                            class="gauge-name">Higher Conn.</span><span
+                                            class="gauge-desc">Sintonizado</span></div>
                                 </div>
                             </div>
                         </div>
@@ -350,13 +377,19 @@
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Introducción a Faena Minera (8 cursos)</h3>
                             <span class="edu-org">mine-class.com</span>
-                            <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general, Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación estratégica del negocio minero.</p>
+                            <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general,
+                                Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera
+                                Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación
+                                estratégica del negocio minero.</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Ruta Profesional: Data Engineer</h3>
                             <span class="edu-org">Platzi Academy (12 Cursos completados)</span>
-                            <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server, MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake), Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform (GCP).</p>
+                            <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server,
+                                MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake),
+                                Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform
+                                (GCP).</p>
                         </div>
                         <div class="edu-item highlight">
                             <span class="edu-date">2023 - 2024</span>

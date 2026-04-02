@@ -340,51 +340,66 @@ h1 .accent {
     opacity: 1;
 }
 
-/* Tooltip for Contact Items */
-.contact-item-tooltip {
-    position: relative;
-    cursor: help;
+/* Inline Informative Box for Contact Items */
+.contact-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
-.contact-item-tooltip .custom-tooltip {
-    position: absolute;
-    bottom: calc(100% + 15px);
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    background: rgba(20, 20, 30, 0.95);
-    border: 1px solid var(--accent-cyan);
-    padding: 12px;
+.contact-item-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.contact-item-wrapper:hover .contact-item-header {
+    color: var(--text-primary);
+}
+
+.contact-item-header i {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    width: max-content;
-    max-width: 250px;
-    font-size: 0.8rem;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+}
+
+.contact-item-body {
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
-    visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 100;
-    pointer-events: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    text-align: center;
-    line-height: 1.4;
+    margin-left: 48px; /* lines up with text, offset by icon 32px + 16px gap */
 }
 
-.contact-item-tooltip .custom-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -6px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: var(--accent-cyan) transparent transparent transparent;
-}
-
-.contact-item-tooltip:hover .custom-tooltip,
-.contact-item-tooltip:focus .custom-tooltip {
+.contact-item-wrapper.active .contact-item-body {
+    max-height: 150px;
     opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    margin-top: 8px;
+}
+
+.contact-info-box {
+    background: rgba(20, 20, 30, 0.6);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    line-height: 1.4;
 }
 
 .contact-item {
