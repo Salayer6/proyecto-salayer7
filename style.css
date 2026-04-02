@@ -56,12 +56,47 @@ body {
 }
 
 header {
-    text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+}
+
+.header-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.profile-photo-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header-main {
-    margin-bottom: 2rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .header-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .header-main {
+        text-align: center;
+    }
 }
 
 h1 {
@@ -126,7 +161,14 @@ h1 .accent {
 }
 
 .contact-item i {
-    color: var(--accent-lime);
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
     font-size: 1rem;
     flex-shrink: 0;
 }
@@ -327,6 +369,14 @@ h1 .accent {
     border-color: var(--accent-cyan);
 }
 
+.contact-item i.toggle-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    display: inline-block;
+}
+
 .collapsible-content {
     max-height: 0;
     overflow: hidden;
@@ -425,31 +475,7 @@ h1 .accent {
     line-height: 1.4;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    text-decoration: none;
-    transition: var(--transition);
-}
 
-.contact-item:hover {
-    color: var(--text-primary);
-}
-
-.contact-item i {
-    width: 32px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-primary);
-}
 
 /* Skills Badges */
 .badges {
