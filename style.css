@@ -1506,6 +1506,10 @@ path.gauge-fill-affection {
 /* PRINT STYLES - Crucial for PDF output */
 
 @media print {
+    @page {
+        size: tabloid;
+        margin: 1cm;
+    }
     :root {
         --bg-color: #ffffff;
         --text-primary: #000000;
