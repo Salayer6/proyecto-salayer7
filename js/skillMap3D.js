@@ -59,8 +59,11 @@ if (container) {
     const skills = [
         // BLANDAS (-X, -Z)
         { name: "Investigación Social", type: "Blanda Fundacional", time: "Técnicas Base", detail: "Aporta rigor metodológico para el análisis inferencial y validación de datos.", vector: [-0.7, -0.3], dist: 80, color: 0xb3e5fc, size: 20 },
+        { name: "Autopoiesis", type: "Blanda Existencial", time: "Mejora Continua", detail: "Capacidad de auto-generación y evolución constante basada en el aprendizaje autogestionado.", vector: [-0.3, -0.5], dist: 100, color: 0x00bcd4, size: 24 },
         { name: "Liderazgo / PMBOK", type: "Blanda Intermedia", time: "Gestión Práctica", detail: "Gestión proactiva y dirección de equipos en proyectos tecnológicos e industriales.", vector: [-0.9, -0.8], dist: 130, color: 0x81d4fa, size: 25 },
+        { name: "Respeto Universal", type: "Blanda Ética", time: "Valores Base", detail: "Reconocimiento de la dignidad humana y principios de trato igualitario en todo entorno.", vector: [-1.0, -0.2], dist: 160, color: 0x4dd0e1, size: 22 },
         { name: "Control de Gestión", type: "Blanda Ultra-Específica", time: "Diplomado FEN", detail: "Núcleo estratégico. Diseño de KPIs, monitoreo de flujos y análisis de procesos.", vector: [-0.5, -1], dist: 190, color: 0x4fc3f7, size: 32 },
+        { name: "Ética Profesional", type: "Blanda Fundamental", time: "Deontología", detail: "Apego inquebrantable a principios morales y compromiso profesional ante cualquier reto.", vector: [-0.8, -0.9], dist: 220, color: 0x80deea, size: 28 },
         
         // DURAS (+X, -Z)
         { name: "Excel", type: "Dura Transversal", time: "Modelado Base", detail: "Herramienta analítica esencial para el modelado rápido y control de procesos.", vector: [0.5, -0.3], dist: 60, color: 0xffffff, size: 26 },
