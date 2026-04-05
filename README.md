@@ -4,4 +4,4 @@ Control/Estrategia: El monitoreo del desempeño frente al presupuesto y cronogra
 En otros modelos populares de la industria, las "tres verticales" o pilares se agrupan de formas similares:  
 Personas, Procesos y Tecnología: El enfoque moderno impulsado por la digitalización y BIM.  
 Alcance, Tiempo y Costo: Conocido como el "Triángulo de Hierro" de la administración de proyectos del PMI.Planificación, Ejecución y Control: El ciclo operativo estándar de cualquier obra civil.
-![Operación de Oracle Primavera P6](/Video P6 1.gif)
+![Operación de Oracle Primavera P6]("./Video P6 1.gif")
