@@ -1719,6 +1719,10 @@ body.exporting-digital .glass {
     box-shadow: none !important;
 }
 
+body.exporting-digital .sr-only {
+    display: none !important;
+}
+
 body.exporting-digital .container {
     max-width: 800px !important;
     width: 800px !important;
