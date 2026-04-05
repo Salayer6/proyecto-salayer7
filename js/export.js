@@ -4,7 +4,8 @@
  */
 
 function exportDigitalCV() {
-    const element = document.body; // Capture body to get the full background gradients
+    // Capturamos el contenedor principal para evitar márgenes innecesarios del body
+    const element = document.querySelector('.container'); 
     
     // 1. Prepare for export
     document.body.classList.add('exporting-digital');
@@ -20,15 +21,15 @@ function exportDigitalCV() {
             backgroundColor: '#1d1a2f', // Match --bg-color
             logging: false,
             letterRendering: true,
-            allowTaint: true
+            allowTaint: true,
+            width: 800 // Forzamos ancho para que coincida con el CSS de exportación
         },
-        jsPDF: { unit: 'in', format: 'tabloid', orientation: 'portrait' }
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
     // 3. Generate PDF
-    html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
-        // Optional: Any last minute PDF manipulation
-    }).save().then(() => {
+    html2pdf().set(opt).from(element).save().then(() => {
         document.body.classList.remove('exporting-digital');
     }).catch(err => {
         console.error('Export error:', err);

@@ -1537,8 +1537,8 @@ path.gauge-fill-affection {
 
 @media print {
     @page {
-        size: tabloid;
-        margin: 1cm;
+        size: A4;
+        margin: 1.5cm;
     }
     :root {
         --bg-color: #ffffff;
@@ -1709,6 +1709,37 @@ body.exporting-digital .html-tooltip,
 body.exporting-digital .nav-links,
 body.exporting-digital .main-toggle {
     display: none !important;
+}
+
+/* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
+body.exporting-digital .glass {
+    background: rgba(30, 41, 59, 1) !important;
+    backdrop-filter: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+}
+
+body.exporting-digital .container {
+    max-width: 800px !important;
+    width: 800px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+body.exporting-digital {
+    background: #1d1a2f !important;
+}
+
+.pdf-page-break {
+    page-break-before: always;
+    break-before: page;
+}
+
+/* Ocultar marcador en pantalla */
+@media screen {
+    .pdf-page-break {
+        display: none;
+    }
 }
 
 body.exporting-digital .bubble-container {
