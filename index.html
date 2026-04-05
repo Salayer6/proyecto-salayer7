@@ -43,6 +43,7 @@
             <p>Nació el 19 de julio, 1995</p>
             <p>Contacto Móvil: +569 7633 1648 | Emergencia: +569 7946 3741 (Marco Salas)</p>
             <p>Email: i.salasv@duocuc.cl</p>
+            <p>LinkedIn: https://linkedin.com/in/salayerignaciosalas | GitHub: https://github.com/salayer6</p>
             <p>Dirección: Av. Diez de julio Huamachuco #750, casa 5, Santiago</p>
             <p>Licencia de conducir clase B/C. Bilingüe Castellano-Inglés. Disponibilidad de viajar.</p>
             <p>Objetivo: Ingeniero de Programación y Control | BI | Data Analytics | Minería.</p>
@@ -78,7 +79,7 @@
                     </a>
                     <a class="contact-item"
                         href="https://maps.google.com/?q=Avenida+Diez+de+julio+Huamachuco+750,+Santiago" target="_blank"
-                        rel="noopener" title="Ver en Google Maps">
+                        rel="noopener noreferrer" title="Ver en Google Maps">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>Santiago, Chile</span>
                     </a>
@@ -110,9 +111,19 @@
                     </a>
                     <a class="contact-item"
                         href="https://instagram.com/ceotempleinfinito?utm_source=cv&utm_medium=web&utm_campaign=workbitch"
-                        target="_blank" rel="noopener" title="Instagram">
+                        target="_blank" rel="noopener noreferrer" title="Instagram">
                         <i class="fa-brands fa-instagram"></i>
                         <span>@ceotempleinfinito</span>
+                    </a>
+                    <a class="contact-item" href="https://linkedin.com/in/salayerignaciosalas" target="_blank"
+                        rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="contact-item" href="https://github.com/salayer6" target="_blank" rel="noopener noreferrer"
+                        title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
@@ -121,7 +132,7 @@
         <main class="grid">
             <div class="content-main">
                 <!-- Profile Section -->
-                <section class="card glass">
+                <section id="profile" class="card glass">
                     <div class="card-header">
                         <h2><i class="fa-solid fa-bullseye"></i> <span data-i18n="profile_title">Perfil
                                 Estratégico</span></h2>
@@ -145,7 +156,7 @@
 
                 <div class="visual-row">
                     <!-- Skills Bubble Map -->
-                    <section class="card glass skill-map-section">
+                    <section id="skillmap" class="card glass skill-map-section">
                         <div class="card-header">
                             <h2><i class="fa-solid fa-diagram-project"></i> Mapa de Skills</h2>
                             <p>Radar de habilidades · La distancia al centro indica especialización para el cargo (BI &
@@ -299,7 +310,7 @@
                     </section>
 
                     <!-- Signos Vitales y Estado del Sistema -->
-                    <section class="card glass mastery-section">
+                    <section id="vitalsigns" class="card glass mastery-section">
                         <div class="card-header">
                             <h2><i class="fa-solid fa-heart-pulse"></i> <span data-i18n="vitals_title">Signos Vitales /
                                     Status</span></h2>
@@ -441,7 +452,7 @@
                 </div>
 
                 <!-- Experience -->
-                <section class="card glass">
+                <section id="experience" class="card glass">
                     <div class="card-header">
                         <h2><i class="fa-solid fa-briefcase"></i> <span data-i18n="exp_title">Trayectoria
                                 Profesional</span></h2>
@@ -460,7 +471,9 @@
                         <div class="timeline-item">
                             <div class="timeline-date">Marzo 2023 - Septiembre 2023</div>
                             <h3 class="timeline-title">Analista de Apoyo Administrativo</h3>
-                            <div class="timeline-org">AUTER (Control Vial Nacional)</div>
+                            <div class="timeline-org">
+                                <a href="https://www.auter.cl" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">AUTER (Control Vial Nacional) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </div>
                             <p class="timeline-desc">Colabora en gestión integral de bodega central. Imputación de
                                 transacciones
                                 críticas atrasadas a nivel central. Mantenimiento y superación de calidad en despacho y
@@ -469,7 +482,9 @@
                         <div class="timeline-item">
                             <div class="timeline-date">Febrero 2019 - Febrero 2020</div>
                             <h3 class="timeline-title">Técnico de Mantención de vehículos 100% eléctricos (CROWN)</h3>
-                            <div class="timeline-org">ROYAL AMERICA</div>
+                            <div class="timeline-org">
+                                <a href="https://www.royalamerica.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">ROYAL AMERICA <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </div>
                             <p class="timeline-desc">Control de flota eléctrica mediante <strong>IBM Maximo</strong>.
                                 Ejecuta de x1.5 ciclos preventivos sobre 200+ equipos en 1 año. Manejo técnico avanzado
                                 de transpaletas y apiladores.</p>
@@ -478,7 +493,7 @@
                 </section>
 
                 <!-- Unified Education & Certifications -->
-                <section class="card glass">
+                <section id="education" class="card glass">
                     <div class="card-header">
                         <h2><i class="fa-solid fa-graduation-cap"></i> Formación Académica y Certificaciones</h2>
                     </div>
@@ -486,12 +501,16 @@
                         <div class="edu-item">
                             <span class="edu-date">Dic-2025</span>
                             <h3 class="edu-heading">Planificación y Control de Faena en P6</h3>
-                            <span class="edu-org">Certificado Udemy</span>
+                            <span class="edu-org">
+                                <a href="https://www.udemy.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Certificado Udemy <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Introducción a Faena Minera (8 cursos SENCE)</h3>
-                            <span class="edu-org">mine-class.com</span>
+                            <span class="edu-org">
+                                <a href="https://mine-class.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">mine-class.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                             <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general,
                                 Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera
                                 Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación
@@ -500,7 +519,9 @@
                         <div class="edu-item">
                             <span class="edu-date">Nov-2025</span>
                             <h3 class="edu-heading">Ruta Profesional: Data Engineer</h3>
-                            <span class="edu-org">Platzi Academy (12 Cursos completados)</span>
+                            <span class="edu-org">
+                                <a href="https://platzi.com/ruta/ingenieria-datos/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Platzi Academy (12 Cursos completados) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                             <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server,
                                 MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake),
                                 Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform
@@ -509,19 +530,25 @@
                         <div class="edu-item highlight">
                             <span class="edu-date">2023 - 2024</span>
                             <h3 class="edu-heading">Diplomado en Control de Gestión para Profesionales</h3>
-                            <span class="edu-org">FEN, Universidad de Chile | Promedio 5.5</span>
+                            <span class="edu-org">
+                                <a href="https://www.uejecutivos.cl/diplomados/detalle/diplomado-en-control-de-gestion-para-profesionales" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">FEN, Universidad de Chile | Promedio 5.5 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                             <p class="edu-meta">"Aborda la disciplina con una adecuada planificación del negocio
                                 mediante el diseño y ejecución de controles sobre los distintos procesos."</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2024</span>
                             <h3 class="edu-heading">Certificado profesional en Analítica de Datos</h3>
-                            <span class="edu-org">Google Career Certificates vía Coursera</span>
+                            <span class="edu-org">
+                                <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Google Career Certificates vía Coursera <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                         </div>
                         <div class="edu-item highlight">
                             <span class="edu-date">2014 - 2018</span>
                             <h3 class="edu-heading">Ingeniería en Mecánica Automotriz y Autotrónica</h3>
-                            <span class="edu-org">Duoc UC, Sede San Joaquín (Titulado) | Promedio 6.0</span>
+                            <span class="edu-org">
+                                <a href="https://www.duoc.cl/carreras/ingenieria-mecanica-automotriz-autotronica/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Duoc UC, Sede San Joaquín (Titulado) | Promedio 6.0 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
+                            </span>
                             <p class="edu-meta">Capacidad para desenvolverse en áreas productivas, administrativas,
                                 comerciales y de gestión de empresas de mantenimiento y reparación avanzada.</p>
                         </div>
