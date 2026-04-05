@@ -113,6 +113,36 @@ h1 .accent {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-family: var(--font-header);
+    margin-bottom: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    transition: var(--transition);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+}
+
+.nav-links a:hover {
+    color: var(--accent-lime);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+    border-color: var(--accent-lime);
+    box-shadow: 0 0 15px rgba(139, 212, 80, 0.3);
 }
 
 .contact-grid {

@@ -7,7 +7,7 @@
 const translations = {
     es: {
         // Header
-        subtitle: "Ingeniero de Programación y Control | BI & Data Analytics",
+        subtitle: "Ingeniero de Programación y Control - BI & Data Analytics",
         contact_title: "Información de contacto",
 
         // Sección Signos Vitales
@@ -54,7 +54,7 @@ const translations = {
     },
 
     en: {
-        subtitle: "Planning & Control Engineer | BI & Data Analytics",
+        subtitle: "Planning & Control Engineer - BI & Data Analytics",
         contact_title: "Contact Information",
 
         vitals_title: "Vital Signs / Status",
@@ -92,7 +92,7 @@ const translations = {
     },
 
     de: {
-        subtitle: "Planungs- & Kontrollingenieur | BI & Datenanalyse",
+        subtitle: "Planungs- & Kontrollingenieur - BI & Datenanalyse",
         contact_title: "Kontaktinformationen",
 
         vitals_title: "Vitaldaten / Status",
@@ -130,7 +130,7 @@ const translations = {
     },
 
     ja: {
-        subtitle: "計画・管理エンジニア | BI & データ分析",
+        subtitle: "計画・管理エンジニア - BI & データ分析",
         contact_title: "連絡先情報",
 
         vitals_title: "バイタルサイン / ステータス",
@@ -168,7 +168,7 @@ const translations = {
     },
 
     ru: {
-        subtitle: "Инженер планирования и контроля | BI & аналитика данных",
+        subtitle: "Инженер планирования и контроля - BI & аналитика данных",
         contact_title: "Контактная информация",
 
         vitals_title: "Жизненные показатели / Статус",
