@@ -7,12 +7,12 @@ Son los ingredientes para llevar a cabo la gestión de un proyecto, cualesquiera
 
 En otros modelos populares de la industria, las "tres verticales" o pilares se agrupan de formas similares:  
 
-Personas, Procesos y Tecnología: El enfoque moderno impulsado por la digitalización y BIM.  
+Personas, Procesos y Tecnología: El enfoque moderno impulsado por la digitalización y Building Information Modeling by Autodesk.  
 Alcance, Tiempo y Costo: Conocido como el "Triángulo de Hierro" de la administración de proyectos del PMI.  
 Planificación, Ejecución y Control: El ciclo operativo estándar de cualquier obra civil.
 
 Softwares como Oracle Primavera P6 nos brinda una forma fluida para interactuar con Bases de datos robustas.
-Mediante la siguiente UI soy capaz de programar proyectos, desde el 1ero, al tercer nivel de programación, considerando:  
+Mediante la siguiente UI soy capaz de programar proyectos, desde el 1er al 3er nivel de programación, considerando:  
 I. Hitos (Fechas límite y concordancia con factores externos) II. Estructura Desglosada de Trabajo o Work Breakdown Structure. Es la estructura que organiza el alcance y contiene información util para Alta Gerencia. III. Cronograma de control. Posibilita el cálculo del Critical Path Method a través de la visualización al nivel de detalle de Actividades. Es un nivel de intención: lo que debería pasar.
 
 Restando solamente la planificación de contigencias y de última semana, motodología adoptada por el Lean Construction:
