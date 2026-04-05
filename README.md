@@ -18,5 +18,5 @@ Mediante la siguiente UI soy capaz de programar proyectos, desde el 1er al 3er n
 
 ![Operación de Oracle Primavera P6](https://github.com/Salayer6/proyecto-salayer7/blob/main/Video%20P6%201.gif)
 
-Restando solamente la planificación de contigencias y de última semana, motodología adoptada por el Lean Construction:
+Restando solamente la planificación de contigencias y de última semana, motodología adoptada por el Lean Construction:  
 IV. Last Planner System  Generalmente realizado en un software distinto, más ajustado y específico. Por ejemplo en una planilla Excel tipo Look Ahead. Permite gestionar recursos y contingencias, así como registrar mediciones. Documento gestionado por el capataz o lider de cuadrillas.
