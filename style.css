@@ -1700,3 +1700,63 @@ path.gauge-fill-affection {
         break-inside: avoid;
     }
 }
+
+/* DIGITAL EXPORT OVERRIDES (Used by js/export.js) */
+body.exporting-digital .skill-map-wrapper,
+body.exporting-digital .map-3d-ui,
+body.exporting-digital .export-banner,
+body.exporting-digital .html-tooltip,
+body.exporting-digital .nav-links,
+body.exporting-digital .main-toggle {
+    display: none !important;
+}
+
+body.exporting-digital .bubble-container {
+    display: block !important;
+    opacity: 1 !important;
+    margin: 2rem auto !important;
+}
+
+body.exporting-digital .contact-grid {
+    max-height: none !important;
+    opacity: 1 !important;
+    display: grid !important;
+}
+
+/* NEW EXPORT UI */
+.export-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.digital-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan)) !important;
+    border-color: transparent !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
+}
+
+.digital-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(150, 95, 212, 0.6) !important;
+}
+
+.print-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.print-btn:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: var(--accent-lime) !important;
+}
+
+@media (max-width: 600px) {
+    .export-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}

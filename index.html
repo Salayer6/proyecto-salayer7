@@ -615,10 +615,16 @@
                     <h2><i class="fa-solid fa-file-pdf"></i> Ignacio Salas Vega - 2026 | BI & Control de Gestión Portfolio</h2>
                     <p>Optimizado para ATS y motores de búsqueda.</p>
                 </div>
-                <button class="btn print-btn" onclick="window.print()"
-                    aria-label="Descargar Curriculum Vitae en formato PDF">
-                    Descargar CV
-                </button>
+                <div class="export-buttons">
+                    <button class="btn digital-btn" onclick="exportDigitalCV()"
+                        aria-label="Descargar Versión Digital (Premium)">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Versión Digital
+                    </button>
+                    <button class="btn print-btn" onclick="window.print()"
+                        aria-label="Descargar Versión Imprimible (Básico)">
+                        <i class="fa-solid fa-print"></i> Versión Imprimible
+                    </button>
+                </div>
             </div>
         </section>
     </div>
@@ -652,6 +658,10 @@
         <p id="tooltip-detail" style="margin: 0; font-size: 12px; color: #ccc; line-height: 1.4;"></p>
     </div>
 
+    <!-- html2pdf.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- PDF Export Logic -->
+    <script src="js/export.js"></script>
     <!-- i18n — Internacionalización automática -->
     <script src="js/i18n.js"></script>
 
