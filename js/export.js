@@ -26,7 +26,42 @@ function exportDigitalCV() {
             allowTaint: true,
             width: 800, 
             scrollY: 0, 
-            scrollX: 0
+            scrollX: 0,
+            onclone: (clonedDoc) => {
+                // Fix para asegurar que los SVGs de los velocímetros se vean en la captura
+                const gauges = clonedDoc.querySelectorAll('.gauge');
+                gauges.forEach(svg => {
+                    svg.setAttribute('width', '100');
+                    svg.setAttribute('height', '100');
+                    
+                    // Asegurar que los paths interiores tengan trazos visibles y sin filtros hardcodificados
+                    const fills = svg.querySelectorAll('.gauge-fill');
+                    fills.forEach(path => {
+                        // Resolvemos el color computado para que html2canvas no use variables CSS (que a veces fallan en clone)
+                        const computedStyle = window.getComputedStyle(path);
+                        const resolvedColor = computedStyle.stroke;
+                        
+                        // Si es el de Afecto (que usa gradiente), lo forzamos a color sólido rosa premium
+                        if (path.classList.contains('gauge-fill-affection')) {
+                            path.style.stroke = '#f472b6'; 
+                        } else if (resolvedColor && resolvedColor !== 'none') {
+                            path.style.stroke = resolvedColor;
+                        }
+                        
+                        // Forzamos visibilidad eliminando filtros que rompen html2canvas (como drop-shadows complejos)
+                        path.style.filter = 'none';
+                        path.style.strokeWidth = '14'; // Un poco más grueso ayuda en la captura a 2x
+                    });
+                });
+
+                // Extender el fondo texturizado al fondo del documento clonado para evitar trailing whitespace
+                const container = clonedDoc.querySelector('.container');
+                if (container) {
+                    container.style.minHeight = '100%';
+                    clonedDoc.body.style.backgroundColor = '#11101d';
+                    clonedDoc.body.style.backgroundImage = container.style.backgroundImage;
+                }
+            }
         },
         jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }, // pt da mejor precisión para links
         pagebreak: { 
