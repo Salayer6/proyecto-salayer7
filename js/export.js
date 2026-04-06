@@ -25,7 +25,6 @@ function exportDigitalCV() {
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Forzar que el clon use 210mm completo (Ancho A4)
                 clonedDoc.documentElement.style.width = '210mm';
                 clonedDoc.body.style.width = '210mm';
                 clonedDoc.body.style.margin = '0';
@@ -35,15 +34,15 @@ function exportDigitalCV() {
                 const container = clonedDoc.querySelector('.container');
                 if (container) {
                     container.style.width = '210mm';
-                    container.style.padding = '10mm 15mm'; // El margen ahora es padding interno
+                    container.style.padding = '10mm 15mm';
                     container.style.margin = '0';
                     container.style.backgroundColor = '#1d1a2f';
                     container.style.backgroundImage = 'none';
                     container.style.boxShadow = 'none';
-                    container.style.minHeight = '297mm';
+                    container.style.minHeight = '100vh';
                 }
 
-                // Asegurar que los SVGs de los velocímetros se vean
+                // Velocímetros
                 const gauges = clonedDoc.querySelectorAll('.gauge');
                 gauges.forEach(svg => {
                     svg.setAttribute('width', '100');
@@ -55,7 +54,7 @@ function exportDigitalCV() {
                     });
                 });
 
-                // Tarjetas con fondo sólido
+                // Tarjetas
                 const cards = clonedDoc.querySelectorAll('.glass');
                 cards.forEach(card => {
                     card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)';
@@ -64,14 +63,14 @@ function exportDigitalCV() {
                 });
             }
         },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }, // pt da mejor precisión para links
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { 
-            mode: ['avoid-all', 'css', 'legacy'],
+            mode: ['avoid-all', 'css', 'legacy'], // Evita cortes en mitad de elementos
             before: '.pdf-page-break',
-            avoid: ['h1', 'header', '.card-header', '.contact-item']
+            avoid: ['.glass', '.card-header', 'h2', '.gauge-item', '.timeline-item', '.edu-item']
         }
-    };
-
+    }; 
+    
     // 3. Generate PDF
     html2pdf().set(opt).from(element).save().then(() => {
         document.body.classList.remove('exporting-digital');

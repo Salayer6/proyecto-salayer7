@@ -1866,7 +1866,18 @@ body.exporting-digital .container {
 body.exporting-digital .profile-photo-container {
     width: 35mm !important;
     height: 35mm !important;
-    margin-bottom: 5mm !important;
+    margin: 0 auto 5mm auto !important;
+    overflow: hidden !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important; /* Evitar que se achate */
+    aspect-ratio: 1 / 1 !important;
+}
+
+body.exporting-digital .profile-photo {
+    width: 35mm !important;
+    height: 35mm !important;
+    object-fit: cover !important;
+    display: block !important;
 }
 
 body.exporting-digital h1 {
@@ -1898,9 +1909,19 @@ body.exporting-digital .contact-item {
 
 body.exporting-digital .glass {
     padding: 10mm 15mm !important;
-    margin-bottom: 10mm !important;
-    border-radius: 0 !important; /* Bordes rectos para full-bleed look opcional, o mantener redondeados */
+    margin-bottom: 12mm !important;
+    border-radius: 12px !important;
     page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    position: relative !important;
+}
+
+body.exporting-digital .timeline-item,
+body.exporting-digital .edu-item,
+body.exporting-digital .contact-item-wrapper,
+body.exporting-digital .gauge-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
 }
 
 body.exporting-digital .gauge-bg {
