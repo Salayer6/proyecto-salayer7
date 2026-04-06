@@ -9,35 +9,33 @@ function exportDigitalCV() {
     const originalScrollY = window.scrollY;
     window.scrollTo(0, 0);
     
-    // El elemento a capturar es ahora el body para asegurar que el fondo cubra todo el PDF
-    const element = document.body;
+    // Capturamos el contenedor principal para evitar márgenes innecesarios del body
+    const element = document.querySelector('.container'); 
     
-    // 2. Configure html2pdf options
+    // 2. Configure html2pdf options (Optimized for A4)
     const opt = {
         margin: 0,
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
+        image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { 
             scale: 2,
             useCORS: true, 
-            backgroundColor: '#1d1a2f', 
+            backgroundColor: '#1d1a2f', // Cubre excedentes con el color correcto
             logging: false,
-            width: 794, // Ancho exacto A4 (210mm a 96dpi)
-            windowWidth: 794,
+            width: 800, // Ancho de captura fijo
+            windowWidth: 800,
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Forzar dimensiones y fondo en el documento clonado
-                clonedDoc.documentElement.style.width = '794px';
-                clonedDoc.body.style.width = '794px';
-                clonedDoc.body.style.backgroundColor = '#1d1a2f';
-                
-                // Asegurar que el contenido relevante ocupe el ancho completo sin márgenes
+                // Forzar dimensiones consistentes en el clon
                 const container = clonedDoc.querySelector('.container');
                 if (container) {
-                    container.style.width = '794px';
+                    container.style.width = '800px';
                     container.style.margin = '0';
-                    container.style.padding = '0.5rem 1.5rem 5rem 1.5rem';
+                    container.style.backgroundColor = '#1d1a2f';
+                    container.style.backgroundImage = 'none'; // Desactivamos textura pesada en el clon para evitar fallos
+                    container.style.boxShadow = 'none';
+                    container.style.minHeight = 'auto'; // Permitir que el contenido defina el largo
                 }
 
                 // Forzar que los SVGs de los velocímetros se vean
@@ -57,6 +55,7 @@ function exportDigitalCV() {
                 cards.forEach(card => {
                     card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)';
                     card.style.backdropFilter = 'none';
+                    card.style.boxShadow = 'none';
                 });
             }
         },
