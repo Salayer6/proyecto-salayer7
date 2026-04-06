@@ -14,7 +14,7 @@ function exportDigitalCV() {
     
     // 2. Configure html2pdf options
     const opt = {
-        margin: 0,
+        margin: [0.3, 0.3, 0.3, 0.3], // Pequeño margen para evitar cortes en bordes A4
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { 
@@ -22,14 +22,18 @@ function exportDigitalCV() {
             useCORS: true, 
             backgroundColor: '#1d1a2f', // Match --bg-color
             logging: false,
-            letterRendering: true,
+            letterRendering: false, // Desactivado para mayor precisión en saltos de texto
             allowTaint: true,
             width: 800, // Forzamos ancho para que coincida con el CSS de exportación
             scrollY: 0, // CRUCIAL: Reinicia el scroll interno de captura
             scrollX: 0
         },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        pagebreak: { 
+            mode: ['avoid-all', 'css', 'legacy'],
+            before: '.pdf-page-break',
+            avoid: ['h1', 'header', '.card-header']
+        }
     };
 
     // 3. Generate PDF

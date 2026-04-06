@@ -1726,8 +1726,20 @@ body.exporting-digital .sr-only {
 body.exporting-digital .container {
     max-width: 800px !important;
     width: 800px !important;
-    padding: 0 !important;
+    padding: 0.5rem 0 !important; /* Reducimos padding superior */
     margin: 0 auto !important;
+}
+
+body.exporting-digital h1 {
+    font-size: 2.8rem !important; /* Reducimos tamaño para evitar saltos de línea/página */
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+}
+
+body.exporting-digital header {
+    page-break-inside: avoid !important;
+    break-inside: avoid-page !important;
+    margin-bottom: 2rem !important;
 }
 
 body.exporting-digital {
