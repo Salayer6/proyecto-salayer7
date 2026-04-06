@@ -1593,7 +1593,7 @@ path.gauge-fill-affection {
         box-shadow: none !important;
         backdrop-filter: none !important;
         border-radius: 12px !important;
-        padding: 1.5rem !important;
+        padding: 1rem !important; /* Reducimos padding de cards */
         break-inside: avoid;
     }
 
@@ -1617,9 +1617,39 @@ path.gauge-fill-affection {
         color: #334155 !important;
     }
 
+    .export-banner, .main-toggle, .html-tooltip {
+        display: none !important;
+    }
+
+    /* Compactar Educación en Impresión */
+    .edu-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.8rem !important;
+    }
+
     .edu-item {
         background: #f8fafc !important;
         border-left-width: 4px !important;
+        padding: 0.8rem !important;
+        border-radius: 8px !important;
+    }
+
+    .edu-heading {
+        font-size: 1.05rem !important;
+    }
+
+    .edu-org, .edu-meta {
+        font-size: 0.8rem !important;
+    }
+
+    .secondary-edu-header {
+        margin: 1.5rem 0 0.8rem !important;
+        padding-top: 0.8rem !important;
+    }
+
+    .edu-grid-secondary {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8rem !important;
     }
 
     .edu-item.highlight {
@@ -1719,15 +1749,48 @@ body.exporting-digital .glass {
     box-shadow: none !important;
 }
 
-body.exporting-digital .sr-only {
+body.exporting-digital .sr-only,
+body.exporting-digital .export-banner,
+body.exporting-digital .html-tooltip,
+body.exporting-digital .main-toggle {
     display: none !important;
 }
 
 body.exporting-digital .container {
     max-width: 800px !important;
     width: 800px !important;
-    padding: 0.5rem 0 !important; /* Reducimos padding superior */
+    padding: 0.5rem 0 0 0 !important; /* Eliminamos padding inferior */
     margin: 0 auto !important;
+}
+
+/* Compactar Educación en Exportación Digital */
+body.exporting-digital .edu-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.8rem !important;
+}
+
+body.exporting-digital .edu-item {
+    padding: 0.8rem !important;
+    border-radius: 8px !important;
+}
+
+body.exporting-digital .edu-heading {
+    font-size: 1.05rem !important;
+}
+
+body.exporting-digital .edu-org,
+body.exporting-digital .edu-meta {
+    font-size: 0.8rem !important;
+}
+
+body.exporting-digital .secondary-edu-header {
+    margin: 1.5rem 0 0.8rem !important;
+    padding-top: 0.8rem !important;
+}
+
+body.exporting-digital .edu-grid-secondary {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.8rem !important;
 }
 
 body.exporting-digital h1 {
