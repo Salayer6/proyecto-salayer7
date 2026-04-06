@@ -1742,17 +1742,37 @@ body.exporting-digital .main-toggle {
 }
 
 /* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
+/* Estética Premium para Exportación Digital (Solución a falta de backdrop-filter) */
 body.exporting-digital .glass {
-    background: rgba(30, 41, 59, 1) !important;
+    background: linear-gradient(145deg, #1e293b, #11101d) !important;
     backdrop-filter: none !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: none !important;
+    border: 1px solid rgba(150, 95, 212, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
+                0 0 15px rgba(150, 95, 212, 0.08) !important;
+    border-radius: 14px !important;
+}
+
+body.exporting-digital .card-header h2 {
+    color: var(--accent-cyan) !important;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.2) !important;
+}
+
+body.exporting-digital .card-header i {
+    color: var(--accent-primary) !important;
+    filter: drop-shadow(0 0 5px rgba(150, 95, 212, 0.3)) !important;
+}
+
+body.exporting-digital .edu-item,
+body.exporting-digital .timeline-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-color: rgba(150, 95, 212, 0.15) !important;
 }
 
 body.exporting-digital .sr-only,
 body.exporting-digital .export-banner,
 body.exporting-digital .html-tooltip,
-body.exporting-digital .main-toggle {
+body.exporting-digital .main-toggle,
+body.exporting-digital .nav-links {
     display: none !important;
 }
 

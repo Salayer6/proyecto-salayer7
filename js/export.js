@@ -18,14 +18,14 @@ function exportDigitalCV() {
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { 
-            scale: 2, 
+            scale: 3, // Aumentamos a resolución 3x para nitidez premium
             useCORS: true, 
-            backgroundColor: '#1d1a2f', // Match --bg-color
+            backgroundColor: '#11101d', // Coincide con el nuevo fondo premium
             logging: false,
-            letterRendering: false, // Desactivado para mayor precisión en saltos de texto
+            letterRendering: false, 
             allowTaint: true,
-            width: 800, // Forzamos ancho para que coincida con el CSS de exportación
-            scrollY: 0, // CRUCIAL: Reinicia el scroll interno de captura
+            width: 800, 
+            scrollY: 0, 
             scrollX: 0
         },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
