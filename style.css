@@ -1854,19 +1854,53 @@ body.exporting-digital .bubble-container {
 body.exporting-digital .container {
     max-width: 190mm !important;
     width: 190mm !important;
-    padding: 10mm !important;
+    padding: 12mm 15mm !important; /* Más aire en los laterales */
     margin: 0 auto !important;
     background-color: #1d1a2f !important;
     background-image: none !important;
     position: relative !important;
-    min-height: 297mm !important; /* Mínimo una hoja A4 */
+    min-height: 297mm !important;
     overflow: visible !important;
 }
 
-/* Fix para Velocímetros en Digital */
-body.exporting-digital .gauge {
-    width: 130px !important;
-    height: 130px !important;
+body.exporting-digital .profile-photo-container {
+    width: 35mm !important;
+    height: 35mm !important;
+    margin-bottom: 5mm !important;
+}
+
+body.exporting-digital h1 {
+    font-size: 2rem !important;
+    margin-bottom: 3mm !important;
+    color: var(--text-primary) !important;
+    text-align: center !important;
+}
+
+body.exporting-digital .subtitle {
+    font-size: 0.9rem !important;
+    margin-bottom: 8mm !important;
+    letter-spacing: 0.2rem !important;
+    text-align: center !important;
+}
+
+body.exporting-digital .contact-grid {
+    grid-template-columns: 1fr 1fr !important; /* 2 columnas para mejor lectura en A4 */
+    gap: 4mm !important;
+    padding: 6mm !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    margin-top: 5mm !important;
+    margin-bottom: 10mm !important;
+}
+
+body.exporting-digital .contact-item {
+    font-size: 0.85rem !important;
+    padding: 3mm !important;
+}
+
+body.exporting-digital .glass {
+    padding: 15mm !important;
+    margin-bottom: 10mm !important;
+    page-break-inside: avoid !important;
 }
 
 body.exporting-digital .gauge-bg {
@@ -1888,8 +1922,8 @@ body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important
 body.exporting-digital .bubble-chart {
     width: 100% !important;
     height: auto !important;
-    max-width: 160mm !important; /* Ajustado para container de 190mm */
-    margin: 0 auto !important;
+    max-width: 145mm !important; /* Ligeramente más pequeño para mejor balance */
+    margin: 5mm auto !important;
 }
 
 /* Compactar Educación en Exportación Digital */
@@ -1920,21 +1954,6 @@ body.exporting-digital .secondary-edu-header {
 body.exporting-digital .edu-grid-secondary {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.8rem !important;
-}
-
-body.exporting-digital h1 {
-    font-size: 2.5rem !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid-page !important;
-    color: var(--text-primary) !important;
-}
-
-body.exporting-digital h1 .accent {
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    background-clip: unset !important;
-    -webkit-text-fill-color: var(--accent-cyan) !important;
-    color: var(--accent-cyan) !important;
 }
 
 body.exporting-digital header {
