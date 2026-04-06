@@ -1588,37 +1588,28 @@ path.gauge-fill-affection {
     }
 
     .glass {
-        background: white !important;
+        background: transparent !important;
         border: 1px solid #e2e8f0 !important;
         box-shadow: none !important;
         backdrop-filter: none !important;
         border-radius: 12px !important;
-        padding: 1rem !important; /* Reducimos padding de cards */
+        padding: 1rem !important;
         break-inside: avoid;
     }
 
-    .card:hover {
-        transform: none !important;
-    }
-
-    .quote {
-        background: #f8fafc !important;
-        border-left: 4px solid var(--accent-lime) !important;
-        color: #475569 !important;
-    }
-
-    .timeline::before {
-        box-shadow: none !important;
-    }
-
-    .badge {
-        background: #f1f5f9 !important;
-        border: 1px solid #e2e8f0 !important;
-        color: #334155 !important;
-    }
-
-    .export-banner, .main-toggle, .html-tooltip {
+    .export-banner, .main-toggle, .html-tooltip, .nav-links {
         display: none !important;
+    }
+
+    /* Ocultar fondos de ítems en impresión */
+    .edu-item, .timeline-item, .quote, .badge, .contact-item-wrapper, .contact-item {
+        background: transparent !important;
+        border-color: #cbd5e1 !important;
+        color: black !important;
+    }
+
+    .contact-item i {
+        color: var(--accent-primary) !important;
     }
 
     /* Compactar Educación en Impresión */
@@ -1742,30 +1733,32 @@ body.exporting-digital .main-toggle {
 }
 
 /* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
-/* Estética Premium para Exportación Digital (Solución a falta de backdrop-filter) */
+/* Estética Limpia para Exportación Digital (Descartando fondos pesados) */
 body.exporting-digital .glass {
-    background: linear-gradient(145deg, #1e293b, #11101d) !important;
+    background: transparent !important;
     backdrop-filter: none !important;
     border: 1px solid rgba(150, 95, 212, 0.25) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 
-                0 0 15px rgba(150, 95, 212, 0.08) !important;
+    box-shadow: none !important;
     border-radius: 14px !important;
 }
 
 body.exporting-digital .card-header h2 {
     color: var(--accent-cyan) !important;
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.2) !important;
-}
-
-body.exporting-digital .card-header i {
-    color: var(--accent-primary) !important;
-    filter: drop-shadow(0 0 5px rgba(150, 95, 212, 0.3)) !important;
 }
 
 body.exporting-digital .edu-item,
-body.exporting-digital .timeline-item {
-    background: rgba(255, 255, 255, 0.03) !important;
-    border-color: rgba(150, 95, 212, 0.15) !important;
+body.exporting-digital .timeline-item,
+body.exporting-digital .contact-item,
+body.exporting-digital .contact-item-wrapper {
+    background: transparent !important;
+    border-color: rgba(150, 95, 212, 0.1) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Forzar color claro para Licencia e Inglés */
+body.exporting-digital .contact-item span,
+body.exporting-digital .contact-item-header span {
+    color: var(--text-primary) !important;
 }
 
 body.exporting-digital .sr-only,
@@ -1774,6 +1767,19 @@ body.exporting-digital .html-tooltip,
 body.exporting-digital .main-toggle,
 body.exporting-digital .nav-links {
     display: none !important;
+}
+
+/* Skill Map: Forzar 2D */
+body.exporting-digital .skill-map-wrapper,
+body.exporting-digital .skill-map-legend,
+body.exporting-digital .map-3d-ui {
+    display: none !important;
+}
+
+body.exporting-digital .bubble-container {
+    display: block !important;
+    opacity: 1 !important;
+    margin: 2rem auto !important;
 }
 
 body.exporting-digital .container {
