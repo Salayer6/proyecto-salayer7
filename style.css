@@ -1680,13 +1680,26 @@ path.gauge-fill-affection {
     }
 
     /* Gauge Adjustments */
+    .gauge {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
     .gauge-bg {
         stroke: #e2e8f0 !important;
     }
 
     .gauge-fill {
         filter: none !important;
+        stroke-width: 14 !important;
     }
+
+    /* Fallback solid colors for print (no vars) */
+    .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
+    .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
+    .color-nps-green .gauge-fill { stroke: #10b981 !important; }
+    .color-coffee .gauge-fill { stroke: #ff9800 !important; }
+    .color-affection .gauge-fill { stroke: #f472b6 !important; }
 
     .gauge-value {
         color: black !important;
@@ -1698,6 +1711,14 @@ path.gauge-fill-affection {
 
     .carousel-container {
         overflow: visible !important;
+        min-height: 200px !important;
+    }
+
+    .bubble-chart {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 650px !important;
+        margin: 0 auto !important;
     }
 
     .gauge-grid.carousel {
@@ -1785,13 +1806,42 @@ body.exporting-digital .bubble-container {
 body.exporting-digital .container {
     max-width: 800px !important;
     width: 800px !important;
-    padding: 0.5rem 0 0 0 !important; 
+    padding: 0.5rem 2rem 5rem 2rem !important; /* Añadimos padding para respiro y fondo */
     margin: 0 auto !important;
     /* Fondo Papel Mural con Micro-Textura Noise */
     background-color: #11101d !important;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E") !important;
     position: relative !important;
-    min-height: 100% !important;
+    min-height: 1100px !important; /* Forzamos altura mínima tipo A4 */
+}
+
+/* Fix para Velocímetros en Digital */
+body.exporting-digital .gauge {
+    width: 130px !important;
+    height: 130px !important;
+}
+
+body.exporting-digital .gauge-bg {
+    stroke: #334155 !important;
+}
+
+body.exporting-digital .gauge-fill {
+    filter: none !important;
+    stroke-width: 14 !important;
+}
+
+/* Fallback solid colors for digital PDF (no vars) */
+body.exporting-digital .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
+body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
+body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important; }
+body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
+body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
+
+body.exporting-digital .bubble-chart {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 650px !important;
+    margin: 0 auto !important;
 }
 
 /* Compactar Educación en Exportación Digital */
