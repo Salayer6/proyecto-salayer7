@@ -22,22 +22,22 @@ function exportDigitalCV() {
             useCORS: true, 
             backgroundColor: '#1d1a2f', 
             logging: false,
-            width: 800, // Fijar ancho de captura a 800px
-            windowWidth: 800,
+            width: 794, // Ancho exacto A4 (210mm a 96dpi)
+            windowWidth: 794,
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
                 // Forzar dimensiones y fondo en el documento clonado
-                clonedDoc.documentElement.style.width = '800px';
-                clonedDoc.body.style.width = '800px';
+                clonedDoc.documentElement.style.width = '794px';
+                clonedDoc.body.style.width = '794px';
                 clonedDoc.body.style.backgroundColor = '#1d1a2f';
                 
-                // Asegurar que solo el contenido relevante sea visible
+                // Asegurar que el contenido relevante ocupe el ancho completo sin márgenes
                 const container = clonedDoc.querySelector('.container');
                 if (container) {
-                    container.style.width = '800px';
+                    container.style.width = '794px';
                     container.style.margin = '0';
-                    container.style.padding = '0.5rem 2rem 5rem 2rem';
+                    container.style.padding = '0.5rem 1.5rem 5rem 1.5rem';
                 }
 
                 // Forzar que los SVGs de los velocímetros se vean
