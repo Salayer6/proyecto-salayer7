@@ -12,7 +12,7 @@ function exportDigitalCV() {
     // Capturamos el contenedor principal para evitar márgenes innecesarios del body
     const element = document.querySelector('.container'); 
     
-    // 2. Configure html2pdf options (Optimized for A4)
+    // 2. Configure html2pdf options (Optimized for A4 - 750px safe width)
     const opt = {
         margin: 0,
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
@@ -20,22 +20,25 @@ function exportDigitalCV() {
         html2canvas: { 
             scale: 2,
             useCORS: true, 
-            backgroundColor: '#1d1a2f', // Cubre excedentes con el color correcto
+            backgroundColor: '#1d1a2f', 
             logging: false,
-            width: 800, // Ancho de captura fijo
-            windowWidth: 800,
+            width: 750, // Ancho de seguridad para A4
+            windowWidth: 750,
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Forzar dimensiones consistentes en el clon
+                // Forzar dimensiones consistentes en el clon para evitar cortes
+                clonedDoc.body.style.width = '750px';
+                clonedDoc.body.style.overflow = 'visible';
                 const container = clonedDoc.querySelector('.container');
                 if (container) {
-                    container.style.width = '800px';
+                    container.style.width = '750px';
                     container.style.margin = '0';
+                    container.style.padding = '1rem 1.5rem';
                     container.style.backgroundColor = '#1d1a2f';
-                    container.style.backgroundImage = 'none'; // Desactivamos textura pesada en el clon para evitar fallos
+                    container.style.backgroundImage = 'none';
                     container.style.boxShadow = 'none';
-                    container.style.minHeight = 'auto'; // Permitir que el contenido defina el largo
+                    container.style.minHeight = '100%';
                 }
 
                 // Forzar que los SVGs de los velocímetros se vean
