@@ -1943,8 +1943,9 @@ body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important
 body.exporting-digital .bubble-chart {
     width: 100% !important;
     height: auto !important;
-    max-width: 175mm !important; /* Más grande para aprovechar el full-bleed */
-    margin: 5mm auto !important;
+    max-width: 160mm !important; /* Redimensionado para evitar cortes en A4 */
+    margin: 8mm auto !important;
+    display: block !important;
 }
 
 /* Compactar Educación en Exportación Digital */
