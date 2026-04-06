@@ -1852,10 +1852,10 @@ body.exporting-digital .bubble-container {
 }
 
 body.exporting-digital .container {
-    max-width: 190mm !important;
-    width: 190mm !important;
-    padding: 12mm 15mm !important; /* Más aire en los laterales */
-    margin: 0 auto !important;
+    max-width: 210mm !important;
+    width: 210mm !important;
+    padding: 10mm 15mm !important; /* Padding interno para que el texto no toque el borde */
+    margin: 0 !important;
     background-color: #1d1a2f !important;
     background-image: none !important;
     position: relative !important;
@@ -1870,36 +1870,36 @@ body.exporting-digital .profile-photo-container {
 }
 
 body.exporting-digital h1 {
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     margin-bottom: 3mm !important;
     color: var(--text-primary) !important;
     text-align: center !important;
 }
 
 body.exporting-digital .subtitle {
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
     margin-bottom: 8mm !important;
     letter-spacing: 0.2rem !important;
     text-align: center !important;
 }
 
 body.exporting-digital .contact-grid {
-    grid-template-columns: 1fr 1fr !important; /* 2 columnas para mejor lectura en A4 */
-    gap: 4mm !important;
-    padding: 6mm !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 5mm !important;
+    padding: 8mm !important;
     background: rgba(255, 255, 255, 0.03) !important;
-    margin-top: 5mm !important;
-    margin-bottom: 10mm !important;
+    margin: 5mm 0 10mm 0 !important;
 }
 
 body.exporting-digital .contact-item {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
     padding: 3mm !important;
 }
 
 body.exporting-digital .glass {
-    padding: 15mm !important;
+    padding: 10mm 15mm !important;
     margin-bottom: 10mm !important;
+    border-radius: 0 !important; /* Bordes rectos para full-bleed look opcional, o mantener redondeados */
     page-break-inside: avoid !important;
 }
 
@@ -1922,7 +1922,7 @@ body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important
 body.exporting-digital .bubble-chart {
     width: 100% !important;
     height: auto !important;
-    max-width: 145mm !important; /* Ligeramente más pequeño para mejor balance */
+    max-width: 175mm !important; /* Más grande para aprovechar el full-bleed */
     margin: 5mm auto !important;
 }
 

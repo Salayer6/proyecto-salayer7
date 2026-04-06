@@ -12,9 +12,9 @@ function exportDigitalCV() {
     // Capturamos el contenedor principal para evitar márgenes innecesarios del body
     const element = document.querySelector('.container'); 
     
-    // 2. Configure html2pdf options (A4 Metrics)
+    // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
-        margin: [10, 10, 10, 10], // Margen de 10mm en todos lados
+        margin: 0, // Sin márgenes externos en el PDF (Full Bleed)
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { 
@@ -22,11 +22,10 @@ function exportDigitalCV() {
             useCORS: true, 
             backgroundColor: '#1d1a2f', 
             logging: false,
-            // Quitamos width/windowWidth fijos de aquí para dejar que html2pdf calcule según el elemento
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Forzar que el clon use medidas métricas para A4
+                // Forzar que el clon use 210mm completo (Ancho A4)
                 clonedDoc.documentElement.style.width = '210mm';
                 clonedDoc.body.style.width = '210mm';
                 clonedDoc.body.style.margin = '0';
@@ -35,13 +34,13 @@ function exportDigitalCV() {
 
                 const container = clonedDoc.querySelector('.container');
                 if (container) {
-                    container.style.width = '190mm'; // 210mm - 20mm de margen (10mm por lado)
-                    container.style.padding = '10mm';
-                    container.style.margin = '0 auto';
+                    container.style.width = '210mm';
+                    container.style.padding = '10mm 15mm'; // El margen ahora es padding interno
+                    container.style.margin = '0';
                     container.style.backgroundColor = '#1d1a2f';
                     container.style.backgroundImage = 'none';
                     container.style.boxShadow = 'none';
-                    container.style.minHeight = '297mm'; // Altura de al menos una página A4
+                    container.style.minHeight = '297mm';
                 }
 
                 // Asegurar que los SVGs de los velocímetros se vean
