@@ -1836,9 +1836,13 @@ body.exporting-digital .nav-links {
 
 /* Skill Map: Forzar 2D */
 body.exporting-digital .skill-map-wrapper,
-body.exporting-digital .skill-map-legend,
 body.exporting-digital .map-3d-ui {
     display: none !important;
+}
+
+body.exporting-digital .skill-map-legend {
+    display: flex !important;
+    margin-bottom: 2rem !important;
 }
 
 body.exporting-digital .bubble-container {
@@ -1856,7 +1860,7 @@ body.exporting-digital .container {
     background-color: #1d1a2f !important;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E") !important;
     position: relative !important;
-    min-height: 1000px !important; /* Forzamos altura mínima para evitar fondos truncados */
+    min-height: 100% !important; 
 }
 
 /* Fix para Velocímetros en Digital */
@@ -1940,9 +1944,10 @@ body.exporting-digital header {
 }
 
 body.exporting-digital {
-    background-color: #11101d !important;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E") !important;
-    height: 100% !important;
+    background-color: #1d1a2f !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E") !important;
+    height: auto !important;
+    min-height: 100% !important;
 }
 
 .pdf-page-break {

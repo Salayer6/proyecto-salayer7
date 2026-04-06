@@ -42,10 +42,11 @@ function exportDigitalCV() {
                     });
                 });
 
-                // Forzar el fondo oscuro en el body del clon
+                // Sincronizar fondo oscuro con el del sitio real (#1d1a2f)
+                clonedDoc.documentElement.style.backgroundColor = '#1d1a2f';
                 clonedDoc.body.style.backgroundColor = '#1d1a2f';
                 
-                // Asegurar que las secciones internas teman fondo sólido u opaco para heredar del container (que ya fue fijado en CSS)
+                // Asegurar que las tarjetas tengan un fondo sólido para evitar fallos de renderizado
                 const cards = clonedDoc.querySelectorAll('.glass');
                 cards.forEach(card => {
                     card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)';
