@@ -4,49 +4,55 @@
  */
 
 function exportDigitalCV() {
-    // Capturamos el contenedor principal para evitar márgenes innecesarios del body
-    const element = document.querySelector('.container'); 
-    
-    // 1. Prepare for export: Add class and reset scroll to prevent blank pages
+    // 1. Prepare for export
     document.body.classList.add('exporting-digital');
     const originalScrollY = window.scrollY;
     window.scrollTo(0, 0);
     
+    // El elemento a capturar es ahora el body para asegurar que el fondo cubra todo el PDF
+    const element = document.body;
+    
     // 2. Configure html2pdf options
     const opt = {
-        margin: 0, // El margen 0 en html2pdf es clave para que los links no se desplacen
+        margin: 0,
         filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
-        image: { type: 'jpeg', quality: 1.0 },
+        image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
-            scale: 2, // 2x es el sweet spot para nitidez y precisión de links
+            scale: 2,
             useCORS: true, 
             backgroundColor: '#1d1a2f', 
             logging: false,
-            letterRendering: false, 
-            allowTaint: true,
-            width: 800, 
+            width: 800, // Fijar ancho de captura a 800px
+            windowWidth: 800,
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Forzar que los SVGs de los velocímetros se vean en la captura
+                // Forzar dimensiones y fondo en el documento clonado
+                clonedDoc.documentElement.style.width = '800px';
+                clonedDoc.body.style.width = '800px';
+                clonedDoc.body.style.backgroundColor = '#1d1a2f';
+                
+                // Asegurar que solo el contenido relevante sea visible
+                const container = clonedDoc.querySelector('.container');
+                if (container) {
+                    container.style.width = '800px';
+                    container.style.margin = '0';
+                    container.style.padding = '0.5rem 2rem 5rem 2rem';
+                }
+
+                // Forzar que los SVGs de los velocímetros se vean
                 const gauges = clonedDoc.querySelectorAll('.gauge');
                 gauges.forEach(svg => {
                     svg.setAttribute('width', '100');
                     svg.setAttribute('height', '100');
-                    
                     const fills = svg.querySelectorAll('.gauge-fill');
                     fills.forEach(path => {
-                        // Eliminamos filtros que rompen html2canvas
                         path.style.filter = 'none';
                         path.style.strokeWidth = '14';
                     });
                 });
 
-                // Sincronizar fondo oscuro con el del sitio real (#1d1a2f)
-                clonedDoc.documentElement.style.backgroundColor = '#1d1a2f';
-                clonedDoc.body.style.backgroundColor = '#1d1a2f';
-                
-                // Asegurar que las tarjetas tengan un fondo sólido para evitar fallos de renderizado
+                // Tarjetas con fondo sólido
                 const cards = clonedDoc.querySelectorAll('.glass');
                 cards.forEach(card => {
                     card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)';
