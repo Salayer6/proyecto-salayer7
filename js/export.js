@@ -20,7 +20,7 @@ function exportDigitalCV() {
         html2canvas: { 
             scale: 2, // 2x es el sweet spot para nitidez y precisión de links
             useCORS: true, 
-            backgroundColor: '#11101d', 
+            backgroundColor: '#1d1a2f', 
             logging: false,
             letterRendering: false, 
             allowTaint: true,
@@ -28,39 +28,29 @@ function exportDigitalCV() {
             scrollY: 0, 
             scrollX: 0,
             onclone: (clonedDoc) => {
-                // Fix para asegurar que los SVGs de los velocímetros se vean en la captura
+                // Forzar que los SVGs de los velocímetros se vean en la captura
                 const gauges = clonedDoc.querySelectorAll('.gauge');
                 gauges.forEach(svg => {
                     svg.setAttribute('width', '100');
                     svg.setAttribute('height', '100');
                     
-                    // Asegurar que los paths interiores tengan trazos visibles y sin filtros hardcodificados
                     const fills = svg.querySelectorAll('.gauge-fill');
                     fills.forEach(path => {
-                        // Resolvemos el color computado para que html2canvas no use variables CSS (que a veces fallan en clone)
-                        const computedStyle = window.getComputedStyle(path);
-                        const resolvedColor = computedStyle.stroke;
-                        
-                        // Si es el de Afecto (que usa gradiente), lo forzamos a color sólido rosa premium
-                        if (path.classList.contains('gauge-fill-affection')) {
-                            path.style.stroke = '#f472b6'; 
-                        } else if (resolvedColor && resolvedColor !== 'none') {
-                            path.style.stroke = resolvedColor;
-                        }
-                        
-                        // Forzamos visibilidad eliminando filtros que rompen html2canvas (como drop-shadows complejos)
+                        // Eliminamos filtros que rompen html2canvas
                         path.style.filter = 'none';
-                        path.style.strokeWidth = '14'; // Un poco más grueso ayuda en la captura a 2x
+                        path.style.strokeWidth = '14';
                     });
                 });
 
-                // Extender el fondo texturizado al fondo del documento clonado para evitar trailing whitespace
-                const container = clonedDoc.querySelector('.container');
-                if (container) {
-                    container.style.minHeight = '100%';
-                    clonedDoc.body.style.backgroundColor = '#11101d';
-                    clonedDoc.body.style.backgroundImage = container.style.backgroundImage;
-                }
+                // Forzar el fondo oscuro en el body del clon
+                clonedDoc.body.style.backgroundColor = '#1d1a2f';
+                
+                // Asegurar que las secciones internas teman fondo sólido u opaco para heredar del container (que ya fue fijado en CSS)
+                const cards = clonedDoc.querySelectorAll('.glass');
+                cards.forEach(card => {
+                    card.style.backgroundColor = 'rgba(30, 41, 59, 0.6)';
+                    card.style.backdropFilter = 'none';
+                });
             }
         },
         jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }, // pt da mejor precisión para links

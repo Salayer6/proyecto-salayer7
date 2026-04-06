@@ -1800,7 +1800,7 @@ body.exporting-digital .main-toggle {
 /* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
 /* Estética Limpia para Exportación Digital (Descartando fondos pesados) */
 body.exporting-digital .glass {
-    background: transparent !important;
+    background: rgba(30, 41, 59, 0.6) !important; /* Fondo sólido oscuro para legibilidad */
     backdrop-filter: none !important;
     border: 1px solid rgba(150, 95, 212, 0.25) !important;
     box-shadow: none !important;
@@ -1850,12 +1850,13 @@ body.exporting-digital .bubble-container {
 body.exporting-digital .container {
     max-width: 800px !important;
     width: 800px !important;
-    padding: 0.5rem 2rem 5rem 2rem !important; /* Añadimos padding para respiro y fondo */
+    padding: 0.5rem 2rem 5rem 2rem !important;
     margin: 0 auto !important;
-    /* El fondo ahora se hereda del body para asegurar cobertura total */
-    background: transparent !important;
+    /* Aplicamos el fondo directamente al container para asegurar captura en PDF */
+    background-color: #1d1a2f !important;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E") !important;
     position: relative !important;
-    min-height: 100% !important; /* Forzamos altura completa */
+    min-height: 1000px !important; /* Forzamos altura mínima para evitar fondos truncados */
 }
 
 /* Fix para Velocímetros en Digital */
@@ -1918,9 +1919,18 @@ body.exporting-digital .edu-grid-secondary {
 }
 
 body.exporting-digital h1 {
-    font-size: 2.8rem !important; /* Reducimos tamaño para evitar saltos de línea/página */
+    font-size: 2.5rem !important;
     page-break-inside: avoid !important;
     break-inside: avoid-page !important;
+    color: var(--text-primary) !important;
+}
+
+body.exporting-digital h1 .accent {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: var(--accent-cyan) !important;
+    color: var(--accent-cyan) !important;
 }
 
 body.exporting-digital header {
