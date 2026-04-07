@@ -1909,7 +1909,7 @@ body.exporting-digital .contact-item {
 
 body.exporting-digital .glass {
     padding: 10mm 15mm !important;
-    margin-bottom: 12mm !important;
+    margin-bottom: 8mm !important; /* Reducir espacio entre bloques */
     border-radius: 12px !important;
     page-break-inside: avoid !important;
     break-inside: avoid-page !important;
@@ -1917,7 +1917,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 50mm !important; /* Mover perfil 5cm abajo para evitar que se junte con los contactos */
+    margin-top: 70mm !important; /* 7cm de margen superior para Perfil Estratégico */
 }
 
 body.exporting-digital .timeline-item,
@@ -1956,7 +1956,7 @@ body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
     width: 140mm !important;
-    margin: 5mm auto !important;
+    margin: 2mm auto !important; /* Reducción de espacio con Signos Vitales */
     page-break-inside: avoid !important;
 }
 
