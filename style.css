@@ -1943,9 +1943,17 @@ body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important
 body.exporting-digital .bubble-chart {
     width: 100% !important;
     height: auto !important;
-    max-width: 160mm !important; /* Redimensionado para evitar cortes en A4 */
-    margin: 8mm auto !important;
+    max-width: 140mm !important; /* Redimensionado para mayor seguridad */
+    margin: 0 auto !important;
     display: block !important;
+}
+
+body.exporting-digital .bubble-container {
+    display: block !important;
+    opacity: 1 !important;
+    width: 140mm !important;
+    margin: 5mm auto !important;
+    page-break-inside: avoid !important;
 }
 
 /* Compactar Educación en Exportación Digital */
@@ -2005,11 +2013,7 @@ body.exporting-digital {
     }
 }
 
-body.exporting-digital .bubble-container {
-    display: block !important;
-    opacity: 1 !important;
-    margin: 2rem auto !important;
-}
+/* Contenedor ya definido arriba */
 
 body.exporting-digital .contact-grid {
     max-height: none !important;
