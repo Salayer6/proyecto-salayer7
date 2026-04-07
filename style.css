@@ -703,6 +703,11 @@ h1 .accent {
 
 .skill-map-section {
     overflow: visible;
+    margin-top: 50px;
+}
+
+#vitalsigns {
+    margin-top: 20px;
 }
 
 .skill-map-legend {
