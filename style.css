@@ -1928,7 +1928,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 90mm !important; /* 9cm de margen superior para Perfil Estratégico */
+    margin-top: 100mm !important; /* 10cm de margen superior para Perfil Estratégico */
 }
 
 body.exporting-digital .timeline-item,
@@ -1960,7 +1960,7 @@ body.exporting-digital .bubble-container {
     opacity: 1 !important;
     max-width: 650px !important; 
     width: 100% !important;
-    margin: 20px auto !important;
+    margin: 30mm auto 10mm auto !important; /* Espacio solicitado con Signos Vitales */
     page-break-inside: avoid !important;
 }
 
