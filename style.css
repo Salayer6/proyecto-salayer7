@@ -1917,7 +1917,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 20mm !important; /* Mover perfil 2cm abajo para evitar cortes */
+    margin-top: 50mm !important; /* Mover perfil 5cm abajo para evitar que se junte con los contactos */
 }
 
 body.exporting-digital .timeline-item,
