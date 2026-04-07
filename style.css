@@ -1718,9 +1718,16 @@ path.gauge-fill-affection {
         display: none !important;
     }
 
-    /* Hide 3D Map and elements on Print */
-    .skill-map-wrapper, .skill-map-legend {
+    /* Hide 3D Map and elements on Print - Ensure 2D shows */
+    .skill-map-wrapper, 
+    #skill-canvas-container,
+    .map-3d-ui {
         display: none !important;
+    }
+
+    .skill-map-legend {
+        display: flex !important;
+        margin-bottom: 1.5rem !important;
     }
 
     /* Gauge Adjustments */
@@ -1834,21 +1841,25 @@ body.exporting-digital .nav-links {
     display: none !important;
 }
 
-/* Skill Map: Forzar 2D */
+/* Skill Map: Forzar 2D en Exportación Digital */
 body.exporting-digital .skill-map-wrapper,
+body.exporting-digital #skill-canvas-container,
 body.exporting-digital .map-3d-ui {
     display: none !important;
-}
-
-body.exporting-digital .skill-map-legend {
-    display: flex !important;
-    margin-bottom: 2rem !important;
 }
 
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
-    margin: 2rem auto !important;
+    visibility: visible !important;
+    margin: 5mm auto !important;
+}
+
+body.exporting-digital .skill-map-legend {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 2rem !important;
 }
 
 body.exporting-digital .container {

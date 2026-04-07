@@ -71,6 +71,27 @@ function exportDigitalCV() {
                     profileContainer.style.flexShrink = '0';
                 }
 
+                // Forzar Mapa 2D y Ocultar 3D
+                const wrapper3d = clonedDoc.querySelector('.skill-map-wrapper');
+                const canvasContainer = clonedDoc.querySelector('#skill-canvas-container');
+                const ui3d = clonedDoc.querySelector('.map-3d-ui');
+                const bubble2d = clonedDoc.querySelector('.bubble-container');
+                const legend = clonedDoc.querySelector('.skill-map-legend');
+
+                if (wrapper3d) wrapper3d.style.display = 'none';
+                if (canvasContainer) canvasContainer.style.display = 'none';
+                if (ui3d) ui3d.style.display = 'none';
+                if (bubble2d) {
+                    bubble2d.style.display = 'block';
+                    bubble2d.style.opacity = '1';
+                    bubble2d.style.visibility = 'visible';
+                }
+                if (legend) {
+                    legend.style.display = 'flex';
+                    legend.style.opacity = '1';
+                    legend.style.visibility = 'visible';
+                }
+
                 // Tarjetas
                 const cards = clonedDoc.querySelectorAll('.glass');
                 cards.forEach(card => {
