@@ -1971,6 +1971,30 @@ body.exporting-digital .bubble-container {
     page-break-inside: avoid !important;
 }
 
+/* Mejorar legibilidad del mapa 2D en Digital */
+body.exporting-digital .blabel {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    fill: #ffffff !important;
+}
+
+body.exporting-digital .conn-line {
+    stroke-width: 1.5px !important;
+    opacity: 0.7 !important;
+}
+
+body.exporting-digital .zone-label {
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    opacity: 0.9 !important;
+}
+
+body.exporting-digital .hub-circle {
+    stroke: rgba(255, 255, 255, 0.5) !important;
+    stroke-width: 3px !important;
+}
+
+
 /* Compactar Educación en Exportación Digital */
 body.exporting-digital .edu-grid {
     grid-template-columns: 1fr 1fr !important;
