@@ -1916,6 +1916,10 @@ body.exporting-digital .glass {
     position: relative !important;
 }
 
+body.exporting-digital #profile {
+    margin-top: 20mm !important; /* Mover perfil 2cm abajo para evitar cortes */
+}
+
 body.exporting-digital .timeline-item,
 body.exporting-digital .edu-item,
 body.exporting-digital .contact-item-wrapper,

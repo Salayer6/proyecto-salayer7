@@ -54,6 +54,23 @@ function exportDigitalCV() {
                     });
                 });
 
+                // Corregir imagen de perfil (evitar achatamiento)
+                const profileImg = clonedDoc.querySelector('.profile-photo');
+                if (profileImg) {
+                    profileImg.style.width = '35mm';
+                    profileImg.style.height = '35mm';
+                    profileImg.style.objectFit = 'cover';
+                    profileImg.style.display = 'block';
+                }
+                const profileContainer = clonedDoc.querySelector('.profile-photo-container');
+                if (profileContainer) {
+                    profileContainer.style.width = '35mm';
+                    profileContainer.style.height = '35mm';
+                    profileContainer.style.borderRadius = '50%';
+                    profileContainer.style.overflow = 'hidden';
+                    profileContainer.style.flexShrink = '0';
+                }
+
                 // Tarjetas
                 const cards = clonedDoc.querySelectorAll('.glass');
                 cards.forEach(card => {
