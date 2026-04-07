@@ -1928,7 +1928,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 70mm !important; /* 7cm de margen superior para Perfil Estratégico */
+    margin-top: 90mm !important; /* 9cm de margen superior para Perfil Estratégico */
 }
 
 body.exporting-digital .timeline-item,
@@ -1955,20 +1955,20 @@ body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important
 body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
 body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
 
-body.exporting-digital .bubble-chart {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 140mm !important; /* Redimensionado para mayor seguridad */
-    margin: 0 auto !important;
-    display: block !important;
-}
-
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
-    width: 140mm !important;
-    margin: 2mm auto !important; /* Reducción de espacio con Signos Vitales */
+    max-width: 650px !important; 
+    width: 100% !important;
+    margin: 20px auto !important;
     page-break-inside: avoid !important;
+}
+
+body.exporting-digital .bubble-chart {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 /* Mejorar legibilidad del mapa 2D en Digital */
