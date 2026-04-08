@@ -1773,7 +1773,8 @@ path.gauge-fill-affection {
     .bubble-chart {
         width: 100% !important;
         height: auto !important;
-        max-width: 650px !important;
+        max-width: 450px !important;
+        max-height: 320px !important;
         margin: 0 auto !important;
     }
 
@@ -1967,9 +1968,9 @@ body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
-    max-width: 650px !important; 
+    max-width: 450px !important; 
     width: 100% !important;
-    margin: 30mm auto 10mm auto !important; /* Espacio solicitado con Signos Vitales */
+    margin: 15mm auto 10mm auto !important; /* Espacio calibrado para A4 en vez de 30mm */
     page-break-inside: avoid !important;
 }
 
@@ -1983,6 +1984,8 @@ body.exporting-digital #skill-map-3d-canvas {
 body.exporting-digital .bubble-chart {
     width: 100% !important;
     height: auto !important;
+    max-width: 450px !important;
+    max-height: 320px !important;
     display: block !important;
     margin: 0 auto !important;
 }
