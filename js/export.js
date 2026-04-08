@@ -27,6 +27,8 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
+            windowWidth: element.scrollWidth,
+            windowHeight: element.scrollHeight + stretchPadding,
             onclone: (clonedDoc) => {
                 clonedDoc.documentElement.style.width = '210mm';
                 clonedDoc.documentElement.style.backgroundColor = '#1d1a2f'; // Fija la capa más profunda
