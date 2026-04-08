@@ -1967,15 +1967,298 @@ body.exporting-digital .main-toggle {
 }
 
 /* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
-/* Estética Limpia para Exportación Digital (Descartando fondos pesados) */
+/* ═══════════════════════════════════════════════════════
+   EXPORTACIÓN DIGITAL — body.exporting-digital
+   Todas las unidades en mm para consistencia con A4 (210×297mm)
+   ═══════════════════════════════════════════════════════ */
+
+/* ── 1. Elementos ocultos en PDF ─────────────────────── */
+body.exporting-digital .export-banner,
+body.exporting-digital .html-tooltip,
+body.exporting-digital .main-toggle,
+body.exporting-digital .nav-links,
+body.exporting-digital .sr-only {
+    display: none !important;
+}
+
+/* ── 2. Body y Contenedor Principal ─────────────────── */
+body.exporting-digital {
+    background-color: #1d1a2f !important;
+    background-image: none !important;
+    overflow: visible !important;
+    width: 210mm !important;
+}
+
+body.exporting-digital .container {
+    width: 210mm !important;
+    max-width: 210mm !important;
+    margin: 0 !important;
+    padding: 10mm 15mm !important;
+    min-height: 297mm !important;
+    background-color: #1d1a2f !important;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
+    background-size: 22px 22px, 300px 300px !important;
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* ── 3. Header y Foto de Perfil ─────────────────────── */
+body.exporting-digital header {
+    margin-bottom: 6mm !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+body.exporting-digital h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 3mm !important;
+    text-align: center !important;
+}
+
+body.exporting-digital .subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 6mm !important;
+    letter-spacing: 0.2rem !important;
+    text-align: center !important;
+}
+
+body.exporting-digital .contact-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4mm !important;
+    padding: 6mm !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    margin: 4mm 0 8mm 0 !important;
+    max-height: none !important;
+    opacity: 1 !important;
+}
+
+body.exporting-digital .contact-item {
+    font-size: 0.85rem !important;
+    padding: 2mm !important;
+    color: var(--text-primary) !important;
+}
+
+body.exporting-digital .contact-item span,
+body.exporting-digital .contact-item-header span {
+    color: var(--text-primary) !important;
+}
+
+body.exporting-digital .profile-photo-container {
+    width: 28mm !important;
+    height: 28mm !important;
+    min-width: 28mm !important;
+    min-height: 28mm !important;
+    margin: 0 auto 4mm auto !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+    flex-shrink: 0 !important;
+}
+
+body.exporting-digital .profile-photo {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* ── 4. Tarjetas (Glass) ────────────────────────────── */
 body.exporting-digital .glass {
+    padding: 8mm 12mm !important;
+    margin-bottom: 6mm !important;
+    border-radius: 10px !important;
     background: rgba(30, 41, 59, 0.6) !important;
-    /* Fondo sólido oscuro para legibilidad */
     backdrop-filter: none !important;
     border: 1px solid rgba(150, 95, 212, 0.25) !important;
     box-shadow: none !important;
-    border-radius: 14px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    position: relative !important;
 }
+
+body.exporting-digital .card-header h2 {
+    color: #22d3ee !important;
+}
+
+/* ── 5. Espaciado de Secciones en A4 ────────────────── */
+body.exporting-digital #profile {
+    margin-top: 30mm !important;
+}
+
+body.exporting-digital .skill-map-section {
+    margin-top: 0 !important;
+}
+
+body.exporting-digital #vitalsigns {
+    margin-top: -50mm !important;
+}
+
+/* ── 6. Mapa de Skills: Forzar 2D ───────────────────── */
+body.exporting-digital .skill-map-wrapper,
+body.exporting-digital #skill-canvas-container,
+body.exporting-digital #skill-map-3d-canvas,
+body.exporting-digital .map-3d-ui {
+    display: none !important;
+}
+
+body.exporting-digital .bubble-container {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 160mm !important;
+    margin: 6mm auto 0 auto !important;
+    page-break-inside: avoid !important;
+}
+
+body.exporting-digital .bubble-chart {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+body.exporting-digital .skill-map-legend {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    justify-content: center !important;
+    margin-bottom: 4mm !important;
+}
+
+body.exporting-digital .blabel {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    fill: #ffffff !important;
+}
+
+body.exporting-digital .zone-label {
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    opacity: 0.9 !important;
+}
+
+body.exporting-digital .conn-line {
+    stroke-width: 1.5px !important;
+    opacity: 0.7 !important;
+}
+
+body.exporting-digital .hub-circle {
+    stroke: rgba(255, 255, 255, 0.5) !important;
+    stroke-width: 3px !important;
+}
+
+/* ── 7. Velocímetros (Gauges) ───────────────────────── */
+body.exporting-digital .gauge-bg {
+    stroke: #334155 !important;
+}
+
+body.exporting-digital .gauge-fill {
+    filter: none !important;
+    stroke-width: 14 !important;
+}
+
+body.exporting-digital .color-nps-red    .gauge-fill { stroke: #ef4444 !important; }
+body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
+body.exporting-digital .color-nps-green  .gauge-fill { stroke: #10b981 !important; }
+body.exporting-digital .color-coffee     .gauge-fill { stroke: #ff9800 !important; }
+body.exporting-digital .color-affection  .gauge-fill { stroke: #f472b6 !important; }
+
+/* ── 8. Educación y Timeline ────────────────────────── */
+body.exporting-digital .edu-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 4mm !important;
+}
+
+body.exporting-digital .edu-grid-secondary {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 4mm !important;
+}
+
+body.exporting-digital .edu-item {
+    padding: 4mm !important;
+    border-radius: 6px !important;
+    background: transparent !important;
+    border-color: rgba(150, 95, 212, 0.1) !important;
+}
+
+body.exporting-digital .edu-heading { font-size: 1.05rem !important; }
+
+body.exporting-digital .edu-org,
+body.exporting-digital .edu-meta { font-size: 0.8rem !important; }
+
+body.exporting-digital .secondary-edu-header {
+    margin: 4mm 0 2mm !important;
+    padding-top: 4mm !important;
+}
+
+body.exporting-digital .timeline-item { background: transparent !important; }
+
+body.exporting-digital .contact-item-wrapper {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+body.exporting-digital .timeline-item,
+body.exporting-digital .edu-item,
+body.exporting-digital .contact-item-wrapper,
+body.exporting-digital .gauge-item {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+/* ── 9. Saltos de Página ────────────────────────────── */
+.pdf-page-break {
+    page-break-before: always;
+    break-before: page;
+}
+
+@media screen {
+    .pdf-page-break { display: none; }
+    .bubble-container { display: none; }
+}
+
+/* ── 10. Botones de Exportación (UI Web) ────────────── */
+.export-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.digital-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan)) !important;
+    border-color: transparent !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
+}
+
+.digital-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(150, 95, 212, 0.6) !important;
+}
+
+.print-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+.print-btn:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: var(--accent-lime) !important;
+}
+
+@media (max-width: 600px) {
+    .export-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 
 body.exporting-digital .card-header h2 {
     color: var(--accent-cyan) !important;
