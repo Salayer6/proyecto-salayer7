@@ -98,8 +98,8 @@ function exportDigitalCV() {
                     bubbleSvg.style.width = '100%';
                     bubbleSvg.style.height = 'auto';
                     bubbleSvg.style.display = 'block';
-                    bubbleSvg.setAttribute('width', '700'); // Atributos fijos ayudan a html2canvas
-                    bubbleSvg.setAttribute('height', '500');
+                    bubbleSvg.setAttribute('width', '450'); // Atributos fijos calibrados a hoja A4
+                    bubbleSvg.setAttribute('height', '321');
                 }
                 if (legend) {
                     legend.style.display = 'flex';
