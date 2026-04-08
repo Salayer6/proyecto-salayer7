@@ -74,20 +74,23 @@ function exportDigitalCV() {
                     const bgDiv = clonedDoc.createElement('div');
                     bgDiv.style.backgroundImage = `url(${imgSrc})`;
                     bgDiv.style.backgroundSize = 'cover';
-                    bgDiv.style.backgroundPosition = 'center';
-                    bgDiv.style.width = '35mm';
-                    bgDiv.style.height = '35mm';
+                    // Usamos center 15% para subir el encuadre, ocultar las manos y centrar en el rostro
+                    bgDiv.style.backgroundPosition = 'center 15%'; 
+                    bgDiv.style.width = '132px'; 
+                    bgDiv.style.height = '132px';
                     bgDiv.style.borderRadius = '50%';
                     bgDiv.style.margin = '0 auto';
                     
                     profileContainer.innerHTML = ''; // Vaciar contenedor antiguo
                     profileContainer.appendChild(bgDiv);
                     
-                    profileContainer.style.width = '35mm';
-                    profileContainer.style.height = '35mm';
+                    profileContainer.style.width = '132px';
+                    profileContainer.style.height = '132px';
+                    profileContainer.style.minWidth = '132px';
+                    profileContainer.style.minHeight = '132px';
                     profileContainer.style.borderRadius = '50%';
                     profileContainer.style.overflow = 'hidden';
-                    profileContainer.style.flexShrink = '0';
+                    profileContainer.style.flex = '0 0 132px'; // Forzar que no crezca ni se achate
                     profileContainer.style.display = 'block';
                 }
 
