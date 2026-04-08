@@ -1960,6 +1960,10 @@ body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important
 body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
 body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
 
+.bubble-container {
+    display: none; /* Hide 2D map on standard web screen */
+}
+
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
@@ -1967,6 +1971,13 @@ body.exporting-digital .bubble-container {
     width: 100% !important;
     margin: 30mm auto 10mm auto !important; /* Espacio solicitado con Signos Vitales */
     page-break-inside: avoid !important;
+}
+
+/* Ocultar el mapa 3D nativo en la exportación digital */
+body.exporting-digital .skill-map-wrapper,
+body.exporting-digital .map-3d-ui,
+body.exporting-digital #skill-map-3d-canvas {
+    display: none !important;
 }
 
 body.exporting-digital .bubble-chart {
