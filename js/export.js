@@ -62,24 +62,33 @@ function exportDigitalCV() {
                     });
                 });
 
-                // Corregir imagen de perfil (evitar achatamiento)
+                // Corregir imagen de perfil (evitar achatamiento mediante background workaround)
+                // html2canvas tiene un conocido bug donde ignora "object-fit: cover" y estruja imágenes no cuadradas.
                 const profileImg = clonedDoc.querySelector('.profile-photo');
-                if (profileImg) {
-                    profileImg.style.width = '35mm';
-                    profileImg.style.height = '35mm';
-                    profileImg.style.minWidth = '35mm';
-                    profileImg.style.minHeight = '35mm';
-                    profileImg.style.objectFit = 'cover';
-                    profileImg.style.display = 'block';
-                }
                 const profileContainer = clonedDoc.querySelector('.profile-photo-container');
-                if (profileContainer) {
+                
+                if (profileImg && profileContainer) {
+                    const imgSrc = profileImg.src;
+                    
+                    // Reemplazamos el elemento img por un cuadrado div con fondo para garantizar la geometría circular en el PDF
+                    const bgDiv = clonedDoc.createElement('div');
+                    bgDiv.style.backgroundImage = `url(${imgSrc})`;
+                    bgDiv.style.backgroundSize = 'cover';
+                    bgDiv.style.backgroundPosition = 'center';
+                    bgDiv.style.width = '35mm';
+                    bgDiv.style.height = '35mm';
+                    bgDiv.style.borderRadius = '50%';
+                    bgDiv.style.margin = '0 auto';
+                    
+                    profileContainer.innerHTML = ''; // Vaciar contenedor antiguo
+                    profileContainer.appendChild(bgDiv);
+                    
                     profileContainer.style.width = '35mm';
                     profileContainer.style.height = '35mm';
                     profileContainer.style.borderRadius = '50%';
                     profileContainer.style.overflow = 'hidden';
                     profileContainer.style.flexShrink = '0';
-                    profileContainer.style.aspectRatio = '1 / 1';
+                    profileContainer.style.display = 'block';
                 }
 
                 // Forzar Mapa 2D y Ocultar 3D Completamente
