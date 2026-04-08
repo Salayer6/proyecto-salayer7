@@ -11,7 +11,7 @@
     --accent-cyan: #22d3ee;
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-blur: blur(12px);
-    
+
     --font-header: 'Barlow Condensed', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'IBM Plex Mono', monospace;
@@ -46,14 +46,21 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
-    /* Fondo con capas: Textura Noise + Mesh Gradient Animado */
-    background: 
-        linear-gradient(rgba(29, 26, 47, 0.8), rgba(29, 26, 47, 0.8)),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    /* Fondo con capas: Textura Grain fina + Puntos micro + Color base */
+    background-color: var(--bg-color);
+    background-image:
+        /* Capa 1: Puntos micro sutiles */
+        radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px),
+        /* Capa 2: Noise grain orgánico */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E"),
+        /* Capa 3: Gradiente oscuro de base */
+        linear-gradient(160deg, rgba(29,26,47,1) 0%, rgba(20,17,38,1) 100%);
+    background-size: 22px 22px, 300px 300px, 100% 100%;
 }
 
 /* Capas de Gradients Animados (Blobs) */
-body::before, body::after {
+body::before,
+body::after {
     content: '';
     position: fixed;
     width: 60vmax;
@@ -80,8 +87,13 @@ body::after {
 }
 
 @keyframes blob-float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(10%, 15%) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(10%, 15%) scale(1.1);
+    }
 }
 
 .container {
@@ -110,19 +122,22 @@ header {
 
 
 .profile-photo-container {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--accent-primary);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     flex-shrink: 0;
+    aspect-ratio: 1 / 1;
 }
 
 .profile-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 10%;
+    display: block;
 }
 
 h1 {
@@ -132,7 +147,7 @@ h1 {
     margin-bottom: 0.25rem;
     letter-spacing: -0.02em;
     line-height: 0.95;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 h1 .accent {
@@ -286,7 +301,7 @@ h1 .accent {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     padding: 2rem;
-    box-shadow: 
+    box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.2),
         inset 0 0 0 1px rgba(255, 255, 255, 0.05);
     transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
@@ -444,7 +459,7 @@ h1 .accent {
     font-size: 0.9rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .main-toggle:hover {
@@ -701,13 +716,17 @@ h1 .accent {
    Skill Bubble Map (Cartesian System)
    ═══════════════════════════════════ */
 
+#profile {
+    margin-top: 20px;
+}
+
 .skill-map-section {
     overflow: visible;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 #vitalsigns {
-    margin-top: 20px;
+    margin-top: -100px;
 }
 
 .skill-map-legend {
@@ -735,9 +754,20 @@ h1 .accent {
     flex-shrink: 0;
 }
 
-.legend-soft .legend-dot { background: var(--accent-primary); box-shadow: 0 0 8px var(--accent-primary); }
-.legend-hybrid .legend-dot { background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
-.legend-hard .legend-dot { background: var(--accent-lime); box-shadow: 0 0 8px var(--accent-lime); }
+.legend-soft .legend-dot {
+    background: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.legend-hybrid .legend-dot {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.legend-hard .legend-dot {
+    background: var(--accent-lime);
+    box-shadow: 0 0 8px var(--accent-lime);
+}
 
 .skill-map-wrapper {
     position: relative;
@@ -746,11 +776,12 @@ h1 .accent {
     height: 48vh;
     max-height: 600px;
     padding: 0;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     overflow: hidden;
-    touch-action: pan-y; /* Crucial para permitir mobile native scroll */
+    touch-action: pan-y;
+    /* Crucial para permitir mobile native scroll */
 }
 
 @media (min-width: 768px) {
@@ -774,8 +805,8 @@ h1 .accent {
 .map-hint {
     background: rgba(20, 20, 30, 0.6);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 11px;
@@ -791,9 +822,21 @@ h1 .accent {
 }
 
 @keyframes swipe {
-    0% { transform: translateX(-15px) rotate(-15deg); opacity: 0.6; }
-    50% { transform: translateX(15px) rotate(15deg); opacity: 1; filter: drop-shadow(0 0 8px var(--accent-lime)); }
-    100% { transform: translateX(-15px) rotate(-15deg); opacity: 0.6; }
+    0% {
+        transform: translateX(-15px) rotate(-15deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateX(15px) rotate(15deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 8px var(--accent-lime));
+    }
+
+    100% {
+        transform: translateX(-15px) rotate(-15deg);
+        opacity: 0.6;
+    }
 }
 
 .swipe-animation {
@@ -811,7 +854,7 @@ h1 .accent {
 .btn-zoom {
     background: rgba(40, 40, 50, 0.8);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--text-primary);
     width: 36px;
     height: 36px;
@@ -835,7 +878,7 @@ h1 .accent {
     display: block;
     margin: 0 auto;
     overflow: visible;
-    filter: drop-shadow(0 0 30px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
 }
 
 /* Zone Backgrounds */
@@ -865,9 +908,20 @@ h1 .accent {
     text-transform: uppercase;
 }
 
-.soft-label { fill: var(--accent-primary); opacity: 0.6; }
-.hybrid-label { fill: var(--accent-cyan); opacity: 0.5; }
-.hard-label { fill: var(--accent-lime); opacity: 0.6; }
+.soft-label {
+    fill: var(--accent-primary);
+    opacity: 0.6;
+}
+
+.hybrid-label {
+    fill: var(--accent-cyan);
+    opacity: 0.5;
+}
+
+.hard-label {
+    fill: var(--accent-lime);
+    opacity: 0.6;
+}
 
 /* Axis */
 .cartesian-ring {
@@ -895,19 +949,19 @@ h1 .accent {
 }
 
 .skill-axis-line {
-    stroke: rgba(255,255,255,0.12);
+    stroke: rgba(255, 255, 255, 0.12);
     stroke-width: 1;
     stroke-dasharray: 3 4;
 }
 
 .skill-axis-arrow {
-    fill: rgba(255,255,255,0.2);
+    fill: rgba(255, 255, 255, 0.2);
 }
 
 .skill-axis-text {
     font-family: var(--font-body);
     font-size: 9px;
-    fill: rgba(255,255,255,0.3);
+    fill: rgba(255, 255, 255, 0.3);
     letter-spacing: 0.05em;
 }
 
@@ -918,7 +972,7 @@ h1 .accent {
 }
 
 .skill-bubble-group:hover {
-    filter: brightness(1.25) drop-shadow(0 0 10px rgba(255,255,255,0.3));
+    filter: brightness(1.25) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .skill-bubble {
@@ -981,9 +1035,9 @@ h1 .accent {
 
 .tooltip-bg {
     fill: rgba(20, 16, 45, 0.94);
-    stroke: rgba(255,255,255,0.12);
+    stroke: rgba(255, 255, 255, 0.12);
     stroke-width: 1;
-    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
 }
 
 .tooltip-name {
@@ -1016,7 +1070,8 @@ h1 .accent {
 
 /* Bubble Chart 2D (Print Fallback) */
 .bubble-container {
-    display: none; /* hidden on screen, shown in print */
+    display: none;
+    /* hidden on screen, shown in print */
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -1031,11 +1086,12 @@ h1 .accent {
 /* Hub center */
 .hub-circle {
     fill: none;
-    stroke: rgba(255,255,255,0.35);
+    stroke: rgba(255, 255, 255, 0.35);
     stroke-width: 2px;
 }
+
 .hub-dot {
-    fill: rgba(255,255,255,0.8);
+    fill: rgba(255, 255, 255, 0.8);
 }
 
 /* Connector lines */
@@ -1044,30 +1100,44 @@ h1 .accent {
     stroke-dasharray: 4 4;
     opacity: 0.5;
 }
-.conn-soft   { stroke: #965fd4; }
-.conn-hard   { stroke: #8bd450; }
-.conn-hybrid { stroke: #22d3ee; }
+
+.conn-soft {
+    stroke: #965fd4;
+}
+
+.conn-hard {
+    stroke: #8bd450;
+}
+
+.conn-hybrid {
+    stroke: #22d3ee;
+}
 
 /* Bubble nodes */
 .bnode {
     stroke-width: 2px;
 }
+
 .bnode-soft {
     fill: rgba(150, 95, 212, 0.20);
     stroke: #965fd4;
 }
+
 .bnode-hard {
     fill: rgba(139, 212, 80, 0.18);
     stroke: #8bd450;
 }
+
 .bnode-hybrid {
     fill: rgba(34, 211, 238, 0.15);
     stroke: #22d3ee;
 }
+
 .bnode-hybrid-warm {
     fill: rgba(255, 183, 77, 0.18);
     stroke: #ffb74d;
 }
+
 .bnode-big {
     stroke-width: 3px;
 }
@@ -1091,9 +1161,18 @@ h1 .accent {
     text-transform: uppercase;
     opacity: 0.65;
 }
-.zone-soft   { fill: #965fd4; }
-.zone-hard   { fill: #8bd450; }
-.zone-hybrid { fill: #22d3ee; }
+
+.zone-soft {
+    fill: #965fd4;
+}
+
+.zone-hard {
+    fill: #8bd450;
+}
+
+.zone-hybrid {
+    fill: #22d3ee;
+}
 
 /* Keep radar container hidden */
 .radar-container {
@@ -1201,17 +1280,25 @@ h1 .accent {
 
 /* Custom Gauge Colors (NPS and Specials) */
 .color-nps-red {
-    --gauge-color: #ef4444; /* Rojo para detractores / bajo */
+    --gauge-color: #ef4444;
+    /* Rojo para detractores / bajo */
 }
+
 .color-nps-yellow {
-    --gauge-color: #f59e0b; /* Amarillo/Naranja para pasivos / medio */
+    --gauge-color: #f59e0b;
+    /* Amarillo/Naranja para pasivos / medio */
 }
+
 .color-nps-green {
-    --gauge-color: #10b981; /* Verde para promotores / alto */
+    --gauge-color: #10b981;
+    /* Verde para promotores / alto */
 }
+
 .color-coffee {
-    --gauge-color: #ff9800; /* Naranja propio */
+    --gauge-color: #ff9800;
+    /* Naranja propio */
 }
+
 .color-affection {
     /* Usamos un color solido como fallback, el gradiente va directo en el SVG o via text-fill */
     --gauge-color: #f472b6;
@@ -1360,7 +1447,7 @@ path.gauge-fill-affection {
     .container {
         padding: 2rem 1.5rem;
     }
-    
+
     .visual-row {
         gap: 2rem;
     }
@@ -1370,7 +1457,7 @@ path.gauge-fill-affection {
     h1 {
         font-size: 3.5rem;
     }
-    
+
     .grid {
         padding: 0 1rem;
     }
@@ -1429,7 +1516,7 @@ path.gauge-fill-affection {
         height: 100px;
     }
 
-    .contact-item, 
+    .contact-item,
     .contact-item-header {
         font-size: 0.8rem;
         padding: 0.5rem 0.75rem;
@@ -1491,7 +1578,7 @@ path.gauge-fill-affection {
         padding: 1.5rem !important;
         background: rgba(20, 20, 30, 0.98) !important;
         border-top: 1px solid var(--accent-cyan) !important;
-        box-shadow: 0 -5px 25px rgba(0,0,0,0.6) !important;
+        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.6) !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1572,13 +1659,14 @@ path.gauge-fill-affection {
     }
 
 
-    
+
     .radar-chart {
         max-width: 240px;
     }
-    
+
     .radar-label {
-        font-size: 12px; /* Slightly larger to combat smaller chart */
+        font-size: 12px;
+        /* Slightly larger to combat smaller chart */
     }
 }
 
@@ -1589,6 +1677,7 @@ path.gauge-fill-affection {
         size: A4;
         margin: 1.5cm;
     }
+
     :root {
         --bg-color: #ffffff;
         --text-primary: #000000;
@@ -1646,12 +1735,20 @@ path.gauge-fill-affection {
         break-inside: avoid;
     }
 
-    .export-banner, .main-toggle, .html-tooltip, .nav-links {
+    .export-banner,
+    .main-toggle,
+    .html-tooltip,
+    .nav-links {
         display: none !important;
     }
 
     /* Ocultar fondos de ítems en impresión */
-    .edu-item, .timeline-item, .quote, .badge, .contact-item-wrapper, .contact-item {
+    .edu-item,
+    .timeline-item,
+    .quote,
+    .badge,
+    .contact-item-wrapper,
+    .contact-item {
         background: transparent !important;
         border-color: #cbd5e1 !important;
         color: black !important;
@@ -1678,7 +1775,8 @@ path.gauge-fill-affection {
         font-size: 1.05rem !important;
     }
 
-    .edu-org, .edu-meta {
+    .edu-org,
+    .edu-meta {
         font-size: 0.8rem !important;
     }
 
@@ -1701,22 +1799,64 @@ path.gauge-fill-affection {
         display: block !important;
     }
 
-    .hub-circle { stroke: #334155 !important; }
-    .hub-dot    { fill: #334155 !important; }
+    .hub-circle {
+        stroke: #334155 !important;
+    }
 
-    .conn-soft   { stroke: #6d28d9 !important; opacity: 0.4 !important; }
-    .conn-hard   { stroke: #4d7c0f !important; opacity: 0.4 !important; }
-    .conn-hybrid { stroke: #0e7490 !important; opacity: 0.4 !important; }
+    .hub-dot {
+        fill: #334155 !important;
+    }
 
-    .bnode-soft         { fill: rgba(109, 40, 217, 0.08) !important; stroke: #6d28d9 !important; }
-    .bnode-hard         { fill: rgba(77, 124, 15, 0.08)  !important; stroke: #4d7c0f !important; }
-    .bnode-hybrid       { fill: rgba(14, 116, 144, 0.08) !important; stroke: #0e7490 !important; }
-    .bnode-hybrid-warm  { fill: rgba(180, 83, 9, 0.08)   !important; stroke: #b45309 !important; }
+    .conn-soft {
+        stroke: #6d28d9 !important;
+        opacity: 0.4 !important;
+    }
 
-    .blabel      { fill: #1e293b !important; }
-    .zone-soft   { fill: #6d28d9 !important; }
-    .zone-hard   { fill: #4d7c0f !important; }
-    .zone-hybrid { fill: #0e7490 !important; }
+    .conn-hard {
+        stroke: #4d7c0f !important;
+        opacity: 0.4 !important;
+    }
+
+    .conn-hybrid {
+        stroke: #0e7490 !important;
+        opacity: 0.4 !important;
+    }
+
+    .bnode-soft {
+        fill: rgba(109, 40, 217, 0.08) !important;
+        stroke: #6d28d9 !important;
+    }
+
+    .bnode-hard {
+        fill: rgba(77, 124, 15, 0.08) !important;
+        stroke: #4d7c0f !important;
+    }
+
+    .bnode-hybrid {
+        fill: rgba(14, 116, 144, 0.08) !important;
+        stroke: #0e7490 !important;
+    }
+
+    .bnode-hybrid-warm {
+        fill: rgba(180, 83, 9, 0.08) !important;
+        stroke: #b45309 !important;
+    }
+
+    .blabel {
+        fill: #1e293b !important;
+    }
+
+    .zone-soft {
+        fill: #6d28d9 !important;
+    }
+
+    .zone-hard {
+        fill: #4d7c0f !important;
+    }
+
+    .zone-hybrid {
+        fill: #0e7490 !important;
+    }
 
     /* Radar (ahora legacy) sigue oculto */
     .radar-container {
@@ -1724,7 +1864,7 @@ path.gauge-fill-affection {
     }
 
     /* Hide 3D Map and elements on Print - Ensure 2D shows */
-    .skill-map-wrapper, 
+    .skill-map-wrapper,
     #skill-canvas-container,
     .map-3d-ui {
         display: none !important;
@@ -1751,11 +1891,25 @@ path.gauge-fill-affection {
     }
 
     /* Fallback solid colors for print (no vars) */
-    .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
-    .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
-    .color-nps-green .gauge-fill { stroke: #10b981 !important; }
-    .color-coffee .gauge-fill { stroke: #ff9800 !important; }
-    .color-affection .gauge-fill { stroke: #f472b6 !important; }
+    .color-nps-red .gauge-fill {
+        stroke: #ef4444 !important;
+    }
+
+    .color-nps-yellow .gauge-fill {
+        stroke: #f59e0b !important;
+    }
+
+    .color-nps-green .gauge-fill {
+        stroke: #10b981 !important;
+    }
+
+    .color-coffee .gauge-fill {
+        stroke: #ff9800 !important;
+    }
+
+    .color-affection .gauge-fill {
+        stroke: #f472b6 !important;
+    }
 
     .gauge-value {
         color: black !important;
@@ -1785,16 +1939,18 @@ path.gauge-fill-affection {
     }
 
     /* Hide non-printable elements */
-    .export-banner, 
-    .controls, 
-    .print-btn, 
+    .export-banner,
+    .controls,
+    .print-btn,
     .carousel-container::-webkit-scrollbar,
     .sr-only {
         display: none !important;
     }
 
     /* Prevent breaking inside cards */
-    .card, .timeline-item, .edu-item {
+    .card,
+    .timeline-item,
+    .edu-item {
         page-break-inside: avoid;
         break-inside: avoid;
     }
@@ -1813,7 +1969,8 @@ body.exporting-digital .main-toggle {
 /* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
 /* Estética Limpia para Exportación Digital (Descartando fondos pesados) */
 body.exporting-digital .glass {
-    background: rgba(30, 41, 59, 0.6) !important; /* Fondo sólido oscuro para legibilidad */
+    background: rgba(30, 41, 59, 0.6) !important;
+    /* Fondo sólido oscuro para legibilidad */
     backdrop-filter: none !important;
     border: 1px solid rgba(150, 95, 212, 0.25) !important;
     box-shadow: none !important;
@@ -1871,10 +2028,14 @@ body.exporting-digital .skill-map-legend {
 body.exporting-digital .container {
     max-width: 210mm !important;
     width: 210mm !important;
-    padding: 10mm 15mm !important; /* Padding interno para que el texto no toque el borde */
+    padding: 10mm 15mm !important;
+    /* Padding interno para que el texto no toque el borde */
     margin: 0 !important;
     background-color: #1d1a2f !important;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E") !important;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
+    background-size: 22px 22px, 300px 300px !important;
     position: relative !important;
     min-height: 297mm !important;
     overflow: visible !important;
@@ -1886,7 +2047,8 @@ body.exporting-digital .profile-photo-container {
     margin: 0 auto 5mm auto !important;
     overflow: hidden !important;
     border-radius: 50% !important;
-    flex-shrink: 0 !important; /* Evitar que se achate */
+    flex-shrink: 0 !important;
+    /* Evitar que se achate */
     aspect-ratio: 1 / 1 !important;
 }
 
@@ -1926,7 +2088,8 @@ body.exporting-digital .contact-item {
 
 body.exporting-digital .glass {
     padding: 10mm 15mm !important;
-    margin-bottom: 8mm !important; /* Reducir espacio entre bloques */
+    margin-bottom: 8mm !important;
+    /* Reducir espacio entre bloques */
     border-radius: 12px !important;
     page-break-inside: avoid !important;
     break-inside: avoid-page !important;
@@ -1934,7 +2097,8 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 100mm !important; /* 10cm de margen superior para Perfil Estratégico */
+    margin-top: 100mm !important;
+    /* 10cm de margen superior para Perfil Estratégico */
 }
 
 body.exporting-digital .timeline-item,
@@ -1955,22 +2119,38 @@ body.exporting-digital .gauge-fill {
 }
 
 /* Fallback solid colors for digital PDF (no vars) */
-body.exporting-digital .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
-body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
-body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important; }
-body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
-body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
+body.exporting-digital .color-nps-red .gauge-fill {
+    stroke: #ef4444 !important;
+}
+
+body.exporting-digital .color-nps-yellow .gauge-fill {
+    stroke: #f59e0b !important;
+}
+
+body.exporting-digital .color-nps-green .gauge-fill {
+    stroke: #10b981 !important;
+}
+
+body.exporting-digital .color-coffee .gauge-fill {
+    stroke: #ff9800 !important;
+}
+
+body.exporting-digital .color-affection .gauge-fill {
+    stroke: #f472b6 !important;
+}
 
 .bubble-container {
-    display: none; /* Hide 2D map on standard web screen */
+    display: none;
+    /* Hide 2D map on standard web screen */
 }
 
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
-    max-width: 450px !important; 
+    max-width: 450px !important;
     width: 100% !important;
-    margin: 15mm auto 10mm auto !important; /* Espacio calibrado para A4 en vez de 30mm */
+    margin: 15mm auto 10mm auto !important;
+    /* Espacio calibrado para A4 en vez de 30mm */
     page-break-inside: avoid !important;
 }
 

@@ -74,24 +74,28 @@ function exportDigitalCV() {
                     const bgDiv = clonedDoc.createElement('div');
                     bgDiv.style.backgroundImage = `url(${imgSrc})`;
                     bgDiv.style.backgroundSize = 'cover';
-                    // Usamos center 15% para subir el encuadre, ocultar las manos y centrar en el rostro
-                    bgDiv.style.backgroundPosition = 'center 15%'; 
-                    bgDiv.style.width = '132px'; 
-                    bgDiv.style.height = '132px';
+                    // Usamos center 10% para subir el encuadre y centrar en el rostro
+                    bgDiv.style.backgroundPosition = 'center 10%'; 
+                    bgDiv.style.width = '110px'; 
+                    bgDiv.style.height = '110px';
+                    bgDiv.style.minWidth = '110px';
+                    bgDiv.style.minHeight = '110px';
                     bgDiv.style.borderRadius = '50%';
                     bgDiv.style.margin = '0 auto';
+                    bgDiv.style.flexShrink = '0';
                     
                     profileContainer.innerHTML = ''; // Vaciar contenedor antiguo
                     profileContainer.appendChild(bgDiv);
                     
-                    profileContainer.style.width = '132px';
-                    profileContainer.style.height = '132px';
-                    profileContainer.style.minWidth = '132px';
-                    profileContainer.style.minHeight = '132px';
+                    profileContainer.style.width = '110px';
+                    profileContainer.style.height = '110px';
+                    profileContainer.style.minWidth = '110px';
+                    profileContainer.style.minHeight = '110px';
                     profileContainer.style.borderRadius = '50%';
                     profileContainer.style.overflow = 'hidden';
-                    profileContainer.style.flex = '0 0 132px'; // Forzar que no crezca ni se achate
+                    profileContainer.style.flex = '0 0 110px'; // Forzar que no crezca ni se achate
                     profileContainer.style.display = 'block';
+                    profileContainer.style.alignSelf = 'flex-start';
                 }
 
                 // Forzar Mapa 2D y Ocultar 3D Completamente
