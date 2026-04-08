@@ -50,11 +50,11 @@ body {
     background-color: var(--bg-color);
     background-image:
         /* Capa 1: Puntos micro sutiles */
-        radial-gradient(circle, rgba(255,255,255,0.055) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
         /* Capa 2: Noise grain orgánico */
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E"),
         /* Capa 3: Gradiente oscuro de base */
-        linear-gradient(160deg, rgba(29,26,47,1) 0%, rgba(20,17,38,1) 100%);
+        linear-gradient(160deg, rgba(29, 26, 47, 1) 0%, rgba(20, 17, 38, 1) 100%);
     background-size: 22px 22px, 300px 300px, 100% 100%;
 }
 
@@ -1956,32 +1956,12 @@ path.gauge-fill-affection {
     }
 }
 
-/* DIGITAL EXPORT OVERRIDES (Used by js/export.js) */
-body.exporting-digital .skill-map-wrapper,
-body.exporting-digital .map-3d-ui,
-body.exporting-digital .export-banner,
-body.exporting-digital .html-tooltip,
-body.exporting-digital .nav-links,
-body.exporting-digital .main-toggle {
-    display: none !important;
-}
-
-/* Forzar fondos sólidos en exportación digital para arreglar errores visuales de backdrop-filter */
 /* ═══════════════════════════════════════════════════════
    EXPORTACIÓN DIGITAL — body.exporting-digital
    Todas las unidades en mm para consistencia con A4 (210×297mm)
    ═══════════════════════════════════════════════════════ */
 
-/* ── 1. Elementos ocultos en PDF ─────────────────────── */
-body.exporting-digital .export-banner,
-body.exporting-digital .html-tooltip,
-body.exporting-digital .main-toggle,
-body.exporting-digital .nav-links,
-body.exporting-digital .sr-only {
-    display: none !important;
-}
-
-/* ── 2. Body y Contenedor Principal ─────────────────── */
+/* ── 1. Contenedor Principal (A4) ────────────────────── */
 body.exporting-digital {
     background-color: #1d1a2f !important;
     background-image: none !important;
@@ -1997,11 +1977,24 @@ body.exporting-digital .container {
     min-height: 297mm !important;
     background-color: #1d1a2f !important;
     background-image:
-        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
     background-size: 22px 22px, 300px 300px !important;
     overflow: visible !important;
     position: relative !important;
+}
+
+/* ── 2. Elementos ocultos ────────────────────────────── */
+body.exporting-digital .export-banner,
+body.exporting-digital .html-tooltip,
+body.exporting-digital .main-toggle,
+body.exporting-digital .nav-links,
+body.exporting-digital .sr-only,
+body.exporting-digital .skill-map-wrapper,
+body.exporting-digital #skill-canvas-container,
+body.exporting-digital #skill-map-3d-canvas,
+body.exporting-digital .map-3d-ui {
+    display: none !important;
 }
 
 /* ── 3. Header y Foto de Perfil ─────────────────────── */
@@ -2015,6 +2008,7 @@ body.exporting-digital h1 {
     font-size: 2.2rem !important;
     margin-bottom: 3mm !important;
     text-align: center !important;
+    color: var(--text-primary) !important;
 }
 
 body.exporting-digital .subtitle {
@@ -2067,9 +2061,9 @@ body.exporting-digital .profile-photo {
 
 /* ── 4. Tarjetas (Glass) ────────────────────────────── */
 body.exporting-digital .glass {
-    padding: 8mm 12mm !important;
-    margin-bottom: 6mm !important;
-    border-radius: 10px !important;
+    padding: 10mm 15mm !important;
+    margin-bottom: 8mm !important;
+    border-radius: 12px !important;
     background: rgba(30, 41, 59, 0.6) !important;
     backdrop-filter: none !important;
     border: 1px solid rgba(150, 95, 212, 0.25) !important;
@@ -2083,34 +2077,27 @@ body.exporting-digital .card-header h2 {
     color: #22d3ee !important;
 }
 
-/* ── 5. Espaciado de Secciones en A4 ────────────────── */
+/* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    margin-top: 30mm !important;
+    margin-top: calc(40px + 20mm) !important;
 }
 
 body.exporting-digital .skill-map-section {
-    margin-top: 0 !important;
+    margin-top: 10px !important;
 }
 
 body.exporting-digital #vitalsigns {
     margin-top: -50mm !important;
 }
 
-/* ── 6. Mapa de Skills: Forzar 2D ───────────────────── */
-body.exporting-digital .skill-map-wrapper,
-body.exporting-digital #skill-canvas-container,
-body.exporting-digital #skill-map-3d-canvas,
-body.exporting-digital .map-3d-ui {
-    display: none !important;
-}
-
+/* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
 body.exporting-digital .bubble-container {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
     width: 100% !important;
     max-width: 160mm !important;
-    margin: 6mm auto 0 auto !important;
+    margin: 6mm auto 10mm auto !important;
     page-break-inside: avoid !important;
 }
 
@@ -2161,20 +2148,16 @@ body.exporting-digital .gauge-fill {
     stroke-width: 14 !important;
 }
 
-body.exporting-digital .color-nps-red    .gauge-fill { stroke: #ef4444 !important; }
+body.exporting-digital .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
 body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
-body.exporting-digital .color-nps-green  .gauge-fill { stroke: #10b981 !important; }
-body.exporting-digital .color-coffee     .gauge-fill { stroke: #ff9800 !important; }
-body.exporting-digital .color-affection  .gauge-fill { stroke: #f472b6 !important; }
+body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important; }
+body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
+body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
 
 /* ── 8. Educación y Timeline ────────────────────────── */
-body.exporting-digital .edu-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 4mm !important;
-}
-
+body.exporting-digital .edu-grid,
 body.exporting-digital .edu-grid-secondary {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 4mm !important;
 }
 
@@ -2186,7 +2169,6 @@ body.exporting-digital .edu-item {
 }
 
 body.exporting-digital .edu-heading { font-size: 1.05rem !important; }
-
 body.exporting-digital .edu-org,
 body.exporting-digital .edu-meta { font-size: 0.8rem !important; }
 
@@ -2195,33 +2177,24 @@ body.exporting-digital .secondary-edu-header {
     padding-top: 4mm !important;
 }
 
-body.exporting-digital .timeline-item { background: transparent !important; }
-
-body.exporting-digital .contact-item-wrapper {
-    background: transparent !important;
-    color: var(--text-primary) !important;
-}
-
 body.exporting-digital .timeline-item,
-body.exporting-digital .edu-item,
 body.exporting-digital .contact-item-wrapper,
 body.exporting-digital .gauge-item {
+    background: transparent !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
 }
 
-/* ── 9. Saltos de Página ────────────────────────────── */
+/* ── 9. Elementos UI Web (Fuera de Impresión) ───────── */
 .pdf-page-break {
     page-break-before: always;
     break-before: page;
 }
 
 @media screen {
-    .pdf-page-break { display: none; }
-    .bubble-container { display: none; }
+    .pdf-page-break, .bubble-container { display: none; }
 }
 
-/* ── 10. Botones de Exportación (UI Web) ────────────── */
 .export-buttons {
     display: flex;
     gap: 1rem;
@@ -2236,325 +2209,10 @@ body.exporting-digital .gauge-item {
     box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
 }
 
-.digital-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(150, 95, 212, 0.6) !important;
-}
-
 .print-btn {
     background: rgba(255, 255, 255, 0.1) !important;
     border-color: var(--border-color) !important;
     color: var(--text-primary) !important;
-}
-
-.print-btn:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-color: var(--accent-lime) !important;
-}
-
-@media (max-width: 600px) {
-    .export-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-}
-
-
-body.exporting-digital .card-header h2 {
-    color: var(--accent-cyan) !important;
-}
-
-body.exporting-digital .edu-item,
-body.exporting-digital .timeline-item,
-body.exporting-digital .contact-item,
-body.exporting-digital .contact-item-wrapper {
-    background: transparent !important;
-    border-color: rgba(150, 95, 212, 0.1) !important;
-    color: var(--text-primary) !important;
-}
-
-/* Forzar color claro para Licencia e Inglés */
-body.exporting-digital .contact-item span,
-body.exporting-digital .contact-item-header span {
-    color: var(--text-primary) !important;
-}
-
-body.exporting-digital .sr-only,
-body.exporting-digital .export-banner,
-body.exporting-digital .html-tooltip,
-body.exporting-digital .main-toggle,
-body.exporting-digital .nav-links {
-    display: none !important;
-}
-
-/* Skill Map: Forzar 2D en Exportación Digital */
-body.exporting-digital .skill-map-wrapper,
-body.exporting-digital #skill-canvas-container,
-body.exporting-digital .map-3d-ui {
-    display: none !important;
-}
-
-body.exporting-digital .bubble-container {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    margin: 5mm auto !important;
-}
-
-body.exporting-digital .skill-map-legend {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    margin-bottom: 2rem !important;
-}
-
-body.exporting-digital .container {
-    max-width: 210mm !important;
-    width: 210mm !important;
-    padding: 10mm 15mm !important;
-    /* Padding interno para que el texto no toque el borde */
-    margin: 0 !important;
-    background-color: #1d1a2f !important;
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
-    background-size: 22px 22px, 300px 300px !important;
-    position: relative !important;
-    min-height: 297mm !important;
-    overflow: visible !important;
-}
-
-body.exporting-digital .profile-photo-container {
-    width: 35mm !important;
-    height: 35mm !important;
-    margin: 0 auto 5mm auto !important;
-    overflow: hidden !important;
-    border-radius: 50% !important;
-    flex-shrink: 0 !important;
-    /* Evitar que se achate */
-    aspect-ratio: 1 / 1 !important;
-}
-
-body.exporting-digital .profile-photo {
-    width: 35mm !important;
-    height: 35mm !important;
-    object-fit: cover !important;
-    display: block !important;
-}
-
-body.exporting-digital h1 {
-    font-size: 2.2rem !important;
-    margin-bottom: 3mm !important;
-    color: var(--text-primary) !important;
-    text-align: center !important;
-}
-
-body.exporting-digital .subtitle {
-    font-size: 1rem !important;
-    margin-bottom: 8mm !important;
-    letter-spacing: 0.2rem !important;
-    text-align: center !important;
-}
-
-body.exporting-digital .contact-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 5mm !important;
-    padding: 8mm !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    margin: 5mm 0 10mm 0 !important;
-}
-
-body.exporting-digital .contact-item {
-    font-size: 0.9rem !important;
-    padding: 3mm !important;
-}
-
-body.exporting-digital .glass {
-    padding: 10mm 15mm !important;
-    margin-bottom: 8mm !important;
-    /* Reducir espacio entre bloques */
-    border-radius: 12px !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid-page !important;
-    position: relative !important;
-}
-
-body.exporting-digital #profile {
-    margin-top: calc(40px + 20mm) !important;
-}
-
-body.exporting-digital .skill-map-section {
-    margin-top: 10px !important;
-}
-
-body.exporting-digital #vitalsigns {
-    margin-top: -50mm !important; /* sube 5 cm respecto a -100mm */
-}
-
-body.exporting-digital .timeline-item,
-body.exporting-digital .edu-item,
-body.exporting-digital .contact-item-wrapper,
-body.exporting-digital .gauge-item {
-    page-break-inside: avoid !important;
-    break-inside: avoid-page !important;
-}
-
-body.exporting-digital .gauge-bg {
-    stroke: #334155 !important;
-}
-
-body.exporting-digital .gauge-fill {
-    filter: none !important;
-    stroke-width: 14 !important;
-}
-
-/* Fallback solid colors for digital PDF (no vars) */
-body.exporting-digital .color-nps-red .gauge-fill {
-    stroke: #ef4444 !important;
-}
-
-body.exporting-digital .color-nps-yellow .gauge-fill {
-    stroke: #f59e0b !important;
-}
-
-body.exporting-digital .color-nps-green .gauge-fill {
-    stroke: #10b981 !important;
-}
-
-body.exporting-digital .color-coffee .gauge-fill {
-    stroke: #ff9800 !important;
-}
-
-body.exporting-digital .color-affection .gauge-fill {
-    stroke: #f472b6 !important;
-}
-
-.bubble-container {
-    display: none;
-    /* Hide 2D map on standard web screen */
-}
-
-body.exporting-digital .bubble-container {
-    display: block !important;
-    opacity: 1 !important;
-    max-width: 450px !important;
-    width: 100% !important;
-    margin: 15mm auto 10mm auto !important;
-    /* Espacio calibrado para A4 en vez de 30mm */
-    page-break-inside: avoid !important;
-}
-
-/* Ocultar el mapa 3D nativo en la exportación digital */
-body.exporting-digital .skill-map-wrapper,
-body.exporting-digital .map-3d-ui,
-body.exporting-digital #skill-map-3d-canvas {
-    display: none !important;
-}
-
-body.exporting-digital .bubble-chart {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 450px !important;
-    max-height: 320px !important;
-    display: block !important;
-    margin: 0 auto !important;
-}
-
-/* Mejorar legibilidad del mapa 2D en Digital */
-body.exporting-digital .blabel {
-    font-size: 10px !important;
-    font-weight: 800 !important;
-    fill: #ffffff !important;
-}
-
-body.exporting-digital .conn-line {
-    stroke-width: 1.5px !important;
-    opacity: 0.7 !important;
-}
-
-body.exporting-digital .zone-label {
-    font-size: 12px !important;
-    font-weight: 900 !important;
-    opacity: 0.9 !important;
-}
-
-body.exporting-digital .hub-circle {
-    stroke: rgba(255, 255, 255, 0.5) !important;
-    stroke-width: 3px !important;
-}
-
-
-/* Compactar Educación en Exportación Digital */
-body.exporting-digital .edu-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.8rem !important;
-}
-
-body.exporting-digital .edu-item {
-    padding: 0.8rem !important;
-    border-radius: 8px !important;
-}
-
-body.exporting-digital .edu-heading {
-    font-size: 1.05rem !important;
-}
-
-body.exporting-digital .edu-org,
-body.exporting-digital .edu-meta {
-    font-size: 0.8rem !important;
-}
-
-body.exporting-digital .secondary-edu-header {
-    margin: 1.5rem 0 0.8rem !important;
-    padding-top: 0.8rem !important;
-}
-
-body.exporting-digital .edu-grid-secondary {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.8rem !important;
-}
-
-body.exporting-digital header {
-    page-break-inside: avoid !important;
-    break-inside: avoid-page !important;
-    margin-bottom: 2rem !important;
-}
-
-body.exporting-digital {
-    background-color: #1d1a2f !important;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E") !important;
-    height: auto !important;
-    min-height: 100% !important;
-    width: 100% !important;
-    overflow: visible !important;
-}
-
-.pdf-page-break {
-    page-break-before: always;
-    break-before: page;
-}
-
-/* Ocultar marcador en pantalla */
-@media screen {
-    .pdf-page-break {
-        display: none;
-    }
-}
-
-/* Contenedor ya definido arriba */
-
-body.exporting-digital .contact-grid {
-    max-height: none !important;
-    opacity: 1 !important;
-    display: grid !important;
-}
-
-/* Ocultar elementos UI y metadatos nativos para no corromper la captura del canvas */
-body.exporting-digital .export-banner,
-body.exporting-digital .sr-only,
-body.exporting-digital .nav-links,
-body.exporting-digital .main-toggle {
-    display: none !important;
 }
 
 /* NEW EXPORT UI */
