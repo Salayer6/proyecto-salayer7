@@ -141,9 +141,9 @@ function exportDigitalCV() {
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         pagebreak: { 
-            mode: ['avoid-all', 'css', 'legacy'], // Evita cortes en mitad de elementos
+            mode: ['css', 'legacy'], // Quitamos 'avoid-all' extremo para no forzar achatamiento al encajar elementos
             before: '.pdf-page-break',
-            avoid: ['.glass', '.card-header', 'h2', '.gauge-item', '.timeline-item', '.edu-item']
+            avoid: ['.card-header', 'h2', '.gauge-item', '.timeline-item', '.edu-item'] // Removido .glass
         }
     }; 
     
