@@ -717,16 +717,16 @@ h1 .accent {
    ═══════════════════════════════════ */
 
 #profile {
-    margin-top: 20px;
+    margin-top: 0;
 }
 
 .skill-map-section {
     overflow: visible;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 #vitalsigns {
-    margin-top: -100px;
+    margin-top: 20px;
 }
 
 .skill-map-legend {
@@ -2097,8 +2097,15 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 100mm !important;
-    /* 10cm de margen superior para Perfil Estratégico */
+    margin-top: 20px !important;
+}
+
+body.exporting-digital .skill-map-section {
+    margin-top: 10px !important;
+}
+
+body.exporting-digital #vitalsigns {
+    margin-top: -100px !important;
 }
 
 body.exporting-digital .timeline-item,
