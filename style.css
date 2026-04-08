@@ -2097,7 +2097,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital #profile {
-    margin-top: 20px !important;
+    margin-top: 40px !important;
 }
 
 body.exporting-digital .skill-map-section {
@@ -2105,7 +2105,7 @@ body.exporting-digital .skill-map-section {
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: -100px !important;
+    margin-top: -100mm !important; /* -10 cm antes de Vital Signs */
 }
 
 body.exporting-digital .timeline-item,
