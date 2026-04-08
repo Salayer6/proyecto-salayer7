@@ -12,8 +12,11 @@ function exportDigitalCV() {
     // Capturamos el contenedor principal para evitar márgenes innecesarios del body
     const element = document.querySelector('.container'); 
     
-    // Calcular estiramiento del 20% para el largo vertical de la captura (petición de extensión de fondo)
-    const stretchPadding = element.scrollHeight * 0.20;
+    // Calcular relleno perfecto para que el fondo llegue al final de la última página A4 (Aspect Ratio A4: 1.4142857)
+    const a4Ratio = 297 / 210;
+    const a4PixelHeight = element.scrollWidth * a4Ratio;
+    const totalPagesNeeded = Math.ceil(element.scrollHeight / a4PixelHeight);
+    const perfectPadding = (totalPagesNeeded * a4PixelHeight) - element.scrollHeight;
     
     // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
@@ -28,7 +31,7 @@ function exportDigitalCV() {
             scrollY: 0, 
             scrollX: 0,
             windowWidth: element.scrollWidth,
-            windowHeight: element.scrollHeight + stretchPadding,
+            windowHeight: element.scrollHeight + perfectPadding,
             onclone: (clonedDoc) => {
                 clonedDoc.documentElement.style.width = '210mm';
                 clonedDoc.documentElement.style.backgroundColor = '#1d1a2f'; // Fija la capa más profunda
@@ -41,7 +44,7 @@ function exportDigitalCV() {
                 if (container) {
                     container.style.width = '210mm';
                     container.style.padding = '10mm 15mm';
-                    container.style.paddingBottom = `${Math.ceil(stretchPadding)}px`; // Aplica el 20% extra al fondo final
+                    container.style.paddingBottom = `${perfectPadding}px`; // Sella matemáticamente la hoja final
                     container.style.margin = '0';
                     container.style.backgroundColor = '#1d1a2f';
                     container.style.backgroundImage = 'none';
