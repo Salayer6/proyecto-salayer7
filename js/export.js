@@ -12,6 +12,9 @@ function exportDigitalCV() {
     // Capturamos el contenedor principal para evitar márgenes innecesarios del body
     const element = document.querySelector('.container'); 
     
+    // Calcular estiramiento del 20% para el largo vertical de la captura (petición de extensión de fondo)
+    const stretchPadding = element.scrollHeight * 0.20;
+    
     // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
         margin: 0, // Sin márgenes externos en el PDF (Full Bleed)
@@ -36,6 +39,7 @@ function exportDigitalCV() {
                 if (container) {
                     container.style.width = '210mm';
                     container.style.padding = '10mm 15mm';
+                    container.style.paddingBottom = `${Math.ceil(stretchPadding)}px`; // Aplica el 20% extra al fondo final
                     container.style.margin = '0';
                     container.style.backgroundColor = '#1d1a2f';
                     container.style.backgroundImage = 'none';
