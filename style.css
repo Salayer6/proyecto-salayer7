@@ -2079,6 +2079,14 @@ body.exporting-digital .contact-grid {
     display: grid !important;
 }
 
+/* Ocultar elementos UI y metadatos nativos para no corromper la captura del canvas */
+body.exporting-digital .export-banner,
+body.exporting-digital .sr-only,
+body.exporting-digital .nav-links,
+body.exporting-digital .main-toggle {
+    display: none !important;
+}
+
 /* NEW EXPORT UI */
 .export-buttons {
     display: flex;

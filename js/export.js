@@ -26,6 +26,7 @@ function exportDigitalCV() {
             scrollX: 0,
             onclone: (clonedDoc) => {
                 clonedDoc.documentElement.style.width = '210mm';
+                clonedDoc.documentElement.style.backgroundColor = '#1d1a2f'; // Fija la capa más profunda
                 clonedDoc.body.style.width = '210mm';
                 clonedDoc.body.style.margin = '0';
                 clonedDoc.body.style.padding = '0';
