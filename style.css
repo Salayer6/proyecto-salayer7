@@ -1966,13 +1966,11 @@ body.exporting-digital {
     background-color: #1d1a2f !important;
     background-image: none !important;
     overflow: visible !important;
-    width: 210mm !important;
 }
 
 body.exporting-digital .container {
-    width: 210mm !important;
-    max-width: 210mm !important;
-    margin: 0 !important;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
     padding: 10mm 15mm !important;
     min-height: 297mm !important;
     background-color: #1d1a2f !important;

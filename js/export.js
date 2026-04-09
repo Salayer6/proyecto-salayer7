@@ -7,7 +7,6 @@ const EXPORT_CONFIG = {
     filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
     bgColor: '#1d1a2f',
     cardBgColor: 'rgba(30, 41, 59, 0.6)',
-    a4Width: '210mm',
     profileDim: '110px',
     noiseFilter: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`
 };
@@ -21,12 +20,13 @@ function exportDigitalCV() {
     const element = document.querySelector('.container'); 
     
     // Calculate perfect padding for full-bleed background on the last A4 page
+    // Using current scrollWidth to stay proportional to how html2canvas captures it
     const a4Ratio = 297 / 210;
     const a4PixelHeight = element.scrollWidth * a4Ratio;
     const totalPagesNeeded = Math.ceil(element.scrollHeight / a4PixelHeight);
     const perfectPadding = (totalPagesNeeded * a4PixelHeight) - element.scrollHeight;
     
-    // 2. Configure html2pdf options
+    // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
         margin: 0,
         filename: EXPORT_CONFIG.filename,
@@ -69,7 +69,7 @@ function exportDigitalCV() {
 function applyDocumentFixes(clonedDoc, padding) {
     const rootElements = [clonedDoc.documentElement, clonedDoc.body];
     rootElements.forEach(el => {
-        el.style.width = EXPORT_CONFIG.a4Width;
+        // Removed explicit 210mm width to prevent "flattening" by scaling engines
         el.style.backgroundColor = EXPORT_CONFIG.bgColor;
         el.style.margin = '0';
         el.style.padding = '0';
@@ -78,7 +78,7 @@ function applyDocumentFixes(clonedDoc, padding) {
     const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            width: EXPORT_CONFIG.a4Width,
+            // Removed explicit 210mm width, letting html2pdf handle scaling naturally
             padding: '10mm 15mm',
             paddingBottom: `${padding}px`,
             margin: '0',
