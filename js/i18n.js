@@ -52,6 +52,7 @@ const translations = {
         // Sección experiencia
         exp_title: "Trayectoria Profesional",
         profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de AI y Datos Faeneros, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
+        specialized_title: "Formación autónoma complementaria",
     },
 
     en: {
@@ -91,6 +92,7 @@ const translations = {
         profile_title: "Strategic Profile",
         exp_title: "Professional Background",
         profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Mining Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
+        specialized_title: "Complementary & Specialized Training",
     },
 
     de: {
@@ -130,6 +132,7 @@ const translations = {
         profile_title: "Strategisches Profil",
         exp_title: "Beruflicher Werdegang",
         profile_desc: "Ich kombiniere technische Basis mit strategischer Vision für Data-Driven Unternehmen. Spezialisiert auf den Übergang von Automotive Engineering zu AI & Data Engineering, integriere ich Generative AI in Control, BI & Analytics Workflows.",
+        specialized_title: "Zusatzqualifikationen & Fachausbildung",
     },
 
     ja: {
@@ -169,6 +172,7 @@ const translations = {
         profile_title: "戦略的プロフィール",
         exp_title: "職歴",
         profile_desc: "データドリブンな企業向けに、技術的基盤と戦略的ビジョンを統合します。自動車工学からAIおよびデータエンジニアリングへの転換を専門とし、生成AI（Generative AI）を管理、BI、およびアナリティクスワークフローに統合します。",
+        specialized_title: "補足教育および専門トレーニング",
     },
 
     ru: {
@@ -207,6 +211,7 @@ const translations = {
         map_hint: "Тяните для вращения",
         profile_title: "Стратегический профиль",
         exp_title: "Профессиональный путь",
+        specialized_title: "Дополнительное и специальное образование",
     }
 };
 
