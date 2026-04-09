@@ -7,7 +7,7 @@
 const translations = {
     es: {
         // Header
-        subtitle: "Ingeniero de IA y Datos | Control, BI & Analytics",
+        subtitle: "Ingeniero de AI y Datos Faeneros",
         contact_title: "Información de contacto",
 
         // Sección Signos Vitales
@@ -51,11 +51,11 @@ const translations = {
 
         // Sección experiencia
         exp_title: "Trayectoria Profesional",
-        profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de IA y Datos, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
+        profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de AI y Datos Faeneros, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
     },
 
     en: {
-        subtitle: "AI & Data Engineer | Control, BI & Analytics",
+        subtitle: "AI & Data Engineer for Mining Ops",
         contact_title: "Contact Information",
 
         vitals_title: "Vital Signs / Status",
@@ -90,7 +90,7 @@ const translations = {
         map_hint: "Drag to orbit",
         profile_title: "Strategic Profile",
         exp_title: "Professional Background",
-        profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
+        profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Mining Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
     },
 
     de: {
