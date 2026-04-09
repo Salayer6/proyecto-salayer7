@@ -2083,7 +2083,7 @@ body.exporting-digital .card-header h2 {
 
 body.exporting-digital .pdf-export-spacer {
     display: block !important;
-    height: 130mm !important;
+    height: 150mm !important;
     width: 100% !important;
 }
 
@@ -2259,6 +2259,7 @@ body.exporting-digital .gauge-item {
     .bubble-container { display: none; }
 }
 
+/* ELEMENTOS UI WEB */
 .export-buttons {
     display: flex;
     gap: 1rem;
@@ -2271,27 +2272,7 @@ body.exporting-digital .gauge-item {
     color: #fff !important;
     font-weight: 700 !important;
     box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
-}
-
-.print-btn {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-primary) !important;
-}
-
-/* NEW EXPORT UI */
-.export-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.digital-btn {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan)) !important;
-    border-color: transparent !important;
-    color: #fff !important;
-    font-weight: 700 !important;
-    box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
+    transition: var(--transition);
 }
 
 .digital-btn:hover {
@@ -2303,12 +2284,14 @@ body.exporting-digital .gauge-item {
     background: rgba(255, 255, 255, 0.1) !important;
     border-color: var(--border-color) !important;
     color: var(--text-primary) !important;
+    transition: var(--transition);
 }
 
 .print-btn:hover {
     background: rgba(255, 255, 255, 0.15) !important;
     border-color: var(--accent-lime) !important;
 }
+
 
 @media (max-width: 600px) {
     .export-buttons {
