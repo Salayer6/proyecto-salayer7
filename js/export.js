@@ -53,8 +53,8 @@ function exportDigitalCV() {
                 // Velocímetros
                 const gauges = clonedDoc.querySelectorAll('.gauge');
                 gauges.forEach(svg => {
-                    svg.setAttribute('width', '100');
-                    svg.setAttribute('height', '100');
+                    svg.setAttribute('width', '70');
+                    svg.setAttribute('height', '70');
                     const fills = svg.querySelectorAll('.gauge-fill');
                     fills.forEach(path => {
                         path.style.filter = 'none';
