@@ -2080,16 +2080,21 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    padding-top: 30mm !important; 
+    margin-top: 30mm !important;
+    padding-top: 0 !important;
+}
+
+body.exporting-digital #profile .card-header {
     margin-top: 0 !important;
+    padding-top: 2mm !important; /* Mínimo necesario para respiro visual */
 }
 
 body.exporting-digital .skill-map-section {
-    margin-top: 3mm !important;
+    margin-top: 50mm !important;
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: 0 !important;
+    margin-top: 50mm !important;
 }
 
 body.exporting-digital #education {
