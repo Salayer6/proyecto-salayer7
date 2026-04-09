@@ -2090,6 +2090,10 @@ body.exporting-digital #vitalsigns {
     margin-top: -300mm !important;
 }
 
+body.exporting-digital #education {
+    margin-top: -200mm !important;
+}
+
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
 body.exporting-digital .bubble-container {
     display: block !important;
