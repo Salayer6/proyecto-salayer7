@@ -1993,7 +1993,8 @@ body.exporting-digital .sr-only,
 body.exporting-digital .skill-map-wrapper,
 body.exporting-digital #skill-canvas-container,
 body.exporting-digital #skill-map-3d-canvas,
-body.exporting-digital .map-3d-ui {
+body.exporting-digital .map-3d-ui,
+body.exporting-digital br {
     display: none !important;
 }
 
@@ -2079,7 +2080,7 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    margin-top: 90mm !important; 
+    margin-top: 10mm !important; 
 }
 
 body.exporting-digital .skill-map-section {
