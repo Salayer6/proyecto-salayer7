@@ -2080,7 +2080,7 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    margin-top: 10mm !important; 
+    margin-top: 90mm !important; 
 }
 
 body.exporting-digital .skill-map-section {
@@ -2088,15 +2088,11 @@ body.exporting-digital .skill-map-section {
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: 10mm !important;
+    margin-top: -300mm !important;
 }
 
 body.exporting-digital #education {
-    margin-top: 10mm !important;
-}
-
-body.exporting-digital #experience {
-    margin-top: 10mm !important;
+    margin-top: -200mm !important;
 }
 
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
@@ -2195,17 +2191,8 @@ body.exporting-digital .gauge-item {
 }
 
 /* ── 9. Elementos UI Web (Fuera de Impresión) ───────── */
-.pdf-page-break {
-    page-break-before: always;
-    break-before: page;
-}
-
-body.exporting-digital .pdf-page-break {
-    display: none !important;
-}
-
 @media screen {
-    .pdf-page-break, .bubble-container { display: none; }
+    .bubble-container { display: none; }
 }
 
 .export-buttons {
