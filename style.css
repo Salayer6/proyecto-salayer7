@@ -2088,11 +2088,15 @@ body.exporting-digital .skill-map-section {
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: -300mm !important;
+    margin-top: 10mm !important;
 }
 
 body.exporting-digital #education {
-    margin-top: -200mm !important;
+    margin-top: 10mm !important;
+}
+
+body.exporting-digital #experience {
+    margin-top: 10mm !important;
 }
 
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
@@ -2194,6 +2198,10 @@ body.exporting-digital .gauge-item {
 .pdf-page-break {
     page-break-before: always;
     break-before: page;
+}
+
+body.exporting-digital .pdf-page-break {
+    display: none !important;
 }
 
 @media screen {
