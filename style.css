@@ -2080,7 +2080,7 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    margin-top: 70mm !important;
+    margin-top: 80mm !important;
     padding-top: 0 !important;
 }
 
@@ -2164,6 +2164,52 @@ body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !importan
 body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important; }
 body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
 body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
+
+body.exporting-digital .gauge-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6mm 10mm !important;
+    justify-content: flex-start !important;
+}
+
+body.exporting-digital .gauge-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 6mm !important;
+    width: 100% !important;
+}
+
+body.exporting-digital .gauge {
+    width: 70px !important;
+    height: 70px !important;
+    flex-shrink: 0 !important;
+}
+
+body.exporting-digital .gauge-info {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+body.exporting-digital .gauge-value {
+    font-size: 1.2rem !important;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+}
+
+body.exporting-digital .gauge-name {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+}
+
+body.exporting-digital .gauge-desc {
+    font-size: 0.65rem !important;
+    margin-top: 1mm !important;
+    line-height: 1.2 !important;
+}
 
 /* ── 8. Educación y Timeline ────────────────────────── */
 body.exporting-digital .edu-grid,
