@@ -2080,7 +2080,7 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital #profile {
-    margin-top: 30mm !important;
+    margin-top: 60mm !important;
     padding-top: 0 !important;
 }
 
@@ -2094,7 +2094,7 @@ body.exporting-digital .skill-map-section {
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: 50mm !important;
+    margin-top: 80mm !important;
 }
 
 body.exporting-digital #education {
