@@ -77,7 +77,7 @@ if (container) {
         { name: "Python / R", type: "Híbrida Básica", time: "Data & Stats", detail: "Procesamiento avanzado de datos, econometría y scripts de análisis exploratorio.", vector: [0.2, 0.8], dist: 110, color: 0xce93d8, size: 28 },
         { name: "Agile / Scrum", type: "Híbrida Gestión", time: "Marcos Ágiles", detail: "Garantía de entrega continua de valor en el desarrollo de soluciones analíticas.", vector: [-0.5, 0.7], dist: 150, color: 0xf06292, size: 26 },
         { name: "Faena Minera", type: "Híbrida Entorno", time: "Operaciones", detail: "Entendimiento del negocio core, operación logística y normativas del sector minero.", vector: [-0.8, 0.5], dist: 180, color: 0xffb74d, size: 25 },
-        { name: "IA Generativa", type: "Híbrida Avanzada", time: "Vanguardia", detail: "Optimización DataOps, aceleración procedural y asistencia estructurada en la nube.", vector: [0.2, 1.0], dist: 220, color: 0xba68c8, size: 26 },
+        { name: "IA Generativa", type: "Híbrida Avanzada", time: "Vanguardia", detail: "Optimización DataOps, aceleración procedural y asistencia estructurada en la nube.", vector: [0.2, 1.0], dist: 220, color: 0xba68c8, size: 40 },
     ];
 
     const targetGroup = new THREE.Group();

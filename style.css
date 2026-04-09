@@ -2080,7 +2080,7 @@ body.exporting-digital .card-header h2 {
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 body.exporting-digital .content-main {
-    padding-top: 90mm !important; /* Espacio antes de la primera sección (Perfil) */
+    padding-top: 110mm !important; /* Espacio antes de la primera sección (Perfil) */
 }
 
 body.exporting-digital #profile {

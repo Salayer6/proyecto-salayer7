@@ -7,7 +7,7 @@
 const translations = {
     es: {
         // Header
-        subtitle: "Ingeniero de Programación y Control - BI & Data Analytics",
+        subtitle: "Ingeniero de IA y Datos | Control, BI & Analytics",
         contact_title: "Información de contacto",
 
         // Sección Signos Vitales
@@ -54,7 +54,7 @@ const translations = {
     },
 
     en: {
-        subtitle: "Planning & Control Engineer - BI & Data Analytics",
+        subtitle: "AI & Data Engineer | Control, BI & Analytics",
         contact_title: "Contact Information",
 
         vitals_title: "Vital Signs / Status",
