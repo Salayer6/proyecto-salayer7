@@ -2079,8 +2079,16 @@ body.exporting-digital .card-header h2 {
 }
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
+.pdf-export-spacer { display: none; }
+
+body.exporting-digital .pdf-export-spacer {
+    display: block !important;
+    height: 110mm !important;
+    width: 100% !important;
+}
+
 body.exporting-digital .content-main {
-    padding-top: 110mm !important; /* Espacio antes de la primera sección (Perfil) */
+    padding-top: 0 !important;
 }
 
 body.exporting-digital #profile {

@@ -51,6 +51,7 @@ const translations = {
 
         // Sección experiencia
         exp_title: "Trayectoria Profesional",
+        profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de IA y Datos, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
     },
 
     en: {
@@ -89,6 +90,7 @@ const translations = {
         map_hint: "Drag to orbit",
         profile_title: "Strategic Profile",
         exp_title: "Professional Background",
+        profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
     },
 
     de: {
@@ -127,6 +129,7 @@ const translations = {
         map_hint: "Ziehen zum Navigieren",
         profile_title: "Strategisches Profil",
         exp_title: "Beruflicher Werdegang",
+        profile_desc: "Ich kombiniere technische Basis mit strategischer Vision für Data-Driven Unternehmen. Spezialisiert auf den Übergang von Automotive Engineering zu AI & Data Engineering, integriere ich Generative AI in Control, BI & Analytics Workflows.",
     },
 
     ja: {
@@ -165,6 +168,7 @@ const translations = {
         map_hint: "ドラッグで回転",
         profile_title: "戦略的プロフィール",
         exp_title: "職歴",
+        profile_desc: "データドリブンな企業向けに、技術的基盤と戦略的ビジョンを統合します。自動車工学からAIおよびデータエンジニアリングへの転換を専門とし、生成AI（Generative AI）を管理、BI、およびアナリティクスワークフローに統合します。",
     },
 
     ru: {
@@ -224,7 +228,7 @@ function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (t[key] !== undefined) {
-            el.textContent = t[key];
+            el.innerHTML = t[key];
         }
     });
 
