@@ -2000,10 +2000,6 @@ body.exporting-digital br {
     display: none !important;
 }
 
-body.exporting-digital {
-    background-color: #1d1a2f !important;
-}
-
 /* ── 3. Header y Foto de Perfil ─────────────────────── */
 body.exporting-digital header {
     margin-bottom: 6mm !important;

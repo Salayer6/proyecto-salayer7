@@ -17,17 +17,14 @@ function exportDigitalCV() {
     const originalScrollY = window.scrollY;
     window.scrollTo(0, 0);
     
-    // Export from body to ensure full-bleed background coverage
-    const element = document.body; 
-    const container = document.querySelector('.container');
+    const element = document.querySelector('.container'); 
     
     // Calculate perfect padding for full-bleed background on the last A4 page
+    // Using current scrollWidth to stay proportional to how html2canvas captures it
     const a4Ratio = 297 / 210;
-    const calcWidth = container.offsetWidth || 1100;
-    const a4PixelHeight = calcWidth * a4Ratio;
+    const a4PixelHeight = element.scrollWidth * a4Ratio;
     const totalPagesNeeded = Math.ceil(element.scrollHeight / a4PixelHeight);
-    const totalTargetHeight = totalPagesNeeded * a4PixelHeight;
-    const perfectPadding = totalTargetHeight - element.scrollHeight;
+    const perfectPadding = (totalPagesNeeded * a4PixelHeight) - element.scrollHeight + 10;
     
     // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
@@ -41,12 +38,8 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
-            windowWidth: calcWidth,
-            windowHeight: totalTargetHeight,
-            width: calcWidth,
-            height: totalTargetHeight,
             onclone: (clonedDoc) => {
-                applyDocumentFixes(clonedDoc, perfectPadding, totalTargetHeight);
+                applyDocumentFixes(clonedDoc, perfectPadding);
                 fixProfileImage(clonedDoc);
                 fixVitalGauges(clonedDoc);
                 toggleSkillMaps(clonedDoc);
@@ -73,46 +66,30 @@ function exportDigitalCV() {
 /**
  * Global document level styles for the clone
  */
-function applyDocumentFixes(clonedDoc, padding, totalHeight) {
-    const container = clonedDoc.querySelector('.container');
-    const targetWidth = container ? container.offsetWidth : 1100;
-
+function applyDocumentFixes(clonedDoc, padding) {
     const rootElements = [clonedDoc.documentElement, clonedDoc.body];
     rootElements.forEach(el => {
+        // Removed explicit 210mm width to prevent "flattening" by scaling engines
         el.style.backgroundColor = EXPORT_CONFIG.bgColor;
         el.style.backgroundImage = EXPORT_CONFIG.noiseFilter;
         el.style.backgroundRepeat = 'repeat';
         el.style.margin = '0';
         el.style.padding = '0';
-        el.style.width = `${targetWidth}px`;
-        el.style.height = `${totalHeight}px`; // Force exact height
-        el.style.minHeight = `${totalHeight}px`;
-        el.style.overflow = 'hidden';
     });
 
+    const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            width: `${targetWidth}px`,
-            maxWidth: 'none',
+            // Removed explicit 210mm width, letting html2pdf handle scaling naturally
             padding: '10mm 15mm',
-            paddingBottom: `${padding}px`, 
-            margin: '0 auto',
-            backgroundColor: 'transparent',
-            backgroundImage: 'none',
+            paddingBottom: `${padding}px`,
+            margin: '0',
+            backgroundColor: EXPORT_CONFIG.bgColor,
+            backgroundImage: EXPORT_CONFIG.noiseFilter,
             boxShadow: 'none',
             minHeight: '100vh'
         });
     }
-
-    // Force remove blobs and other artifacts that html2canvas struggles with
-    const style = clonedDoc.createElement('style');
-    style.innerHTML = `
-        body::before, body::after { display: none !important; }
-        .export-banner, .nav-links, .map-3d-ui, .map-zoom-controls { display: none !important; }
-        .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-        * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
-    `;
-    clonedDoc.head.appendChild(style);
 }
 
 /**
