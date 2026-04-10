@@ -12,6 +12,9 @@ const EXPORT_CONFIG = {
 };
 
 function exportDigitalCV() {
+    const overlay = document.getElementById('export-overlay');
+    if (overlay) overlay.style.display = 'flex';
+
     // 1. Prepare for export
     document.body.classList.add('exporting-digital');
     const originalScrollY = window.scrollY;
@@ -218,6 +221,9 @@ function fixVisualStyles(clonedDoc) {
  * Resets the UI state after export
  */
 function finishExport(originalY) {
+    const overlay = document.getElementById('export-overlay');
+    if (overlay) overlay.style.display = 'none';
+
     document.body.classList.remove('exporting-digital');
     window.scrollTo(0, originalY);
 }
