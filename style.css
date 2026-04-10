@@ -2078,7 +2078,14 @@ body.exporting-digital .glass {
 
 body.exporting-digital .card-header h2 {
     color: #22d3ee !important;
+    margin-bottom: 1mm !important;
 }
+
+body.exporting-digital .card-header {
+    margin-bottom: 2mm !important;
+    padding-bottom: 1mm !important;
+}
+
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
 .pdf-export-spacer { display: none; }
@@ -2112,7 +2119,7 @@ body.exporting-digital #vitalsigns {
 }
 
 body.exporting-digital #experience {
-    margin-top: 20mm !important;
+    margin-top: 50mm !important;
 }
 
 body.exporting-digital #education {
