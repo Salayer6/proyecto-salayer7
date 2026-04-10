@@ -602,7 +602,7 @@ h1 .accent {
 /* Education & Certs Grid */
 .edu-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 
@@ -617,6 +617,10 @@ h1 .accent {
 .edu-item.highlight {
     border-left-color: var(--accent-lime);
     background: rgba(139, 212, 80, 0.04);
+}
+
+.edu-item-full {
+    grid-column: 1 / -1 !important;
 }
 
 .edu-date {
@@ -2113,6 +2117,10 @@ body.exporting-digital #experience {
 
 body.exporting-digital #education {
     margin-top: 100mm !important;
+}
+
+body.exporting-digital #specialized-edu {
+    margin-top: -30mm !important;
 }
 
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
