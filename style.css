@@ -1679,7 +1679,7 @@ path.gauge-fill-affection {
 @media print {
     @page {
         size: A4;
-        margin: 1.5cm;
+        margin: 0;
     }
 
     :root {
@@ -1695,13 +1695,16 @@ path.gauge-fill-affection {
     body {
         background: white !important;
         color: black !important;
+        margin: 0 !important;
+        padding: 0 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
 
     .container {
-        padding: 0;
+        padding: 1.5cm;
         max-width: 100%;
+        margin: 0 auto;
     }
 
     header {
