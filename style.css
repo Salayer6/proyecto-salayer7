@@ -2123,7 +2123,17 @@ body.exporting-digital #experience {
 }
 
 body.exporting-digital #education {
-    margin-top: 15mm !important;
+    margin-top: 100mm !important;
+    padding-top: 5mm !important;
+}
+
+body.exporting-digital #education .card-header {
+    margin-bottom: 1mm !important;
+    padding-bottom: 0 !important;
+}
+
+body.exporting-digital #education h2 {
+    margin: 0 !important;
 }
 
 body.exporting-digital #specialized-edu {
