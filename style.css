@@ -2116,11 +2116,7 @@ body.exporting-digital #experience {
 }
 
 body.exporting-digital #education {
-    margin-top: 100mm !important;
-}
-
-body.exporting-digital #specialized-edu {
-    margin-top: -30mm !important;
+    margin-top: 70mm !important;
 }
 
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
