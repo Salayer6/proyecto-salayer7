@@ -69,25 +69,37 @@ function exportDigitalCV() {
 function applyDocumentFixes(clonedDoc, padding) {
     const rootElements = [clonedDoc.documentElement, clonedDoc.body];
     rootElements.forEach(el => {
-        // Removed explicit 210mm width to prevent "flattening" by scaling engines
         el.style.backgroundColor = EXPORT_CONFIG.bgColor;
+        el.style.backgroundImage = EXPORT_CONFIG.noiseFilter;
+        el.style.backgroundRepeat = 'repeat';
         el.style.margin = '0';
         el.style.padding = '0';
+        el.style.minHeight = '100%';
     });
 
     const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            // Removed explicit 210mm width, letting html2pdf handle scaling naturally
+            width: '100%',
+            maxWidth: 'none',
             padding: '10mm 15mm',
-            paddingBottom: `${padding}px`,
+            paddingBottom: `${padding + 10}px`, // Slight buffer to ensure full coverage
             margin: '0',
-            backgroundColor: EXPORT_CONFIG.bgColor,
-            backgroundImage: EXPORT_CONFIG.noiseFilter,
+            backgroundColor: 'transparent',
+            backgroundImage: 'none',
             boxShadow: 'none',
             minHeight: '100vh'
         });
     }
+
+    // Force remove blobs and other artifacts that html2canvas struggles with
+    const style = clonedDoc.createElement('style');
+    style.innerHTML = `
+        body::before, body::after { display: none !important; }
+        .export-banner, .nav-links, .map-3d-ui, .map-zoom-controls { display: none !important; }
+        .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    `;
+    clonedDoc.head.appendChild(style);
 }
 
 /**
