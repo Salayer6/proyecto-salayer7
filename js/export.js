@@ -93,6 +93,17 @@ function applyDocumentFixes(clonedDoc, padding) {
             minHeight: '100vh'
         });
     }
+
+    // Force hide elements in the export capture
+    const style = clonedDoc.createElement('style');
+    style.innerHTML = `
+        #export-overlay, .export-banner, .nav-links, .map-3d-ui, .map-zoom-controls, .main-toggle { 
+            display: none !important; 
+        }
+        body::before, body::after { display: none !important; }
+        .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    `;
+    clonedDoc.head.appendChild(style);
 }
 
 /**
