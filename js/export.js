@@ -17,14 +17,17 @@ function exportDigitalCV() {
     const originalScrollY = window.scrollY;
     window.scrollTo(0, 0);
     
-    const element = document.querySelector('.container'); 
+    // Export from body to ensure full-bleed background coverage
+    const element = document.body; 
+    const container = document.querySelector('.container');
     
     // Calculate perfect padding for full-bleed background on the last A4 page
-    // Using current scrollWidth to stay proportional to how html2canvas captures it
     const a4Ratio = 297 / 210;
-    const a4PixelHeight = element.scrollWidth * a4Ratio;
+    const calcWidth = container.offsetWidth || 1100;
+    const a4PixelHeight = calcWidth * a4Ratio;
     const totalPagesNeeded = Math.ceil(element.scrollHeight / a4PixelHeight);
-    const perfectPadding = (totalPagesNeeded * a4PixelHeight) - element.scrollHeight;
+    const totalTargetHeight = totalPagesNeeded * a4PixelHeight;
+    const perfectPadding = totalTargetHeight - element.scrollHeight;
     
     // 2. Configure html2pdf options (Full-Bleed A4 Metrics)
     const opt = {
@@ -38,8 +41,12 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
+            windowWidth: calcWidth,
+            windowHeight: totalTargetHeight,
+            width: calcWidth,
+            height: totalTargetHeight,
             onclone: (clonedDoc) => {
-                applyDocumentFixes(clonedDoc, perfectPadding);
+                applyDocumentFixes(clonedDoc, perfectPadding, totalTargetHeight);
                 fixProfileImage(clonedDoc);
                 fixVitalGauges(clonedDoc);
                 toggleSkillMaps(clonedDoc);
@@ -66,7 +73,10 @@ function exportDigitalCV() {
 /**
  * Global document level styles for the clone
  */
-function applyDocumentFixes(clonedDoc, padding) {
+function applyDocumentFixes(clonedDoc, padding, totalHeight) {
+    const container = clonedDoc.querySelector('.container');
+    const targetWidth = container ? container.offsetWidth : 1100;
+
     const rootElements = [clonedDoc.documentElement, clonedDoc.body];
     rootElements.forEach(el => {
         el.style.backgroundColor = EXPORT_CONFIG.bgColor;
@@ -74,17 +84,19 @@ function applyDocumentFixes(clonedDoc, padding) {
         el.style.backgroundRepeat = 'repeat';
         el.style.margin = '0';
         el.style.padding = '0';
-        el.style.minHeight = '100%';
+        el.style.width = `${targetWidth}px`;
+        el.style.height = `${totalHeight}px`; // Force exact height
+        el.style.minHeight = `${totalHeight}px`;
+        el.style.overflow = 'hidden';
     });
 
-    const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            width: '100%',
+            width: `${targetWidth}px`,
             maxWidth: 'none',
             padding: '10mm 15mm',
-            paddingBottom: `${padding + 10}px`, // Slight buffer to ensure full coverage
-            margin: '0',
+            paddingBottom: `${padding}px`, 
+            margin: '0 auto',
             backgroundColor: 'transparent',
             backgroundImage: 'none',
             boxShadow: 'none',
@@ -98,6 +110,7 @@ function applyDocumentFixes(clonedDoc, padding) {
         body::before, body::after { display: none !important; }
         .export-banner, .nav-links, .map-3d-ui, .map-zoom-controls { display: none !important; }
         .glass { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+        * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
     `;
     clonedDoc.head.appendChild(style);
 }
