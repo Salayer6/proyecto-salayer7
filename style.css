@@ -2108,16 +2108,21 @@ body.exporting-digital .skill-map-section {
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: 100mm !important;
+    margin-top: 15mm !important;
 }
 
 body.exporting-digital #experience {
-    margin-top: 130mm !important;
+    margin-top: 20mm !important;
 }
 
 body.exporting-digital #education {
-    margin-top: 70mm !important;
+    margin-top: 15mm !important;
 }
+
+body.exporting-digital #specialized-edu {
+    margin-top: 10mm !important;
+}
+
 
 /* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
 body.exporting-digital .bubble-container {
@@ -2232,25 +2237,29 @@ body.exporting-digital .gauge-desc {
 /* ── 8. Educación y Timeline ────────────────────────── */
 body.exporting-digital .edu-grid,
 body.exporting-digital .edu-grid-secondary {
-    grid-template-columns: 1fr 1fr !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
     gap: 4mm !important;
 }
 
-body.exporting-digital .edu-item {
+body.exporting-digital .edu-item,
+body.exporting-digital .edu-item-small {
+    flex: 1 1 45% !important;
     padding: 4mm !important;
     border-radius: 6px !important;
     background: transparent !important;
     border-color: rgba(150, 95, 212, 0.1) !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+}
+
+body.exporting-digital .edu-item-full {
+    flex: 1 1 100% !important;
 }
 
 body.exporting-digital .edu-heading { font-size: 1.05rem !important; }
 body.exporting-digital .edu-org,
 body.exporting-digital .edu-meta { font-size: 0.8rem !important; }
-
-body.exporting-digital .secondary-edu-header {
-    margin: 4mm 0 2mm !important;
-    padding-top: 4mm !important;
-}
 
 body.exporting-digital .timeline-item,
 body.exporting-digital .contact-item-wrapper,
@@ -2259,6 +2268,7 @@ body.exporting-digital .gauge-item {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
 }
+
 
 /* ── 9. Elementos UI Web (Fuera de Impresión) ───────── */
 @media screen {
