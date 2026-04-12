@@ -2146,7 +2146,7 @@ body.exporting-digital #experience {
 }
 
 body.exporting-digital #education {
-    margin-top: 85mm !important;
+    margin-top: -5mm !important;
     padding-top: 5mm !important;
 }
 
