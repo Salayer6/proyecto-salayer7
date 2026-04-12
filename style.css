@@ -1,22 +1,41 @@
 :root {
-    --bg-color: #1d1a2f;
-    --card-bg: rgba(30, 41, 59, 0.4);
-    --accent-primary: #965fd4;
-    --accent-secondary: #734f9a;
-    --accent-green: #3f6d4e;
-    --accent-lime: #8bd450;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --accent-cyan: #22d3ee;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-blur: blur(12px);
+    /* ── Fondos ───────────────────────────────────────── */
+    --bg-color:          #1d1a2f;
+    --bg-deep:           #14112a;
+    --surface:           #1e293b;
+    --card-bg:           rgba(30, 41, 59, 0.4);
 
-    --font-header: 'Barlow Condensed', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'IBM Plex Mono', monospace;
+    /* ── Acentos ──────────────────────────────────────── */
+    --accent-primary:    #965fd4;
+    --accent-secondary:  #734f9a;
+    --accent-cyan:       #22d3ee;
+    --accent-lime:       #8bd450;
+    --accent-green:      #10b981;
+    --accent-red:        #ef4444;
+    --accent-amber:      #f59e0b;
+    --accent-pink:       #f472b6;
+    --accent-sky:        #38bdf8;
+    --accent-teal:       #48e699;
 
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* ── Texto ────────────────────────────────────────── */
+    --text-primary:      #f1f5f9;
+    --text-secondary:    #94a3b8;
+    --text-muted:        #64748b;
+    --text-dark:         #334155;
+
+    /* ── Bordes / Glass ───────────────────────────────── */
+    --border-color:      rgba(255, 255, 255, 0.08);
+    --border-light:      rgba(255, 255, 255, 0.12);
+    --glass-border:      rgba(255, 255, 255, 0.10);
+    --glass-blur:        blur(12px);
+
+    /* ── Tipografía ───────────────────────────────────── */
+    --font-header:       'Barlow Condensed', sans-serif;
+    --font-body:         'Inter', sans-serif;
+    --font-mono:         'IBM Plex Mono', monospace;
+
+    /* ── Miscelánea ───────────────────────────────────── */
+    --transition:        all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sr-only {
@@ -127,7 +146,7 @@ header {
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--accent-primary);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* shadow-sm */
     flex-shrink: 0;
     aspect-ratio: 1 / 1;
 }
@@ -155,7 +174,7 @@ h1 .accent {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(150, 95, 212, 0.3));
+    filter: drop-shadow(0 0 10px rgba(150, 95, 212, 0.3)); /* accent-primary/30 */
 }
 
 .subtitle {
@@ -187,7 +206,7 @@ h1 .accent {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03); /* surface-xs */
     border: 1px solid var(--border-color);
 }
 
@@ -196,7 +215,7 @@ h1 .accent {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
     border-color: var(--accent-lime);
-    box-shadow: 0 0 15px rgba(139, 212, 80, 0.3);
+    box-shadow: 0 0 15px rgba(139, 212, 80, 0.3); /* accent-lime/30 */
 }
 
 .contact-grid {
@@ -208,7 +227,7 @@ h1 .accent {
     margin-left: auto;
     margin-right: auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.03); /* surface-xs */
     border-radius: 20px;
     border: 1px solid var(--border-color);
 }
@@ -242,7 +261,7 @@ h1 .accent {
     border-radius: 12px;
     transition: var(--transition);
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.02); /* surface-2xs */
     border: 1px solid transparent;
 }
 
@@ -310,7 +329,7 @@ h1 .accent {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
-    border-color: rgba(150, 95, 212, 0.3);
+    border-color: rgba(150, 95, 212, 0.3); /* accent-primary/30 */
 }
 
 .card-header {
@@ -397,7 +416,7 @@ h1 .accent {
 .quote {
     margin-top: 2rem;
     padding: 1.5rem 2rem;
-    background: rgba(139, 212, 80, 0.05);
+    background: rgba(139, 212, 80, 0.05); /* accent-lime/5 */
     border-left: 4px solid var(--accent-lime);
     font-style: italic;
     color: var(--text-secondary);
@@ -459,7 +478,7 @@ h1 .accent {
     font-size: 0.9rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* shadow-xs */
 }
 
 .main-toggle:hover {
@@ -570,12 +589,12 @@ h1 .accent {
 }
 
 .contact-info-box {
-    background: rgba(20, 20, 30, 0.6);
+    background: rgba(20, 20, 30, 0.6); /* bg-deep/60 */
     border-left: 3px solid var(--accent-cyan);
     padding: 10px 12px;
     border-radius: 0 8px 8px 0;
     font-size: 0.8rem;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     line-height: 1.4;
 }
 
@@ -616,7 +635,7 @@ h1 .accent {
 
 .edu-item.highlight {
     border-left-color: var(--accent-lime);
-    background: rgba(139, 212, 80, 0.04);
+    background: rgba(139, 212, 80, 0.04); /* accent-lime/4 */
 }
 
 .edu-item-full {
@@ -856,9 +875,9 @@ h1 .accent {
 }
 
 .btn-zoom {
-    background: rgba(40, 40, 50, 0.8);
+    background: rgba(40, 40, 50, 0.8); /* surface-dark/80 */
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--border-light);
     color: var(--text-primary);
     width: 36px;
     height: 36px;
@@ -872,7 +891,7 @@ h1 .accent {
 
 .btn-zoom:hover {
     background: var(--accent-cyan);
-    color: #000;
+    color: var(--bg-color);
 }
 
 .skill-bubble-svg {
@@ -1008,7 +1027,7 @@ h1 .accent {
 /* Hybrid leaning hard (cyan-lime) */
 .skill-bubble-hybrid-hard {
     fill: rgba(72, 230, 150, 0.15);
-    stroke: #48e699;
+    stroke: var(--accent-teal);
     filter: drop-shadow(0 0 8px rgba(72, 230, 150, 0.45));
 }
 
@@ -1020,7 +1039,7 @@ h1 .accent {
     fill: var(--text-primary);
     text-anchor: middle;
     paint-order: stroke;
-    stroke: rgba(20, 18, 40, 0.9);
+    stroke: rgba(20, 18, 40, 0.9); /* bg-deep/90 */
     stroke-width: 3px;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -1038,7 +1057,7 @@ h1 .accent {
 }
 
 .tooltip-bg {
-    fill: rgba(20, 16, 45, 0.94);
+    fill: rgba(20, 16, 45, 0.94); /* bg-deep/94 */
     stroke: rgba(255, 255, 255, 0.12);
     stroke-width: 1;
     filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
@@ -1106,15 +1125,15 @@ h1 .accent {
 }
 
 .conn-soft {
-    stroke: #965fd4;
+    stroke: var(--accent-primary);
 }
 
 .conn-hard {
-    stroke: #8bd450;
+    stroke: var(--accent-lime);
 }
 
 .conn-hybrid {
-    stroke: #22d3ee;
+    stroke: var(--accent-cyan);
 }
 
 /* Bubble nodes */
@@ -1124,22 +1143,22 @@ h1 .accent {
 
 .bnode-soft {
     fill: rgba(150, 95, 212, 0.20);
-    stroke: #965fd4;
+    stroke: var(--accent-primary);
 }
 
 .bnode-hard {
     fill: rgba(139, 212, 80, 0.18);
-    stroke: #8bd450;
+    stroke: var(--accent-lime);
 }
 
 .bnode-hybrid {
     fill: rgba(34, 211, 238, 0.15);
-    stroke: #22d3ee;
+    stroke: var(--accent-cyan);
 }
 
 .bnode-hybrid-warm {
-    fill: rgba(255, 183, 77, 0.18);
-    stroke: #ffb74d;
+    fill: rgba(255, 183, 77, 0.18); /* accent-amber/18 */
+    stroke: var(--accent-amber);
 }
 
 .bnode-big {
@@ -1151,7 +1170,7 @@ h1 .accent {
     font-family: var(--font-body, 'Inter', sans-serif);
     font-size: 7.5px;
     font-weight: 600;
-    fill: #e2e8f0;
+    fill: var(--text-primary);
     dominant-baseline: middle;
     pointer-events: none;
 }
@@ -1167,15 +1186,15 @@ h1 .accent {
 }
 
 .zone-soft {
-    fill: #965fd4;
+    fill: var(--accent-primary);
 }
 
 .zone-hard {
-    fill: #8bd450;
+    fill: var(--accent-lime);
 }
 
 .zone-hybrid {
-    fill: #22d3ee;
+    fill: var(--accent-cyan);
 }
 
 /* Keep radar container hidden */
@@ -1283,30 +1302,11 @@ h1 .accent {
 }
 
 /* Custom Gauge Colors (NPS and Specials) */
-.color-nps-red {
-    --gauge-color: #ef4444;
-    /* Rojo para detractores / bajo */
-}
-
-.color-nps-yellow {
-    --gauge-color: #f59e0b;
-    /* Amarillo/Naranja para pasivos / medio */
-}
-
-.color-nps-green {
-    --gauge-color: #10b981;
-    /* Verde para promotores / alto */
-}
-
-.color-coffee {
-    --gauge-color: #ff9800;
-    /* Naranja propio */
-}
-
-.color-affection {
-    /* Usamos un color solido como fallback, el gradiente va directo en el SVG o via text-fill */
-    --gauge-color: #f472b6;
-}
+.color-nps-red    { --gauge-color: var(--accent-red);   /* Rojo: detractores / bajo    */ }
+.color-nps-yellow { --gauge-color: var(--accent-amber); /* Ámbar: pasivos / medio       */ }
+.color-nps-green  { --gauge-color: var(--accent-green); /* Verde: promotores / alto     */ }
+.color-coffee     { --gauge-color: var(--accent-amber); /* Naranja coke (= amber)        */ }
+.color-affection  { --gauge-color: var(--accent-pink);  /* Gradiente en SVG vía fallback */ }
 
 .gauge-fill {
     fill: none;
@@ -1321,7 +1321,7 @@ h1 .accent {
    lo pasamos directo por url(#affection-gradient) en el path. */
 path.gauge-fill-affection {
     stroke: url(#affection-gradient) !important;
-    filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.6)) !important;
+    filter: drop-shadow(0 0 5px rgba(244, 114, 182, 0.6)) !important; /* accent-pink/60 */
 }
 
 
@@ -1370,7 +1370,7 @@ path.gauge-fill-affection {
 }
 
 .color-affection .gauge-desc {
-    background: linear-gradient(90deg, #f472b6, #38bdf8);
+    background: linear-gradient(90deg, var(--accent-pink), var(--accent-sky));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -1433,7 +1433,7 @@ path.gauge-fill-affection {
     font-family: var(--font-header);
     cursor: pointer;
     font-size: 1.1rem;
-    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 4px 20px rgba(150, 95, 212, 0.4); /* accent-primary/40 */
     transition: filter 0.3s, transform 0.2s;
 }
 
@@ -1683,13 +1683,14 @@ path.gauge-fill-affection {
     }
 
     :root {
-        --bg-color: #ffffff;
-        --text-primary: #000000;
+        /* Print overrides — light theme */
+        --bg-color:       #ffffff;
+        --text-primary:   #000000;
         --text-secondary: #334155;
-        --border-color: #cbd5e1;
+        --border-color:   #cbd5e1;
         --accent-primary: #4f46e5;
-        --accent-lime: #16a34a;
-        --accent-purple: #7c3aed;
+        --accent-lime:    #16a34a;
+        --accent-secondary: #7c3aed;
     }
 
     body {
@@ -1792,7 +1793,7 @@ path.gauge-fill-affection {
     }
 
     .edu-item {
-        background: #f8fafc !important;
+        background: var(--bg-color-light, #f8fafc) !important;
         border-left-width: 4px !important;
         padding: 0.8rem !important;
         border-radius: 8px !important;
@@ -1818,7 +1819,7 @@ path.gauge-fill-affection {
     }
 
     .edu-item.highlight {
-        background: #f0fdf4 !important;
+        background: var(--bg-color-success, #f0fdf4) !important;
     }
 
     /* Bubble Map 2D for Print */
@@ -1917,26 +1918,11 @@ path.gauge-fill-affection {
         stroke-width: 14 !important;
     }
 
-    /* Fallback solid colors for print (no vars) */
-    .color-nps-red .gauge-fill {
-        stroke: #ef4444 !important;
-    }
-
-    .color-nps-yellow .gauge-fill {
-        stroke: #f59e0b !important;
-    }
-
-    .color-nps-green .gauge-fill {
-        stroke: #10b981 !important;
-    }
-
-    .color-coffee .gauge-fill {
-        stroke: #ff9800 !important;
-    }
-
-    .color-affection .gauge-fill {
-        stroke: #f472b6 !important;
-    }
+    .color-nps-red .gauge-fill    { stroke: var(--accent-red)   !important; }
+    .color-nps-yellow .gauge-fill { stroke: var(--accent-amber) !important; }
+    .color-nps-green .gauge-fill  { stroke: var(--accent-green) !important; }
+    .color-coffee .gauge-fill     { stroke: var(--accent-amber) !important; }
+    .color-affection .gauge-fill  { stroke: var(--accent-pink)  !important; }
 
     .gauge-value {
         color: black !important;
@@ -2100,7 +2086,7 @@ body.exporting-digital .glass {
 }
 
 body.exporting-digital .card-header h2 {
-    color: #22d3ee !important;
+    color: var(--accent-cyan) !important;
     margin-bottom: 1mm !important;
 }
 
@@ -2134,7 +2120,7 @@ body.exporting-digital #profile .card-header {
 }
 
 body.exporting-digital .skill-map-section {
-    margin-top: 150mm !important;
+    margin-top: 155mm !important;
 }
 
 body.exporting-digital #vitalsigns {
