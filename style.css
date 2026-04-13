@@ -2077,7 +2077,7 @@ body.exporting-digital .profile-photo-container {
 
 body.exporting-digital .profile-photo {
     width: 100% !important;
-    height: 100% !important;
+    height: auto-fit !important;
     object-fit: cover !important;
     display: block !important;
 }
@@ -2138,12 +2138,12 @@ body.exporting-digital .skill-map-section {
 
 body.exporting-digital #vitalsigns {
     margin-top: 0 !important;
-    margin-bottom: -28mm !important;
+    margin-bottom: 0mm !important;
 }
 
 body.exporting-digital #experience {
     margin-top: 0 !important;
-    margin-bottom: 10mm !important;
+    margin-bottom: 0mm !important;
 }
 
 body.exporting-digital #education {
