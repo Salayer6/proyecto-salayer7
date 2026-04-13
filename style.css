@@ -2211,7 +2211,7 @@ body.exporting-digital #education .card-header {
 }
 
 body.exporting-digital #education h2 {
-    margin: 0 !important;
+    margin-top: -10 !important;
 }
 
 body.exporting-digital #specialized-edu {
