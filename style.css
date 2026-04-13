@@ -626,16 +626,30 @@ h1 .accent {
 }
 
 .edu-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.02);
     padding: 1.5rem;
     border-radius: 16px;
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--accent-secondary);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.edu-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-secondary);
+    transform: translateY(-3px) translateX(4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .edu-item.highlight {
     border-left-color: var(--accent-lime);
-    background: rgba(139, 212, 80, 0.04); /* accent-lime/4 */
+    background: rgba(139, 212, 80, 0.03); /* accent-lime/3 */
+}
+
+.edu-item.highlight:hover {
+    border-color: var(--accent-lime);
 }
 
 .edu-item-full {
@@ -651,22 +665,45 @@ h1 .accent {
 }
 
 .edu-heading {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 700;
+    color: var(--text-primary);
     font-family: var(--font-header);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
 }
 
 .edu-org {
-    font-size: 0.95rem;
-    color: var(--text-primary);
+    font-size: 0.9rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.edu-org a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.edu-org a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
 }
 
 .edu-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
+    line-height: 1.5;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.75rem;
+}
+
+.edu-meta strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .secondary-edu-header {
