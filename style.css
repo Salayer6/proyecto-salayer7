@@ -2123,6 +2123,7 @@ body.exporting-digital .content-main {
 body.exporting-digital #profile {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-bottom: 165mm !important;
 }
 
 body.exporting-digital #profile .card-header {
@@ -2131,20 +2132,24 @@ body.exporting-digital #profile .card-header {
 }
 
 body.exporting-digital .skill-map-section {
-    margin-top: 165mm !important;
+    margin-top: 0 !important;
+    margin-bottom: 115mm !important;
 }
 
 body.exporting-digital #vitalsigns {
-    margin-top: 115mm !important;
+    margin-top: 0 !important;
+    margin-bottom: -28mm !important;
 }
 
 body.exporting-digital #experience {
-    margin-top: -28mm !important;
+    margin-top: 0 !important;
+    margin-bottom: 10mm !important;
 }
 
 body.exporting-digital #education {
-    margin-top: 10mm !important;
+    margin-top: 0 !important;
     padding-top: 5mm !important;
+    margin-bottom: 10mm !important;
 }
 
 body.exporting-digital #education .card-header {
@@ -2157,7 +2162,7 @@ body.exporting-digital #education h2 {
 }
 
 body.exporting-digital #specialized-edu {
-    margin-top: 10mm !important;
+    margin-top: 0 !important;
 }
 
 
