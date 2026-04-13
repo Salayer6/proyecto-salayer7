@@ -2147,12 +2147,12 @@ body.exporting-digital #experience {
 }
 
 body.exporting-digital #education {
-    margin-top: 0 !important;
-    margin-bottom: 0mm !important;
+    margin-top: -10mm !important;
+    margin-bottom: 10mm !important;
 }
 
 body.exporting-digital #education .card-header {
-    margin-bottom: 1mm !important;
+    margin-bottom: 0mm !important;
     padding-bottom: 0 !important;
 }
 
