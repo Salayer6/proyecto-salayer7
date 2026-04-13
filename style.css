@@ -1689,19 +1689,19 @@ path.gauge-fill-affection {
 
 @media print {
     @page {
-        size: A4;
+        size: letter;
         margin: 0;
     }
 
     :root {
-        /* Print overrides — light theme */
+        /* Print overrides — grayscale focused */
         --bg-color:       #ffffff;
         --text-primary:   #000000;
         --text-secondary: #334155;
         --border-color:   #cbd5e1;
-        --accent-primary: #4f46e5;
-        --accent-lime:    #16a34a;
-        --accent-secondary: #7c3aed;
+        --accent-primary: #1e293b;
+        --accent-lime:    #334155;
+        --accent-secondary: #475569;
     }
 
     body {
@@ -1847,38 +1847,38 @@ path.gauge-fill-affection {
     }
 
     .conn-soft {
-        stroke: #6d28d9 !important;
-        opacity: 0.4 !important;
+        stroke: #cbd5e1 !important;
+        opacity: 0.3 !important;
     }
 
     .conn-hard {
-        stroke: #4d7c0f !important;
-        opacity: 0.4 !important;
+        stroke: #cbd5e1 !important;
+        opacity: 0.3 !important;
     }
 
     .conn-hybrid {
-        stroke: #0e7490 !important;
-        opacity: 0.4 !important;
+        stroke: #cbd5e1 !important;
+        opacity: 0.3 !important;
     }
 
     .bnode-soft {
-        fill: rgba(109, 40, 217, 0.08) !important;
-        stroke: #6d28d9 !important;
+        fill: #f1f5f9 !important;
+        stroke: #64748b !important;
     }
 
     .bnode-hard {
-        fill: rgba(77, 124, 15, 0.08) !important;
-        stroke: #4d7c0f !important;
+        fill: #f1f5f9 !important;
+        stroke: #64748b !important;
     }
 
     .bnode-hybrid {
-        fill: rgba(14, 116, 144, 0.08) !important;
-        stroke: #0e7490 !important;
+        fill: #f1f5f9 !important;
+        stroke: #64748b !important;
     }
 
     .bnode-hybrid-warm {
-        fill: rgba(180, 83, 9, 0.08) !important;
-        stroke: #b45309 !important;
+        fill: #f1f5f9 !important;
+        stroke: #64748b !important;
     }
 
     .blabel {
@@ -1886,15 +1886,15 @@ path.gauge-fill-affection {
     }
 
     .zone-soft {
-        fill: #6d28d9 !important;
+        fill: #334155 !important;
     }
 
     .zone-hard {
-        fill: #4d7c0f !important;
+        fill: #334155 !important;
     }
 
     .zone-hybrid {
-        fill: #0e7490 !important;
+        fill: #334155 !important;
     }
 
     /* Radar (ahora legacy) sigue oculto */
@@ -1929,11 +1929,11 @@ path.gauge-fill-affection {
         stroke-width: 14 !important;
     }
 
-    .color-nps-red .gauge-fill    { stroke: var(--accent-red)   !important; }
-    .color-nps-yellow .gauge-fill { stroke: var(--accent-amber) !important; }
-    .color-nps-green .gauge-fill  { stroke: var(--accent-green) !important; }
-    .color-coffee .gauge-fill     { stroke: var(--accent-amber) !important; }
-    .color-affection .gauge-fill  { stroke: var(--accent-pink)  !important; }
+    .color-nps-red .gauge-fill    { stroke: #94a3b8 !important; }
+    .color-nps-yellow .gauge-fill { stroke: #64748b !important; }
+    .color-nps-green .gauge-fill  { stroke: #1e293b !important; }
+    .color-coffee .gauge-fill     { stroke: #64748b !important; }
+    .color-affection .gauge-fill  { stroke: #475569 !important; }
 
     .gauge-value {
         color: black !important;
