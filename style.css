@@ -131,7 +131,6 @@ header {
 }
 
 .profile-photo-wrapper {
-    grid-column: 1 / -1 !important;
     display: flex;
     justify-content: center;
     margin-bottom: 1.5rem;
@@ -430,31 +429,7 @@ h1 .accent {
     gap: 2.5rem;
 }
 
-/* Profile Section (Deprecated, moved to header) */
-.profile-card {
-    text-align: center;
-}
-
-.profile-img-container {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 1.5rem;
-    border-radius: 30px;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    padding: 4px;
-}
-
-.profile-img-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--bg-color);
-    border-radius: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-}
-
+/* Contact Info Box */
 .contact-info {
     margin-top: 2rem;
     text-align: left;
@@ -2013,7 +1988,7 @@ path.gauge-fill-affection {
 
 /* ── 1. Contenedor Principal (A4) ────────────────────── */
 body.exporting-digital {
-    background-color: #1d1a2f !important;
+    background-color: var(--bg-color) !important;
     background-image: none !important;
     overflow: visible !important;
 }
@@ -2023,7 +1998,7 @@ body.exporting-digital .container {
     margin: 0 auto !important;
     padding: 10mm 15mm !important;
     min-height: 297mm !important;
-    background-color: #1d1a2f !important;
+    background-color: var(--bg-color) !important;
     background-image:
         radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
@@ -2216,7 +2191,7 @@ body.exporting-digital .skill-map-legend {
 body.exporting-digital .blabel {
     font-size: 10px !important;
     font-weight: 800 !important;
-    fill: #ffffff !important;
+    fill: var(--text-primary) !important;
 }
 
 body.exporting-digital .zone-label {
@@ -2237,7 +2212,7 @@ body.exporting-digital .hub-circle {
 
 /* ── 7. Velocímetros (Gauges) ───────────────────────── */
 body.exporting-digital .gauge-bg {
-    stroke: #334155 !important;
+    stroke: var(--text-muted) !important;
 }
 
 body.exporting-digital .gauge-fill {
@@ -2245,11 +2220,11 @@ body.exporting-digital .gauge-fill {
     stroke-width: 14 !important;
 }
 
-body.exporting-digital .color-nps-red .gauge-fill { stroke: #ef4444 !important; }
-body.exporting-digital .color-nps-yellow .gauge-fill { stroke: #f59e0b !important; }
-body.exporting-digital .color-nps-green .gauge-fill { stroke: #10b981 !important; }
-body.exporting-digital .color-coffee .gauge-fill { stroke: #ff9800 !important; }
-body.exporting-digital .color-affection .gauge-fill { stroke: #f472b6 !important; }
+body.exporting-digital .color-nps-red .gauge-fill    { stroke: var(--accent-red)   !important; }
+body.exporting-digital .color-nps-yellow .gauge-fill { stroke: var(--accent-amber) !important; }
+body.exporting-digital .color-nps-green .gauge-fill  { stroke: var(--accent-green) !important; }
+body.exporting-digital .color-coffee .gauge-fill     { stroke: var(--accent-amber) !important; }
+body.exporting-digital .color-affection .gauge-fill  { stroke: var(--accent-pink)  !important; }
 
 body.exporting-digital .gauge-grid {
     display: grid !important;
