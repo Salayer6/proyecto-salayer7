@@ -2138,18 +2138,17 @@ body.exporting-digital .skill-map-section {
 
 body.exporting-digital #vitalsigns {
     margin-top: 0 !important;
-    margin-bottom: 0mm !important;
+    margin-bottom: 10mm !important;
 }
 
 body.exporting-digital #experience {
     margin-top: 0 !important;
-    margin-bottom: 0mm !important;
+    margin-bottom: 30mm !important;
 }
 
 body.exporting-digital #education {
     margin-top: 0 !important;
-    padding-top: 5mm !important;
-    margin-bottom: 10mm !important;
+    margin-bottom: 0mm !important;
 }
 
 body.exporting-digital #education .card-header {
