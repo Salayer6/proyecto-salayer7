@@ -2142,7 +2142,7 @@ body.exporting-digital #vitalsigns {
 }
 
 body.exporting-digital #experience {
-    margin-top: 0 !important;
+    margin-top: 1mm !important;
     margin-bottom: 10mm !important;
 }
 
