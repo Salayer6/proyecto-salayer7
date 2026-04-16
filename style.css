@@ -2348,7 +2348,7 @@ body.exporting-digital .edu-grid,
 body.exporting-digital .edu-grid-secondary {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 4mm !important;
+    gap: 2mm !important;
 }
 
 body.exporting-digital .edu-item,
