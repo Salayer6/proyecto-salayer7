@@ -2349,13 +2349,13 @@ body.exporting-digital .edu-grid-secondary {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 2mm !important;
-    padding: 0mm !important;
+
 }
 
 body.exporting-digital .edu-item,
 body.exporting-digital .edu-item-small {
     flex: 1 1 45% !important;
-    padding: 4mm !important;
+    padding: 2mm !important;
     border-radius: 6px !important;
     background: transparent !important;
     border-color: rgba(150, 95, 212, 0.1) !important;
