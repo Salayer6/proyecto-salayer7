@@ -2201,8 +2201,8 @@ body.exporting-digital #experience {
 }
 
 body.exporting-digital #education {
-    margin-top: -39mm !important;
-    margin-bottom: 0mm !important;
+    margin-top: -59mm !important;
+    padding-bottom: -8mm !important;
 }
 
 body.exporting-digital #education .card-header {
