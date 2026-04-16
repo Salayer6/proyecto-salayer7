@@ -2202,7 +2202,7 @@ body.exporting-digital #experience {
 
 body.exporting-digital #education {
     margin-top: -70mm !important;
-    margin-bottom: -8mm !important;
+    margin-bottom: 25mm !important;
 }
 
 body.exporting-digital #education .card-header {
