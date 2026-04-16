@@ -2197,13 +2197,12 @@ body.exporting-digital #vitalsigns {
 
 body.exporting-digital #experience {
     margin-top: 1mm !important;
-    margin-bottom: 50mm !important;
+    margin-bottom: 70mm !important;
 }
 
 body.exporting-digital #education {
     margin-top: -19mm !important;
     margin-bottom: -8mm !important;
-    padding-bottom: -1mm !important;
 }
 
 body.exporting-digital #education .card-header {
