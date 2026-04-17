@@ -41,6 +41,7 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
+            windowWidth: 1200,
             onclone: (clonedDoc) => {
                 applyDocumentFixes(clonedDoc, perfectPadding);
                 fixProfileImage(clonedDoc);

@@ -53,6 +53,19 @@ const translations = {
         exp_title: "Trayectoria Profesional",
         profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de AI y Datos Faeneros, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
         specialized_title: "Formación autónoma complementaria",
+
+        // Tech Vitals
+        tech_excel: "Avanzado",
+        tech_bq: "Lee y Depura",
+        tech_m: "Ejecuta",
+        tech_dax: "Muestra",
+        tech_py: "Estudia ML+PyTorch",
+        tech_bash: "Autodidacta",
+        tech_js: "Entiende",
+        tech_genai: "Vanguardia",
+        tech_pbi: "Produce",
+        tech_html: "Administra",
+        tech_r: "No Requerido",
     },
 
     en: {
@@ -93,6 +106,18 @@ const translations = {
         exp_title: "Professional Background",
         profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Mining Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
         specialized_title: "Complementary & Specialized Training",
+
+        tech_excel: "Advanced",
+        tech_bq: "Reads & Debugs",
+        tech_m: "Executes",
+        tech_dax: "Shows",
+        tech_py: "Studies ML+PyTorch",
+        tech_bash: "Self-taught",
+        tech_js: "Understands",
+        tech_genai: "Avant-garde",
+        tech_pbi: "Produces",
+        tech_html: "Administers",
+        tech_r: "Not Required",
     },
 
     de: {
@@ -133,6 +158,18 @@ const translations = {
         exp_title: "Beruflicher Werdegang",
         profile_desc: "Ich kombiniere technische Basis mit strategischer Vision für Data-Driven Unternehmen. Spezialisiert auf den Übergang von Automotive Engineering zu AI & Data Engineering, integriere ich Generative AI in Control, BI & Analytics Workflows.",
         specialized_title: "Zusatzqualifikationen & Fachausbildung",
+
+        tech_excel: "Fortgeschritten",
+        tech_bq: "Liest & Debuggt",
+        tech_m: "Führt aus",
+        tech_dax: "Zeigt",
+        tech_py: "Studiert ML+PyTorch",
+        tech_bash: "Autodidakt",
+        tech_js: "Versteht",
+        tech_genai: "Avantgarde",
+        tech_pbi: "Produziert",
+        tech_html: "Verwaltet",
+        tech_r: "Nicht erforderlich",
     },
 
     ja: {
@@ -173,6 +210,18 @@ const translations = {
         exp_title: "職歴",
         profile_desc: "データドリブンな企業向けに、技術的基盤と戦略的ビジョンを統合します。自動車工学からAIおよびデータエンジニアリングへの転換を専門とし、生成AI（Generative AI）を管理、BI、およびアナリティクスワークフローに統合します。",
         specialized_title: "補足教育および専門トレーニング",
+
+        tech_excel: "上級",
+        tech_bq: "読み取り・デバッグ",
+        tech_m: "実行",
+        tech_dax: "表示",
+        tech_py: "ML+PyTorchを学習中",
+        tech_bash: "独学",
+        tech_js: "理解",
+        tech_genai: "アバンギャルド",
+        tech_pbi: "作成",
+        tech_html: "管理",
+        tech_r: "不要",
     },
 
     ru: {
@@ -212,6 +261,18 @@ const translations = {
         profile_title: "Стратегический профиль",
         exp_title: "Профессиональный путь",
         specialized_title: "Дополнительное и специальное образование",
+
+        tech_excel: "Продвинутый",
+        tech_bq: "Читает и отлаживает",
+        tech_m: "Выполняет",
+        tech_dax: "Показывает",
+        tech_py: "Изучает ML+PyTorch",
+        tech_bash: "Самоучка",
+        tech_js: "Понимает",
+        tech_genai: "Авангард",
+        tech_pbi: "Производит",
+        tech_html: "Администрирует",
+        tech_r: "Не требуется",
     }
 };
 
