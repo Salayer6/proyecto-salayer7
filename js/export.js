@@ -41,7 +41,7 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
-            windowWidth: 1200,
+            windowWidth: 1100,
             onclone: (clonedDoc) => {
                 applyDocumentFixes(clonedDoc, perfectPadding);
                 fixProfileImage(clonedDoc);
@@ -84,10 +84,12 @@ function applyDocumentFixes(clonedDoc, padding) {
     const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            // Removed explicit 210mm width, letting html2pdf handle scaling naturally
+            // Fixed width to match windowWidth and prevent lateral shifting
             padding: '10mm 15mm',
             paddingBottom: `${padding}px`,
-            margin: '0',
+            margin: '0 auto',
+            width: '1100px',
+            maxWidth: '1100px',
             backgroundColor: EXPORT_CONFIG.bgColor,
             backgroundImage: EXPORT_CONFIG.noiseFilter,
             boxShadow: 'none',

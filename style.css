@@ -134,6 +134,7 @@ header {
     justify-content: center;
     margin-bottom: 1.5rem;
     width: 100%;
+    grid-column: 1 / -1;
 }
 
 
