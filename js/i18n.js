@@ -302,12 +302,19 @@ function applyTranslations(lang) {
     document.documentElement.lang = lang;
 }
 
-// Inicializar al cargar
-document.addEventListener('DOMContentLoaded', () => {
+function initI18n() {
     const lang = detectLang();
     applyTranslations(lang);
 
     // Exponer globalmente para que se pueda forzar desde consola: setLang('en')
     window.setLang = (l) => applyTranslations(l);
     window.currentLang = lang;
-});
+    window.translations = translations;
+}
+
+// Inicializar al cargar
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initI18n);
+} else {
+    initI18n();
+}
