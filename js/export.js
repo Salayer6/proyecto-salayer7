@@ -12,6 +12,19 @@ const EXPORT_CONFIG = {
 };
 
 function exportDigitalCV() {
+    // Definimos si es un dispositivo móvil revisando el User-Agent
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+        // En móvil, se prefiere descargar el PDF almacenado estáticamente
+        const link = document.createElement('a');
+        link.href = 'assets/CV_Ignacio_Salas_Digital.pdf';
+        link.download = EXPORT_CONFIG.filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        return;
+    }
+
     const overlay = document.getElementById('export-overlay');
     if (overlay) overlay.style.display = 'flex';
 
@@ -41,7 +54,6 @@ function exportDigitalCV() {
             logging: false,
             scrollY: 0, 
             scrollX: 0,
-            windowWidth: 1100,
             onclone: (clonedDoc) => {
                 applyDocumentFixes(clonedDoc, perfectPadding);
                 fixProfileImage(clonedDoc);
@@ -84,12 +96,10 @@ function applyDocumentFixes(clonedDoc, padding) {
     const container = clonedDoc.querySelector('.container');
     if (container) {
         Object.assign(container.style, {
-            // Fixed width to match windowWidth and prevent lateral shifting
+            // Removed explicit 210mm width, letting html2pdf handle scaling naturally
             padding: '10mm 15mm',
             paddingBottom: `${padding}px`,
-            margin: '0 auto',
-            width: '1100px',
-            maxWidth: '1100px',
+            margin: '0',
             backgroundColor: EXPORT_CONFIG.bgColor,
             backgroundImage: EXPORT_CONFIG.noiseFilter,
             boxShadow: 'none',
