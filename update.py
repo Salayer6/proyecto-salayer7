@@ -61,25 +61,25 @@ replacement_html = """<div class="carousel-container">
                                             class="gauge-name">Terminal</span><span class="gauge-desc">Conectado y Estable</span>
                                     </div>
                                 </div>
-                                <!-- 5. Attended mental health: 85% -->
+                                <!-- 5. Attended mental health: 86% -->
                                 <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 9.42;" />
+                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 8.79;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">85%</span><span
+                                    <div class="gauge-info"><span class="gauge-value">86%</span><span
                                             class="gauge-name">Mental Health</span><span class="gauge-desc">Bajo Control</span>
                                     </div>
                                 </div>
-                                <!-- 6. Coffee/Coke: 20% -->
+                                <!-- 6. Coffee/Coke: 5% -->
                                 <div class="gauge-item color-coffee">
                                     <svg viewBox="0 0 100 100" class="gauge">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
+                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 59.66;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">20%</span><span
+                                    <div class="gauge-info"><span class="gauge-value">5%</span><span
                                             class="gauge-name">Coffee / Coke</span><span class="gauge-desc">Reserva Crítica</span>
                                     </div>
                                 </div>
