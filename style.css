@@ -2018,8 +2018,7 @@ path.gauge-fill-affection {
     .export-banner,
     .controls,
     .print-btn,
-    .carousel-container::-webkit-scrollbar,
-    .sr-only {
+    .carousel-container::-webkit-scrollbar {
         display: none !important;
     }
 
@@ -2063,7 +2062,6 @@ body.exporting-digital .export-banner,
 body.exporting-digital .html-tooltip,
 body.exporting-digital .main-toggle,
 body.exporting-digital .nav-links,
-body.exporting-digital .sr-only,
 body.exporting-digital .skill-map-wrapper,
 body.exporting-digital #skill-canvas-container,
 body.exporting-digital #skill-map-3d-canvas,
