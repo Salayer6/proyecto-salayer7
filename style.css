@@ -642,6 +642,29 @@ h1 .accent {
     grid-column: 1 / -1 !important;
 }
 
+/* Hover GIF Animation for Primavera P6 */
+.hover-gif-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease, margin-top 0.6s ease;
+}
+
+.primavera-hover-container:hover .hover-gif-wrapper {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.hover-gif-p6 {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    display: block;
+}
+
 .edu-date {
     font-size: 0.8rem;
     color: var(--accent-lime);
