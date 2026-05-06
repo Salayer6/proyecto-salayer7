@@ -6,9 +6,9 @@
 const EXPORT_CONFIG = {
     filename: 'CV Ignacio Antonio Salas Vega - Digital.pdf',
     bgColor: '#1d1a2f',
-    cardBgColor: 'rgba(30, 41, 59, 0.6)',
+    cardBgColor: 'rgba(30, 41, 59, 1)', // Solid color for better compression
     profileDim: '110px',
-    noiseFilter: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E")`
+    noiseFilter: 'none' // Removed textures
 };
 
 function exportPrintableCV() {
@@ -62,7 +62,7 @@ function exportDigitalCV() {
         filename: EXPORT_CONFIG.filename,
         image: { type: 'jpeg', quality: 1.0 },
         html2canvas: { 
-            scale: 2,
+            scale: 1.5,
             useCORS: true, 
             backgroundColor: EXPORT_CONFIG.bgColor, 
             logging: false,
@@ -101,8 +101,7 @@ function applyDocumentFixes(clonedDoc, padding) {
     rootElements.forEach(el => {
         // Removed explicit 210mm width to prevent "flattening" by scaling engines
         el.style.backgroundColor = EXPORT_CONFIG.bgColor;
-        el.style.backgroundImage = EXPORT_CONFIG.noiseFilter;
-        el.style.backgroundRepeat = 'repeat';
+        el.style.backgroundImage = 'none';
         el.style.margin = '0';
         el.style.padding = '0';
     });
@@ -115,7 +114,7 @@ function applyDocumentFixes(clonedDoc, padding) {
             paddingBottom: `${padding}px`,
             margin: '0',
             backgroundColor: EXPORT_CONFIG.bgColor,
-            backgroundImage: EXPORT_CONFIG.noiseFilter,
+            backgroundImage: 'none',
             boxShadow: 'none',
             minHeight: '100vh'
         });

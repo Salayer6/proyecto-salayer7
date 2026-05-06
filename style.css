@@ -2054,6 +2054,26 @@ path.gauge-fill-affection {
     }
 }
 
+/* ATS Metadata Persistence Layer */
+.ats-metadata {
+    pointer-events: none;
+    user-select: all;
+    z-index: -9999;
+}
+
+@media print {
+    .ats-metadata {
+        display: block !important;
+        opacity: 0.01 !important;
+        visibility: visible !important;
+        height: 1px !important;
+        width: 1px !important;
+        overflow: hidden !important;
+        position: absolute !important;
+    }
+}
+
+
 /* ═══════════════════════════════════════════════════════
    EXPORTACIÓN DIGITAL — body.exporting-digital
    Todas las unidades en mm para consistencia con A4 (210×297mm)
@@ -2072,10 +2092,8 @@ body.exporting-digital .container {
     padding: 10mm 15mm !important;
     min-height: 297mm !important;
     background-color: var(--bg-color) !important;
-    background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.75' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E") !important;
-    background-size: 22px 22px, 300px 300px !important;
+    background-image: none !important;
+    background-size: auto !important;
     overflow: visible !important;
     position: relative !important;
 }
@@ -2160,9 +2178,9 @@ body.exporting-digital .glass {
     padding: 10mm 15mm !important;
     margin-bottom: 8mm !important;
     border-radius: 12px !important;
-    background: rgba(30, 41, 59, 0.6) !important;
+    background: #1e293b !important; /* Solid background for cards */
     backdrop-filter: none !important;
-    border: 1px solid rgba(150, 95, 212, 0.25) !important;
+    border: 1px solid rgba(150, 95, 212, 0.2) !important;
     box-shadow: none !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
