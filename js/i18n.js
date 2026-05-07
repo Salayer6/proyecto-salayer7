@@ -7,7 +7,7 @@
 const translations = {
     es: {
         // Header
-        subtitle: "Ingeniero de AI y Datos Faeneros",
+        subtitle: "Prompt Engineer y Datos Faeneros",
         contact_title: "Información de contacto",
 
         // Sección Signos Vitales
@@ -51,7 +51,7 @@ const translations = {
 
         // Sección experiencia
         exp_title: "Trayectoria Profesional",
-        profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de AI y Datos Faeneros, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
+        profile_desc: "Propongo la integración de una sólida base técnico-operativa con visión estratégica para empresas Data Driven. Especializado en la transición desde la Ingeniería Automotriz hacia la Ingeniería de Prompt y Datos Faeneros, integrando Inteligencia Generativa en flujos de Control, BI & Analytics para optimizar el rendimiento, costos y plazos mediante automatización inteligente.",
         specialized_title: "Formación autónoma complementaria",
 
         // Tech Vitals
@@ -69,7 +69,7 @@ const translations = {
     },
 
     en: {
-        subtitle: "AI & Data Engineer for Mining Ops",
+        subtitle: "Prompt & Data Engineer for Mining Ops",
         contact_title: "Contact Information",
 
         vitals_title: "Vital Signs / Status",
@@ -104,7 +104,7 @@ const translations = {
         map_hint: "Drag to orbit",
         profile_title: "Strategic Profile",
         exp_title: "Professional Background",
-        profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to AI and Mining Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
+        profile_desc: "I propose integrating a solid technical-operational base with strategic vision for Data Driven companies. Specialized in the transition from Automotive Engineering to Prompt and Mining Data Engineering, integrating Generative Intelligence into Control, BI & Analytics workflows to optimize performance, costs, and deadlines through intelligent automation.",
         specialized_title: "Complementary & Specialized Training",
 
         tech_excel: "Advanced",
@@ -156,7 +156,7 @@ const translations = {
         map_hint: "Ziehen zum Navigieren",
         profile_title: "Strategisches Profil",
         exp_title: "Beruflicher Werdegang",
-        profile_desc: "Ich kombiniere technische Basis mit strategischer Vision für Data-Driven Unternehmen. Spezialisiert auf den Übergang von Automotive Engineering zu AI & Data Engineering, integriere ich Generative AI in Control, BI & Analytics Workflows.",
+        profile_desc: "Ich kombiniere technische Basis mit strategischer Vision für Data-Driven Unternehmen. Spezialisiert auf den Übergang von Automotive Engineering zu Prompt & Data Engineering, integriere ich Generative AI in Control, BI & Analytics Workflows.",
         specialized_title: "Zusatzqualifikationen & Fachausbildung",
 
         tech_excel: "Fortgeschritten",
@@ -208,7 +208,7 @@ const translations = {
         map_hint: "ドラッグで回転",
         profile_title: "戦略的プロフィール",
         exp_title: "職歴",
-        profile_desc: "データドリブンな企業向けに、技術的基盤と戦略的ビジョンを統合します。自動車工学からAIおよびデータエンジニアリングへの転換を専門とし、生成AI（Generative AI）を管理、BI、およびアナリティクスワークフローに統合します。",
+        profile_desc: "データドリブンな企業向けに、技術的基盤と戦略的ビジョンを統合します。自動車工学からPromptおよびデータエンジニアリングへの転換を専門とし、生成AI（Generative AI）を管理、BI、およびアナリティクスワークフローに統合します。",
         specialized_title: "補足教育および専門トレーニング",
 
         tech_excel: "上級",
