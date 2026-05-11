@@ -2201,15 +2201,7 @@ body.exporting-digital .card-header {
 
 
 /* ── 5. Ajustes de Márgenes de Sección ──────────────── */
-.pdf-export-spacer {
-    display: none;
-}
 
-body.exporting-digital .pdf-export-spacer {
-    display: block !important;
-    height: 150mm !important;
-    width: 100% !important;
-}
 
 body.exporting-digital .content-main {
     padding-top: 0 !important;
