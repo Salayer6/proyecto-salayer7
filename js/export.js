@@ -60,9 +60,9 @@ function exportDigitalCV() {
     const opt = {
         margin: 0,
         filename: EXPORT_CONFIG.filename,
-        image: { type: 'jpeg', quality: 1.0 },
+        image: { type: 'jpeg', quality: 0.7 },
         html2canvas: { 
-            scale: 1.5,
+            scale: 1,
             useCORS: true, 
             backgroundColor: EXPORT_CONFIG.bgColor, 
             logging: false,
@@ -74,9 +74,12 @@ function exportDigitalCV() {
                 fixVitalGauges(clonedDoc);
                 toggleSkillMaps(clonedDoc);
                 fixVisualStyles(clonedDoc);
+                // Ensure ATS metadata is visible in the PDF
+                const meta = clonedDoc.querySelectorAll('.ats-metadata');
+                meta.forEach(el => el.style.display = 'block');
             }
         },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
         pagebreak: { 
             mode: ['css', 'legacy'],
             before: '.pdf-page-break',
