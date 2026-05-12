@@ -2115,7 +2115,7 @@ body.exporting-digital br {
 
 /* ── 3. Header y Foto de Perfil ─────────────────────── */
 body.exporting-digital header {
-    margin-bottom: 6mm !important;
+    margin-bottom: 26mm !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
 }
@@ -2208,7 +2208,7 @@ body.exporting-digital .content-main {
 }
 
 body.exporting-digital #profile {
-    margin-top: 20mm !important;
+    margin-top: 0 !important;
     padding-top: 0 !important;
     margin-bottom: 10mm !important;
 }
@@ -2226,16 +2226,16 @@ body.exporting-digital .skill-map-section {
 
 body.exporting-digital #vitalsigns {
     margin-top: 0 !important;
-    margin-bottom: 70mm !important;
+    margin-bottom: 81mm !important;
 }
 
 body.exporting-digital #experience {
-    margin-top: 11mm !important;
-    margin-bottom: 100mm !important;
+    margin-top: 0 !important;
+    margin-bottom: 30mm !important;
 }
 
 body.exporting-digital #education {
-    margin-top: -70mm !important;
+    margin-top: 0 !important;
     margin-bottom: 25mm !important;
 }
 
