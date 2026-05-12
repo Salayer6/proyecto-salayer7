@@ -2067,22 +2067,50 @@ path.gauge-fill-affection {
     }
 }
 
-/* ATS Metadata Persistence Layer */
+/* ATS Metadata Persistence Layer — HiringRoom Compatible
+   Uses clip-rect technique: content stays in PDF text layer
+   but is invisible on screen. Parsers extract text normally. */
 .ats-metadata {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: normal;
+    border: 0;
     pointer-events: none;
     user-select: all;
     z-index: -9999;
+    color: transparent;
+    font-size: 1px;
+    line-height: 1;
+}
+
+/* Ensure inner elements don't inherit visible styles */
+.ats-metadata h2,
+.ats-metadata p,
+.ats-metadata section {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
 }
 
 @media print {
     .ats-metadata {
         display: block !important;
-        opacity: 0.01 !important;
         visibility: visible !important;
-        height: 1px !important;
-        width: 1px !important;
-        overflow: hidden !important;
         position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: normal !important;
+        color: transparent !important;
+        font-size: 1px !important;
     }
 }
 

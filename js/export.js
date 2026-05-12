@@ -74,9 +74,18 @@ function exportDigitalCV() {
                 fixVitalGauges(clonedDoc);
                 toggleSkillMaps(clonedDoc);
                 fixVisualStyles(clonedDoc);
-                // Ensure ATS metadata is visible in the PDF
+                // Ensure ATS metadata is in the PDF text layer for HiringRoom parser
                 const meta = clonedDoc.querySelectorAll('.ats-metadata');
-                meta.forEach(el => el.style.display = 'block');
+                meta.forEach(el => {
+                    el.style.display = 'block';
+                    el.style.position = 'absolute';
+                    el.style.width = '1px';
+                    el.style.height = '1px';
+                    el.style.overflow = 'hidden';
+                    el.style.clip = 'rect(0, 0, 0, 0)';
+                    el.style.color = 'transparent';
+                    el.style.fontSize = '1px';
+                });
             }
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
