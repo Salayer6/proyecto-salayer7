@@ -788,7 +788,7 @@ h1 .accent {
    ═══════════════════════════════════ */
 
 #profile {
-    margin-top: 0;
+    margin-top: 20mm;
 }
 
 .skill-map-section {
@@ -2247,7 +2247,7 @@ body.exporting-digital .content-main {
 }
 
 body.exporting-digital #profile {
-    margin-top: 0 !important;
+    margin-top: 20mm !important;
     padding-top: 0 !important;
     margin-bottom: 10mm !important;
 }
