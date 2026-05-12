@@ -414,7 +414,7 @@ h1 .accent {
 }
 
 .objective-text {
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: var(--text-primary);
 }
@@ -427,7 +427,7 @@ h1 .accent {
     border-left: 4px solid var(--accent-lime);
     font-style: italic;
     color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     border-radius: 0 16px 16px 0;
 }
 
@@ -598,7 +598,7 @@ h1 .accent {
     border: 1px solid var(--border-color);
     padding: 0.4rem 0.8rem;
     border-radius: 8px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--text-secondary);
 }
@@ -1837,6 +1837,17 @@ path.gauge-fill-affection {
         break-inside: avoid;
     }
 
+    /* Reducción Perfil Estratégico en Impresión */
+    #profile .objective-text {
+        font-size: 0.85rem !important;
+    }
+    #profile .badge {
+        font-size: 0.6rem !important;
+    }
+    #profile .quote {
+        font-size: 0.75rem !important;
+    }
+
     .export-banner,
     .main-toggle,
     .html-tooltip,
@@ -2211,6 +2222,18 @@ body.exporting-digital #profile {
     margin-top: 0 !important;
     padding-top: 0 !important;
     margin-bottom: 10mm !important;
+}
+
+body.exporting-digital #profile .objective-text {
+    font-size: 0.9rem !important;
+}
+
+body.exporting-digital #profile .badge {
+    font-size: 0.65rem !important;
+}
+
+body.exporting-digital #profile .quote {
+    font-size: 0.8rem !important;
 }
 
 body.exporting-digital #profile .card-header {
