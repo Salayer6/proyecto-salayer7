@@ -2116,359 +2116,261 @@ path.gauge-fill-affection {
 
 
 /* ═══════════════════════════════════════════════════════
-   EXPORTACIÓN DIGITAL — body.exporting-digital
-   Todas las unidades en mm para consistencia con A4 (210×297mm)
+   COLOR PRINT MODE — body.print-color
+   When the user selects "Versión Color", this class is added
+   to body before calling window.print(). It overrides the
+   default B&W print styles to preserve the dark-mode look
+   with full-color accents, while still using the native
+   print engine (text layer intact for ATS).
    ═══════════════════════════════════════════════════════ */
 
-/* ── 1. Contenedor Principal (A4) ────────────────────── */
-body.exporting-digital {
-    background-color: var(--bg-color) !important;
-    background-image: none !important;
-    overflow: visible !important;
-}
+@media print {
+    body.print-color {
+        background: var(--bg-color) !important;
+        color: var(--text-primary) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 
-body.exporting-digital .container {
-    max-width: 1000px !important;
-    margin: 0 auto !important;
-    padding: 10mm 15mm !important;
-    min-height: 297mm !important;
-    background-color: var(--bg-color) !important;
-    background-image: none !important;
-    background-size: auto !important;
-    overflow: visible !important;
-    position: relative !important;
-}
+    body.print-color :root {
+        --bg-color: #1d1a2f;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --border-color: rgba(255, 255, 255, 0.08);
+        --accent-primary: #965fd4;
+    }
 
-/* ── 2. Elementos ocultos ────────────────────────────── */
-body.exporting-digital .export-banner,
-body.exporting-digital .html-tooltip,
-body.exporting-digital .main-toggle,
-body.exporting-digital .nav-links,
-body.exporting-digital .skill-map-wrapper,
-body.exporting-digital #skill-canvas-container,
-body.exporting-digital #skill-map-3d-canvas,
-body.exporting-digital .map-3d-ui,
-body.exporting-digital br {
-    display: none !important;
-}
+    body.print-color .container {
+        background: var(--bg-color) !important;
+        padding: 1.5cm !important;
+    }
 
-/* ── 3. Header y Foto de Perfil ─────────────────────── */
-body.exporting-digital header {
-    margin-bottom: 6mm !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-}
+    body.print-color h1 {
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital h1 {
-    font-size: 2.2rem !important;
-    margin-bottom: 3mm !important;
-    text-align: center !important;
-    color: var(--text-primary) !important;
-}
+    body.print-color h1 .accent {
+        background: linear-gradient(135deg, #965fd4, #22d3ee) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
 
-body.exporting-digital .subtitle {
-    font-size: 1rem !important;
-    margin-bottom: 6mm !important;
-    letter-spacing: 0.2rem !important;
-    text-align: center !important;
-}
+    body.print-color .contact-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        padding: 1rem !important;
+        margin-top: 1rem !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 
-body.exporting-digital .contact-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 4mm !important;
-    padding: 6mm !important;
-    background: rgba(255, 255, 255, 0.03) !important;
-    margin: 4mm 0 10mm 0 !important;
-    max-height: none !important;
-    opacity: 1 !important;
-}
+    body.print-color .contact-item,
+    body.print-color .contact-item * {
+        color: var(--text-primary) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 
-body.exporting-digital .contact-item {
-    font-size: 0.85rem !important;
-    padding: 2mm !important;
-    color: var(--text-primary) !important;
-}
+    body.print-color .contact-item i {
+        color: var(--accent-cyan) !important;
+    }
 
-body.exporting-digital .contact-item span,
-body.exporting-digital .contact-item-header span {
-    color: var(--text-primary) !important;
-}
+    body.print-color .glass {
+        background: rgba(30, 41, 59, 0.8) !important;
+        border: 1px solid rgba(150, 95, 212, 0.2) !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+        break-inside: avoid;
+    }
 
-body.exporting-digital .profile-photo-container {
-    width: 28mm !important;
-    height: 28mm !important;
-    min-width: 28mm !important;
-    min-height: 28mm !important;
-    margin: 0 auto 4mm auto !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    aspect-ratio: 1 / 1 !important;
-    flex-shrink: 0 !important;
-}
+    body.print-color .card-header h2 {
+        color: var(--accent-cyan) !important;
+    }
 
-body.exporting-digital .profile-photo {
-    width: 100% !important;
-    height: auto-fit !important;
-    object-fit: cover !important;
-    display: block !important;
-}
+    /* Gauge colors preserved */
+    body.print-color .gauge-bg {
+        stroke: var(--text-muted) !important;
+    }
 
-/* ── 4. Tarjetas (Glass) ────────────────────────────── */
-body.exporting-digital .glass {
-    padding: 10mm 15mm !important;
-    margin-bottom: 8mm !important;
-    border-radius: 12px !important;
-    background: #1e293b !important; /* Solid background for cards */
-    backdrop-filter: none !important;
-    border: 1px solid rgba(150, 95, 212, 0.2) !important;
-    box-shadow: none !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    position: relative !important;
-}
+    body.print-color .gauge-fill {
+        filter: none !important;
+        stroke-width: 14 !important;
+    }
 
-body.exporting-digital .card-header h2 {
-    color: var(--accent-cyan) !important;
-    margin-bottom: 1mm !important;
-}
+    body.print-color .color-nps-red .gauge-fill {
+        stroke: var(--accent-red) !important;
+    }
 
-body.exporting-digital .card-header {
-    margin-bottom: 2mm !important;
-    padding-bottom: 1mm !important;
-}
+    body.print-color .color-nps-yellow .gauge-fill {
+        stroke: var(--accent-amber) !important;
+    }
 
+    body.print-color .color-nps-green .gauge-fill {
+        stroke: var(--accent-green) !important;
+    }
 
-/* ── 5. Ajustes de Márgenes de Sección ──────────────── */
+    body.print-color .color-coffee .gauge-fill {
+        stroke: var(--accent-amber) !important;
+    }
 
+    body.print-color .color-affection .gauge-fill {
+        stroke: var(--accent-pink) !important;
+    }
 
-body.exporting-digital .content-main {
-    padding-top: 0 !important;
-}
+    body.print-color .gauge-value {
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital #profile {
-    margin-top: 20mm !important;
-    padding-top: 0 !important;
-    margin-bottom: 10mm !important;
-}
+    body.print-color .gauge-name {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital #profile .objective-text {
-    font-size: 0.9rem !important;
-}
+    body.print-color .gauge-desc {
+        color: var(--text-muted) !important;
+    }
 
-body.exporting-digital #profile .badge {
-    font-size: 0.65rem !important;
-}
+    /* Education items */
+    body.print-color .edu-item,
+    body.print-color .timeline-item,
+    body.print-color .quote,
+    body.print-color .badge,
+    body.print-color .contact-item-wrapper,
+    body.print-color .contact-item {
+        background: rgba(30, 41, 59, 0.4) !important;
+        border-color: rgba(150, 95, 212, 0.15) !important;
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital #profile .quote {
-    font-size: 0.8rem !important;
-}
+    body.print-color .edu-item.highlight {
+        background: rgba(30, 41, 59, 0.6) !important;
+    }
 
-body.exporting-digital #profile .card-header {
-    margin-top: 0 !important;
-    padding-top: 2mm !important;
-    /* Mínimo necesario para respiro visual */
-}
+    /* Timeline text colors */
+    body.print-color .timeline-date {
+        color: var(--accent-lime) !important;
+    }
 
-body.exporting-digital .skill-map-section {
-    margin-top: 0 !important;
-    margin-bottom: 115mm !important;
-}
+    body.print-color .timeline-title {
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital #vitalsigns {
-    margin-top: 0 !important;
-    margin-bottom: 88mm !important;
-}
+    body.print-color .timeline-org {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital #experience {
-    margin-top: 0 !important;
-    margin-bottom: 30mm !important;
-}
+    body.print-color .timeline-desc {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital #education {
-    margin-top: 0 !important;
-    margin-bottom: 25mm !important;
-}
+    /* Bubble map preserved in color */
+    body.print-color .bnode-soft {
+        fill: rgba(56, 189, 248, 0.15) !important;
+        stroke: #38bdf8 !important;
+    }
 
-body.exporting-digital #education .card-header {
-    margin-bottom: 0mm !important;
-    padding-bottom: 0 !important;
-}
+    body.print-color .bnode-hard {
+        fill: rgba(150, 95, 212, 0.15) !important;
+        stroke: #965fd4 !important;
+    }
 
-body.exporting-digital #education h2 {
-    margin-top: -10mm !important;
-}
+    body.print-color .bnode-hybrid {
+        fill: rgba(139, 212, 80, 0.15) !important;
+        stroke: #8bd450 !important;
+    }
 
-body.exporting-digital #specialized-edu {
-    margin-top: 0 !important;
-    padding-bottom: 10mm !important;
-    margin-bottom: 10mm !important;
-}
+    body.print-color .bnode-hybrid-warm {
+        fill: rgba(245, 158, 11, 0.15) !important;
+        stroke: #f59e0b !important;
+    }
 
+    body.print-color .blabel {
+        fill: var(--text-primary) !important;
+    }
 
-/* ── 6. Mapa de Skills (Visual 2D) ─────────────────── */
-body.exporting-digital .bubble-container {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    width: 100% !important;
-    max-width: 160mm !important;
-    margin: 6mm auto 10mm auto !important;
-    page-break-inside: avoid !important;
-}
+    body.print-color .hub-circle {
+        stroke: rgba(255, 255, 255, 0.5) !important;
+    }
 
-body.exporting-digital .bubble-chart {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
-}
+    body.print-color .hub-dot {
+        fill: var(--accent-primary) !important;
+    }
 
-body.exporting-digital .skill-map-legend {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    justify-content: center !important;
-    margin-bottom: 4mm !important;
-}
+    body.print-color .conn-soft {
+        stroke: rgba(56, 189, 248, 0.3) !important;
+    }
 
-body.exporting-digital .blabel {
-    font-size: 10px !important;
-    font-weight: 800 !important;
-    fill: var(--text-primary) !important;
-}
+    body.print-color .conn-hard {
+        stroke: rgba(150, 95, 212, 0.3) !important;
+    }
 
-body.exporting-digital .zone-label {
-    font-size: 12px !important;
-    font-weight: 900 !important;
-    opacity: 0.9 !important;
-}
+    body.print-color .conn-hybrid {
+        stroke: rgba(139, 212, 80, 0.3) !important;
+    }
 
-body.exporting-digital .conn-line {
-    stroke-width: 1.5px !important;
-    opacity: 0.7 !important;
-}
+    body.print-color .zone-soft {
+        fill: #38bdf8 !important;
+    }
 
-body.exporting-digital .hub-circle {
-    stroke: rgba(255, 255, 255, 0.5) !important;
-    stroke-width: 3px !important;
-}
+    body.print-color .zone-hard {
+        fill: #965fd4 !important;
+    }
 
-/* ── 7. Velocímetros (Gauges) ───────────────────────── */
-body.exporting-digital .gauge-bg {
-    stroke: var(--text-muted) !important;
-}
+    body.print-color .zone-hybrid {
+        fill: #8bd450 !important;
+    }
 
-body.exporting-digital .gauge-fill {
-    filter: none !important;
-    stroke-width: 14 !important;
-}
+    /* Legend colors preserved */
+    body.print-color .legend-soft .legend-dot {
+        background: #38bdf8 !important;
+    }
 
-body.exporting-digital .color-nps-red .gauge-fill {
-    stroke: var(--accent-red) !important;
-}
+    body.print-color .legend-hard .legend-dot {
+        background: #965fd4 !important;
+    }
 
-body.exporting-digital .color-nps-yellow .gauge-fill {
-    stroke: var(--accent-amber) !important;
-}
+    body.print-color .legend-hybrid .legend-dot {
+        background: #8bd450 !important;
+    }
 
-body.exporting-digital .color-nps-green .gauge-fill {
-    stroke: var(--accent-green) !important;
-}
+    body.print-color .legend-item {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital .color-coffee .gauge-fill {
-    stroke: var(--accent-amber) !important;
-}
+    /* Tech badges colors preserved */
+    body.print-color .badge {
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital .color-affection .gauge-fill {
-    stroke: var(--accent-pink) !important;
-}
+    body.print-color .quote {
+        color: var(--text-secondary) !important;
+        border-left-color: var(--accent-primary) !important;
+    }
 
-body.exporting-digital .gauge-grid {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 6mm 10mm !important;
-    justify-content: flex-start !important;
-}
+    /* Education section */
+    body.print-color .edu-date {
+        color: var(--accent-lime) !important;
+    }
 
-body.exporting-digital .gauge-item {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    text-align: left !important;
-    gap: 6mm !important;
-    width: 100% !important;
-}
+    body.print-color .edu-heading {
+        color: var(--text-primary) !important;
+    }
 
-body.exporting-digital .gauge {
-    width: 70px !important;
-    height: 70px !important;
-    flex-shrink: 0 !important;
-}
+    body.print-color .edu-org {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital .gauge-info {
-    margin-top: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-}
+    body.print-color .edu-meta {
+        color: var(--text-secondary) !important;
+    }
 
-body.exporting-digital .gauge-value {
-    font-size: 1.2rem !important;
-    margin-bottom: 0 !important;
-    line-height: 1 !important;
-}
-
-body.exporting-digital .gauge-name {
-    font-size: 0.75rem !important;
-    line-height: 1.2 !important;
-}
-
-body.exporting-digital .gauge-desc {
-    font-size: 0.65rem !important;
-    margin-top: 1mm !important;
-    line-height: 1.2 !important;
-}
-
-/* ── 8. Educación y Timeline ────────────────────────── */
-body.exporting-digital .edu-grid,
-body.exporting-digital .edu-grid-secondary {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 2mm !important;
-
-}
-
-body.exporting-digital .edu-item,
-body.exporting-digital .edu-item-small {
-    flex: 1 1 45% !important;
-    padding: 2mm !important;
-    border-radius: 6px !important;
-    background: transparent !important;
-    border-color: rgba(150, 95, 212, 0.1) !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-}
-
-body.exporting-digital .edu-item-full {
-    flex: 1 1 100% !important;
-}
-
-body.exporting-digital .edu-heading {
-    font-size: 1.05rem !important;
-}
-
-body.exporting-digital .edu-org,
-body.exporting-digital .edu-meta {
-    font-size: 0.8rem !important;
-}
-
-body.exporting-digital .timeline-item,
-body.exporting-digital .contact-item-wrapper,
-body.exporting-digital .gauge-item {
-    background: transparent !important;
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
+    /* Subtitle */
+    body.print-color .subtitle {
+        color: var(--text-secondary) !important;
+    }
 }
 
 
@@ -2514,73 +2416,6 @@ body.exporting-digital .gauge-item {
 
 
 /* ── UI Components (Centralized) ────────────────────── */
-
-#export-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.9);
-    z-index: 10000;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.glass-export {
-    padding: 2.5rem;
-    border-radius: 30px;
-    border: 1px solid var(--accent-primary) !important;
-    max-width: 90%;
-    width: 500px;
-}
-
-.export-icon {
-    color: var(--accent-primary);
-    margin-bottom: 1.5rem;
-    display: block;
-    filter: drop-shadow(0 0 15px var(--accent-primary));
-}
-
-.export-p {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.pbar-container {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    height: 6px;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.loading-progress-bar {
-    width: 40%;
-    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-    height: 100%;
-    position: absolute;
-    animation: loading-bar-move 1.8s infinite ease-in-out;
-}
-
-@keyframes loading-bar-move {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(250%);
-    }
-}
 
 /* 3D Skill Tooltip */
 .html-tooltip {
