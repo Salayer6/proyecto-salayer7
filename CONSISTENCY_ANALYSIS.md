@@ -106,7 +106,7 @@ Se identificaron y corrigieron **6 inconsistencias**.
 | Licencia | B/C \| Viajes OK | ✅ |
 | Idioma | Inglés Bilingüe | ✅ |
 | **Email** | i.salasv@duocuc.cl | ✅ *(añadido)* |
-| Instagram | @ceotempleinfinito | ✅ |
+
 
 ---
 
