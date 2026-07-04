@@ -1922,19 +1922,33 @@ path.gauge-fill-affection {
     }
 
     /* 4. Color Mode (Versión Digital) */
-    /* Harmonizing colors for the headings and name, keeping background white */
+    /* Dark background composition with vibrant digital accents */
+    body.print-color {
+        background: #151221 !important;
+        background-color: #151221 !important;
+    }
+    
+    body.print-color .ats-metadata {
+        color: #e2e8f0 !important;
+    }
+
+    body.print-color .ats-metadata p {
+        color: #e2e8f0 !important;
+    }
+
     body.print-color .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        color: #734f9a !important; /* Accent Secondary (Harmonizing Purple) */
+        color: #22d3ee !important; /* Neon Cyan Name */
+        text-shadow: 0px 0px 8px rgba(34, 211, 238, 0.4);
     }
     
     body.print-color .ats-metadata h2 {
-        color: #1e293b !important; /* Dark Slate */
-        border-bottom-color: #734f9a !important; /* Purple divider */
+        color: #f8fafc !important; /* White headers */
+        border-bottom-color: #965fd4 !important; /* Vibrant purple divider */
     }
     
     body.print-color .ats-metadata section:nth-of-type(2) p {
-        color: #22d3ee !important; /* Accent Cyan */
-        text-shadow: 0px 0px 1px rgba(34, 211, 238, 0.4);
+        color: #965fd4 !important; /* Vibrant Purple Title */
+        text-shadow: 0px 0px 8px rgba(150, 95, 212, 0.4);
     }
 }
 
