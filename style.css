@@ -1922,10 +1922,10 @@ path.gauge-fill-affection {
     }
 
     /* 4. Color Mode (Versión Digital) */
-    /* Dark background composition with vibrant digital accents */
+    /* Subtle, elegant dark composition */
     body.print-color,
     body.print-color .container {
-        background-color: #120f1c !important; /* Very dark background */
+        background-color: #13141c !important; /* Elegant deep slate */
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
@@ -1933,20 +1933,21 @@ path.gauge-fill-affection {
     body.print-color .ats-metadata,
     body.print-color .ats-metadata p,
     body.print-color .ats-metadata section {
-        color: #ffffff !important; /* Pure white for maximum contrast */
+        color: #d1d5db !important; /* Soft light gray for body text */
     }
 
     body.print-color .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        color: #00f0ff !important; /* Brighter Neon Cyan Name */
+        color: #a78bfa !important; /* Soft, elegant violet for the Name */
     }
     
     body.print-color .ats-metadata h2 {
-        color: #ffffff !important; /* Pure White headers */
-        border-bottom: 1px solid #b25cff !important; /* Brighter Purple divider */
+        color: #e2e8f0 !important; /* Subtle off-white for headers */
+        border-bottom: 1px solid rgba(167, 139, 250, 0.3) !important; /* Faint violet divider */
     }
     
     body.print-color .ats-metadata section:nth-of-type(2) p {
-        color: #b25cff !important; /* Brighter Purple Title */
+        color: #7dd3fc !important; /* Calm sky blue for Professional Title */
+        font-weight: normal !important;
     }
 }
 
