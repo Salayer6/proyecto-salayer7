@@ -1747,631 +1747,149 @@ path.gauge-fill-affection {
     }
 }
 
-/* PRINT STYLES - Crucial for PDF output */
+
+/* ==========================================================================
+   PRINT STYLES — HARVARD CV FORMAT (ATS METADATA)
+   ========================================================================== */
 
 @media print {
-    @page {
-        size: letter;
-        margin: 0;
+    /* 1. Reset Print */
+    @page { 
+        size: letter; 
+        margin: 1.5cm; 
     }
-
-    :root {
-        /* Print overrides — grayscale focused */
-        --bg-color: #ffffff;
-        --text-primary: #000000;
-        --text-secondary: #334155;
-        --border-color: #cbd5e1;
-        --accent-primary: #1e293b;
-        --accent-lime: #334155;
-        --accent-secondary: #475569;
-    }
-
+    
     body {
         background: white !important;
         color: black !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        font-family: Georgia, 'Times New Roman', serif !important;
+        font-size: 10pt !important;
+        line-height: 1.4 !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    .container {
-        padding: 1.5cm;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    header {
-        margin-bottom: 2rem;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    /* Force AOS elements to be visible in print */
-    [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-        visibility: visible !important;
-        transition: none !important;
-    }
-
-    h1 {
-        color: black !important;
-    }
-
-    h1 .accent {
-        background: none !important;
-        -webkit-text-fill-color: initial !important;
-        color: var(--accent-primary) !important;
-    }
-
-    .contact-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        background: none !important;
-        border: 1px solid #e2e8f0;
-        padding: 1rem;
-        margin-top: 1rem;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .contact-item,
-    .contact-item * {
-        color: black !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .contact-item i {
-        color: var(--accent-primary) !important;
-    }
-
-    .glass {
-        background: transparent !important;
-        border: 1px solid #e2e8f0 !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-        break-inside: avoid;
-    }
-
-    /* Reducción Perfil Estratégico en Impresión */
-    #profile .objective-text {
-        font-size: 0.85rem !important;
-    }
-    #profile .badge {
-        font-size: 0.6rem !important;
-    }
-    #profile .quote {
-        font-size: 0.75rem !important;
-    }
-
-    .export-banner,
-    .main-toggle,
-    .html-tooltip,
-    .nav-links {
+    /* 2. Hide Web UI completely */
+    header, 
+    main, 
+    .export-banner, 
+    .html-tooltip, 
+    #export-overlay, 
+    .container > *:not(.ats-metadata) {
         display: none !important;
     }
 
-    /* Ocultar fondos de ítems en impresión */
-    .edu-item,
-    .timeline-item,
-    .quote,
-    .badge,
-    .contact-item-wrapper,
-    .contact-item {
-        background: transparent !important;
-        border-color: #cbd5e1 !important;
-        color: black !important;
-    }
-
-    .contact-item i {
-        color: var(--accent-primary) !important;
-    }
-
-    /* Compactar Educación en Impresión */
-    .edu-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 0.8rem !important;
-    }
-
-    .edu-item {
-        background: var(--bg-color-light, #f8fafc) !important;
-        border-left-width: 4px !important;
-        padding: 0.8rem !important;
-        border-radius: 8px !important;
-    }
-
-    .edu-heading {
-        font-size: 1.05rem !important;
-    }
-
-    .edu-org,
-    .edu-meta {
-        font-size: 0.8rem !important;
-    }
-
-    .secondary-edu-header {
-        margin: 1.5rem 0 0.8rem !important;
-        padding-top: 0.8rem !important;
-    }
-
-    .edu-grid-secondary {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.8rem !important;
-    }
-
-    .edu-item.highlight {
-        background: var(--bg-color-success, #f0fdf4) !important;
-    }
-
-    /* Bubble Map 2D for Print */
-    .bubble-container {
-        display: block !important;
-    }
-
-    .hub-circle {
-        stroke: #334155 !important;
-    }
-
-    .hub-dot {
-        fill: #334155 !important;
-    }
-
-    .conn-soft {
-        stroke: #cbd5e1 !important;
-        opacity: 0.3 !important;
-    }
-
-    .conn-hard {
-        stroke: #cbd5e1 !important;
-        opacity: 0.3 !important;
-    }
-
-    .conn-hybrid {
-        stroke: #cbd5e1 !important;
-        opacity: 0.3 !important;
-    }
-
-    .bnode-soft {
-        fill: #f1f5f9 !important;
-        stroke: #64748b !important;
-    }
-
-    .bnode-hard {
-        fill: #f1f5f9 !important;
-        stroke: #64748b !important;
-    }
-
-    .bnode-hybrid {
-        fill: #f1f5f9 !important;
-        stroke: #64748b !important;
-    }
-
-    .bnode-hybrid-warm {
-        fill: #f1f5f9 !important;
-        stroke: #64748b !important;
-    }
-
-    .blabel {
-        fill: #1e293b !important;
-    }
-
-    .zone-soft {
-        fill: #334155 !important;
-    }
-
-    .zone-hard {
-        fill: #334155 !important;
-    }
-
-    .zone-hybrid {
-        fill: #334155 !important;
-    }
-
-    /* Radar (ahora legacy) sigue oculto */
-    .radar-container {
-        display: none !important;
-    }
-
-    /* Hide 3D Map and elements on Print - Ensure 2D shows */
-    .skill-map-wrapper,
-    #skill-canvas-container,
-    .map-3d-ui {
-        display: none !important;
-    }
-
-    .skill-map-legend {
-        display: flex !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    /* Gauge Adjustments */
-    .gauge {
-        width: 120px !important;
-        height: 120px !important;
-    }
-
-    .gauge-bg {
-        stroke: #e2e8f0 !important;
-    }
-
-    .gauge-fill {
-        filter: none !important;
-        stroke-width: 14 !important;
-    }
-
-    .color-nps-red .gauge-fill {
-        stroke: #94a3b8 !important;
-    }
-
-    .color-nps-yellow .gauge-fill {
-        stroke: #64748b !important;
-    }
-
-    .color-nps-green .gauge-fill {
-        stroke: #1e293b !important;
-    }
-
-    .color-coffee .gauge-fill {
-        stroke: #64748b !important;
-    }
-
-    .color-affection .gauge-fill {
-        stroke: #475569 !important;
-    }
-
-    .gauge-value {
-        color: black !important;
-    }
-
-    .gauge-name {
-        color: #64748b !important;
-    }
-
-    .carousel-container {
-        overflow: visible !important;
-        min-height: 200px !important;
-    }
-
-    .bubble-chart {
-        width: 100% !important;
-        height: auto !important;
-        max-width: 450px !important;
-        max-height: 320px !important;
-        margin: 0 auto !important;
-    }
-
-    .gauge-grid.carousel {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 1.5rem !important;
-    }
-
-    /* Hide non-printable elements */
-    .export-banner,
-    .controls,
-    .print-btn,
-    .carousel-container::-webkit-scrollbar {
-        display: none !important;
-    }
-
-    /* Prevent breaking inside cards */
-    .card,
-    .timeline-item,
-    .edu-item {
-        page-break-inside: avoid;
-        break-inside: avoid;
-    }
-}
-
-/* ATS Metadata Persistence Layer — HiringRoom Compatible
-   Uses clip-rect technique: content stays in PDF text layer
-   but is invisible on screen. Parsers extract text normally. */
-.ats-metadata {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: normal;
-    border: 0;
-    pointer-events: none;
-    user-select: all;
-    z-index: -9999;
-    color: transparent;
-    font-size: 1px;
-    line-height: 1;
-}
-
-/* Ensure inner elements don't inherit visible styles */
-.ats-metadata h2,
-.ats-metadata p,
-.ats-metadata section {
-    font-size: inherit;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    color: inherit;
-}
-
-@media print {
+    /* 3. Make ATS Metadata Visible */
     .ats-metadata {
         display: block !important;
         visibility: visible !important;
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+        clip: auto !important;
         white-space: normal !important;
-        color: transparent !important;
-        font-size: 1px !important;
+        color: black !important;
+        font-size: 10.5pt !important;
+        z-index: 1 !important;
+        pointer-events: auto !important;
+    }
+
+    .ats-metadata section {
+        margin-bottom: 1.5rem !important;
+        page-break-inside: avoid;
+    }
+
+    .ats-metadata h2 {
+        font-family: Georgia, 'Times New Roman', serif !important;
+        font-size: 13pt !important;
+        text-transform: uppercase !important;
+        border-bottom: 1px solid black !important;
+        margin: 0 0 0.6rem 0 !important;
+        padding-bottom: 0.2rem !important;
+        font-weight: bold !important;
+        color: black !important;
+        page-break-after: avoid;
+    }
+
+    .ats-metadata p {
+        margin: 0 0 0.4rem 0 !important;
+        color: black !important;
+    }
+
+    /* Format "Datos Personales" as a CV Header */
+    .ats-metadata section:nth-of-type(1) h2 {
+        display: none !important; /* Hide "Datos Personales" text */
+    }
+    
+    .ats-metadata section:nth-of-type(1) {
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        border-bottom: none !important;
+    }
+
+    /* Make the Name very prominent */
+    .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
+        font-size: 26pt !important;
+        font-weight: bold !important;
+        text-transform: uppercase !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.1 !important;
+    }
+
+    /* Style the remaining contact info as an inline compact block */
+    .ats-metadata section:nth-of-type(1) p:not(:nth-of-type(1)) {
+        display: inline-block !important;
+        font-size: 9.5pt !important;
+        margin: 0 0.3rem !important;
+    }
+
+    .ats-metadata section:nth-of-type(1) p:not(:nth-of-type(1))::after {
+        content: " | ";
+        color: #999;
+        margin-left: 0.6rem;
+    }
+    
+    .ats-metadata section:nth-of-type(1) p:last-child::after {
+        content: "";
+    }
+
+    /* Emphasize the Professional Title */
+    .ats-metadata section:nth-of-type(2) {
+        text-align: center !important;
+        margin-top: -1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .ats-metadata section:nth-of-type(2) h2 {
+        display: none !important;
+    }
+    
+    .ats-metadata section:nth-of-type(2) p {
+        font-size: 13pt !important;
+        font-weight: bold !important;
+        font-style: italic !important;
+    }
+
+    /* 4. Color Mode (Versión Digital) */
+    /* Harmonizing colors for the headings and name, keeping background white */
+    body.print-color .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
+        color: #734f9a !important; /* Accent Secondary (Harmonizing Purple) */
+    }
+    
+    body.print-color .ats-metadata h2 {
+        color: #1e293b !important; /* Dark Slate */
+        border-bottom-color: #734f9a !important; /* Purple divider */
+    }
+    
+    body.print-color .ats-metadata section:nth-of-type(2) p {
+        color: #22d3ee !important; /* Accent Cyan */
+        text-shadow: 0px 0px 1px rgba(34, 211, 238, 0.4);
     }
 }
 
-
-/* ═══════════════════════════════════════════════════════
-   COLOR PRINT MODE — body.print-color
-   When the user selects "Versión Color", this class is added
-   to body before calling window.print(). It overrides the
-   default B&W print styles to preserve the dark-mode look
-   with full-color accents, while still using the native
-   print engine (text layer intact for ATS).
-   ═══════════════════════════════════════════════════════ */
-
-@media print {
-    body.print-color {
-        background: var(--bg-color) !important;
-        color: var(--text-primary) !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-
-    body.print-color :root {
-        --bg-color: #1d1a2f;
-        --text-primary: #f1f5f9;
-        --text-secondary: #94a3b8;
-        --border-color: rgba(255, 255, 255, 0.08);
-        --accent-primary: #965fd4;
-    }
-
-    body.print-color .container {
-        background: var(--bg-color) !important;
-        padding: 1.5cm !important;
-    }
-
-    body.print-color h1 {
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color h1 .accent {
-        background: linear-gradient(135deg, #965fd4, #22d3ee) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-    }
-
-    body.print-color .contact-grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        background: rgba(255, 255, 255, 0.03) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        padding: 1rem !important;
-        margin-top: 1rem !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    body.print-color .contact-item,
-    body.print-color .contact-item * {
-        color: var(--text-primary) !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    body.print-color .contact-item i {
-        color: var(--accent-cyan) !important;
-    }
-
-    body.print-color .glass {
-        background: rgba(30, 41, 59, 0.8) !important;
-        border: 1px solid rgba(150, 95, 212, 0.2) !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-        break-inside: avoid;
-    }
-
-    body.print-color .card-header h2 {
-        color: var(--accent-cyan) !important;
-    }
-
-    /* Gauge colors preserved */
-    body.print-color .gauge-bg {
-        stroke: var(--text-muted) !important;
-    }
-
-    body.print-color .gauge-fill {
-        filter: none !important;
-        stroke-width: 14 !important;
-    }
-
-    body.print-color .color-nps-red .gauge-fill {
-        stroke: var(--accent-red) !important;
-    }
-
-    body.print-color .color-nps-yellow .gauge-fill {
-        stroke: var(--accent-amber) !important;
-    }
-
-    body.print-color .color-nps-green .gauge-fill {
-        stroke: var(--accent-green) !important;
-    }
-
-    body.print-color .color-coffee .gauge-fill {
-        stroke: var(--accent-amber) !important;
-    }
-
-    body.print-color .color-affection .gauge-fill {
-        stroke: var(--accent-pink) !important;
-    }
-
-    body.print-color .gauge-value {
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color .gauge-name {
-        color: var(--text-secondary) !important;
-    }
-
-    body.print-color .gauge-desc {
-        color: var(--text-muted) !important;
-    }
-
-    /* Education items */
-    body.print-color .edu-item,
-    body.print-color .timeline-item,
-    body.print-color .quote,
-    body.print-color .badge,
-    body.print-color .contact-item-wrapper,
-    body.print-color .contact-item {
-        background: rgba(30, 41, 59, 0.4) !important;
-        border-color: rgba(150, 95, 212, 0.15) !important;
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color .edu-item.highlight {
-        background: rgba(30, 41, 59, 0.6) !important;
-    }
-
-    /* Timeline text colors */
-    body.print-color .timeline-date {
-        color: var(--accent-lime) !important;
-    }
-
-    body.print-color .timeline-title {
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color .timeline-org {
-        color: var(--text-secondary) !important;
-    }
-
-    body.print-color .timeline-desc {
-        color: var(--text-secondary) !important;
-    }
-
-    /* Bubble map preserved in color */
-    body.print-color .bnode-soft {
-        fill: rgba(56, 189, 248, 0.15) !important;
-        stroke: #38bdf8 !important;
-    }
-
-    body.print-color .bnode-hard {
-        fill: rgba(150, 95, 212, 0.15) !important;
-        stroke: #965fd4 !important;
-    }
-
-    body.print-color .bnode-hybrid {
-        fill: rgba(139, 212, 80, 0.15) !important;
-        stroke: #8bd450 !important;
-    }
-
-    body.print-color .bnode-hybrid-warm {
-        fill: rgba(245, 158, 11, 0.15) !important;
-        stroke: #f59e0b !important;
-    }
-
-    body.print-color .blabel {
-        fill: var(--text-primary) !important;
-    }
-
-    body.print-color .hub-circle {
-        stroke: rgba(255, 255, 255, 0.5) !important;
-    }
-
-    body.print-color .hub-dot {
-        fill: var(--accent-primary) !important;
-    }
-
-    body.print-color .conn-soft {
-        stroke: rgba(56, 189, 248, 0.3) !important;
-    }
-
-    body.print-color .conn-hard {
-        stroke: rgba(150, 95, 212, 0.3) !important;
-    }
-
-    body.print-color .conn-hybrid {
-        stroke: rgba(139, 212, 80, 0.3) !important;
-    }
-
-    body.print-color .zone-soft {
-        fill: #38bdf8 !important;
-    }
-
-    body.print-color .zone-hard {
-        fill: #965fd4 !important;
-    }
-
-    body.print-color .zone-hybrid {
-        fill: #8bd450 !important;
-    }
-
-    /* Legend colors preserved */
-    body.print-color .legend-soft .legend-dot {
-        background: #38bdf8 !important;
-    }
-
-    body.print-color .legend-hard .legend-dot {
-        background: #965fd4 !important;
-    }
-
-    body.print-color .legend-hybrid .legend-dot {
-        background: #8bd450 !important;
-    }
-
-    body.print-color .legend-item {
-        color: var(--text-secondary) !important;
-    }
-
-    /* Tech badges colors preserved */
-    body.print-color .badge {
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color .quote {
-        color: var(--text-secondary) !important;
-        border-left-color: var(--accent-primary) !important;
-    }
-
-    /* Education section */
-    body.print-color .edu-date {
-        color: var(--accent-lime) !important;
-    }
-
-    body.print-color .edu-heading {
-        color: var(--text-primary) !important;
-    }
-
-    body.print-color .edu-org {
-        color: var(--text-secondary) !important;
-    }
-
-    body.print-color .edu-meta {
-        color: var(--text-secondary) !important;
-    }
-
-    /* Subtitle */
-    body.print-color .subtitle {
-        color: var(--text-secondary) !important;
-    }
-}
 
 
 /* ── 9. Elementos UI Web (Fuera de Impresión) ───────── */
