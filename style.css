@@ -1923,32 +1923,30 @@ path.gauge-fill-affection {
 
     /* 4. Color Mode (Versión Digital) */
     /* Dark background composition with vibrant digital accents */
-    body.print-color {
-        background: #151221 !important;
-        background-color: #151221 !important;
+    body.print-color,
+    body.print-color .container {
+        background-color: #120f1c !important; /* Very dark background */
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
     
-    body.print-color .ats-metadata {
-        color: #e2e8f0 !important;
-    }
-
-    body.print-color .ats-metadata p {
-        color: #e2e8f0 !important;
+    body.print-color .ats-metadata,
+    body.print-color .ats-metadata p,
+    body.print-color .ats-metadata section {
+        color: #ffffff !important; /* Pure white for maximum contrast */
     }
 
     body.print-color .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        color: #22d3ee !important; /* Neon Cyan Name */
-        text-shadow: 0px 0px 8px rgba(34, 211, 238, 0.4);
+        color: #00f0ff !important; /* Brighter Neon Cyan Name */
     }
     
     body.print-color .ats-metadata h2 {
-        color: #f8fafc !important; /* White headers */
-        border-bottom-color: #965fd4 !important; /* Vibrant purple divider */
+        color: #ffffff !important; /* Pure White headers */
+        border-bottom: 1px solid #b25cff !important; /* Brighter Purple divider */
     }
     
     body.print-color .ats-metadata section:nth-of-type(2) p {
-        color: #965fd4 !important; /* Vibrant Purple Title */
-        text-shadow: 0px 0px 8px rgba(150, 95, 212, 0.4);
+        color: #b25cff !important; /* Brighter Purple Title */
     }
 }
 
