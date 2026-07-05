@@ -1,50 +1,33 @@
 /**
  * Export Logic for Ignacio Salas Vega Portfolio
- * Both modes use window.print() → "Save as PDF" to preserve
- * the native text layer required by ATS parsers (HiringRoom, 
+ * Uses window.print() → "Save as PDF" to preserve
+ * the native text layer required by ATS parsers (HiringRoom,
  * Computrabajo, Workday, etc.)
  *
- * Modes:
- *  - Color (Digital): Dark background with full-color accents
- *  - Low-Color (B&W): White background, grayscale — printer-friendly
+ * Single mode: Low-color professional style — clean, minimal accents
  */
 
 /**
  * Exports the CV using the browser's native print dialog.
- * @param {'color'|'bw'} mode - 'color' for digital dark theme, 'bw' for grayscale
+ * Applies a single unified low-color print style.
  */
-function exportCV(mode) {
-    // Apply the appropriate print class
-    if (mode === 'color') {
-        document.body.classList.add('print-color');
-        document.body.classList.remove('print-bw');
-    } else {
-        document.body.classList.add('print-bw');
-        document.body.classList.remove('print-color');
-    }
+function exportCV() {
+    document.body.classList.add('print-lc');
 
     const cleanup = () => {
-        document.body.classList.remove('print-color', 'print-bw');
+        document.body.classList.remove('print-lc');
         window.removeEventListener('afterprint', cleanup);
     };
 
     window.addEventListener('afterprint', cleanup);
 
-    // Use a short timeout to let the CSS class apply before printing
     setTimeout(() => {
         window.print();
-        
-        // Fallback cleanup after a longer delay (e.g. 5 seconds) 
-        // in case afterprint does not fire in some legacy browsers.
+        // Fallback cleanup in case afterprint doesn't fire (e.g. some iOS Safari versions)
         setTimeout(cleanup, 5000);
     }, 100);
 }
 
-// Convenience wrappers called by the buttons in index.html
-function exportColorCV() {
-    exportCV('color');
-}
-
-function exportBWCV() {
-    exportCV('bw');
-}
+// Legacy aliases kept for safety (no longer used by the UI)
+function exportColorCV() { exportCV(); }
+function exportBWCV()    { exportCV(); }

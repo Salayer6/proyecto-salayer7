@@ -1928,33 +1928,37 @@ path.gauge-fill-affection {
         font-style: italic !important;
     }
 
-    /* 4. Color Mode (Versión Digital) */
-    /* Subtle, elegant dark composition */
-    body.print-color,
-    body.print-color .container {
-        background-color: #13141c !important; /* Elegant deep slate */
+
+    /* 4. Low-Color Mode — Único estilo de exportación */
+    /* Fondo blanco puro, tipografía oscura, acento mínimo en índigo */
+    body.print-lc,
+    body.print-lc .container {
+        background-color: #ffffff !important;
         background-image: none !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
-    
-    body.print-color .ats-metadata,
-    body.print-color .ats-metadata p,
-    body.print-color .ats-metadata section {
-        color: #d1d5db !important; /* Soft light gray for body text */
+
+    body.print-lc .ats-metadata,
+    body.print-lc .ats-metadata p,
+    body.print-lc .ats-metadata section {
+        color: #1a1a2e !important;
     }
 
-    body.print-color .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        color: #a78bfa !important; /* Soft, elegant violet for the Name */
+    /* Nombre: acento índigo oscuro */
+    body.print-lc .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
+        color: #2d2d6b !important;
     }
-    
-    body.print-color .ats-metadata h2 {
-        color: #e2e8f0 !important; /* Subtle off-white for headers */
-        border-bottom: 1px solid rgba(167, 139, 250, 0.3) !important; /* Faint violet divider */
+
+    /* Encabezados de sección: índigo sutil con línea divisora gris claro */
+    body.print-lc .ats-metadata h2 {
+        color: #2d2d6b !important;
+        border-bottom: 1px solid #c0c0d0 !important;
     }
-    
-    body.print-color .ats-metadata section:nth-of-type(2) p {
-        color: #7dd3fc !important; /* Calm sky blue for Professional Title */
+
+    /* Título profesional: índigo medio, sin negrita extra */
+    body.print-lc .ats-metadata section:nth-of-type(2) p {
+        color: #3a3a8c !important;
         font-weight: normal !important;
     }
 }
@@ -1975,30 +1979,18 @@ path.gauge-fill-affection {
     flex-wrap: wrap;
 }
 
-.digital-btn {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan)) !important;
+.export-btn {
+    background: linear-gradient(135deg, #2d2d6b, #4a4a9c) !important;
     border-color: transparent !important;
     color: #fff !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 15px rgba(150, 95, 212, 0.4) !important;
+    box-shadow: 0 4px 15px rgba(45, 45, 107, 0.35) !important;
     transition: var(--transition);
 }
 
-.digital-btn:hover {
+.export-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(150, 95, 212, 0.6) !important;
-}
-
-.print-btn {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-primary) !important;
-    transition: var(--transition);
-}
-
-.print-btn:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-color: var(--accent-lime) !important;
+    box-shadow: 0 6px 22px rgba(45, 45, 107, 0.55) !important;
 }
 
 
