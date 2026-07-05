@@ -14,23 +14,7 @@
  * @param {'color'|'bw'} mode - 'color' for digital dark theme, 'bw' for grayscale
  */
 function exportCV(mode) {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    if (isMobile) {
-        // On mobile, serve the pre-generated static PDF
-        const link = document.createElement('a');
-        if (mode === 'color') {
-            link.href = 'assets/CV_Ignacio_Salas_Digital.pdf';
-            link.download = 'CV Ignacio Antonio Salas Vega - Digital.pdf';
-        } else {
-            link.href = 'assets/CV_Ignacio_Salas_Printable.pdf';
-            link.download = 'CV Ignacio Antonio Salas Vega - Imprimible.pdf';
-        }
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        return;
-    }
 
     // Apply the appropriate print class
     if (mode === 'color') {
