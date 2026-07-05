@@ -14,8 +14,6 @@
  * @param {'color'|'bw'} mode - 'color' for digital dark theme, 'bw' for grayscale
  */
 function exportCV(mode) {
-
-
     // Apply the appropriate print class
     if (mode === 'color') {
         document.body.classList.add('print-color');
@@ -25,11 +23,20 @@ function exportCV(mode) {
         document.body.classList.remove('print-color');
     }
 
+    const cleanup = () => {
+        document.body.classList.remove('print-color', 'print-bw');
+        window.removeEventListener('afterprint', cleanup);
+    };
+
+    window.addEventListener('afterprint', cleanup);
+
     // Use a short timeout to let the CSS class apply before printing
     setTimeout(() => {
         window.print();
-        // Clean up classes after print dialog closes
-        document.body.classList.remove('print-color', 'print-bw');
+        
+        // Fallback cleanup after a longer delay (e.g. 5 seconds) 
+        // in case afterprint does not fire in some legacy browsers.
+        setTimeout(cleanup, 5000);
     }, 100);
 }
 
