@@ -236,14 +236,14 @@ h1 .accent {
     border: 1px solid var(--border-color);
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .contact-grid {
         grid-template-columns: repeat(3, 1fr) !important;
         padding: 1.5rem;
     }
 }
 
-@media (max-width: 850px) {
+@media screen and (max-width: 850px) {
     .contact-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 1rem;
@@ -855,7 +855,7 @@ h1 .accent {
     /* Crucial para permitir mobile native scroll */
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .skill-map-wrapper {
         min-height: 500px;
     }
@@ -1520,7 +1520,7 @@ path.gauge-fill-affection {
 
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .container {
         padding: 2rem 1.5rem;
     }
@@ -1530,7 +1530,7 @@ path.gauge-fill-affection {
     }
 }
 
-@media (max-width: 850px) {
+@media screen and (max-width: 850px) {
     h1 {
         font-size: 3.5rem;
     }
@@ -1559,7 +1559,7 @@ path.gauge-fill-affection {
     }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     :root {
         --glass-blur: blur(8px);
     }
@@ -1726,7 +1726,7 @@ path.gauge-fill-affection {
     }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     h1 {
         font-size: 2.3rem;
     }
@@ -2067,7 +2067,7 @@ path.gauge-fill-affection {
     font-style: italic;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .export-buttons {
         flex-direction: column;
         width: 100%;
