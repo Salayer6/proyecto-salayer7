@@ -1793,7 +1793,8 @@ path.gauge-fill-affection {
     }
     
     body {
-        background: white !important;
+        background-color: white !important;
+        background-image: none !important;
         color: black !important;
         font-family: Georgia, 'Times New Roman', serif !important;
         font-size: 10pt !important;
@@ -1802,6 +1803,12 @@ path.gauge-fill-affection {
         print-color-adjust: exact !important;
         margin: 0 !important;
         padding: 0 !important;
+    }
+
+    body::before,
+    body::after {
+        display: none !important;
+        content: none !important;
     }
 
     /* 2. Hide Web UI completely */
@@ -1926,6 +1933,7 @@ path.gauge-fill-affection {
     body.print-color,
     body.print-color .container {
         background-color: #13141c !important; /* Elegant deep slate */
+        background-image: none !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }
