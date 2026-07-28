@@ -826,13 +826,13 @@ h1 .accent {
 }
 
 .legend-soft .legend-dot {
-    background: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
+    background: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan);
 }
 
 .legend-hybrid .legend-dot {
-    background: var(--accent-cyan);
-    box-shadow: 0 0 8px var(--accent-cyan);
+    background: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary);
 }
 
 .legend-hard .legend-dot {
@@ -959,11 +959,11 @@ h1 .accent {
 }
 
 .skill-zone-soft {
-    fill: rgba(150, 95, 212, 0.07);
+    fill: rgba(34, 211, 238, 0.05);
 }
 
 .skill-zone-hybrid {
-    fill: rgba(34, 211, 238, 0.05);
+    fill: rgba(150, 95, 212, 0.07);
 }
 
 .skill-zone-hard {
@@ -981,12 +981,12 @@ h1 .accent {
 }
 
 .soft-label {
-    fill: var(--accent-primary);
+    fill: var(--accent-cyan);
     opacity: 0.6;
 }
 
 .hybrid-label {
-    fill: var(--accent-cyan);
+    fill: var(--accent-primary);
     opacity: 0.5;
 }
 
@@ -1052,11 +1052,11 @@ h1 .accent {
     transition: r 0.3s ease, opacity 0.2s ease;
 }
 
-/* Soft (blandas) - Purple */
+/* Soft (blandas) - Cyan */
 .skill-bubble-soft {
-    fill: rgba(150, 95, 212, 0.22);
-    stroke: var(--accent-primary);
-    filter: drop-shadow(0 0 8px rgba(150, 95, 212, 0.5));
+    fill: rgba(34, 211, 238, 0.18);
+    stroke: var(--accent-cyan);
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.45));
 }
 
 /* Hard (duras) - Lime green */
@@ -1066,11 +1066,11 @@ h1 .accent {
     filter: drop-shadow(0 0 8px rgba(139, 212, 80, 0.5));
 }
 
-/* Hybrid leaning soft (cyan-purple) */
+/* Hybrid - Purple */
 .skill-bubble-hybrid {
-    fill: rgba(34, 211, 238, 0.15);
-    stroke: var(--accent-cyan);
-    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.45));
+    fill: rgba(150, 95, 212, 0.22);
+    stroke: var(--accent-primary);
+    filter: drop-shadow(0 0 8px rgba(150, 95, 212, 0.5));
 }
 
 /* Hybrid leaning hard (cyan-lime) */
@@ -1176,7 +1176,7 @@ h1 .accent {
 }
 
 .conn-soft {
-    stroke: var(--accent-primary);
+    stroke: var(--accent-cyan);
 }
 
 .conn-hard {
@@ -1184,7 +1184,7 @@ h1 .accent {
 }
 
 .conn-hybrid {
-    stroke: var(--accent-cyan);
+    stroke: var(--accent-primary);
 }
 
 /* Bubble nodes */
@@ -1193,8 +1193,8 @@ h1 .accent {
 }
 
 .bnode-soft {
-    fill: rgba(150, 95, 212, 0.20);
-    stroke: var(--accent-primary);
+    fill: rgba(34, 211, 238, 0.18);
+    stroke: var(--accent-cyan);
 }
 
 .bnode-hard {
@@ -1203,8 +1203,8 @@ h1 .accent {
 }
 
 .bnode-hybrid {
-    fill: rgba(34, 211, 238, 0.15);
-    stroke: var(--accent-cyan);
+    fill: rgba(150, 95, 212, 0.20);
+    stroke: var(--accent-primary);
 }
 
 .bnode-hybrid-warm {
@@ -1238,7 +1238,7 @@ h1 .accent {
 }
 
 .zone-soft {
-    fill: var(--accent-primary);
+    fill: var(--accent-cyan);
 }
 
 .zone-hard {
@@ -1246,7 +1246,7 @@ h1 .accent {
 }
 
 .zone-hybrid {
-    fill: var(--accent-cyan);
+    fill: var(--accent-primary);
 }
 
 /* Keep radar container hidden */
@@ -1332,14 +1332,32 @@ h1 .accent {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2.5rem;
+    gap: 1.5rem;
     width: 100% !important;
 }
 
 .gauge-item {
     text-align: center;
-    width: 130px;
+    width: 140px;
     flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1rem 0.6rem 0.85rem 0.6rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gauge-item:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--gauge-color, var(--accent-cyan));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 255, 255, 0.08);
 }
 
 .gauge {
@@ -1412,7 +1430,11 @@ path.gauge-fill-affection {
 }
 
 .gauge-info {
-    margin-top: -5px;
+    margin-top: -0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .gauge-value {
@@ -1678,16 +1700,28 @@ path.gauge-fill-affection {
     }
 
     .gauge-grid {
-        gap: 1.5rem 1rem;
+        gap: 0.85rem;
         grid-template-columns: repeat(2, 1fr) !important;
+        justify-items: center;
     }
 
     .gauge-item {
-        width: 100px;
+        width: 100%;
+        max-width: 150px;
+        padding: 0.75rem 0.4rem 0.75rem 0.4rem;
+        border-radius: 14px;
     }
 
     .gauge-value {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    .gauge-name {
+        font-size: 0.7rem;
+    }
+
+    .gauge-desc {
+        font-size: 0.65rem;
     }
 
     .timeline {
