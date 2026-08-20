@@ -75,7 +75,6 @@
                 <h2>Experiencia Laboral</h2>
                 <p>CultureOps &amp; DataOps Developer S-Senior — Grupo MSUS — Junio 2024 - Actualidad. Desarrollo de soluciones de gestión y optimización de flujos de trabajo. Diseño de módulos integrados tipo ERP low-cost para seguimiento de Sprints. Automatización de tableros de rendimiento. Auditorías SEO.</p>
                 <p>Analista de Apoyo Administrativo — AUTER (Control Vial Nacional) — Marzo 2023 - Septiembre 2023. Gestión integral de bodega central. Imputación de transacciones críticas atrasadas a nivel central.</p>
-                <!-- <p>Asistente de Calidad, Especialidad Electricidad — Ingeniería Concha y Gana — Marzo 2021 - Enero 2022. Digitalización de protocolos eléctricos en tiempo real. Control de calidad remoto y trazabilidad documental.</p> -->
                 <p>Técnico de Mantención de vehículos eléctricos CROWN — ROYAL AMERICA — Febrero 2019 - Febrero 2020. Control de flota eléctrica mediante IBM Maximo. Ejecución de 1.5 ciclos preventivos sobre 200+ equipos.</p>
             </section>
             <section>
@@ -135,7 +134,7 @@
                         <span>Santiago, Chile</span>
                     </a>
 
-                    <!-- Licencia con cuadro informativo (Expansible inline) -->
+                    <!-- Licencia con cuadro informativo -->
                     <button class="contact-item-wrapper" onclick="this.classList.toggle('active')"
                         title="Haz clic para leer más" aria-expanded="false">
                         <div class="contact-item-header">
@@ -149,7 +148,6 @@
                         </div>
                     </button>
 
-                    <!-- Inglés sin link por el momento -->
                     <div class="contact-item">
                         <i class="fa-solid fa-language"></i>
                         <span>Inglés Bilingüe</span>
@@ -241,10 +239,7 @@
 
                         <!-- Bubble Map Wrapper -->
                         <div class="skill-map-wrapper">
-                            <!-- 3D Canvas Anchor -->
                             <div id="skill-map-3d-canvas"></div>
-
-                            <!-- 3D Map Interactivity UI -->
                             <div class="map-3d-ui">
                                 <span class="map-hint icon-only" title="Arrastra para orbitar"><i
                                         class="fa-solid fa-hand-pointer swipe-animation"></i></span>
@@ -260,114 +255,90 @@
                         <!-- Bubble Map 2D for Print Version -->
                         <div class="bubble-container">
                             <svg width="450" height="320" viewBox="0 0 700 500" class="bubble-chart" xmlns="http://www.w3.org/2000/svg">
-                                <!-- ==== ZONE LABELS ==== -->
                                 <text x="90" y="30" class="zone-label zone-soft">← BLANDAS</text>
-                                <text x="350" y="490" class="zone-label zone-hybrid" text-anchor="middle">HÍBRIDAS
-                                    ↑</text>
+                                <text x="350" y="490" class="zone-label zone-hybrid" text-anchor="middle">HÍBRIDAS ↑</text>
                                 <text x="610" y="30" class="zone-label zone-hard" text-anchor="end">DURAS →</text>
 
-                                <!-- ==== CONNECTOR LINES (centro 350,240) ==== -->
-                                <!-- Blandas -->
                                 <line x1="350" y1="240" x2="148" y2="190" class="conn-line conn-soft" />
                                 <line x1="350" y1="240" x2="220" y2="250" class="conn-line conn-soft" />
                                 <line x1="350" y1="240" x2="60" y2="200" class="conn-line conn-soft" />
                                 <line x1="350" y1="240" x2="130" y2="440" class="conn-line conn-soft" />
                                 <line x1="350" y1="240" x2="88" y2="270" class="conn-line conn-soft" />
                                 <line x1="350" y1="240" x2="128" y2="350" class="conn-line conn-soft" />
-                                <!-- Duras -->
+                                
                                 <line x1="350" y1="240" x2="460" y2="130" class="conn-line conn-hard" />
                                 <line x1="350" y1="240" x2="555" y2="155" class="conn-line conn-hard" />
                                 <line x1="350" y1="240" x2="575" y2="235" class="conn-line conn-hard" />
                                 <line x1="350" y1="240" x2="545" y2="320" class="conn-line conn-hard" />
                                 <line x1="350" y1="240" x2="455" y2="340" class="conn-line conn-hard" />
                                 <line x1="350" y1="240" x2="570" y2="390" class="conn-line conn-hard" />
-                                <!-- Híbridas -->
+                                
                                 <line x1="350" y1="240" x2="290" y2="380" class="conn-line conn-hybrid" />
                                 <line x1="350" y1="240" x2="195" y2="395" class="conn-line conn-hybrid" />
                                 <line x1="350" y1="240" x2="230" y2="460" class="conn-line conn-hybrid" />
                                 <line x1="350" y1="240" x2="390" y2="420" class="conn-line conn-hybrid" />
 
-                                <!-- ==== CENTER HUB ==== -->
                                 <circle cx="350" cy="240" r="18" class="hub-circle" />
                                 <circle cx="350" cy="240" r="6" class="hub-dot" />
 
-                                <!-- ==== BLANDAS NODES ==== -->
-                                <!-- Investigación Social  size:20 -->
                                 <circle cx="148" cy="190" r="20" class="bnode bnode-soft" />
                                 <text x="148" y="187" class="blabel" text-anchor="middle">Investigación</text>
                                 <text x="148" y="199" class="blabel" text-anchor="middle">Social</text>
 
-                                <!-- Autopoiesis  size:25 -->
                                 <circle cx="220" cy="250" r="25" class="bnode bnode-soft" />
                                 <text x="220" y="254" class="blabel" text-anchor="middle">Autopoiesis</text>
 
-                                <!-- Liderazgo / PMBOK  size:25 -->
                                 <circle cx="88" cy="270" r="25" class="bnode bnode-soft" />
                                 <text x="88" y="267" class="blabel" text-anchor="middle">Liderazgo</text>
                                 <text x="88" y="279" class="blabel" text-anchor="middle">PMBOK</text>
 
-                                <!-- Respeto Universal  size:22 -->
                                 <circle cx="60" cy="200" r="22" class="bnode bnode-soft" />
                                 <text x="60" y="197" class="blabel" text-anchor="middle">Respeto</text>
                                 <text x="60" y="208" class="blabel" text-anchor="middle">Universal</text>
 
-                                <!-- Control de Gestión  size:32 -->
                                 <circle cx="128" cy="350" r="32" class="bnode bnode-soft bnode-big" />
                                 <text x="128" y="347" class="blabel" text-anchor="middle">Control de</text>
                                 <text x="128" y="359" class="blabel" text-anchor="middle">Gestión</text>
 
-                                <!-- Ética Profesional  size:28 -->
                                 <circle cx="130" cy="440" r="28" class="bnode bnode-soft" />
                                 <text x="130" y="437" class="blabel" text-anchor="middle">Ética</text>
                                 <text x="130" y="449" class="blabel" text-anchor="middle">Profesional</text>
 
-                                <!-- ==== DURAS NODES ==== -->
-                                <!-- Excel  size:26 -->
                                 <circle cx="460" cy="130" r="26" class="bnode bnode-hard" />
                                 <text x="460" y="134" class="blabel" text-anchor="middle">Excel</text>
 
-                                <!-- Bash / Linux  size:18 -->
                                 <circle cx="555" cy="155" r="18" class="bnode bnode-hard" />
                                 <text x="555" y="152" class="blabel" text-anchor="middle">Bash /</text>
                                 <text x="555" y="163" class="blabel" text-anchor="middle">Linux</text>
 
-                                <!-- SQL / BigQuery  size:30 -->
                                 <circle cx="575" cy="235" r="30" class="bnode bnode-hard bnode-big" />
                                 <text x="575" y="232" class="blabel" text-anchor="middle">SQL /</text>
                                 <text x="575" y="244" class="blabel" text-anchor="middle">BigQuery</text>
 
-                                <!-- Cloud / Ops  size:22 -->
                                 <circle cx="545" cy="320" r="22" class="bnode bnode-hard" />
                                 <text x="545" y="317" class="blabel" text-anchor="middle">Cloud /</text>
                                 <text x="545" y="329" class="blabel" text-anchor="middle">Ops</text>
 
-                                <!-- Power BI / DAX  size:32 -->
                                 <circle cx="455" cy="340" r="32" class="bnode bnode-hard bnode-big" />
                                 <text x="455" y="337" class="blabel" text-anchor="middle">Power BI</text>
                                 <text x="455" y="349" class="blabel" text-anchor="middle">/ DAX</text>
 
-                                <!-- Oracle P6  size:28 -->
                                 <circle cx="570" cy="390" r="28" class="bnode bnode-hard" />
                                 <text x="570" y="387" class="blabel" text-anchor="middle">Oracle</text>
                                 <text x="570" y="399" class="blabel" text-anchor="middle">P6</text>
 
-                                <!-- ==== HÍBRIDAS NODES ==== -->
-                                <!-- Python / R  size:28 -->
                                 <circle cx="290" cy="380" r="28" class="bnode bnode-hybrid" />
                                 <text x="290" y="377" class="blabel" text-anchor="middle">Python</text>
                                 <text x="290" y="389" class="blabel" text-anchor="middle">/ R</text>
 
-                                <!-- Agile / Scrum  size:26 -->
                                 <circle cx="195" cy="395" r="26" class="bnode bnode-hybrid" />
                                 <text x="195" y="392" class="blabel" text-anchor="middle">Agile /</text>
                                 <text x="195" y="404" class="blabel" text-anchor="middle">Scrum</text>
 
-                                <!-- Faena Minera  size:25 -->
                                 <circle cx="230" cy="460" r="25" class="bnode bnode-hybrid-warm" />
                                 <text x="230" y="457" class="blabel" text-anchor="middle">Faena</text>
                                 <text x="230" y="469" class="blabel" text-anchor="middle">Minera</text>
 
-                                <!-- IA Generativa  size:40 -->
                                 <circle cx="390" cy="420" r="40" class="bnode bnode-hybrid bnode-big" style="stroke-width: 4px; fill: rgba(186, 104, 200, 0.3);" />
                                 <text x="390" y="417" class="blabel" text-anchor="middle" style="font-size: 14px; font-weight: 900;">IA</text>
                                 <text x="390" y="432" class="blabel" text-anchor="middle" style="font-size: 14px; font-weight: 900;">Generativa</text>
@@ -375,17 +346,13 @@
                         </div>
                     </section>
 
-                    
                     <!-- Signos Vitales y Estado del Sistema -->
                     <section id="vitalsigns" class="card glass mastery-section">
                         <div class="card-header">
-                            <h2><i class="fa-solid fa-heart-pulse"></i> <span data-i18n="vitals_title">Signos Vitales /
-                                    Status</span></h2>
-                            <p data-i18n="vitals_desc">Condicionantes operativos bio-mecánicos e infraestructura base
-                            </p>
+                            <h2><i class="fa-solid fa-heart-pulse"></i> <span data-i18n="vitals_title">Signos Vitales / Status</span></h2>
+                            <p data-i18n="vitals_desc">Condicionantes operativos bio-mecánicos e infraestructura base</p>
                         </div>
                         <div class="carousel-container">
-                            <!-- SVG Gradients for Custom Gauges -->
                             <svg width="0" height="0" style="position: absolute;">
                                 <defs>
                                     <linearGradient id="affection-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -395,145 +362,92 @@
                                 </defs>
                             </svg>
                             <div class="gauge-grid carousel">
-                                <!-- 1. Alimentación Básica: 60% -->
                                 <div class="gauge-item color-nps-red">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 25.12;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 25.12;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">60%</span><span class="gauge-name"
-                                            data-i18n="gauge_basic_food">Alimentación Básica</span><span
-                                            class="gauge-desc" data-i18n="desc_attention">Atención Requerida</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">60%</span><span class="gauge-name" data-i18n="gauge_basic_food">Alimentación Básica</span><span class="gauge-desc" data-i18n="desc_attention">Atención Requerida</span></div>
                                 </div>
-                                <!-- 2. Homeostasis: 97% -->
                                 <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 1.88;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 1.88;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">97%</span><span class="gauge-name"
-                                            data-i18n="gauge_homeostasis">Homeostasis</span><span class="gauge-desc"
-                                            data-i18n="desc_optimal">Sistema Óptimo</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">97%</span><span class="gauge-name" data-i18n="gauge_homeostasis">Homeostasis</span><span class="gauge-desc" data-i18n="desc_optimal">Sistema Óptimo</span></div>
                                 </div>
-                                <!-- 3. Cobijo / Vivienda: 67% -->
                                 <div class="gauge-item color-nps-red">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 20.72;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 20.72;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">67%</span><span class="gauge-name"
-                                            data-i18n="gauge_shelter">Cobijo / Vivienda</span><span class="gauge-desc"
-                                            data-i18n="desc_improvable">Mejorable</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">67%</span><span class="gauge-name" data-i18n="gauge_shelter">Cobijo / Vivienda</span><span class="gauge-desc" data-i18n="desc_improvable">Mejorable</span></div>
                                 </div>
-                                <!-- 4. Terminal: 100% -->
                                 <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">98%</span><span class="gauge-name"
-                                            data-i18n="gauge_terminal">Terminal</span><span class="gauge-desc"
-                                            data-i18n="desc_connected">Conectado y Estable</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">98%</span><span class="gauge-name" data-i18n="gauge_terminal">Terminal</span><span class="gauge-desc" data-i18n="desc_connected">Conectado y Estable</span></div>
                                 </div>
-                                <!-- 5. Salud Mental: 86% -->
                                 <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 8.79;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 8.79;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">86%</span><span class="gauge-name"
-                                            data-i18n="gauge_mental">Salud Mental</span><span class="gauge-desc"
-                                            data-i18n="desc_controlled">Bajo Control</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">86%</span><span class="gauge-name" data-i18n="gauge_mental">Salud Mental</span><span class="gauge-desc" data-i18n="desc_controlled">Bajo Control</span></div>
                                 </div>
-                                <!-- 6. Café / Coke: 5% -->
                                 <div class="gauge-item color-coffee">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 59.66;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 59.66;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">5%</span><span class="gauge-name"
-                                            data-i18n="gauge_coffee">Café / Coke</span><span class="gauge-desc"
-                                            data-i18n="desc_critical">Reserva Baja</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">5%</span><span class="gauge-name" data-i18n="gauge_coffee">Café / Coke</span><span class="gauge-desc" data-i18n="desc_critical">Reserva Baja</span></div>
                                 </div>
-                                <!-- 7. Alimentación Superior: 75% -->
                                 <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">75%</span><span class="gauge-name"
-                                            data-i18n="gauge_superior_food">Alimentación Superior</span><span
-                                            class="gauge-desc" data-i18n="desc_adequate">Adecuado</span></div>
+                                    <div class="gauge-info"><span class="gauge-value">75%</span><span class="gauge-name" data-i18n="gauge_superior_food">Alimentación Superior</span><span class="gauge-desc" data-i18n="desc_adequate">Adecuado</span></div>
                                 </div>
-                                <!-- 8. Afecto y Entretenimiento: 20% -->
                                 <div class="gauge-item color-affection">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill gauge-fill-affection"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill gauge-fill-affection" style="stroke-dasharray: 62.8; stroke-dashoffset: 50.24;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">20%</span><span class="gauge-name"
-                                            data-i18n="gauge_affection">Afecto</span><span class="gauge-desc"
-                                            data-i18n="desc_deficit">Déficit de Interacción</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">20%</span><span class="gauge-name" data-i18n="gauge_affection">Afecto</span><span class="gauge-desc" data-i18n="desc_deficit">Déficit de Interacción</span></div>
                                 </div>
-                                <!-- 9. Descanso y Hábitos: 75% -->
                                 <div class="gauge-item color-nps-yellow">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 15.70;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">75%</span><span class="gauge-name"
-                                            data-i18n="gauge_rest">Descanso y Hábitos</span><span class="gauge-desc"
-                                            data-i18n="desc_developing">En Desarrollo</span>
-                                    </div>
+                                    <div class="gauge-info"><span class="gauge-value">75%</span><span class="gauge-name" data-i18n="gauge_rest">Descanso y Hábitos</span><span class="gauge-desc" data-i18n="desc_developing">En Desarrollo</span></div>
                                 </div>
-                                <!-- 10. Conexión Superior: 100% -->
                                 <div class="gauge-item color-nps-green">
                                     <svg viewBox="0 0 100 100" class="gauge" width="100" height="100">
                                         <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-bg" />
-                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill"
-                                            style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
+                                        <path d="M 10 50 A 40 40 0 0 1 50 10" class="gauge-fill" style="stroke-dasharray: 62.8; stroke-dashoffset: 0;" />
                                     </svg>
-                                    <div class="gauge-info"><span class="gauge-value">100%</span><span
-                                            class="gauge-name" data-i18n="gauge_higher">Conexión Superior</span><span
-                                            class="gauge-desc" data-i18n="desc_tuned">Sintonizado</span></div>
+                                    <div class="gauge-info"><span class="gauge-value">100%</span><span class="gauge-name" data-i18n="gauge_higher">Conexión Superior</span><span class="gauge-desc" data-i18n="desc_tuned">Sintonizado</span></div>
                                 </div>
                             </div>
                         </div>
                     </section>
                 </div>
 
-                <!-- Experience -->
+                <!-- Experience Section -->
                 <section id="experience" class="card glass">
                     <div class="card-header">
-                        <h2><i class="fa-solid fa-briefcase"></i> <span data-i18n="exp_title">Trayectoria
-                                Profesional</span></h2>
+                        <h2><i class="fa-solid fa-briefcase"></i> <span data-i18n="exp_title">Trayectoria Profesional</span></h2>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">Junio 2024 - Actualidad</div>
-                            <h3 class="timeline-title">CultureOps & DataOps Developer S-Senior</h3>
+                            <h3 class="timeline-title">CultureOps &amp; DataOps Developer S-Senior</h3>
                             <div class="timeline-org" style="font-weight: 700; color: var(--accent-cyan); font-size: 1.1em;">Grupo MSUS <span style="font-weight: 400; color: var(--text-secondary); font-size: 0.9em;">(Holding Nacional de Startups Comerciales)</span></div>
-                            <p class="timeline-desc">Desarrollo de soluciones de gestión y optimización de flujos de
-                                trabajo. Diseño de módulos integrados tipo ERP low-cost, para seguimiento de Sprints.
-                                Automatización de tableros de rendimiento mediante lógica de programación. Auditorías
-                                SEO.
-                            </p>
+                            <p class="timeline-desc">Desarrollo de soluciones de gestión y optimización de flujos de trabajo. Diseño de módulos integrados tipo ERP low-cost, para seguimiento de Sprints. Automatización de tableros de rendimiento mediante lógica de programación. Auditorías SEO.</p>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-date">Marzo 2023 - Septiembre 2023</div>
@@ -541,34 +455,20 @@
                             <div class="timeline-org">
                                 <a href="https://www.auter.cl" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">AUTER (Control Vial Nacional) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </div>
-                            <p class="timeline-desc">Colabora en gestión integral de bodega central. Imputación de
-                                transacciones
-                                críticas atrasadas a nivel central. Mantenimiento y superación de calidad en despacho y
-                                recepción.</p>
+                            <p class="timeline-desc">Colabora en gestión integral de bodega central. Imputación de transacciones críticas atrasadas a nivel central. Mantenimiento y superación de calidad en despacho y recepción.</p>
                         </div>
-                        <!-- 
-                        <div class="timeline-item">
-                            <div class="timeline-date">Marzo 2021 - Enero 2022</div>
-                            <h3 class="timeline-title">Asistente de Calidad — Especialidad Electricidad</h3>
-                            <div class="timeline-org">Ingeniería Concha y Gana (Empresa Constructora)</div>
-                            <p class="timeline-desc">Eslabón operativo crítico para la <strong>continuidad de operaciones</strong> durante la contingencia sanitaria. Actuando como la interfaz base entre la obra física y los sistemas centrales, aseguré el flujo ininterrumpido de datos mediante la digitalización de protocolos eléctricos en tiempo real. Esta labor permitió el control de calidad remoto y la trazabilidad documental necesaria para evitar paralizaciones críticas en periodos de restricción de movilidad.</p>
-                        </div> 
-                        -->
                         <div class="timeline-item">
                             <div class="timeline-date">Febrero 2019 - Febrero 2020</div>
                             <h3 class="timeline-title">Técnico de Mantención de vehículos 100% eléctricos (CROWN)</h3>
                             <div class="timeline-org">
                                 <a href="https://www.royalamerica.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">ROYAL AMERICA <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </div>
-                            <p class="timeline-desc">Ejecuta x1.5 ciclos preventivos sobre 200+ equipos en 1 año.
-                                Control de flota eléctrica mediante <strong>IBM Maximo</strong>. Manejo técnico avanzado
-                                de transpaletas y apiladores.</p>
+                            <p class="timeline-desc">Ejecuta x1.5 ciclos preventivos sobre 200+ equipos en 1 año. Control de flota eléctrica mediante <strong>IBM Maximo</strong>. Manejo técnico avanzado de transpaletas y apiladores.</p>
                         </div>
                     </div>
                 </section>
 
-                
-                <!-- Unified Education & Certifications -->
+                <!-- Education Section -->
                 <section id="education" class="card glass">
                     <div class="card-header">
                         <h2><i class="fa-solid fa-graduation-cap"></i> Formación Académica y Certificaciones</h2>
@@ -591,10 +491,7 @@
                             <span class="edu-org">
                                 <a href="https://mine-class.com" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">mine-class.com <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </span>
-                            <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general,
-                                Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera
-                                Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación
-                                estratégica del negocio minero.</p>
+                            <p class="edu-meta"><strong>Cursos:</strong> Economía de minerales, Geología general, Minería para no mineros, Planificación Minería Cielo Abierto, Planificación Minera Subterránea, Emprende en minería, Gestión de proyectos mineros, Planificación estratégica del negocio minero.</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2025</span>
@@ -602,10 +499,7 @@
                             <span class="edu-org">
                                 <a href="https://platzi.com/ruta/ingenieria-datos/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Platzi Academy (12 Cursos completados) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </span>
-                            <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server,
-                                MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake),
-                                Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform
-                                (GCP).</p>
+                            <p class="edu-meta"><strong>Stack Analítico y Cloud:</strong> PostgreSQL, SQL Server, MongoDB (Modelado y Aggregation Framework), Apache Spark, Databricks (Delta Lake), Apache Airflow, AWS (Redshift, DynamoDB) y Machine Learning en Google Cloud Platform (GCP).</p>
                         </div>
                         <div class="edu-item highlight">
                             <span class="edu-date">2023 - 2024</span>
@@ -613,8 +507,7 @@
                             <span class="edu-org">
                                 <a href="https://www.uejecutivos.cl/diplomados/detalle/diplomado-en-control-de-gestion-para-profesionales" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">FEN, Universidad de Chile | Promedio 5.5 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </span>
-                            <p class="edu-meta">"Aborda la disciplina con una adecuada planificación del negocio
-                                mediante el diseño y ejecución de controles sobre los distintos procesos."</p>
+                            <p class="edu-meta">"Aborda la disciplina con una adecuada planificación del negocio mediante el diseño y ejecución de controles sobre los distintos procesos."</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">Nov-2024</span>
@@ -629,15 +522,13 @@
                             <span class="edu-org">
                                 <a href="https://www.duoc.cl/carreras/ingenieria-mecanica-automotriz-autotronica/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Duoc UC, Sede San Joaquín (Titulado) | Promedio 6.0 <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7em; opacity: 0.5;"></i></a>
                             </span>
-                            <p class="edu-meta">Capacidad para desenvolverse en áreas productivas, administrativas,
-                                comerciales y de gestión de empresas de mantenimiento y reparación avanzada.</p>
+                            <p class="edu-meta">Capacidad para desenvolverse en áreas productivas, administrativas, comerciales y de gestión de empresas de mantenimiento y reparación avanzada.</p>
                         </div>
                         <div class="edu-item">
                             <span class="edu-date">2010 - 2013</span>
                             <h3 class="edu-heading">Educación Media Humanista-Científica</h3>
                             <span class="edu-org">Colegio Salesiano Oratorio Don Bosco</span>
-                            <p class="edu-meta">PSU Puntaje sólido: Lenguaje 653, Matemáticas 648, Ciencias 613, NEM 564.
-                            </p>
+                            <p class="edu-meta">PSU Puntaje sólido: Lenguaje 653, Matemáticas 648, Ciencias 613, NEM 564.</p>
                         </div>
                     </div>
                 </section>
@@ -679,9 +570,7 @@
                     </div>
 
                     <div class="self-taught">
-                        <p><strong>Investigación & Liderazgo (Autodidacta):</strong> Técnicas de investigación social
-                            (Restituto Sierra Bravo), Agile Manifesto, Liderazgo (Maxwell), Ventas (Willingham), PMBOK® Guide (PMI).
-                        </p>
+                        <p><strong>Investigación & Liderazgo (Autodidacta):</strong> Técnicas de investigación social (Restituto Sierra Bravo), Agile Manifesto, Liderazgo (Maxwell), Ventas (Willingham), PMBOK® Guide (PMI).</p>
                     </div>
                 </section>
             </div>
@@ -697,15 +586,14 @@
                     </p>
                 </div>
                 <div class="export-buttons">
-                    <button class="btn export-btn" onclick="exportCV()"
-                        aria-label="Exportar CV como PDF">
+                    <button class="btn export-btn" onclick="exportCV()" aria-label="Exportar CV como PDF">
                         <i class="fa-solid fa-file-arrow-down"></i> Exportar CV
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- ATS Keyword Cluster (Accessible text for parser extraction) -->
+        <!-- ATS Keyword Cluster -->
         <div class="ats-metadata" aria-hidden="true">
             <section>
                 <h2>Competencias Técnicas y Herramientas</h2>
@@ -714,8 +602,7 @@
         </div>
     </div>
 
-
-    <!-- 3D HTML Tooltip (Fixed Overlay reparentado) -->
+    <!-- 3D HTML Tooltip -->
     <div id="skill-tooltip-html" class="html-tooltip">
         <button id="tooltip-close" title="Cerrar">✕</button>
         <h4 id="tooltip-name"></h4>
@@ -724,12 +611,9 @@
         <p id="tooltip-detail"></p>
     </div>
 
-    <!-- PDF Export Logic (Native Print — ATS Compatible) -->
+    <!-- PDF Export & i18n Scripts -->
     <script src="js/export.js?v=1.3"></script>
-    <!-- i18n — Internacionalización automática -->
     <script src="js/i18n.js?v=1.1"></script>
-
-    <!-- ThreeJS Skill Map Logic -->
     <script type="module" src="js/skillMap3D.js"></script>
 </body>
 

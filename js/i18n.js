@@ -1,13 +1,15 @@
 /**
  * i18n.js — Internacionalización del Portfolio de Ignacio Salas Vega
  * Idiomas soportados: es (base), en, de, ja, ru
- * Se auto-detecta desde navigator.language; fallback a español.
+ * Auto-detecta idioma del navegador; fallback a español.
  */
 
 const translations = {
     es: {
-        // Header
+        // Headers & Titles
         subtitle: "Controller en busca de un empleo Entry level, con habilidades de Prompt Engineering y Data Engineering",
+        subtitle_controller: "Controller en busca de un empleo Entry level, con habilidades de Prompt Engineering y Data Engineering",
+        subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
 
         // Sección Signos Vitales
@@ -46,15 +48,18 @@ const translations = {
         // Mapa — hint
         map_hint: "Arrastra para orbitar",
 
-        // Perfil estratégico
+        // Perfil estratégico — Controller
         profile_title: "Perfil Estratégico",
-
-        // Sección experiencia
-        exp_title: "Trayectoria Profesional",
         profile_desc: "En la transición desde la Ingeniería Automotriz hacia el rol de Controller en busca de un empleo Entry level, con habilidades de Prompt Engineering y Data Engineering, propongo un perfil mixto que integra una sólida base técnico-operativa en el área de mantención con visión estratégica para empresas modernas. He realizado prácticas en empresas de Grupo MSUS:<br><br><a href='https://sadhanacore.com/' target='_blank' style='color: var(--accent-cyan);'>https://sadhanacore.com/</a><br>• He construido tableros de visualización de datos para clientes internos y externos.<br>• He integrado Inteligencia Generativa en el desarrollo de propuestas comerciales logrando 1 venta de servicios en Mercado Público (Chile).<br>• He operado herramientas de automatización inteligente y a bajo costo para servicios de bienestar para oficinas de bufete de abogados.<br>• He implementado flujos de control y análisis de resultados de eventos masivos como media-partner para sector del bienestar.<br><br><a href='https://prismadigital.io/' target='_blank' style='color: var(--accent-cyan);'>https://prismadigital.io/</a><br>• He realizado Auditorías SEO para cliente dedicado al e-commerce de productos parrilleros y pizzeros.<br><br><strong>Contacto de referencia:</strong> Felipe Ramírez: +569 8526 5640 \"CEO de Sadhana Core y Head of Sales en Prisma Digital\"",
+        
+        // Perfil Conductor Profesional
+        profile_title_conductor: "Perfil Profesional de Conducción & Logística",
+        profile_desc_conductor: "Conductor profesional bilingüe (Español nativo, Inglés C2) con licencias A2, A4, B y C sin anotaciones. Amplia experiencia en logística de distribución urbana de alimentos cárnicos en la ciudad de Santiago (<strong>Susaron</strong>), traslado bilingüe de dignatarios y autoridades VIP en los <strong>Juegos Panamericanos y Parapanamericanos Santiago 2023</strong>, y transporte privado de pasajeros alcanzando la categoría máxima <strong>Nivel Platino en Uber</strong>. Titulado de <strong>Ingeniería en Mecánica Automotriz y Autotrónica (Duoc UC)</strong>, lo que otorga un respaldo técnico único en diagnóstico preventivo, física de operación, gestión de flotas y seguridad vial.",
+
+        exp_title: "Trayectoria Profesional",
         specialized_title: "Formación autónoma complementaria",
 
-        // Tech Vitals
+        // Tech Vitals — Controller
         tech_excel: "Avanzado",
         tech_bq: "Lee y Depura",
         tech_m: "Ejecuta",
@@ -66,10 +71,22 @@ const translations = {
         tech_pbi: "Produce",
         tech_html: "Administra",
         tech_r: "No Requerido",
+
+        // Tech Vitals — Conductor
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Bilingüe",
+        tech_uber: "Nivel Platino",
+        tech_panam: "Dignatarios 2023",
+        tech_susaron: "Carga Cárnica Susaron",
+        tech_mech: "Ing. Duoc UC",
+        tech_safety: "Conducción Defensiva",
+        tech_fleet: "IBM Maximo",
     },
 
     en: {
         subtitle: "Controller with Prompt Engineering & Data Engineering skills",
+        subtitle_controller: "Controller with Prompt Engineering & Data Engineering skills",
+        subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
 
         vitals_title: "Vital Signs / Status",
@@ -103,8 +120,12 @@ const translations = {
 
         map_hint: "Drag to orbit",
         profile_title: "Strategic Profile",
+        profile_desc: "In the transition from Automotive Engineering to a Controller role with Prompt Engineering and Data Engineering skills, I propose a mixed profile that integrates a solid technical-operational base in the maintenance area with a strategic vision for modern companies. I have completed internships at Grupo MSUS companies...",
+        
+        profile_title_conductor: "Professional Driving & Logistics Profile",
+        profile_desc_conductor: "Bilingual professional driver (Native Spanish, C2 English) holding Chilean professional licenses A2, A4, B, and C with clean record. Extensive experience in urban cold-chain distribution of meat products in Santiago (<strong>Susaron</strong>), bilingual dignitary and VIP delegation transport during the Santiago 2023 Pan American and Parapan American Games, and top-rated private passenger transport achieving <strong>Uber Platinum Status</strong>. Holds a B.S. in Automotive Mechanical Engineering from Duoc UC.",
+
         exp_title: "Professional Background",
-        profile_desc: "In the transition from Automotive Engineering to a Controller role with Prompt Engineering and Data Engineering skills, I propose a mixed profile that integrates a solid technical-operational base in the maintenance area with a strategic vision for modern companies. I have completed internships at Grupo MSUS companies:<br><br><a href='https://sadhanacore.com/' target='_blank' style='color: var(--accent-cyan);'>https://sadhanacore.com/</a><br>• I have built data visualization dashboards for internal and external clients.<br>• I have integrated Generative Intelligence in the development of commercial proposals, achieving 1 service sale in Mercado Público (Chile).<br>• I have operated intelligent, low-cost automation tools for wellness services for a law firm client.<br>• I have implemented control flows and results analysis for mass events as a media-partner for the wellness sector.<br><br><a href='https://prismadigital.io/' target='_blank' style='color: var(--accent-cyan);'>https://prismadigital.io/</a><br>• I have performed SEO Audits for a client dedicated to e-commerce of barbecue and pizza products.<br><br><strong>Reference contact:</strong> Felipe Ramírez: +569 8526 5640 \"CEO of Sadhana Core & Head of Sales at Prisma Digital\"",
         specialized_title: "Complementary & Specialized Training",
 
         tech_excel: "Advanced",
@@ -118,10 +139,21 @@ const translations = {
         tech_pbi: "Produces",
         tech_html: "Administers",
         tech_r: "Not Required",
+
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Bilingual",
+        tech_uber: "Platinum Rank",
+        tech_panam: "Dignitaries 2023",
+        tech_susaron: "Susaron Cold Cargo",
+        tech_mech: "Eng. Duoc UC",
+        tech_safety: "Defensive Driving",
+        tech_fleet: "IBM Maximo",
     },
 
     de: {
         subtitle: "Controller mit Kenntnissen in Prompt Engineering & Data Engineering",
+        subtitle_controller: "Controller mit Kenntnissen in Prompt Engineering & Data Engineering",
+        subtitle_conductor: "Zweisprachiger Berufskraftfahrer | Führerschein A2 / A4 / B / C | VIP & Logistik",
         contact_title: "Kontaktinformationen",
 
         vitals_title: "Vitaldaten / Status",
@@ -155,8 +187,12 @@ const translations = {
 
         map_hint: "Ziehen zum Navigieren",
         profile_title: "Strategisches Profil",
+        profile_desc: "Beim Übergang vom Automotive Engineering zur Rolle als Controller...",
+        
+        profile_title_conductor: "Berufskraftfahrer & Logistik Profil",
+        profile_desc_conductor: "Zweisprachiger Berufskraftfahrer (Spanisch Muttersprache, Englisch C2) mit Führerscheinen A2, A4, B und C. Erfahrung in der Fleischwarenlogistik bei <strong>Susaron</strong> (Santiago), VIP-Diplomatentransport bei den Panamerikanischen Spielen 2023 und <strong>Uber Platin Status</strong>.",
+
         exp_title: "Beruflicher Werdegang",
-        profile_desc: "Beim Übergang vom Automotive Engineering zur Rolle als Controller mit Kenntnissen in Prompt Engineering und Data Engineering schlage ich ein gemischtes Profil vor, das eine solide technisch-operative Basis im Bereich Instandhaltung mit einer strategischen Vision für moderne Unternehmen verbindet. Ich habe Praktika bei Unternehmen der Grupo MSUS absolviert:<br><br><a href='https://sadhanacore.com/' target='_blank' style='color: var(--accent-cyan);'>https://sadhanacore.com/</a><br>• Ich habe Datenvisualisierungs-Dashboards für interne und externe Kunden erstellt.<br>• Ich habe generative Intelligenz in die Entwicklung von kommerziellen Angeboten integriert und einen Serviceverkauf in Mercado Público (Chile) erzielt.<br>• Ich habe intelligente, kostengünstige Automatisierungstools für Wellness-Dienstleistungen für einen Anwaltskanzlei-Kunden bedient.<br>• Ich habe Kontrollflüsse und Ergebnisanalysen für Massenveranstaltungen als Medienpartner für den Wellness-Sektor implementiert.<br><br><a href='https://prismadigital.io/' target='_blank' style='color: var(--accent-cyan);'>https://prismadigital.io/</a><br>• Ich habe SEO-Audits für einen Kunden durchgeführt, der sich auf den E-Commerce von Grill- und Pizzaprodukten spezialisiert hat.<br><br><strong>Referenzkontakt:</strong> Felipe Ramírez: +569 8526 5640 \"CEO von Sadhana Core & Head of Sales bei Prisma Digital\"",
         specialized_title: "Zusatzqualifikationen & Fachausbildung",
 
         tech_excel: "Fortgeschritten",
@@ -170,10 +206,21 @@ const translations = {
         tech_pbi: "Produziert",
         tech_html: "Verwaltet",
         tech_r: "Nicht erforderlich",
+
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Zweisprachig",
+        tech_uber: "Platin Status",
+        tech_panam: "Diplomaten 2023",
+        tech_susaron: "Kühltransport Susaron",
+        tech_mech: "Ing. Duoc UC",
+        tech_safety: "Defensives Fahren",
+        tech_fleet: "IBM Maximo",
     },
 
     ja: {
         subtitle: "Controller (Prompt Engineering & Data Engineering 技能保有)",
+        subtitle_controller: "Controller (Prompt Engineering & Data Engineering 技能保有)",
+        subtitle_conductor: "バイリンガルプロドライバー | 免許 A2 / A4 / B / C | VIP要人輸送 & 配送物流",
         contact_title: "連絡先情報",
 
         vitals_title: "バイタルサイン / ステータス",
@@ -207,8 +254,12 @@ const translations = {
 
         map_hint: "ドラッグで回転",
         profile_title: "戦略的プロフィール",
+        profile_desc: "自動車工学からプロンプトエンジニアリングおよびデータエンジニアリングのスキルを持つController役への移行...",
+
+        profile_title_conductor: "プロドライバー & 流通物流プロフィール",
+        profile_desc_conductor: "プロフェッショナルバイリンガルドライバー（スペイン語母国語、英語C2）。A2、A4、B、Cプロ運転免許を保有。サンティアゴでの精肉配送物流（<strong>Susaron</strong>）、2023年パンアメリカン競技大会でのVIP・要人バイリンガル輸送、および**Uberプラチナレベル**の実績を保有。Duoc UCの自動車機械工学士号を有し、車両整備・防衛運転に精通。",
+
         exp_title: "職歴",
-        profile_desc: "自動車工学からプロンプトエンジニアリングおよびデータエンジニアリングのスキルを持つController役への移行にあたり、メンテナンス分野の強固な技術・運用基盤と現代企業向けの戦略的ビジョンを統合した混合プロフィールを提案します。Grupo MSUSの各社でインターンシップを経験しました：<br><br><a href='https://sadhanacore.com/' target='_blank' style='color: var(--accent-cyan);'>https://sadhanacore.com/</a><br>• 社内および社外クライアント向けにデータ可視化ダッシュボードを構築しました。<br>• 商業提案の開発に生成AIを統合し、Mercado Público (Chile) で1件のサービス販売を達成しました。<br>• 法律事務所のクライアント向けに、ウェルネスサービスのためのインテリジェントで低コストな自動化ツールを運用しました。<br>• ウェルネスセクターのメディアパートナーとして、大規模イベントのコントロールフローと結果分析を実装しました。<br><br><a href='https://prismadigital.io/' target='_blank' style='color: var(--accent-cyan);'>https://prismadigital.io/</a><br>• バーベキューおよびピザ製品のEコマースを専門とするクライアント向けにSEO監査を実施しました。<br><br><strong>連絡先リファレンス:</strong> Felipe Ramírez: +569 8526 5640 \"CEO of Sadhana Core & Head of Sales at Prisma Digital\"",
         specialized_title: "補足教育および専門トレーニング",
 
         tech_excel: "上級",
@@ -222,10 +273,21 @@ const translations = {
         tech_pbi: "作成",
         tech_html: "管理",
         tech_r: "不要",
+
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 バイリンガル",
+        tech_uber: "プラチナレベル",
+        tech_panam: "要人輸送 2023",
+        tech_susaron: "Susaron 精肉配送",
+        tech_mech: "Duoc UC 機械工学",
+        tech_safety: "防衛運転",
+        tech_fleet: "IBM Maximo",
     },
 
     ru: {
         subtitle: "Controller с навыками Prompt Engineering и Data Engineering",
+        subtitle_controller: "Controller с навыками Prompt Engineering и Data Engineering",
+        subtitle_conductor: "Двуязычный профессиональный водитель | Права A2 / A4 / B / C | Транспорт VIP & Логистика",
         contact_title: "Контактная информация",
 
         vitals_title: "Жизненные показатели / Статус",
@@ -259,8 +321,12 @@ const translations = {
 
         map_hint: "Тяните для вращения",
         profile_title: "Стратегический профиль",
+        profile_desc: "В переходе от автомобильной инженерии к роли Controller...",
+
+        profile_title_conductor: "Профиль Профессионального Водителя и Логиста",
+        profile_desc_conductor: "Двуязычный профессиональный водитель (испанский родной, английский C2) с правами A2, A4, B и C. Опыт городской логистики доставки мясных продуктов в Сантьяго (<strong>Susaron</strong>), сопровождения дипломатов и VIP-делегаций на Панамериканских играх 2023 и статус <strong>Uber Платина</strong>. Инженер по автомобильной механике (Duoc UC).",
+
         exp_title: "Профессиональный путь",
-        profile_desc: "В переходе от автомобильной инженерии к роли Controller с навыками Prompt Engineering и Data Engineering я предлагаю смешанный профиль, сочетающий прочную технико-операционную базу в области технического обслуживания со стратегическим видением для современных компаний. Я прошел стажировку в компаниях Grupo MSUS:<br><br><a href='https://sadhanacore.com/' target='_blank' style='color: var(--accent-cyan);'>https://sadhanacore.com/</a><br>• Я создал дашборды для визуализации данных для внутренних и внешних клиентов.<br>• Я интегрировал генеративный ИИ в разработку коммерческих предложений, добившись одной продажи услуг на Mercado Público (Chile).<br>• Я работал с интеллектуальными и недорогими инструментами автоматизации оздоровительных услуг для клиента юридической фирмы.<br>• Я внедрил потоки контроля и анализа результатов массовых мероприятий в качестве медиа-партнера в секторе велнеса.<br><br><a href='https://prismadigital.io/' target='_blank' style='color: var(--accent-cyan);'>https://prismadigital.io/</a><br>• Я провел SEO-аудиты для клиента, специализирующегося на электронной коммерции товаров для гриля и пиццы.<br><br><strong>Рекомендатель:</strong> Felipe Ramírez: +569 8526 5640 \"CEO Sadhana Core и Head of Sales в Prisma Digital\"",
         specialized_title: "Дополнительное и специальное образование",
 
         tech_excel: "Продвинутый",
@@ -274,22 +340,24 @@ const translations = {
         tech_pbi: "Производит",
         tech_html: "Администрирует",
         tech_r: "Не требуется",
+
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Двуязычный",
+        tech_uber: "Статус Платина",
+        tech_panam: "Дипломаты 2023",
+        tech_susaron: "Мясная логистика Susaron",
+        tech_mech: "Индж. Duoc UC",
+        tech_safety: "Защитное вождение",
+        tech_fleet: "IBM Maximo",
     }
 };
 
-/**
- * Detecta el idioma del navegador y retorna el código base (es/en/de/ja/ru).
- * Fallback: "es"
- */
 function detectLang() {
     const nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase().split('-')[0];
     const supported = ['es', 'en', 'de', 'ja', 'ru'];
     return supported.includes(nav) ? nav : 'es';
 }
 
-/**
- * Aplica las traducciones al DOM buscando atributos data-i18n.
- */
 function applyTranslations(lang) {
     const t = translations[lang] || translations['es'];
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -299,7 +367,6 @@ function applyTranslations(lang) {
         }
     });
 
-    // Actualiza el atributo lang del <html> para accesibilidad
     document.documentElement.lang = lang;
 }
 
@@ -307,13 +374,11 @@ function initI18n() {
     const lang = detectLang();
     applyTranslations(lang);
 
-    // Exponer globalmente para que se pueda forzar desde consola: setLang('en')
     window.setLang = (l) => applyTranslations(l);
     window.currentLang = lang;
     window.translations = translations;
 }
 
-// Inicializar al cargar
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initI18n);
 } else {
