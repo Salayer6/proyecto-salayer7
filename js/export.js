@@ -31,4 +31,4 @@ function exportCV() {
 }
 
 function exportColorCV() { exportCV(); }
-function exportBWCV()    { exportCV(); }
+function exportBWCV() { exportCV(); }
