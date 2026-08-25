@@ -1478,8 +1478,52 @@ path.gauge-fill-affection {
     color: var(--text-secondary);
 }
 
+/* ═══════════════════════════════════════════════════════════
+   EXPORT BANNER — Premium Glassmorphic CTA Section
+   ═══════════════════════════════════════════════════════════ */
+
 .export-banner {
     margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient border glow */
+.export-banner::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary),
+        var(--accent-cyan),
+        var(--accent-pink),
+        var(--accent-primary)
+    );
+    background-size: 300% 300%;
+    animation: export-border-glow 6s ease infinite;
+    z-index: -1;
+    opacity: 0.6;
+    filter: blur(3px);
+}
+
+.export-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.85) 0%,
+        rgba(15, 23, 42, 0.92) 100%
+    );
+    z-index: -1;
+}
+
+@keyframes export-border-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .export-flex {
@@ -1487,12 +1531,99 @@ path.gauge-fill-affection {
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .export-banner h2 {
     font-family: var(--font-header);
     margin-bottom: 0.5rem;
     font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.export-banner h2 i {
+    -webkit-text-fill-color: var(--accent-primary);
+    margin-right: 0.35rem;
+    filter: drop-shadow(0 0 6px rgba(150, 95, 212, 0.5));
+}
+
+.export-banner > .export-flex > div:first-child > p:first-of-type {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* Export feature badges */
+.export-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.export-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.export-chip i {
+    font-size: 0.68rem;
+}
+
+.export-chip.chip-ats {
+    color: var(--accent-green);
+    border-color: rgba(16, 185, 129, 0.25);
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.export-chip.chip-pdf {
+    color: var(--accent-amber);
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.export-chip.chip-text {
+    color: var(--accent-cyan);
+    border-color: rgba(34, 211, 238, 0.25);
+    background: rgba(34, 211, 238, 0.08);
+}
+
+.export-chip.chip-harvard {
+    color: var(--accent-pink);
+    border-color: rgba(244, 114, 182, 0.25);
+    background: rgba(244, 114, 182, 0.08);
+}
+
+/* Export info hint */
+.export-hint {
+    font-size: 0.78rem;
+    color: var(--accent-cyan);
+    margin-top: 0.65rem;
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: opacity 0.3s;
+}
+
+.export-banner:hover .export-hint {
+    opacity: 1;
 }
 
 .features {
@@ -1517,28 +1648,87 @@ path.gauge-fill-affection {
     font-family: var(--font-header);
 }
 
+/* ── Primary CTA Button ────────────────────────────────── */
 .btn {
     padding: 1rem 2rem;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-cyan));
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     color: white;
     font-weight: 700;
     font-family: var(--font-header);
     cursor: pointer;
     font-size: 1.1rem;
-    box-shadow: 0 4px 20px rgba(150, 95, 212, 0.4);
-    /* accent-primary/40 */
-    transition: filter 0.3s, transform 0.2s;
+    box-shadow:
+        0 4px 20px rgba(150, 95, 212, 0.35),
+        0 0 0 0 rgba(150, 95, 212, 0);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.02em;
+}
+
+/* Shimmer sweep effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 125%;
 }
 
 .btn:hover {
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 30px rgba(150, 95, 212, 0.45),
+        0 0 20px rgba(34, 211, 238, 0.15);
+    filter: brightness(1.08);
 }
 
 .btn:active {
-    transform: scale(0.98);
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 2px 12px rgba(150, 95, 212, 0.3);
 }
+
+/* Export button specific overrides */
+.export-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    white-space: nowrap;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.export-btn i {
+    font-size: 1.15rem;
+    transition: transform 0.3s;
+}
+
+.export-btn:hover i {
+    transform: translateY(2px);
+    animation: bounce-icon 0.6s ease;
+}
+
+@keyframes bounce-icon {
+    0%, 100% { transform: translateY(0); }
+    30% { transform: translateY(3px); }
+    60% { transform: translateY(-1px); }
+}
+
 
 
 /* RESPONSIVE DESIGN */
@@ -1754,9 +1944,21 @@ path.gauge-fill-affection {
         text-align: center;
     }
 
+    .export-features {
+        justify-content: center;
+    }
+
+    .export-hint {
+        justify-content: center;
+    }
+
     .btn {
         width: 100%;
         padding: 0.8rem 1.5rem;
+    }
+
+    .export-btn {
+        width: 100%;
     }
 }
 
@@ -1782,9 +1984,9 @@ path.gauge-fill-affection {
 }
 
 
-/* ATS Metadata Persistence Layer — HiringRoom Compatible
-   Uses clip-rect technique: content stays in PDF text layer
-   but is invisible on screen. Parsers extract text normally. */
+/* ATS Metadata Persistence Layer — HiringRoom & ATS Parser Compatible
+   Uses clip-rect technique: content stays in DOM text layer for parsers,
+   completely invisible on screen, and formats as Harvard CV when printed. */
 .ats-metadata {
     position: absolute;
     width: 1px;
@@ -1803,41 +2005,46 @@ path.gauge-fill-affection {
     line-height: 1;
 }
 
-/* Ensure inner elements don't inherit visible styles */
-.ats-metadata h2,
-.ats-metadata p,
-.ats-metadata section {
-    font-size: inherit;
-    line-height: inherit;
-    margin: 0;
-    padding: 0;
-    color: inherit;
+@media screen {
+    .ats-metadata,
+    .ats-metadata * {
+        color: transparent !important;
+        font-size: 1px !important;
+        line-height: 1 !important;
+        border: none !important;
+        background: transparent !important;
+    }
 }
 
 /* ==========================================================================
-   PRINT STYLES — HARVARD CV FORMAT (ATS METADATA)
+   PRINT STYLES — HARVARD & EXECUTIVE ATS-OPTIMIZED CV EXPORT
    ========================================================================== */
 
-
 @media print {
-
-    /* 1. Reset Print */
+    /* 1. Page Setup & Document Canvas */
     @page {
-        size: auto;
-        margin: 1.5cm;
+        size: letter portrait;
+        margin: 12mm 15mm 12mm 15mm;
     }
 
-    body {
-        background-color: white !important;
-        background-image: none !important;
-        color: black !important;
-        font-family: Georgia, 'Times New Roman', serif !important;
-        font-size: 10pt !important;
-        line-height: 1.4 !important;
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+    }
+
+    html, body {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #0f172a !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+        font-size: 9.2pt !important;
+        line-height: 1.35 !important;
         margin: 0 !important;
         padding: 0 !important;
+        width: 100% !important;
     }
 
     body::before,
@@ -1846,17 +2053,33 @@ path.gauge-fill-affection {
         content: none !important;
     }
 
-    /* 2. Hide Web UI completely */
+    /* 2. Hide All Interactive & Web UI Elements */
     header,
     main,
+    nav,
     .export-banner,
     .html-tooltip,
     #export-overlay,
-    .container>*:not(.ats-metadata) {
+    .bubble-container,
+    .map-3d-ui,
+    .nav-links,
+    .contact-section,
+    .container > *:not(.ats-metadata) {
         display: none !important;
+        visibility: hidden !important;
     }
 
-    /* 3. Make ATS Metadata Visible */
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* 3. Reveal and Style the ATS / Harvard Print Document */
     .ats-metadata {
         display: block !important;
         visibility: visible !important;
@@ -1866,136 +2089,218 @@ path.gauge-fill-affection {
         overflow: visible !important;
         clip: auto !important;
         white-space: normal !important;
-        color: black !important;
-        font-size: 10.5pt !important;
+        color: #0f172a !important;
+        font-size: 9.2pt !important;
+        line-height: 1.35 !important;
         z-index: 1 !important;
         pointer-events: auto !important;
-    }
-
-    .ats-metadata section {
-        margin-bottom: 1.5rem !important;
-        page-break-inside: avoid;
-    }
-
-    .ats-metadata h2 {
-        font-family: Georgia, 'Times New Roman', serif !important;
-        font-size: 13pt !important;
-        text-transform: uppercase !important;
-        border-bottom: 1px solid black !important;
-        margin: 0 0 0.6rem 0 !important;
-        padding-bottom: 0.2rem !important;
-        font-weight: bold !important;
-        color: black !important;
-        page-break-after: avoid;
-    }
-
-    .ats-metadata p {
-        margin: 0 0 0.4rem 0 !important;
-        color: black !important;
-    }
-
-    /* Hide the 'Habilidades' metadata visually but keep in PDF text layer for ATS */
-    .ats-metadata section:last-child {
-        position: absolute !important;
-        width: 1px !important;
-        height: 1px !important;
         padding: 0 !important;
-        margin: -1px !important;
-        overflow: hidden !important;
-        clip: rect(0, 0, 0, 0) !important;
-        color: transparent !important;
-        font-size: 1px !important;
-        line-height: 1 !important;
-        border: none !important;
+        margin: 0 !important;
     }
 
-    /* Format "Datos Personales" as a CV Header */
-    .ats-metadata section:nth-of-type(1) h2 {
-        display: none !important;
-        /* Hide "Datos Personales" text */
-    }
-
-    .ats-metadata section:nth-of-type(1) {
+    /* ── Header & Contact Bar ────────────────────────────────────────── */
+    .ats-metadata .cv-header {
+        display: block !important;
         text-align: center !important;
-        margin-bottom: 2rem !important;
-        border-bottom: none !important;
+        margin-bottom: 8pt !important;
+        padding-bottom: 6pt !important;
+        border-bottom: 1.5pt solid #0f172a !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    /* Make the Name very prominent */
-    .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        font-size: 26pt !important;
-        font-weight: bold !important;
+    .ats-metadata .cv-name {
+        font-family: 'Barlow Condensed', 'Inter', sans-serif !important;
+        font-size: 22pt !important;
+        font-weight: 800 !important;
         text-transform: uppercase !important;
-        margin-bottom: 0.5rem !important;
+        letter-spacing: 0.8px !important;
+        color: #0f172a !important;
+        margin: 0 0 2pt 0 !important;
         line-height: 1.1 !important;
     }
 
-    /* Style the remaining contact info as an inline compact block */
-    .ats-metadata section:nth-of-type(1) p:not(:nth-of-type(1)) {
-        display: inline-block !important;
-        font-size: 9.5pt !important;
-        margin: 0 0.3rem !important;
+    .ats-metadata .cv-headline {
+        font-size: 10pt !important;
+        font-weight: 600 !important;
+        font-style: italic !important;
+        color: #334155 !important;
+        margin: 0 0 4pt 0 !important;
+        line-height: 1.2 !important;
     }
 
-    .ats-metadata section:nth-of-type(1) p:not(:nth-of-type(1))::after {
-        content: " | ";
-        color: #999;
-        margin-left: 0.6rem;
+    .ats-metadata .cv-contact-bar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 2pt 6pt !important;
+        font-size: 8.5pt !important;
+        color: #475569 !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
     }
 
-    .ats-metadata section:nth-of-type(1) p:last-child::after {
-        content: "";
+    .ats-metadata .cv-contact-bar span {
+        display: inline-flex !important;
+        align-items: center !important;
     }
 
-    /* Emphasize the Professional Title */
-    .ats-metadata section:nth-of-type(2) {
-        text-align: center !important;
-        margin-top: -1.5rem !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    .ats-metadata section:nth-of-type(2) h2 {
-        display: none !important;
-    }
-
-    .ats-metadata section:nth-of-type(2) p {
-        font-size: 13pt !important;
+    .ats-metadata .cv-contact-bar span:not(:last-child)::after {
+        content: "•" !important;
+        margin-left: 6pt !important;
+        color: #94a3b8 !important;
         font-weight: bold !important;
+    }
+
+    /* ── Sections & Headings ─────────────────────────────────────────── */
+    .ats-metadata .cv-section {
+        display: block !important;
+        margin-bottom: 8pt !important;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+    }
+
+    .ats-metadata .cv-section-title {
+        font-family: 'Barlow Condensed', 'Inter', sans-serif !important;
+        font-size: 11pt !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.8px !important;
+        color: #0f172a !important;
+        border-bottom: 1.2pt solid #0f172a !important;
+        margin: 8pt 0 4pt 0 !important;
+        padding-bottom: 1.5pt !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
+    /* ── Summary Text ────────────────────────────────────────────────── */
+    .ats-metadata .cv-summary-text {
+        font-size: 8.9pt !important;
+        line-height: 1.38 !important;
+        color: #1e293b !important;
+        text-align: justify !important;
+        margin: 0 0 4pt 0 !important;
+    }
+
+    .ats-metadata .cv-summary-text strong {
+        color: #0f172a !important;
+        font-weight: 700 !important;
+    }
+
+    /* ── Experience & Education Entries ──────────────────────────────── */
+    .ats-metadata .cv-entry {
+        display: block !important;
+        margin-bottom: 5.5pt !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .ats-metadata .cv-entry-head {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: baseline !important;
+        margin-bottom: 1.5pt !important;
+    }
+
+    .ats-metadata .cv-entry-main {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
+        padding-right: 8pt !important;
+    }
+
+    .ats-metadata .cv-job-title {
+        font-size: 9.6pt !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+        line-height: 1.25 !important;
+    }
+
+    .ats-metadata .cv-company {
+        font-size: 8.9pt !important;
+        font-weight: 500 !important;
+        font-style: italic !important;
+        color: #334155 !important;
+        line-height: 1.25 !important;
+    }
+
+    .ats-metadata .cv-entry-side {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        text-align: right !important;
+        flex-shrink: 0 !important;
+    }
+
+    .ats-metadata .cv-dates {
+        font-size: 8.6pt !important;
+        font-weight: 600 !important;
+        color: #475569 !important;
+        white-space: nowrap !important;
+    }
+
+    .ats-metadata .cv-location {
+        font-size: 8.2pt !important;
+        color: #64748b !important;
         font-style: italic !important;
     }
 
+    .ats-metadata .cv-entry-detail {
+        font-size: 8.7pt !important;
+        line-height: 1.32 !important;
+        color: #334155 !important;
+        margin: 1.5pt 0 0 0 !important;
+    }
 
-    /* 4. Low-Color Mode — Único estilo de exportación */
-    /* Fondo blanco puro, tipografía oscura, acento mínimo en índigo */
+    /* ── Bullet Lists ────────────────────────────────────────────────── */
+    .ats-metadata .cv-bullets {
+        margin: 2pt 0 0 0 !important;
+        padding-left: 12pt !important;
+        list-style-type: disc !important;
+    }
+
+    .ats-metadata .cv-bullets li {
+        font-size: 8.7pt !important;
+        line-height: 1.33 !important;
+        color: #1e293b !important;
+        margin-bottom: 1.5pt !important;
+        padding-left: 1pt !important;
+    }
+
+    .ats-metadata .cv-bullets li strong {
+        color: #0f172a !important;
+        font-weight: 700 !important;
+    }
+
+    .ats-metadata .cv-bullets li em {
+        color: #475569 !important;
+        font-style: italic !important;
+    }
+
+    /* ── Skills Block ────────────────────────────────────────────────── */
+    .ats-metadata .cv-skills-block {
+        display: block !important;
+        font-size: 8.7pt !important;
+        line-height: 1.35 !important;
+        color: #1e293b !important;
+    }
+
+    .ats-metadata .cv-skills-block p {
+        margin: 0 0 3pt 0 !important;
+    }
+
+    .ats-metadata .cv-skills-block strong {
+        color: #0f172a !important;
+        font-weight: 700 !important;
+    }
+
+    /* ── Print LC (Low-Color / Strict Monochromatic Mode) ─────────────── */
     body.print-lc,
-    body.print-lc .container {
+    body.print-lc .ats-metadata {
+        color: #0f172a !important;
         background-color: #ffffff !important;
-        background-image: none !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-
-    body.print-lc .ats-metadata,
-    body.print-lc .ats-metadata p,
-    body.print-lc .ats-metadata section {
-        color: #1a1a2e !important;
-    }
-
-    /* Nombre: acento índigo oscuro */
-    body.print-lc .ats-metadata section:nth-of-type(1) p:nth-of-type(1) {
-        color: #2d2d6b !important;
-    }
-
-    /* Encabezados de sección: índigo sutil con línea divisora gris claro */
-    body.print-lc .ats-metadata h2 {
-        color: #2d2d6b !important;
-        border-bottom: 1px solid #c0c0d0 !important;
-    }
-
-    /* Título profesional: índigo medio, sin negrita extra */
-    body.print-lc .ats-metadata section:nth-of-type(2) p {
-        color: #3a3a8c !important;
-        font-weight: normal !important;
     }
 }
 
@@ -2013,20 +2318,26 @@ path.gauge-fill-affection {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .export-btn {
-    background: linear-gradient(135deg, #2d2d6b, #4a4a9c) !important;
+    background: linear-gradient(135deg, #2d2d6b 0%, #4a4a9c 50%, #5b5bc4 100%) !important;
     border-color: transparent !important;
     color: #fff !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 15px rgba(45, 45, 107, 0.35) !important;
-    transition: var(--transition);
+    box-shadow:
+        0 4px 15px rgba(45, 45, 107, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .export-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 22px rgba(45, 45, 107, 0.55) !important;
+    box-shadow:
+        0 8px 28px rgba(45, 45, 107, 0.55),
+        0 0 15px rgba(91, 91, 196, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
 }
 
 
