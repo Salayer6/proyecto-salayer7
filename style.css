@@ -2038,7 +2038,7 @@ path.gauge-fill-affection {
     html, body {
         background-color: #ffffff !important;
         background-image: none !important;
-        color: #0f172a !important;
+        color: #000000 !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
         font-size: 9.2pt !important;
         line-height: 1.35 !important;
@@ -2051,6 +2051,20 @@ path.gauge-fill-affection {
     body::after {
         display: none !important;
         content: none !important;
+    }
+
+    /* Reset all web text gradients, transparency, and shadows */
+    h1, h2, h3, h4, h5, h6,
+    .cv-name, .cv-name *,
+    .accent, #user-name, #user-name * {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        text-shadow: none !important;
+        filter: none !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        opacity: 1 !important;
     }
 
     /* 2. Hide All Interactive & Web UI Elements */
@@ -2089,7 +2103,7 @@ path.gauge-fill-affection {
         overflow: visible !important;
         clip: auto !important;
         white-space: normal !important;
-        color: #0f172a !important;
+        color: #000000 !important;
         font-size: 9.2pt !important;
         line-height: 1.35 !important;
         z-index: 1 !important;
@@ -2104,27 +2118,32 @@ path.gauge-fill-affection {
         text-align: center !important;
         margin-bottom: 8pt !important;
         padding-bottom: 6pt !important;
-        border-bottom: 1.5pt solid #0f172a !important;
+        border-bottom: 1.5pt solid #000000 !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
 
     .ats-metadata .cv-name {
-        font-family: 'Barlow Condensed', 'Inter', sans-serif !important;
+        font-family: 'Barlow Condensed', 'Inter', -apple-system, sans-serif !important;
         font-size: 22pt !important;
-        font-weight: 800 !important;
+        font-weight: 900 !important;
         text-transform: uppercase !important;
-        letter-spacing: 0.8px !important;
-        color: #0f172a !important;
+        letter-spacing: 0.5px !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        text-shadow: none !important;
+        filter: none !important;
+        background: none !important;
         margin: 0 0 2pt 0 !important;
         line-height: 1.1 !important;
     }
 
     .ats-metadata .cv-headline {
         font-size: 10pt !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
         font-style: italic !important;
-        color: #334155 !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
         margin: 0 0 4pt 0 !important;
         line-height: 1.2 !important;
     }
@@ -2136,7 +2155,8 @@ path.gauge-fill-affection {
         align-items: center !important;
         gap: 2pt 6pt !important;
         font-size: 8.5pt !important;
-        color: #475569 !important;
+        color: #1f2937 !important;
+        -webkit-text-fill-color: #1f2937 !important;
         margin: 0 !important;
         line-height: 1.3 !important;
     }
@@ -2144,12 +2164,13 @@ path.gauge-fill-affection {
     .ats-metadata .cv-contact-bar span {
         display: inline-flex !important;
         align-items: center !important;
+        color: #1f2937 !important;
     }
 
     .ats-metadata .cv-contact-bar span:not(:last-child)::after {
         content: "•" !important;
         margin-left: 6pt !important;
-        color: #94a3b8 !important;
+        color: #4b5563 !important;
         font-weight: bold !important;
     }
 
@@ -2162,13 +2183,14 @@ path.gauge-fill-affection {
     }
 
     .ats-metadata .cv-section-title {
-        font-family: 'Barlow Condensed', 'Inter', sans-serif !important;
+        font-family: 'Barlow Condensed', 'Inter', -apple-system, sans-serif !important;
         font-size: 11pt !important;
-        font-weight: 700 !important;
+        font-weight: 800 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.8px !important;
-        color: #0f172a !important;
-        border-bottom: 1.2pt solid #0f172a !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        border-bottom: 1.5pt solid #000000 !important;
         margin: 8pt 0 4pt 0 !important;
         padding-bottom: 1.5pt !important;
         page-break-after: avoid !important;
@@ -2179,13 +2201,15 @@ path.gauge-fill-affection {
     .ats-metadata .cv-summary-text {
         font-size: 8.9pt !important;
         line-height: 1.38 !important;
-        color: #1e293b !important;
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
         text-align: justify !important;
         margin: 0 0 4pt 0 !important;
     }
 
     .ats-metadata .cv-summary-text strong {
-        color: #0f172a !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
         font-weight: 700 !important;
     }
 
@@ -2213,16 +2237,18 @@ path.gauge-fill-affection {
 
     .ats-metadata .cv-job-title {
         font-size: 9.6pt !important;
-        font-weight: 700 !important;
-        color: #0f172a !important;
+        font-weight: 800 !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
         line-height: 1.25 !important;
     }
 
     .ats-metadata .cv-company {
         font-size: 8.9pt !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
         font-style: italic !important;
-        color: #334155 !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
         line-height: 1.25 !important;
     }
 
@@ -2236,21 +2262,24 @@ path.gauge-fill-affection {
 
     .ats-metadata .cv-dates {
         font-size: 8.6pt !important;
-        font-weight: 600 !important;
-        color: #475569 !important;
+        font-weight: 700 !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
         white-space: nowrap !important;
     }
 
     .ats-metadata .cv-location {
         font-size: 8.2pt !important;
-        color: #64748b !important;
+        color: #334155 !important;
+        -webkit-text-fill-color: #334155 !important;
         font-style: italic !important;
     }
 
     .ats-metadata .cv-entry-detail {
         font-size: 8.7pt !important;
         line-height: 1.32 !important;
-        color: #334155 !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
         margin: 1.5pt 0 0 0 !important;
     }
 
@@ -2264,18 +2293,21 @@ path.gauge-fill-affection {
     .ats-metadata .cv-bullets li {
         font-size: 8.7pt !important;
         line-height: 1.33 !important;
-        color: #1e293b !important;
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
         margin-bottom: 1.5pt !important;
         padding-left: 1pt !important;
     }
 
     .ats-metadata .cv-bullets li strong {
-        color: #0f172a !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
         font-weight: 700 !important;
     }
 
     .ats-metadata .cv-bullets li em {
-        color: #475569 !important;
+        color: #1e293b !important;
+        -webkit-text-fill-color: #1e293b !important;
         font-style: italic !important;
     }
 
@@ -2284,7 +2316,8 @@ path.gauge-fill-affection {
         display: block !important;
         font-size: 8.7pt !important;
         line-height: 1.35 !important;
-        color: #1e293b !important;
+        color: #0f172a !important;
+        -webkit-text-fill-color: #0f172a !important;
     }
 
     .ats-metadata .cv-skills-block p {
@@ -2292,14 +2325,16 @@ path.gauge-fill-affection {
     }
 
     .ats-metadata .cv-skills-block strong {
-        color: #0f172a !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
         font-weight: 700 !important;
     }
 
     /* ── Print LC (Low-Color / Strict Monochromatic Mode) ─────────────── */
     body.print-lc,
     body.print-lc .ats-metadata {
-        color: #0f172a !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
         background-color: #ffffff !important;
     }
 }
