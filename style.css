@@ -800,11 +800,17 @@ h1 .accent {
     margin-top: 20px;
 }
 
+.skill-map-legend-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
 .skill-map-legend {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 1.25rem;
 }
 
 .legend-item {
@@ -838,6 +844,56 @@ h1 .accent {
 .legend-hard .legend-dot {
     background: var(--accent-lime);
     box-shadow: 0 0 8px var(--accent-lime);
+}
+
+/* Radar Radial Scale Bar */
+.skill-radar-scale {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0.85rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+.scale-label {
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 700;
+}
+
+.scale-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-secondary);
+}
+
+.scale-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.scale-critical .scale-dot {
+    background: #ff5252;
+    box-shadow: 0 0 6px rgba(255, 82, 82, 0.8);
+}
+
+.scale-tactical .scale-dot {
+    background: #fbbf24;
+    box-shadow: 0 0 6px rgba(251, 191, 36, 0.8);
+}
+
+.scale-structural .scale-dot {
+    background: #38bdf8;
+    box-shadow: 0 0 6px rgba(56, 189, 248, 0.8);
 }
 
 .skill-map-wrapper {
@@ -1225,6 +1281,42 @@ h1 .accent {
     fill: var(--text-primary);
     dominant-baseline: middle;
     pointer-events: none;
+}
+
+/* 2D SVG Radar Reference Rings */
+.radar-ref-ring {
+    fill: none;
+    stroke-linecap: round;
+}
+
+.ring-crit {
+    stroke: rgba(255, 82, 82, 0.35);
+    stroke-width: 1.5px;
+    stroke-dasharray: 4 3;
+}
+
+.ring-tact {
+    stroke: rgba(251, 191, 36, 0.25);
+    stroke-width: 1px;
+    stroke-dasharray: 6 4;
+}
+
+.ring-struc {
+    stroke: rgba(56, 189, 248, 0.20);
+    stroke-width: 1px;
+}
+
+.radar-ring-label {
+    font-family: var(--font-header, 'Barlow Condensed', sans-serif);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    fill: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+.bnode-crit {
+    filter: drop-shadow(0 0 6px rgba(255, 82, 82, 0.6));
 }
 
 /* Zone labels */
@@ -2422,28 +2514,64 @@ path.gauge-fill-affection {
 }
 
 #tooltip-name {
-    margin: 0 0 4px 0;
+    margin: 0 0 6px 0;
     font-size: 14px;
     font-weight: 600;
-    color: var(--accent-cyan);
+    color: #fff;
     padding-right: 20px;
     font-family: var(--font-header);
 }
 
-#tooltip-type {
-    margin: 0 0 8px 0;
-    font-size: 11px;
+.tooltip-badge-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.tooltip-tag {
+    font-size: 9.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-lime);
+    letter-spacing: 0.8px;
     font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.type-tag {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.risk-tag {
+    font-size: 9px;
+}
+
+.risk-critical {
+    background: rgba(255, 82, 82, 0.18);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 82, 82, 0.35);
+}
+
+.risk-tactical {
+    background: rgba(251, 191, 36, 0.16);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.risk-structural {
+    background: rgba(56, 189, 248, 0.14);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
 #tooltip-time {
     margin: 0 0 4px 0;
     font-size: 12px;
     font-weight: 500;
-    color: var(--text-primary);
+    color: var(--accent-lime);
 }
 
 #tooltip-detail {

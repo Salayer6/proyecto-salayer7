@@ -41,6 +41,8 @@ const translations = {
         desc_tuned: "Sintonizado",
 
         // Mapa de skills — leyenda
+        skillmap_title: "Radar de Habilidades & Criticidad",
+        skillmap_desc: "Medidor radial de criticidad · <strong>Centro:</strong> Alta criticidad e intervenciones de alto riesgo puntual (ej. queries SQL, control P6) → <strong>Periferia:</strong> Habilidades tácticas y estructurales continuas.",
         legend_soft: "Habilidades Blandas",
         legend_hybrid: "Híbridas",
         legend_hard: "Habilidades Duras",
@@ -114,6 +116,8 @@ const translations = {
         desc_developing: "In Development",
         desc_tuned: "Tuned In",
 
+        skillmap_title: "Skills & Criticality Radar",
+        skillmap_desc: "Radial criticality meter · <strong>Center:</strong> High-risk & short surgical precision tasks (e.g. SQL queries, P6 control) → <strong>Periphery:</strong> Continuous tactical and structural skills.",
         legend_soft: "Soft Skills",
         legend_hybrid: "Hybrid",
         legend_hard: "Hard Skills",
@@ -181,6 +185,8 @@ const translations = {
         desc_developing: "In Entwicklung",
         desc_tuned: "Abgestimmt",
 
+        skillmap_title: "Fähigkeiten- & Kritikalitätsradar",
+        skillmap_desc: "Radialer Kritikalitätsmesser · <strong>Zentrum:</strong> Hochrisiko- & kurzzeitige Präzisionsaufgaben (z. B. SQL-Queries, P6-Steuerung) → <strong>Peripherie:</strong> Kontinuierliche taktische und strukturelle Fähigkeiten.",
         legend_soft: "Soziale Kompetenzen",
         legend_hybrid: "Hybrid",
         legend_hard: "Fachkompetenzen",
@@ -248,6 +254,8 @@ const translations = {
         desc_developing: "開発中",
         desc_tuned: "チューニング済",
 
+        skillmap_title: "スキル・重要度レーダー",
+        skillmap_desc: "放射状重要度メーター · <strong>中心部:</strong> 高リスク・短時間精密作業（SQLクエリ変更、P6工程管理等） → <strong>周辺部:</strong> 継続的戦術・基盤スキル。",
         legend_soft: "ソフトスキル",
         legend_hybrid: "ハイブリッド",
         legend_hard: "ハードスキル",
@@ -315,6 +323,8 @@ const translations = {
         desc_developing: "В разработке",
         desc_tuned: "Настроено",
 
+        skillmap_title: "Радар навыков и критичности",
+        skillmap_desc: "Радиальный измеритель критичности · <strong>Центр:</strong> Высокорисковые и краткосрочные точечные задачи (напр. правка SQL-запросов, контроль P6) → <strong>Периферия:</strong> Непрерывные тактические и структурные навыки.",
         legend_soft: "Гибкие навыки",
         legend_hybrid: "Гибридные",
         legend_hard: "Жёсткие навыки",

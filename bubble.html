@@ -133,15 +133,23 @@
                     <!-- Skills Bubble Map -->
                     <section class="card glass skill-map-section">
                         <div class="card-header">
-                            <h2><i class="fa-solid fa-diagram-project"></i> Mapa de Skills</h2>
-                            <p>Posici??n horizontal: naturaleza de la habilidad ?? Tama??o: tiempo de estudio</p>
+                            <h2><i class="fa-solid fa-crosshairs"></i> Radar de Habilidades & Criticidad</h2>
+                            <p>Medidor radial de criticidad · <strong>Centro:</strong> Alta criticidad y alto riesgo puntual (ej. queries SQL, control P6) → <strong>Periferia:</strong> Habilidades tácticas y estructurales continuas.</p>
                         </div>
 
-                        <!-- Skill Map Legend -->
-                        <div class="skill-map-legend">
-                            <span class="legend-item legend-soft"><span class="legend-dot"></span>Habilidades Blandas</span>
-                            <span class="legend-item legend-hybrid"><span class="legend-dot"></span>H??bridas</span>
-                            <span class="legend-item legend-hard"><span class="legend-dot"></span>Habilidades Duras</span>
+                        <!-- Skill Map Legend: Categorías & Eje Radial -->
+                        <div class="skill-map-legend-group">
+                            <div class="skill-map-legend">
+                                <span class="legend-item legend-soft"><span class="legend-dot"></span>Habilidades Blandas</span>
+                                <span class="legend-item legend-hybrid"><span class="legend-dot"></span>Híbridas</span>
+                                <span class="legend-item legend-hard"><span class="legend-dot"></span>Habilidades Duras</span>
+                            </div>
+                            <div class="skill-radar-scale">
+                                <span class="scale-label"><i class="fa-solid fa-bullseye"></i> <strong>Eje Radial:</strong></span>
+                                <span class="scale-item scale-critical"><span class="scale-dot"></span> <strong>Centro:</strong> Crítica (Alto Riesgo / Precisión)</span>
+                                <span class="scale-item scale-tactical"><span class="scale-dot"></span> <strong>Medio:</strong> Táctica (Operativa)</span>
+                                <span class="scale-item scale-structural"><span class="scale-dot"></span> <strong>Periferia:</strong> Estructural (Base Continua)</span>
+                            </div>
                         </div>
 
                         <!-- Bubble Map Wrapper -->
@@ -149,11 +157,15 @@
                             <!-- 3D Canvas Anchor -->
                             <div id="skill-map-3d-canvas"></div>
                             <!-- 3D HTML Tooltip (Fixed Overlay) -->
-                            <div id="skill-tooltip-html" class="html-tooltip" style="display:none; position: fixed; z-index: 1000; pointer-events: none; background: rgba(20, 20, 30, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px; backdrop-filter: blur(10px); color: #fff; font-family: 'Inter', sans-serif; box-shadow: 0 8px 32px rgba(0,0,0,0.5); width: 220px; transition: opacity 0.2s;">
-                                <h4 id="tooltip-name" style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: var(--accent-cyan);"></h4>
-                                <p id="tooltip-type" style="margin: 0 0 8px 0; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #8bd450;"></p>
-                                <p id="tooltip-time" style="margin: 0 0 4px 0; font-size: 12px; font-weight: 500;"></p>
-                                <p id="tooltip-detail" style="margin: 0; font-size: 12px; color: #ccc; line-height: 1.4;"></p>
+                            <div id="skill-tooltip-html" class="html-tooltip">
+                                <button id="tooltip-close" title="Cerrar">✕</button>
+                                <h4 id="tooltip-name"></h4>
+                                <div class="tooltip-badge-row">
+                                    <span id="tooltip-type" class="tooltip-tag type-tag"></span>
+                                    <span id="tooltip-risk" class="tooltip-tag risk-tag"></span>
+                                </div>
+                                <p id="tooltip-time"></p>
+                                <p id="tooltip-detail"></p>
                             </div>
                         </div>
                     </section>

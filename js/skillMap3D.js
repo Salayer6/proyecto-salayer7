@@ -56,39 +56,296 @@ if (container) {
     const particleTexture = createGlowTexture();
     const sprites = [];
 
+    // RADAR DE CRITICIDAD Y RIESGO:
+    // - Centro (dist: 55-80): Crítica / Alto Riesgo / Momentos cortos de alta precisión quirúrgica (ej. SQL directo, P6, Control de Gestión)
+    // - Zona Media (dist: 115-150): Táctica / Operativa / Análisis y ejecución frecuente (Power BI, Excel, Python/R, Agile, PMBOK)
+    // - Periferia (dist: 180-240): Estructural / Base / Continuidad, gobernanza y soporte continuo (Ética, Autopoiesis, Cloud, Bash, Faena, IA Gen)
     const skills = [
-        // BLANDAS (-X, -Z)
-        { name: "Investigación Social", type: "Blanda Fundacional", time: "Técnicas Base", detail: "Aporta rigor metodológico para el análisis inferencial y validación de datos.", vector: [-0.7, -0.3], dist: 80, color: 0xb3e5fc, size: 20 },
-        { name: "Autopoiesis", type: "Blanda Existencial", time: "Mejora Continua", detail: "Capacidad de auto-generación y evolución constante basada en el aprendizaje autogestionado.", vector: [-0.3, -0.5], dist: 100, color: 0x00bcd4, size: 24 },
-        { name: "Liderazgo / PMBOK", type: "Blanda Intermedia", time: "Gestión Práctica", detail: "Gestión proactiva y dirección de equipos en proyectos tecnológicos e industriales.", vector: [-0.9, -0.8], dist: 130, color: 0x81d4fa, size: 25 },
-        { name: "Respeto Universal", type: "Blanda Ética", time: "Valores Base", detail: "Reconocimiento de la dignidad humana y principios de trato igualitario en todo entorno.", vector: [-1.0, -0.2], dist: 160, color: 0x4dd0e1, size: 22 },
-        { name: "Control de Gestión", type: "Blanda Ultra-Específica", time: "Diplomado FEN", detail: "Núcleo estratégico. Diseño de KPIs, monitoreo de flujos y análisis de procesos.", vector: [-0.5, -1], dist: 190, color: 0x4fc3f7, size: 32 },
-        { name: "Ética Profesional", type: "Blanda Fundamental", time: "Deontología", detail: "Apego inquebrantable a principios morales y compromiso profesional ante cualquier reto.", vector: [-0.8, -0.9], dist: 220, color: 0x80deea, size: 28 },
+        // ================= DURAS (+X, -Z) =================
+        // Crítica (Centro)
+        { 
+            name: "SQL / BigQuery", 
+            type: "Dura", 
+            riskLevel: "CRÍTICA · ALTO RIESGO", 
+            riskBadge: "critical",
+            time: "Precisión Quirúrgica", 
+            detail: "Intervención de alto riesgo e impacto inmediato: modificación directa de queries productivas, transformación masiva de datos y gobernanza BI.", 
+            vector: [0.8, -0.6], 
+            dist: 60, 
+            color: 0xaed581, 
+            size: 32 
+        },
+        { 
+            name: "Oracle P6", 
+            type: "Dura", 
+            riskLevel: "CRÍTICA · ALTO RIESGO", 
+            riskBadge: "critical",
+            time: "Control de Faena", 
+            detail: "Planificación rotunda y control de cronogramas. Cualquier desviación en ruta crítica impacta directamente la faena.", 
+            vector: [0.6, -0.8], 
+            dist: 75, 
+            color: 0xc5e1a5, 
+            size: 30 
+        },
+        // Táctica (Media)
+        { 
+            name: "Power BI / DAX", 
+            type: "Dura", 
+            riskLevel: "TÁCTICA · OPERATIVA", 
+            riskBadge: "tactical",
+            time: "Analista BI", 
+            detail: "Desarrollo y modelado tabular complejo continuo de cuadros de mando gerenciales para toma de decisiones.", 
+            vector: [0.5, -0.9], 
+            dist: 125, 
+            color: 0x66bb6a, 
+            size: 30 
+        },
+        { 
+            name: "Excel", 
+            type: "Dura", 
+            riskLevel: "TÁCTICA · OPERATIVA", 
+            riskBadge: "tactical",
+            time: "Modelado Base", 
+            detail: "Herramienta analítica esencial para modelado rápido, consolidación matricial y control de procesos diarios.", 
+            vector: [0.9, -0.4], 
+            dist: 140, 
+            color: 0xffffff, 
+            size: 26 
+        },
+        // Estructural (Periferia)
+        { 
+            name: "Cloud / Ops", 
+            type: "Dura", 
+            riskLevel: "ESTRUCTURAL · BASE", 
+            riskBadge: "structural",
+            time: "DevOps / Infraestructura", 
+            detail: "Soporte de despliegue en la nube y comprensión continua de infraestructura y ecosistemas modernos.", 
+            vector: [0.9, -0.2], 
+            dist: 190, 
+            color: 0xdcedc8, 
+            size: 22 
+        },
+        { 
+            name: "Bash / Linux", 
+            type: "Dura", 
+            riskLevel: "FUNDACIONAL · SOPORTE", 
+            riskBadge: "structural",
+            time: "Fundamento SO", 
+            detail: "Manejo base de SO y terminal para comprensión de infraestructura y automatizaciones sin riesgo crítico puntual.", 
+            vector: [0.7, -0.7], 
+            dist: 225, 
+            color: 0x81c784, 
+            size: 20 
+        },
         
-        // DURAS (+X, -Z)
-        { name: "Excel", type: "Dura Transversal", time: "Modelado Base", detail: "Herramienta analítica esencial para el modelado rápido y control de procesos.", vector: [0.5, -0.3], dist: 60, color: 0xffffff, size: 26 },
-        { name: "Bash / Linux", type: "Dura Fundacional", time: "Fundamento (10%)", detail: "Manejo base de SO y terminal, fundamental para comprender entornos e infraestructura.", vector: [0.9, -0.2], dist: 90, color: 0x81c784, size: 18 },
-        { name: "SQL / BigQuery", type: "Dura Intermedia", time: "Manejo de Datos", detail: "Extracción y transformación de datos a gran escala para arquitecturas de BI.", vector: [0.7, -0.7], dist: 140, color: 0xaed581, size: 30 },
-        { name: "Cloud / Ops", type: "Dura Complementaria", time: "DevOps Básico", detail: "Soporte de despliegue en la nube y comprensión de ecosistemas de datos modernos.", vector: [1, -0.8], dist: 160, color: 0xdcedc8, size: 22 },
-        { name: "Power BI / DAX", type: "Dura Específica", time: "Analista BI", detail: "Desarrollo de cuadros de mando gerenciales y modelado tabular complejo.", vector: [0.5, -0.9], dist: 180, color: 0x66bb6a, size: 32 },
-        { name: "Oracle P6", type: "Dura Hiper-Específica", time: "Planeamiento", detail: "Dominio indispensable para la planificación rotunda y control de faena.", vector: [0.8, -1.0], dist: 220, color: 0xc5e1a5, size: 28 },
+        // ================= BLANDAS (-X, -Z) =================
+        // Crítica (Centro)
+        { 
+            name: "Control de Gestión", 
+            type: "Blanda", 
+            riskLevel: "CRÍTICA · ALTO RIESGO", 
+            riskBadge: "critical",
+            time: "Estratégico / FEN", 
+            detail: "Decisiones estratégicas de alto impacto. Alertas tempranas de desviación y supervisión de KPIs neurálgicos de negocio.", 
+            vector: [-0.6, -0.8], 
+            dist: 65, 
+            color: 0x4fc3f7, 
+            size: 32 
+        },
+        // Táctica (Media)
+        { 
+            name: "Liderazgo / PMBOK", 
+            type: "Blanda", 
+            riskLevel: "TÁCTICA · OPERATIVA", 
+            riskBadge: "tactical",
+            time: "Gestión Práctica", 
+            detail: "Gestión activa, resolución de conflictos y coordinación de equipos en proyectos tecnológicos e industriales.", 
+            vector: [-0.9, -0.6], 
+            dist: 130, 
+            color: 0x81d4fa, 
+            size: 26 
+        },
+        // Estructural (Periferia)
+        { 
+            name: "Investigación Social", 
+            type: "Blanda", 
+            riskLevel: "ESTRUCTURAL · BASE", 
+            riskBadge: "structural",
+            time: "Técnicas Base", 
+            detail: "Rigor metodológico continuo para análisis inferencial, formulación de hipótesis y validación empírica de datos.", 
+            vector: [-0.6, -0.8], 
+            dist: 180, 
+            color: 0xb3e5fc, 
+            size: 22 
+        },
+        { 
+            name: "Autopoiesis", 
+            type: "Blanda", 
+            riskLevel: "EXISTENCIAL · EVOLUCIÓN", 
+            riskBadge: "structural",
+            time: "Mejora Continua", 
+            detail: "Capacidad permanente de auto-organización, regeneración y aprendizaje autogestionado a lo largo del tiempo.", 
+            vector: [-0.8, -0.5], 
+            dist: 200, 
+            color: 0x00bcd4, 
+            size: 24 
+        },
+        { 
+            name: "Respeto Universal", 
+            type: "Blanda", 
+            riskLevel: "ÉTICA · PERMANENTE", 
+            riskBadge: "structural",
+            time: "Valores Base", 
+            detail: "Principio rector permanente de trato digno, respeto transversal e inclusividad en todo entorno laboral.", 
+            vector: [-0.95, -0.2], 
+            dist: 220, 
+            color: 0x4dd0e1, 
+            size: 22 
+        },
+        { 
+            name: "Ética Profesional", 
+            type: "Blanda", 
+            riskLevel: "FUNDAMENTAL · DEONTOLOGÍA", 
+            riskBadge: "structural",
+            time: "Deontología", 
+            detail: "Apego deontológico perenne e inquebrantable que fundamenta la totalidad de la conducta profesional.", 
+            vector: [-0.4, -0.9], 
+            dist: 235, 
+            color: 0x80deea, 
+            size: 28 
+        },
         
-        // HÍBRIDAS (0, +Z)
-        { name: "Python / R", type: "Híbrida Básica", time: "Data & Stats", detail: "Procesamiento avanzado de datos, econometría y scripts de análisis exploratorio.", vector: [0.2, 0.8], dist: 110, color: 0xce93d8, size: 28 },
-        { name: "Agile / Scrum", type: "Híbrida Gestión", time: "Marcos Ágiles", detail: "Garantía de entrega continua de valor en el desarrollo de soluciones analíticas.", vector: [-0.5, 0.7], dist: 150, color: 0xf06292, size: 26 },
-        { name: "Faena Minera", type: "Híbrida Entorno", time: "Operaciones", detail: "Entendimiento del negocio core, operación logística y normativas del sector minero.", vector: [-0.8, 0.5], dist: 180, color: 0xffb74d, size: 25 },
-        { name: "IA Generativa", type: "Híbrida Avanzada", time: "Vanguardia", detail: "Optimización DataOps, aceleración procedural y asistencia estructurada en la nube.", vector: [0.2, 1.0], dist: 220, color: 0xba68c8, size: 40 },
+        // ================= HÍBRIDAS (0, +Z) =================
+        // Táctica (Media)
+        { 
+            name: "Python / R", 
+            type: "Híbrida", 
+            riskLevel: "TÁCTICA · OPERATIVA", 
+            riskBadge: "tactical",
+            time: "Data & Stats", 
+            detail: "Scripts de procesamiento analítico, econometría, pipelines de datos y modelos predictivos en ciclos iterativos.", 
+            vector: [0.3, 0.9], 
+            dist: 120, 
+            color: 0xce93d8, 
+            size: 28 
+        },
+        { 
+            name: "Agile / Scrum", 
+            type: "Híbrida", 
+            riskLevel: "TÁCTICA · OPERATIVA", 
+            riskBadge: "tactical",
+            time: "Marcos Ágiles", 
+            detail: "Iteración continua y entrega adaptativa de valor en el desarrollo de soluciones de analítica de datos.", 
+            vector: [-0.4, 0.9], 
+            dist: 145, 
+            color: 0xf06292, 
+            size: 26 
+        },
+        // Estructural (Periferia)
+        { 
+            name: "Faena Minera", 
+            type: "Híbrida", 
+            riskLevel: "ESTRUCTURAL · ENTORNO", 
+            riskBadge: "structural",
+            time: "Operaciones", 
+            detail: "Comprensión integral de faena, logística pesada, seguridad industrial y normativas del sector minero.", 
+            vector: [-0.7, 0.7], 
+            dist: 185, 
+            color: 0xffb74d, 
+            size: 25 
+        },
+        { 
+            name: "IA Generativa", 
+            type: "Híbrida", 
+            riskLevel: "VANGUARDIA · ACELERACIÓN", 
+            riskBadge: "structural",
+            time: "DataOps & Aceleración", 
+            detail: "Optimización continua de flujos, aceleración procedural y asistencia estructurada en la nube.", 
+            vector: [0.2, 1.0], 
+            dist: 215, 
+            color: 0xba68c8, 
+            size: 38 
+        },
     ];
 
     const targetGroup = new THREE.Group();
     scene.add(targetGroup);
 
-    const centerMat = new THREE.SpriteMaterial({ map: particleTexture, color: 0xffffff, blending: THREE.AdditiveBlending, depthTest: false, transparent: true });
+    // Centro del Radar: Núcleo Crítico (Glow Rojizo / Ámbar de Alta Precisión)
+    const centerMat = new THREE.SpriteMaterial({ 
+        map: particleTexture, 
+        color: 0xff5252, 
+        blending: THREE.AdditiveBlending, 
+        depthTest: false, 
+        transparent: true 
+    });
     const centerSprite = new THREE.Sprite(centerMat);
-    centerSprite.scale.set(15, 15, 1);
+    centerSprite.scale.set(22, 22, 1);
     targetGroup.add(centerSprite);
 
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.08 });
+    // PLANO DE REFERENCIA / ANILLOS CONCÉNTRICOS DEL RADAR (MEDIDOR DE CRITICIDAD)
+    function createRadarRing(radius, color = 0xffffff, opacity = 0.25, dashed = false) {
+        const segments = 96;
+        const points = [];
+        for (let i = 0; i <= segments; i++) {
+            const theta = (i / segments) * Math.PI * 2;
+            points.push(new THREE.Vector3(Math.cos(theta) * radius, 0, Math.sin(theta) * radius));
+        }
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        let material;
+        if (dashed) {
+            material = new THREE.LineDashedMaterial({
+                color: color,
+                transparent: true,
+                opacity: opacity,
+                dashSize: 8,
+                gapSize: 6
+            });
+        } else {
+            material = new THREE.LineBasicMaterial({
+                color: color,
+                transparent: true,
+                opacity: opacity
+            });
+        }
+        const line = new THREE.Line(geometry, material);
+        if (dashed) line.computeLineDistances();
+        return line;
+    }
+
+    // 1. Anillo Crítico (Centro / Alto Riesgo) - R = 80
+    const ringCritical = createRadarRing(80, 0xff5252, 0.45);
+    targetGroup.add(ringCritical);
+
+    // 2. Anillo Táctico (Zona Media / Operativa) - R = 150
+    const ringTactical = createRadarRing(150, 0xfbbf24, 0.35, true);
+    targetGroup.add(ringTactical);
+
+    // 3. Anillo Estructural (Periferia / Base Continua) - R = 235
+    const ringStructural = createRadarRing(235, 0x38bdf8, 0.25);
+    targetGroup.add(ringStructural);
+
+    // Discos translúcidos para dar profundidad táctica al plano de referencia
+    const discGeo1 = new THREE.RingGeometry(0.1, 80, 64);
+    const discMat1 = new THREE.MeshBasicMaterial({ color: 0xff3b30, transparent: true, opacity: 0.04, side: THREE.DoubleSide });
+    const disc1 = new THREE.Mesh(discGeo1, discMat1);
+    disc1.rotation.x = Math.PI / 2;
+    targetGroup.add(disc1);
+
+    const discGeo2 = new THREE.RingGeometry(80, 150, 64);
+    const discMat2 = new THREE.MeshBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.02, side: THREE.DoubleSide });
+    const disc2 = new THREE.Mesh(discGeo2, discMat2);
+    disc2.rotation.x = Math.PI / 2;
+    targetGroup.add(disc2);
+
+    const discGeo3 = new THREE.RingGeometry(150, 235, 64);
+    const discMat3 = new THREE.MeshBasicMaterial({ color: 0x0284c7, transparent: true, opacity: 0.015, side: THREE.DoubleSide });
+    const disc3 = new THREE.Mesh(discGeo3, discMat3);
+    disc3.rotation.x = Math.PI / 2;
+    targetGroup.add(disc3);
+
+    // Ejes de radar
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.12 });
     const axisBlanda = [new THREE.Vector3(0,0,0), new THREE.Vector3(-250, 0, -150)];
     const axisDura = [new THREE.Vector3(0,0,0), new THREE.Vector3(250, 0, -150)];
     const axisHyb = [new THREE.Vector3(0,0,0), new THREE.Vector3(0, 0, 250)];
@@ -120,6 +377,8 @@ if (container) {
         sprite.userData = {
             name: skill.name,
             type: skill.type,
+            riskLevel: skill.riskLevel,
+            riskBadge: skill.riskBadge,
             time: skill.time,
             detail: skill.detail,
             baseScale: sprite.scale.x
@@ -157,6 +416,7 @@ if (container) {
     const tooltip = document.getElementById('skill-tooltip-html');
     const tooltipName = document.getElementById('tooltip-name');
     const tooltipType = document.getElementById('tooltip-type');
+    const tooltipRisk = document.getElementById('tooltip-risk');
     const tooltipTime = document.getElementById('tooltip-time');
     const tooltipDetail = document.getElementById('tooltip-detail');
     const tooltipClose = document.getElementById('tooltip-close');
@@ -198,8 +458,8 @@ if (container) {
             let ty = event.clientY + 15;
             
             // Boundary detection para evitar clipping en mobile/esquinas
-            if (tx + 240 > window.innerWidth) tx = event.clientX - 240;
-            if (ty + 130 > window.innerHeight) ty = event.clientY - 130;
+            if (tx + 260 > window.innerWidth) tx = event.clientX - 260;
+            if (ty + 160 > window.innerHeight) ty = event.clientY - 160;
             
             tooltip.style.left = tx + 'px';
             tooltip.style.top = ty + 'px';
@@ -212,32 +472,51 @@ if (container) {
     const clock = new THREE.Clock();
     
     // Generar labels fijos 3D temporales como "Polos" usando sprites con canvas Text (Optimizadamente)
-    function createTextSprite(text, fontColor = 'var(--accent-cyan)') {
+    function createTextSprite(text, fontColor = 'var(--accent-cyan)', fontSize = 24) {
         const canvas = document.createElement('canvas');
-        canvas.width = 256; canvas.height = 64;
+        canvas.width = 384; 
+        canvas.height = 72;
         const ctx = canvas.getContext('2d');
-        ctx.font = 'bold 28px Inter';
+        ctx.font = `bold ${fontSize}px Inter, sans-serif`;
         ctx.fillStyle = fontColor;
         ctx.textAlign = 'center';
-        ctx.fillText(text, 128, 40);
+        ctx.textBaseline = 'middle';
+        ctx.fillText(text, 192, 36);
         const tex = new THREE.CanvasTexture(canvas);
-        const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.5, depthTest: false });
+        const mat = new THREE.SpriteMaterial({ map: tex, transparent: true, opacity: 0.75, depthTest: false });
         const sprite = new THREE.Sprite(mat);
-        sprite.scale.set(100, 25, 1);
+        sprite.scale.set(130, 24, 1);
         return sprite;
     }
 
-    const tDuras = createTextSprite("DURAS", "#8bd450");
-    tDuras.position.set(200, -30, -100);
+    // Polos de Categorías
+    const tDuras = createTextSprite("DURAS", "#8bd450", 28);
+    tDuras.position.set(210, -20, -120);
     targetGroup.add(tDuras);
 
-    const tBlandas = createTextSprite("BLANDAS", "#3f6d4e");
-    tBlandas.position.set(-200, -30, -100);
+    const tBlandas = createTextSprite("BLANDAS", "#38bdf8", 28);
+    tBlandas.position.set(-210, -20, -120);
     targetGroup.add(tBlandas);
 
-    const tHyb = createTextSprite("HÍBRIDAS", "#965fd4");
-    tHyb.position.set(0, -30, 200);
+    const tHyb = createTextSprite("HÍBRIDAS", "#c084fc", 28);
+    tHyb.position.set(0, -20, 220);
     targetGroup.add(tHyb);
+
+    // Indicadores 3D de Zonas del Radar en el Plano de Referencia
+    const tCriticaZone = createTextSprite("⚡ ZONA CRÍTICA (ALTO RIESGO)", "#ff6b6b", 18);
+    tCriticaZone.position.set(0, -2, -80);
+    tCriticaZone.scale.set(120, 22, 1);
+    targetGroup.add(tCriticaZone);
+
+    const tTacticalZone = createTextSprite("🎯 ZONA TÁCTICA (OPERATIVA)", "#fbbf24", 17);
+    tTacticalZone.position.set(0, -2, -150);
+    tTacticalZone.scale.set(125, 22, 1);
+    targetGroup.add(tTacticalZone);
+
+    const tStructuralZone = createTextSprite("🌐 ZONA ESTRUCTURAL (BASE)", "#38bdf8", 17);
+    tStructuralZone.position.set(0, -2, -235);
+    tStructuralZone.scale.set(130, 22, 1);
+    targetGroup.add(tStructuralZone);
 
     // Zoom Functions for Global UI (HTML integration)
     window.zoomMapIn = () => {
@@ -270,9 +549,11 @@ if (container) {
             targetGroup.rotation.y += 0.0005;
         }
 
+        // Pulso sutil del núcleo del radar
+        centerSprite.scale.setScalar(20 + Math.sin(time * 3) * 3);
+
         raycaster.setFromCamera(mouse, camera);
         
-        // Prevenir colisión sobre el fondo del card aumentando minDistance si hace falta
         const intersects = raycaster.intersectObjects(sprites);
         
         if (intersects.length > 0) {
@@ -285,13 +566,19 @@ if (container) {
                 hoveredSprite = obj;
                 // Ampliar halo al enfocar
                 hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale * 1.5);
-                hoveredSprite.material.color.setHex(0xffffff); // Destalla en blando al focus
+                hoveredSprite.material.color.setHex(0xffffff); // Destella en blanco al focus
                 hoveredSprite.material.opacity = 1.0;
                 
                 if(tooltip) {
                     tooltip.style.display = 'block';
                     tooltipName.textContent = obj.userData.name;
                     tooltipType.textContent = obj.userData.type;
+                    
+                    if (tooltipRisk) {
+                        tooltipRisk.textContent = obj.userData.riskLevel || '';
+                        tooltipRisk.className = `tooltip-tag risk-tag risk-${obj.userData.riskBadge || 'tactical'}`;
+                    }
+                    
                     tooltipTime.textContent = obj.userData.time;
                     tooltipDetail.textContent = obj.userData.detail;
                 }
