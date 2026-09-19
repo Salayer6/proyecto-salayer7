@@ -50,9 +50,10 @@ const translations = {
         // Mapa — hint
         map_hint: "Arrastra para orbitar",
 
-        // Perfil estratégico — Controller
-        profile_title: "Perfil Estratégico",
-        profile_desc: "<strong>Controller de Gestión &amp; Data Operations</strong> con formación en <strong>Ingeniería Automotriz (Duoc UC)</strong> y especialización en <strong>Control de Gestión (FEN Universidad de Chile)</strong>. Me especializo en transformar datos dispersos en decisiones rentables mediante <strong>Business Intelligence, Data Engineering y automatización con IA</strong>.<br><br>Aporto un enfoque híbrido que fusiona la disciplina operativa y de mantenimiento con visión de negocio y analítica avanzada. Mi trayectoria en empresas de <strong>Grupo MSUS</strong> comprende:<br><br>• <a href='https://sadhanacore.com/' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>SadhanaCore <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>: Diseñé e implementé tableros directivos de <strong>Business Intelligence (Power BI, DAX, Power Query)</strong> para uso interno y modelos analíticos de bajo costo en <strong>Airtable</strong> para clientes corporativos; integré flujos de <strong>Prompt Engineering e IA Generativa</strong> para la adjudicación de propuestas técnicas en <strong>Mercado Público (Chile)</strong>; y desplegué módulos de seguimiento de Sprints (ERP low-cost) con automatizaciones en <strong>n8n y Python</strong>.<br>• <a href='https://prismadigital.io/' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>Prisma Digital <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>: Desarrollé y desplegué <strong>aplicaciones web gamificadas</strong> de alta interactividad, e ideé e implementé una solución asistida por IA con capacidades agénticas para la <strong>búsqueda inteligente, filtrado y análisis de licitaciones y compras ágiles (Mercado Público)</strong>, desarrollada mediante <strong>Claude, Antigravity y n8n</strong> sobre <strong>HTML5+JavaScript</strong> y despliegue serverless de alta disponibilidad en <strong>Vercel.app</strong>. Además, ejecuté auditorías técnicas integrales de <strong>SEO, arquitectura web y analítica digital (GA4)</strong> para plataformas de e-commerce como <a href='https://pizzeando.cl' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>Pizzeando.cl <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>.<br><br><strong>Contacto de referencia:</strong> Felipe Ramírez (+56 9 8526 5640) — <em>CEO de SadhanaCore &amp; Head of Sales en Prisma Digital</em>.",
+        // Perfil estratégico — Controller / Sobre Ignacio
+        author_kicker: "Sobre el autor",
+        profile_title: "Sobre Ignacio",
+        profile_desc: "Soy <strong>Ignacio Salas</strong>, Controller de Gestión &amp; Data Operations en <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). Mi día a día consiste en fusionar la gestión táctica y operativa de procesos con el desarrollo de soluciones disruptivas con IA. Me especializo en crear apps internas con IA para automatizar tareas y potenciar la innovación dentro del equipo. Creo fielmente que la tecnología es el mejor aliado de la estrategia. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Conecta conmigo en LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
         
         // Perfil Conductor Profesional
         profile_title_conductor: "Perfil Profesional de Conducción & Logística",
@@ -124,8 +125,9 @@ const translations = {
         legend_hard: "Hard Skills",
 
         map_hint: "Drag to orbit",
-        profile_title: "Strategic Profile",
-        profile_desc: "<strong>Management Controller &amp; Data Operations</strong> with background in <strong>Automotive Engineering (Duoc UC)</strong> and postgraduate studies in <strong>Management Control (FEN Universidad de Chile)</strong>. I specialize in transforming scattered data into profitable business decisions through <strong>Business Intelligence, Data Engineering, and AI Automation</strong>.<br><br>I deliver a hybrid approach merging operational process discipline with business vision and advanced analytics. My track record at <strong>Grupo MSUS</strong> companies includes:<br><br>• <a href='https://sadhanacore.com/' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>SadhanaCore <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>: I designed and implemented <strong>Business Intelligence dashboards (Power BI, DAX, Power Query)</strong> for internal performance tracking and low-cost outcome analysis models in <strong>Airtable</strong> for corporate clients. Additionally, I integrated <strong>Prompt Engineering &amp; GenAI</strong> workflows to secure public tender contracts on <strong>Mercado Público (Chile)</strong>, and deployed low-cost ERP sprint-tracking modules automated with <strong>Python and n8n</strong>.<br>• <a href='https://prismadigital.io/' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>Prisma Digital <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>: I developed and deployed interactive <strong>gamified web applications</strong>, and conceived and built an intelligent agentic platform to <strong>assist in searching, filtering, and analyzing public tenders and agile procurement (Mercado Público)</strong> using <strong>Claude, Antigravity, and n8n</strong> with <strong>HTML5/JavaScript</strong> and serverless deployment on <strong>Vercel</strong>. Furthermore, I executed comprehensive technical audits covering <strong>SEO, web architecture, and digital analytics (GA4)</strong> for e-commerce platforms such as <a href='https://pizzeando.cl' target='_blank' rel='noopener noreferrer' style='color: var(--accent-cyan); font-weight: 600;'>Pizzeando.cl <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em;'></i></a>.<br><br><strong>Direct Reference:</strong> Felipe Ramírez (+56 9 8526 5640) — <em>CEO at SadhanaCore &amp; Head of Sales at Prisma Digital</em>.",
+        author_kicker: "About the author",
+        profile_title: "About Ignacio",
+        profile_desc: "I am <strong>Ignacio Salas</strong>, Management Controller &amp; Data Operations at <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). My day-to-day work focuses on merging tactical operational discipline with the development of disruptive AI solutions. I specialize in building internal AI apps to automate tasks and empower team innovation. I firmly believe that technology is strategy's greatest ally. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Connect with me on LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
         
         profile_title_conductor: "Professional Driving & Logistics Profile",
         profile_desc_conductor: "Bilingual professional driver (Native Spanish, C2 English) holding Chilean professional licenses A2, A4, B, and C with clean record. Extensive experience in urban cold-chain distribution of meat products in Santiago (<strong>Susaron</strong>), bilingual dignitary and VIP delegation transport during the Santiago 2023 Pan American and Parapan American Games, and top-rated private passenger transport achieving <strong>Uber Platinum Status</strong>. Holds a B.S. in Automotive Mechanical Engineering from Duoc UC.",
@@ -194,8 +196,9 @@ const translations = {
         legend_hard: "Fachkompetenzen",
 
         map_hint: "Ziehen zum Navigieren",
-        profile_title: "Strategisches Profil",
-        profile_desc: "Beim Übergang vom Automotive Engineering zur Rolle als Controller...",
+        author_kicker: "Über den Autor",
+        profile_title: "Über Ignacio",
+        profile_desc: "Ich bin <strong>Ignacio Salas</strong>, Management Controller &amp; Data Operations bei <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). Mein Alltag besteht darin, operative Prozessdisziplin mit der Entwicklung disruptiver KI-Lösungen zu verbinden. Ich bin darauf spezialisiert, interne KI-Apps zu entwickeln, um Aufgaben zu automatisieren und Innovationen im Team voranzutreiben. Ich glaube fest daran, dass Technologie der beste Verbündete der Strategie ist. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Vernetzen Sie sich auf LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
         
         profile_title_conductor: "Berufskraftfahrer & Logistik Profil",
         profile_desc_conductor: "Zweisprachiger Berufskraftfahrer (Spanisch Muttersprache, Englisch C2) mit Führerscheinen A2, A4, B und C. Erfahrung in der Fleischwarenlogistik bei <strong>Susaron</strong> (Santiago), VIP-Diplomatentransport bei den Panamerikanischen Spielen 2023 und <strong>Uber Platin Status</strong>.",
@@ -262,9 +265,9 @@ const translations = {
         legend_hybrid: "ハイブリッド",
         legend_hard: "ハードスキル",
 
-        map_hint: "ドラッグで回転",
-        profile_title: "戦略的プロフィール",
-        profile_desc: "自動車工学からプロンプトエンジニアリングおよびデータエンジニアリングのスキルを持つController役への移行...",
+        author_kicker: "著者について",
+        profile_title: "イグナシオについて",
+        profile_desc: "私は<strong>イグナシオ・サラス</strong>、Grupo MSUS（SadhanaCore / Prisma Digital）のマネジメントコントローラー兼データオペレーション担当です。日々の業務は、業務プロセスの規律と革新的なAIソリューション開発の融合です。タスクを自動化しチームのイノベーションを加速する社内AIアプリの構築を専門としています。テクノロジーこそが戦略の最良のパートナーであると確信しています。<a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> LinkedInでつながる <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
 
         profile_title_conductor: "プロドライバー & 流通物流プロフィール",
         profile_desc_conductor: "プロフェッショナルバイリンガルドライバー（スペイン語母国語、英語C2）。A2、A4、B、Cプロ運転免許を保有。サンティアゴでの精肉配送物流（<strong>Susaron</strong>）、2023年パンアメリカン競技大会でのVIP・要人バイリンガル輸送、および**Uberプラチナレベル**の実績を保有。Duoc UCの自動車機械工学士号を有し、車両整備・防衛運転に精通。",
@@ -332,8 +335,9 @@ const translations = {
         legend_hard: "Жёсткие навыки",
 
         map_hint: "Тяните для вращения",
-        profile_title: "Стратегический профиль",
-        profile_desc: "В переходе от автомобильной инженерии к роли Controller...",
+        author_kicker: "Об авторе",
+        profile_title: "Об Игнасио",
+        profile_desc: "Я <strong>Игнасио Салас</strong>, Management Controller &amp; Data Operations в <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). Моя повседневная работа заключается в объединении тактической дисциплины процессов с разработкой прорывных ИИ-решений. Я специализируюсь на создании внутренних ИИ-приложений для автоматизации задач и стимулирования инноваций в команде. Я искренне верю, что технологии — лучший союзник стратегии. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Связаться в LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
 
         profile_title_conductor: "Профиль Профессионального Водителя и Логиста",
         profile_desc_conductor: "Двуязычный профессиональный водитель (испанский родной, английский C2) с правами A2, A4, B и C. Опыт городской логистики доставки мясных продуктов в Сантьяго (<strong>Susaron</strong>), сопровождения дипломатов и VIP-делегаций на Панамериканских играх 2023 и статус <strong>Uber Платина</strong>. Инженер по автомобильной механике (Duoc UC).",

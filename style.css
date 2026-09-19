@@ -2607,3 +2607,537 @@ path.gauge-fill-affection {
     color: #ffffff !important;
     font-weight: 800 !important;
 }
+
+/* ── Author Card / Sobre Ignacio Component ──────────────── */
+.author-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(150, 95, 212, 0.25);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6) 0%, rgba(20, 17, 42, 0.4) 100%);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.author-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-cyan), var(--accent-teal));
+}
+
+.author-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.95rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: var(--font-header);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-cyan);
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.25);
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+}
+
+.author-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.author-avatar-col {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.author-avatar-ring {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-cyan) 100%);
+    box-shadow: 0 8px 24px rgba(150, 95, 212, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 50%;
+    display: block;
+    background-color: var(--bg-deep);
+}
+
+.author-status-pulse {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--accent-green);
+    border: 2.5px solid var(--bg-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent-green);
+    animation: pulse-status 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-status {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.author-content-col {
+    flex: 1;
+}
+
+.author-name {
+    font-family: var(--font-header);
+    font-size: clamp(1.85rem, 4vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+}
+
+.author-headline {
+    color: var(--accent-cyan);
+    font-size: 0.96rem;
+    font-weight: 600;
+    margin-bottom: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.author-bio-text {
+    font-size: 1.03rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    margin-bottom: 0;
+}
+
+.author-bio-text strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.author-linkedin-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-left: 0.4rem;
+    padding: 0.22rem 0.85rem;
+    background: rgba(10, 102, 194, 0.18);
+    border: 1px solid rgba(10, 102, 194, 0.45);
+    color: #38bdf8 !important;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: var(--transition);
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.author-linkedin-cta:hover {
+    background: #0a66c2;
+    color: #ffffff !important;
+    border-color: #0a66c2;
+    box-shadow: 0 4px 18px rgba(10, 102, 194, 0.5);
+    transform: translateY(-2px);
+}
+
+.author-linkedin-cta i.fa-linkedin {
+    color: #0077b5;
+    font-size: 1.1em;
+    transition: var(--transition);
+}
+
+.author-linkedin-cta:hover i.fa-linkedin {
+    color: #ffffff;
+}
+
+/* ── Author Accordion (Trayectoria Grupo MSUS & Referencias) ── */
+.author-accordion {
+    margin-top: 1.35rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.author-accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.25rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.author-accordion-trigger:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.author-accordion.expanded .author-accordion-trigger {
+    color: var(--accent-cyan);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.author-accordion-chevron {
+    transition: transform 0.3s ease;
+}
+
+.author-accordion.expanded .author-accordion-chevron {
+    transform: rotate(180deg);
+}
+
+.author-accordion-body {
+    display: none;
+    padding: 1.25rem;
+}
+
+.author-accordion.expanded .author-accordion-body {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.author-track-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.author-track-card {
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.1rem;
+}
+
+.author-track-card h4 {
+    margin-bottom: 0.45rem;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.author-track-card h4 a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.author-track-card h4 a:hover {
+    color: var(--accent-teal);
+    text-decoration: underline;
+}
+
+.author-track-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.author-ref-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.1rem;
+    background: rgba(139, 212, 80, 0.06);
+    border: 1px solid rgba(139, 212, 80, 0.2);
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+}
+
+.author-ref-banner i {
+    color: var(--accent-lime);
+    font-size: 1.1em;
+}
+
+@media screen and (max-width: 680px) {
+    .author-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.1rem;
+    }
+
+    .author-headline {
+        justify-content: center;
+    }
+
+    .author-linkedin-cta {
+        display: inline-flex;
+        margin-top: 0.6rem;
+        margin-left: 0;
+    }
+}
+
+/* ── Author Integrated Contact Bar ──────────────────────── */
+.author-contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 1.25rem 0 1.5rem 0;
+    padding: 1.1rem;
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    align-items: center;
+}
+
+.author-contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.42rem 0.85rem;
+    font-size: 0.86rem;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    font-family: var(--font-body);
+    position: relative;
+    white-space: nowrap;
+}
+
+.author-contact-chip:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: var(--accent-cyan);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.author-chip-linkedin {
+    border-color: rgba(10, 102, 194, 0.4);
+    background: rgba(10, 102, 194, 0.12);
+    color: #70b5f9;
+}
+
+.author-chip-linkedin:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(10, 102, 194, 0.4);
+}
+
+.author-chip-github:hover {
+    border-color: var(--text-primary);
+}
+
+.author-chip-interactive {
+    border-style: dashed;
+}
+
+.author-chip-popover {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    padding: 0.75rem 0.95rem;
+    background: var(--surface);
+    border: 1px solid var(--accent-teal);
+    border-radius: 10px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--text-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    text-align: left;
+    white-space: normal;
+    pointer-events: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.author-chip-popover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--accent-teal) transparent transparent transparent;
+}
+
+.author-chip-interactive:hover .author-chip-popover,
+.author-chip-interactive.active .author-chip-popover {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .author-contact-bar {
+        padding: 0.85rem;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .author-contact-chip {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.7rem;
+    }
+
+    .author-chip-popover {
+        width: 230px;
+        left: 20%;
+        transform: none;
+    }
+}
+
+/* ── Author Collapsible Panels (Vistas Plegable / Desplegable) ── */
+.author-collapsibles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.author-panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.35);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.author-panel:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.author-panel.open {
+    border-color: rgba(34, 211, 238, 0.35);
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.author-panel-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.15rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    transition: var(--transition);
+}
+
+.author-panel-trigger:hover {
+    color: #ffffff;
+}
+
+.author-panel-trigger .trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.author-panel-trigger .trigger-icon {
+    font-size: 1.05em;
+}
+
+.author-panel-trigger .trigger-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.author-panel-trigger .chevron-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.author-panel.open .author-panel-trigger {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.author-panel.open .chevron-icon {
+    transform: rotate(180deg);
+    color: var(--accent-cyan);
+}
+
+.author-panel.open .trigger-hint .hint-text {
+    color: var(--accent-cyan);
+}
+
+.author-panel-body {
+    display: none;
+    padding: 1rem 1.15rem;
+    animation: panelFadeSlide 0.28s ease-out;
+}
+
+.author-panel.open .author-panel-body {
+    display: block;
+}
+
+@keyframes panelFadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.author-panel-body .author-contact-bar {
+    margin: 0;
+    padding: 0.25rem 0;
+    background: transparent;
+    border: none;
+}
+
+.author-panel-body .author-track-grid {
+    margin-top: 0.25rem;
+}
+
+.author-panel-body .tech-vitals {
+    margin-top: 0.25rem;
+}
