@@ -37,7 +37,7 @@ const translations = {
         desc_cpm: "Ruta Crítica & WBS",
         desc_prompting: "Prompt Engineering",
         desc_engineering: "Flotas Críticas",
-        desc_fluent: "Certificación TOEIC",
+        desc_fluent: "Nivel Certificado",
         desc_optimal: "Tecnología & Activos",
 
         // Mapa de skills — leyenda
@@ -115,7 +115,7 @@ const translations = {
         desc_cpm: "Critical Path & WBS",
         desc_prompting: "Prompt Engineering",
         desc_engineering: "Critical Fleets",
-        desc_fluent: "TOEIC Certified",
+        desc_fluent: "Certified Level",
         desc_optimal: "Tech & Asset Reliability",
 
         skillmap_title: "Skills & Criticality Radar",
