@@ -11,7 +11,7 @@ function exportCV() {
     if (isConductor) {
         document.title = "Ignacio_Salas_Vega_CV_Conductor_Profesional_Bilingue";
     } else {
-        document.title = "Ignacio_Salas_Vega_CV_Mantenimiento_Electro-Mecanico_Confiabilidad";
+        document.title = "Ignacio_Salas_Vega_CV_Ingenieria_Mantenimiento_Data_Operations";
     }
 
     document.body.classList.add('print-lc');

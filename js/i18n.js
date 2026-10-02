@@ -7,21 +7,21 @@
 const translations = {
     es: {
         // Headers & Titles
-        subtitle: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Control de Gestión",
-        subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Control de Gestión",
+        subtitle: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
+        subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
 
         // Sección Telemetría Operativa
         vitals_title: "Telemetría Operativa / Status",
-        vitals_desc: "Disponibilidad, continuidad operacional e indicadores de preparación técnica en terreno",
+        vitals_desc: "Disponibilidad operacional, confiabilidad de activos y capacidades analíticas y tecnológicas",
 
         // Medidores — nombres
-        gauge_availability: "Disponibilidad / Faena",
+        gauge_availability: "Disponibilidad Operacional",
         gauge_terminal: "Seguridad & SSOMA",
         gauge_analytics: "Control de Gestión",
-        gauge_automation: "Python & Data",
-        gauge_powerbi: "SQL & Dashboards",
+        gauge_automation: "Python & DataOps",
+        gauge_powerbi: "BI & SQL Dashboards",
         gauge_p6: "Planificación P6",
         gauge_genai: "IA Generativa",
         gauge_maintenance: "Mant. Electro-Mecánico",
@@ -29,16 +29,16 @@ const translations = {
         gauge_alignment: "Continuidad Operativa",
 
         // Medidores — descripciones
-        desc_immediate: "Turnos 7x7 / 4x3",
-        desc_connected: "Normativa PTS",
-        desc_methodology: "KPIs MTBF / MTTR",
-        desc_auto: "Análisis Operacional",
-        desc_executive: "Reportabilidad",
+        desc_immediate: "Terreno & Remoto",
+        desc_connected: "Normativas & PTS",
+        desc_methodology: "FEN U. Chile / KPIs",
+        desc_auto: "Scripts & n8n",
+        desc_executive: "Power BI & Tabulares",
         desc_cpm: "Ruta Crítica & WBS",
         desc_prompting: "Prompt Engineering",
         desc_engineering: "Flotas Críticas",
         desc_fluent: "Certificación TOEIC",
-        desc_optimal: "Confiabilidad Activos",
+        desc_optimal: "Tecnología & Activos",
 
         // Mapa de skills — leyenda
         skillmap_title: "Radar de Habilidades & Criticidad",
@@ -53,7 +53,7 @@ const translations = {
         // Perfil estratégico — Controller / Sobre Ignacio
         author_kicker: "Sobre el autor",
         profile_title: "Sobre Ignacio",
-        profile_desc: "Ingeniero en Mecánica Automotriz y Autotrónica enfocado en la continuidad operacional, confiabilidad de activos y gestión de mantenimiento en terreno. Cuento con experiencia comprobable en ejecución de planes preventivos/correctivos para flotas electro-mecánicas y administración de órdenes de trabajo (OT) en sistemas ERP (MAXIMO). Complemento mi base técnica con formación ejecutiva en Control de Gestión (Diplomado Universidad de Chile), planificación de proyectos (Oracle Primavera P6) e ingeniería de datos (SQL, Python, arquitecturas cloud) para el análisis de KPIs operativos. Orientado al cumplimiento estricto de estándares de seguridad industrial (SSOMA) y trabajo bajo sistemas exigentes de turnos. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Contactar vía LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
+        profile_desc: "Ingeniero en Mecánica Automotriz y Autotrónica con postgrado en Control de Gestión (Diplomado FEN Universidad de Chile), especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital. Cuento con experiencia comprobable en gestión de órdenes de trabajo (ERP MAXIMO / SAP) y ejecución de planes preventivos/correctivos para equipamiento crítico, complementada con liderazgo técnico en Grupo MSUS (SadhanaCore y Prisma Digital) desarrollando soluciones de Business Intelligence (Power BI, DAX), analítica avanzada (SQL, Python), automatización de procesos (n8n, IA Generativa) y planificación técnica (Oracle Primavera P6). Orientado a la optimización de KPIs operativos (Disponibilidad, MTBF, MTTR), continuidad operacional y riguroso cumplimiento de normativas de seguridad (SSOMA). <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Contactar vía LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
         
         // Perfil Conductor Profesional
         profile_title_conductor: "Perfil Profesional de Conducción & Logística",
@@ -88,35 +88,35 @@ const translations = {
     },
 
     en: {
-        subtitle: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Management Control",
-        subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Management Control",
+        subtitle: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
+        subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
 
         vitals_title: "Operational Telemetry / Status",
-        vitals_desc: "Availability, operational continuity, and field technical readiness indicators",
+        vitals_desc: "Operational availability, asset reliability, and advanced analytical and technological capabilities",
 
-        gauge_availability: "Availability / Field",
+        gauge_availability: "Operational Availability",
         gauge_terminal: "Safety & SSOMA",
         gauge_analytics: "Management Control",
-        gauge_automation: "Python & Data",
-        gauge_powerbi: "SQL & Dashboards",
+        gauge_automation: "Python & DataOps",
+        gauge_powerbi: "BI & SQL Dashboards",
         gauge_p6: "Planning & P6",
         gauge_genai: "Generative AI",
         gauge_maintenance: "Electro-Mechanical Maint.",
         gauge_bilingual: "Technical English",
         gauge_alignment: "Operational Continuity",
 
-        desc_immediate: "Rosters 7x7 / 4x3",
+        desc_immediate: "Field & Remote",
         desc_connected: "Safe Work Procedures",
-        desc_methodology: "MTBF / MTTR KPIs",
-        desc_auto: "Operational Analytics",
-        desc_executive: "Technical Reporting",
+        desc_methodology: "FEN U. Chile / KPIs",
+        desc_auto: "Scripts & n8n",
+        desc_executive: "Power BI & Tabulars",
         desc_cpm: "Critical Path & WBS",
         desc_prompting: "Prompt Engineering",
         desc_engineering: "Critical Fleets",
         desc_fluent: "TOEIC Certified",
-        desc_optimal: "Asset Reliability",
+        desc_optimal: "Tech & Asset Reliability",
 
         skillmap_title: "Skills & Criticality Radar",
         skillmap_desc: "Radial criticality meter · <strong>Center:</strong> High criticality & operational precision tasks (e.g. Electro-Mechanical Maint., ERP MAXIMO, P6) → <strong>Periphery:</strong> Continuous tactical and structural skills.",
@@ -127,7 +127,7 @@ const translations = {
         map_hint: "Drag to orbit",
         author_kicker: "About the author",
         profile_title: "About Ignacio",
-        profile_desc: "Automotive and Autatronics Engineer focused on operational continuity, asset reliability, and field maintenance management. Verifiable track record executing preventive and corrective plans for electro-mechanical fleets and managing work orders (WO) in ERP systems (MAXIMO). Backed by executive training in Management Control (Universidad de Chile), project planning (Oracle Primavera P6), and data engineering (SQL, Python, cloud architectures) for operational KPI analysis. Strictly committed to industrial safety standards (SSOMA) and demanding shift rosters. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Contact via LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
+        profile_desc: "Automotive and Autatronics Engineer with postgraduate studies in Management Control (FEN Universidad de Chile), specializing in the intersection between electro-mechanical fleet maintenance, asset reliability, and digital transformation. Proven track record managing work orders in ERP systems (MAXIMO / SAP) and executing preventive/corrective maintenance plans for critical equipment, paired with technical leadership at Grupo MSUS (SadhanaCore and Prisma Digital) building Business Intelligence solutions (Power BI, DAX), advanced analytics (SQL, Python), process automation (n8n, Generative AI), and project planning (Oracle Primavera P6). Focused on operational KPI optimization (Availability, MTBF, MTTR), service continuity, and strict compliance with SSOMA industrial safety standards. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Contact via LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
         
         profile_title_conductor: "Professional Driving & Logistics Profile",
         profile_desc_conductor: "Bilingual professional driver (Native Spanish, C2 English) holding Chilean professional licenses A2, A4, B, and C with clean record. Extensive experience in urban cold-chain distribution of meat products in Santiago (<strong>Susaron</strong>), bilingual dignitary and VIP delegation transport during the Santiago 2023 Pan American and Parapan American Games, and top-rated private passenger transport achieving <strong>Uber Platinum Status</strong>. Holds a B.S. in Automotive Mechanical Engineering from Duoc UC.",
