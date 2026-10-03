@@ -376,10 +376,10 @@ tailwind.config = {
           <div class="gauge-item">
             <div class="flex justify-between items-center mb-1">
               <span class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="gauge_english">Inglés Técnico</span>
-              <span class="font-label-code text-label-code text-telemetry-cyan">85.0%</span>
+              <span class="font-label-code text-label-code text-telemetry-cyan">100%</span>
             </div>
             <div class="h-1.5 bg-surface-elevated rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-telemetry-cyan to-telemetry-blue rounded-full transition-all duration-1000" style="width:85%"></div>
+              <div class="h-full bg-gradient-to-r from-telemetry-cyan to-telemetry-blue rounded-full transition-all duration-1000" style="width:100%"></div>
             </div>
           </div>
         </div>
@@ -549,6 +549,45 @@ tailwind.config = {
         </div>
       </section>
 
+      <!-- Formación Complementaria & Especializada -->
+      <section id="formacion-complementaria" class="rounded-xl border border-outline-variant/40 bg-surface-panel p-6">
+        <div class="flex items-center gap-2 mb-5">
+          <span class="material-symbols-outlined text-primary text-xl">auto_stories</span>
+          <h2 class="font-headline-md text-headline-md text-text-primary" data-i18n="edu_comp_title">Formación Complementaria &amp; Especializada</h2>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-5">
+          <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40 hover:border-primary/40 transition-colors">
+            <span class="font-label-code text-label-code text-telemetry-cyan">Ene 2026</span>
+            <h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">Marketing para E-Commerce</h3>
+            <p class="font-body-sm text-body-sm text-text-muted mt-0.5">Platzi · Posicionamiento y ventas digitales</p>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40 hover:border-primary/40 transition-colors">
+            <span class="font-label-code text-label-code text-telemetry-cyan">Ene 2026</span>
+            <h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">Introducción a la Sustentabilidad</h3>
+            <p class="font-body-sm text-body-sm text-text-muted mt-0.5">PUC Chile · Intercambio ING 2045</p>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40 hover:border-primary/40 transition-colors">
+            <span class="font-label-code text-label-code text-telemetry-cyan">Ago 2014</span>
+            <h3 class="font-headline-sm text-headline-sm text-text-primary mt-1">Seminario de Lubricantes y Aditivos</h3>
+            <p class="font-body-sm text-body-sm text-text-muted mt-0.5">Liqui-Moly · Capacitación técnica</p>
+          </div>
+        </div>
+        <!-- Self-taught / Libros -->
+        <div class="p-4 rounded-lg bg-surface-base border border-outline-variant/30">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="material-symbols-outlined text-secondary text-base">menu_book</span>
+            <span class="font-label-sm text-label-sm text-text-muted uppercase tracking-widest">Investigación &amp; Liderazgo (Autodidacta)</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/20 font-label-code text-label-code text-secondary">Técnicas de investigación social · Restituto Sierra Bravo</span>
+            <span class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/20 font-label-code text-label-code text-secondary">Agile Manifesto · PMI</span>
+            <span class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/20 font-label-code text-label-code text-secondary">Liderazgo · John Maxwell</span>
+            <span class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/20 font-label-code text-label-code text-secondary">Ventas · Ron Willingham</span>
+            <span class="px-2.5 py-1 rounded bg-secondary/10 border border-secondary/20 font-label-code text-label-code text-secondary">PMBOK® Guide · PMI</span>
+          </div>
+        </div>
+      </section>
+
       <!-- 3D Skill Map -->
       <section class="rounded-xl border border-outline-variant/40 bg-surface-panel p-6">
         <div class="flex items-center gap-2 mb-4">
@@ -687,8 +726,8 @@ tailwind.config = {
           <div class="h-1.5 bg-surface-elevated rounded-full"><div class="h-full bg-gradient-to-r from-telemetry-cyan to-telemetry-blue rounded-full" style="width:91%"></div></div>
         </div>
         <div>
-          <div class="flex justify-between mb-1"><span class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="gauge_english">Inglés Técnico</span><span class="font-label-code text-label-code text-telemetry-cyan">85.0%</span></div>
-          <div class="h-1.5 bg-surface-elevated rounded-full"><div class="h-full bg-gradient-to-r from-telemetry-cyan to-telemetry-blue rounded-full" style="width:85%"></div></div>
+          <div class="flex justify-between mb-1"><span class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="gauge_english">Inglés Técnico</span><span class="font-label-code text-label-code text-telemetry-cyan">100%</span></div>
+          <div class="h-1.5 bg-surface-elevated rounded-full"><div class="h-full bg-gradient-to-r from-telemetry-cyan to-telemetry-blue rounded-full" style="width:100%"></div></div>
         </div>
       </div>
     </section>
@@ -715,6 +754,35 @@ tailwind.config = {
           <p class="font-body-sm text-body-sm text-text-muted">Servicio técnico liviano</p>
           <p class="font-label-code text-label-code text-text-muted mt-1" data-i18n="exp3_date">2017 – 2018</p>
         </div>
+      </div>
+    </section>
+
+    <!-- Mobile Formación Complementaria -->
+    <section class="rounded-xl border border-outline-variant/40 bg-surface-panel p-4">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-lg">auto_stories</span>
+        <h2 class="font-headline-sm text-headline-sm text-text-primary" data-i18n="edu_comp_title">Formación Complementaria</h2>
+      </div>
+      <div class="space-y-2 mb-3">
+        <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40">
+          <span class="font-label-code text-label-code text-telemetry-cyan">Ene 2026</span>
+          <p class="font-body-sm text-body-sm text-text-primary mt-0.5">Marketing para E-Commerce <span class="text-text-muted">· Platzi</span></p>
+        </div>
+        <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40">
+          <span class="font-label-code text-label-code text-telemetry-cyan">Ene 2026</span>
+          <p class="font-body-sm text-body-sm text-text-primary mt-0.5">Introducción a la Sustentabilidad <span class="text-text-muted">· PUC Chile</span></p>
+        </div>
+        <div class="p-3 rounded-lg bg-surface-elevated border border-outline-variant/40">
+          <span class="font-label-code text-label-code text-telemetry-cyan">Ago 2014</span>
+          <p class="font-body-sm text-body-sm text-text-primary mt-0.5">Seminario de Lubricantes y Aditivos <span class="text-text-muted">· Liqui-Moly</span></p>
+        </div>
+      </div>
+      <div class="p-3 rounded-lg bg-surface-base border border-outline-variant/30">
+        <div class="flex items-center gap-1.5 mb-2">
+          <span class="material-symbols-outlined text-secondary text-sm">menu_book</span>
+          <span class="font-label-sm text-label-sm text-text-muted uppercase tracking-widest">Autodidacta</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">Investigación social (Restituto), Agile Manifesto, Liderazgo (Maxwell), Ventas (Willingham), PMBOK® Guide (PMI)</p>
       </div>
     </section>
 
