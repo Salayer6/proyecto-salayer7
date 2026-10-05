@@ -11,8 +11,8 @@ const translations = {
         subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
-        export_pdf: "Exportar CV Harvard",
-        export_pdf_short: "CV Harvard",
+        export_pdf: "Descargar CV",
+        export_pdf_short: "Descargar CV",
         export_harvard: "Formato Harvard",
 
         // Sección Telemetría Operativa
@@ -95,8 +95,8 @@ const translations = {
         subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
-        export_pdf: "Export Harvard CV",
-        export_pdf_short: "Harvard CV",
+        export_pdf: "Download CV",
+        export_pdf_short: "Download CV",
         export_harvard: "Harvard Format",
 
         vitals_title: "Operational Telemetry / Status",

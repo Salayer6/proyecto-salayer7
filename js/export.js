@@ -9,9 +9,9 @@ function exportCV() {
     const originalTitle = document.title;
 
     if (isConductor) {
-        document.title = "Ignacio_Salas_Vega_CV_Conductor_Profesional_Bilingue";
+        document.title = "CV_Ignacio_Antonio_Salas_Vega";
     } else {
-        document.title = "Ignacio_Salas_Vega_CV_Ingenieria_Mantenimiento_Data_Operations";
+        document.title = "CV_Ignacio_Antonio_Salas_Vega";
     }
 
     document.body.classList.add('print-lc');
