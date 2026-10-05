@@ -14,11 +14,38 @@ function exportCV() {
         document.title = "CV_Ignacio_Antonio_Salas_Vega";
     }
 
+    // Inyectar estilo dinámico para forzar la eliminación de cabeza (título/fecha) y pie de página (URL/paginación)
+    let dynamicStyle = document.getElementById('export-clean-print-style');
+    if (!dynamicStyle) {
+        dynamicStyle = document.createElement('style');
+        dynamicStyle.id = 'export-clean-print-style';
+        dynamicStyle.innerHTML = `
+            @page {
+                size: letter portrait;
+                margin: 0;
+            }
+            @media print {
+                html, body {
+                    margin: 0 !important;
+                    padding: 12mm 15mm !important;
+                    background: #ffffff !important;
+                }
+                header:not(.cv-header), footer, .export-banner, .web-only {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(dynamicStyle);
+    }
+
     document.body.classList.add('print-lc');
 
     const cleanup = () => {
         document.body.classList.remove('print-lc');
         document.title = originalTitle;
+        if (dynamicStyle && dynamicStyle.parentNode) {
+            dynamicStyle.parentNode.removeChild(dynamicStyle);
+        }
         window.removeEventListener('afterprint', cleanup);
     };
 

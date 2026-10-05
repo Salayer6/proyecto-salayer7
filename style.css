@@ -2116,7 +2116,7 @@ path.gauge-fill-affection {
     /* 1. Page Setup & Document Canvas */
     @page {
         size: letter portrait;
-        margin: 12mm 15mm 12mm 15mm;
+        margin: 0;
     }
 
     *,
@@ -2135,7 +2135,7 @@ path.gauge-fill-affection {
         font-size: 9.2pt !important;
         line-height: 1.35 !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 12mm 15mm !important;
         width: 100% !important;
     }
 
@@ -2165,6 +2165,7 @@ path.gauge-fill-affection {
 
     /* 2. Hide All Interactive & Web UI Elements */
     header:not(.cv-header),
+    footer,
     main,
     nav,
     .export-banner,

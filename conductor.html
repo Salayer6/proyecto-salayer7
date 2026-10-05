@@ -47,7 +47,7 @@
         <style media="print">
             @page {
                 size: letter portrait;
-                margin: 12mm 15mm 12mm 15mm;
+                margin: 0;
             }
             *, *::before, *::after {
                 box-sizing: border-box !important;
@@ -64,7 +64,7 @@
                 font-size: 9.3pt !important;
                 line-height: 1.38 !important;
                 margin: 0 !important;
-                padding: 0 !important;
+                padding: 12mm 15mm !important;
                 -webkit-font-smoothing: antialiased !important;
             }
             /* Reset all web text gradients, transparency, and shadows */
@@ -86,6 +86,7 @@
             }
             /* Hide web interface */
             header:not(.cv-header),
+            footer,
             main, nav, .export-banner, .html-tooltip, #export-overlay,
             .bubble-container, .map-3d-ui, .nav-links, .contact-section,
             .container > *:not(.ats-metadata) {
