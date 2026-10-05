@@ -90,7 +90,8 @@ tailwind.config = {
 .pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);} .pt-safe{padding-top:env(safe-area-inset-top,0px);}
 .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none;} .no-scrollbar::-webkit-scrollbar{display:none;}
 [id]{scroll-margin-top:72px;}
-#skill-map-3d-canvas{width:100%;height:380px;border-radius:0.5rem;overflow:hidden;position:relative;}
+#skill-map-3d-canvas, #skill-map-3d-canvas-mobile{width:100%;height:380px;border-radius:0.75rem;overflow:hidden;position:relative;touch-action:pan-y;}
+#skill-map-3d-canvas-mobile{height:320px;}
 .map-3d-ui{position:absolute;top:12px;right:12px;display:flex;flex-direction:column;gap:8px;z-index:10;}
 .map-zoom-controls{display:flex;flex-direction:column;gap:4px;}
 .btn-zoom{width:32px;height:32px;background:rgba(30,41,59,0.9);border:1px solid #334155;border-radius:4px;color:#dfe2ee;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;}
@@ -110,7 +111,7 @@ tailwind.config = {
   *,*::before,*::after{box-sizing:border-box!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
   html,body{background:#ffffff!important;color:#111111!important;font-family:Segoe UI,Calibri,Arial,sans-serif!important;font-size:9.3pt!important;line-height:1.38!important;margin:0!important;padding:0!important;}
   h1,h2,h3,h4,h5,h6{color:#000000!important;font-weight:800!important;}
-  header,main,nav,footer,.web-only,#skill-map-3d-canvas,.html-tooltip,.map-3d-ui{display:none!important;}
+  header,main,nav,footer,.web-only,#skill-map-3d-canvas,#skill-map-3d-canvas-mobile,.html-tooltip,.map-3d-ui{display:none!important;}
   .ats-metadata{display:block!important;visibility:visible!important;position:static!important;width:100%!important;height:auto!important;overflow:visible!important;color:#111111!important;}
   .ats-metadata .cv-header{display:block!important;text-align:center!important;margin-bottom:8pt!important;padding-bottom:6pt!important;border-bottom:1.8pt solid #000!important;}
   .ats-metadata .cv-name{font-size:20pt!important;font-weight:900!important;text-transform:uppercase!important;margin:0 0 2pt 0!important;color:#000!important;}
@@ -905,7 +906,7 @@ tailwind.config = {
         <span class="material-symbols-outlined text-primary text-lg">scatter_plot</span>
         <h2 class="font-headline-sm text-headline-sm text-text-primary" data-i18n="map_title">Mapa 3D de Habilidades</h2>
       </div>
-      <div id="skill-map-3d-canvas" class="relative" style="height:280px;">
+      <div id="skill-map-3d-canvas-mobile" class="relative" style="height:320px;">
         <div class="map-3d-ui">
           <div class="map-zoom-controls">
             <button class="btn-zoom" id="zoom-in-btn-m" title="Zoom in">+</button>
@@ -974,8 +975,8 @@ tailwind.config = {
           </div>
           <p class="export-hint"><i class="fa-solid fa-circle-info"></i> Guardar como PDF en la ventana de impresión.</p>
         </div>
-        <button class="export-btn" onclick="exportToPDF()" style="width:100%;min-width:0;" aria-label="Descargar CV Harvard">
-          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="export_pdf_short">CV Harvard</span>
+        <button class="export-btn" onclick="exportToPDF()" style="width:100%;min-width:0;" aria-label="Descargar CV">
+          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="export_pdf_short">Descargar CV</span>
         </button>
       </div>
     </section>

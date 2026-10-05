@@ -1,39 +1,82 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-// Setup
-const container = document.getElementById('skill-map-3d-canvas');
+// Setup: Support both desktop and mobile layout containers
+const desktopContainer = document.getElementById('skill-map-3d-canvas');
+const mobileContainer = document.getElementById('skill-map-3d-canvas-mobile');
+
+function getActiveContainer() {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile && mobileContainer) return mobileContainer;
+    return desktopContainer || mobileContainer;
+}
+
+let container = getActiveContainer();
 
 // Ensure Container has physical dimensions
 if (container) {
-    container.style.position = 'relative';
-    container.style.width = '100%';
-    container.style.height = '400px'; 
-    container.style.overflow = 'hidden';
-    container.style.borderRadius = '16px';
-    container.style.cursor = 'grab';
-    
     const scene = new THREE.Scene();
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
-    renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.touchAction = 'pan-y';
     container.appendChild(renderer.domElement);
 
-    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 2000);
-    camera.position.set(0, 180, 450); 
+    const camera = new THREE.PerspectiveCamera(45, 1, 1, 2000);
 
+    let autoRotate = true;
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.015; // Inercia súper pesada
-    controls.rotateSpeed = 0.5;
-    controls.enableZoom = false; // Desactiva scroll nativo para no asfixiar el layout al scrollear
+    controls.dampingFactor = 0.02;
+    controls.rotateSpeed = 0.6;
+    controls.enableZoom = true;
     controls.enablePan = false;
-    controls.minDistance = 100;
-    controls.maxDistance = 800;
+    controls.minDistance = 120;
+    controls.maxDistance = 850;
+    controls.touches = {
+        ONE: THREE.TOUCH.ROTATE,
+        TWO: THREE.TOUCH.DOLLY_PAN
+    };
 
-    controls.addEventListener('start', () => { container.style.cursor = 'grabbing'; });
-    controls.addEventListener('end', () => { container.style.cursor = 'grab'; });
+    function updateSizeAndAspect() {
+        const target = getActiveContainer();
+        if (!target) return;
+
+        if (target !== container) {
+            target.appendChild(renderer.domElement);
+            container = target;
+        }
+
+        const width = container.clientWidth || (window.innerWidth < 768 ? window.innerWidth - 32 : 800);
+        const height = container.clientHeight || (window.innerWidth < 768 ? 320 : 380);
+
+        renderer.setSize(width, height);
+        const aspect = width / Math.max(height, 1);
+        camera.aspect = aspect;
+
+        if (aspect < 1.35) {
+            camera.fov = 52;
+            camera.position.set(0, 205, 530);
+        } else {
+            camera.fov = 45;
+            camera.position.set(0, 180, 450);
+        }
+        camera.updateProjectionMatrix();
+        controls.update();
+    }
+
+    updateSizeAndAspect();
+
+    controls.addEventListener('start', () => { 
+        if (container) container.style.cursor = 'grabbing'; 
+        autoRotate = false;
+    });
+    controls.addEventListener('end', () => { 
+        if (container) container.style.cursor = 'grab'; 
+    });
 
     // Generar textura de destello ("Glow/Halo") procedimentalmente
     function createGlowTexture() {
@@ -406,7 +449,7 @@ if (container) {
     scene.add(stars);
 
     // Rotación inicial base muy tenue
-    let autoRotate = true;
+    autoRotate = true;
 
     // Raycaster interactivo
     const raycaster = new THREE.Raycaster();
@@ -422,20 +465,70 @@ if (container) {
     const tooltipClose = document.getElementById('tooltip-close');
     let tooltipPinned = false; // true when user explicitly clicked to keep it open
 
+    function positionTooltip(clientX, clientY) {
+        if (!tooltip) return;
+        const isMobile = window.innerWidth < 768;
+        const tw = 240;
+        let tx = clientX + 15;
+        let ty = clientY + 15;
+
+        if (isMobile) {
+            tx = Math.max(12, Math.min(window.innerWidth - tw - 12, clientX - tw / 2));
+            ty = clientY - 145;
+            if (ty < 55) ty = clientY + 25;
+        } else {
+            if (tx + tw > window.innerWidth) tx = clientX - tw - 15;
+            if (ty + 180 > window.innerHeight) ty = clientY - 180;
+        }
+
+        tooltip.style.left = tx + 'px';
+        tooltip.style.top = ty + 'px';
+    }
+
+    function selectSprite(obj, clientX, clientY, pin = true) {
+        if (hoveredSprite && hoveredSprite !== obj) {
+            hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
+            const prevMatch = skills.find(s => s.name === hoveredSprite.userData.name);
+            if (prevMatch) hoveredSprite.material.color.setHex(prevMatch.color);
+        }
+        hoveredSprite = obj;
+        hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale * 1.5);
+        hoveredSprite.material.color.setHex(0xffffff);
+        hoveredSprite.material.opacity = 1.0;
+
+        if (tooltip) {
+            tooltip.style.display = 'block';
+            tooltipName.textContent = obj.userData.name;
+            tooltipType.textContent = obj.userData.type;
+            if (tooltipRisk) {
+                tooltipRisk.textContent = obj.userData.riskLevel || '';
+                tooltipRisk.className = `tooltip-tag risk-tag risk-${obj.userData.riskBadge || 'tactical'}`;
+            }
+            tooltipTime.textContent = obj.userData.time;
+            tooltipDetail.textContent = obj.userData.detail;
+            positionTooltip(clientX, clientY);
+        }
+        if (pin) tooltipPinned = true;
+    }
+
+    function deselectSprite() {
+        if (hoveredSprite) {
+            hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
+            const match = skills.find(s => s.name === hoveredSprite.userData.name);
+            if (match) hoveredSprite.material.color.setHex(match.color);
+            hoveredSprite = null;
+        }
+        tooltipPinned = false;
+        if (tooltip) tooltip.style.display = 'none';
+        mouse.set(-9999, -9999);
+        if (container) container.style.cursor = 'grab';
+    }
+
     // Cerrar manualmente resetea el pin y el sprite activo
     if (tooltipClose) {
         tooltipClose.addEventListener('click', (e) => {
             e.stopPropagation();
-            tooltipPinned = false;
-            tooltip.style.display = 'none';
-            // Sacar el raycaster fuera del canvas para que el loop no reabra el tooltip
-            mouse.set(-9999, -9999);
-            if (hoveredSprite) {
-                hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
-                const match = skills.find(s => s.name === hoveredSprite.userData.name);
-                if (match) hoveredSprite.material.color.setHex(match.color);
-                hoveredSprite = null;
-            }
+            deselectSprite();
         });
     }
 
@@ -445,29 +538,54 @@ if (container) {
         tooltip.addEventListener('mouseleave', () => { tooltipPinned = false; });
     }
 
-    container.addEventListener('mousemove', (event) => {
-        const rect = container.getBoundingClientRect();
-        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-        
-        // Apagar rotacion mientras se mueve pointer 
+    // Tap/Click handling for both mobile touch and desktop click
+    let ptrDownX = 0;
+    let ptrDownY = 0;
+    let ptrDownTime = 0;
+
+    renderer.domElement.addEventListener('pointerdown', (e) => {
+        ptrDownX = e.clientX;
+        ptrDownY = e.clientY;
+        ptrDownTime = Date.now();
         autoRotate = false;
-        
-        if (tooltip && hoveredSprite) {
-            let tx = event.clientX + 15;
-            let ty = event.clientY + 15;
-            
-            // Boundary detection para evitar clipping en mobile/esquinas
-            if (tx + 260 > window.innerWidth) tx = event.clientX - 260;
-            if (ty + 160 > window.innerHeight) ty = event.clientY - 160;
-            
-            tooltip.style.left = tx + 'px';
-            tooltip.style.top = ty + 'px';
+    });
+
+    renderer.domElement.addEventListener('pointerup', (e) => {
+        const dx = e.clientX - ptrDownX;
+        const dy = e.clientY - ptrDownY;
+        const elapsed = Date.now() - ptrDownTime;
+        if (Math.hypot(dx, dy) < 10 && elapsed < 350) {
+            const rect = renderer.domElement.getBoundingClientRect();
+            const tapMouse = new THREE.Vector2(
+                ((e.clientX - rect.left) / rect.width) * 2 - 1,
+                -((e.clientY - rect.top) / rect.height) * 2 + 1
+            );
+            const tapRaycaster = new THREE.Raycaster();
+            tapRaycaster.setFromCamera(tapMouse, camera);
+            const hits = tapRaycaster.intersectObjects(sprites);
+            if (hits.length > 0) {
+                selectSprite(hits[0].object, e.clientX, e.clientY, true);
+            } else {
+                deselectSprite();
+            }
         }
     });
 
-    container.addEventListener('mouseenter', () => autoRotate = false);
-    container.addEventListener('mouseleave', () => autoRotate = true);
+    renderer.domElement.addEventListener('mousemove', (event) => {
+        if (tooltipPinned) return;
+        const rect = renderer.domElement.getBoundingClientRect();
+        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        autoRotate = false;
+        if (hoveredSprite) {
+            positionTooltip(event.clientX, event.clientY);
+        }
+    });
+
+    renderer.domElement.addEventListener('mouseenter', () => { autoRotate = false; });
+    renderer.domElement.addEventListener('mouseleave', () => { 
+        if (!tooltipPinned) autoRotate = true; 
+    });
 
     const clock = new THREE.Clock();
     
@@ -521,7 +639,7 @@ if (container) {
     // Zoom Functions for Global UI (HTML integration)
     window.zoomMapIn = () => {
         const dist = camera.position.distanceTo(controls.target);
-        const targetDist = Math.max(controls.minDistance, dist - 150);
+        const targetDist = Math.max(controls.minDistance, dist - 120);
         const direction = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
         camera.position.copy(controls.target).add(direction.multiplyScalar(targetDist));
         controls.update();
@@ -529,11 +647,27 @@ if (container) {
 
     window.zoomMapOut = () => {
         const dist = camera.position.distanceTo(controls.target);
-        const targetDist = Math.min(controls.maxDistance, dist + 150);
+        const targetDist = Math.min(controls.maxDistance, dist + 120);
         const direction = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
         camera.position.copy(controls.target).add(direction.multiplyScalar(targetDist));
         controls.update();
     };
+
+    ['zoom-in-btn', 'zoom-in-btn-m'].forEach(id => {
+        document.getElementById(id)?.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.zoomMapIn();
+        });
+    });
+
+    ['zoom-out-btn', 'zoom-out-btn-m'].forEach(id => {
+        document.getElementById(id)?.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.zoomMapOut();
+        });
+    });
 
     function animate() {
         requestAnimationFrame(animate);
@@ -545,70 +679,64 @@ if (container) {
             s.position.y += Math.sin(time * 2 + idx) * 0.15;
         });
         
-        if(autoRotate) {
+        if (autoRotate) {
             targetGroup.rotation.y += 0.0005;
         }
 
         // Pulso sutil del núcleo del radar
         centerSprite.scale.setScalar(20 + Math.sin(time * 3) * 3);
 
-        raycaster.setFromCamera(mouse, camera);
-        
-        const intersects = raycaster.intersectObjects(sprites);
-        
-        if (intersects.length > 0) {
-            const obj = intersects[0].object;
-            if (hoveredSprite !== obj) {
+        if (!tooltipPinned) {
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(sprites);
+            
+            if (intersects.length > 0) {
+                const obj = intersects[0].object;
+                if (hoveredSprite !== obj) {
+                    if (hoveredSprite) {
+                        hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
+                        hoveredSprite.material.opacity = 1.0;
+                    }
+                    hoveredSprite = obj;
+                    hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale * 1.5);
+                    hoveredSprite.material.color.setHex(0xffffff);
+                    hoveredSprite.material.opacity = 1.0;
+                    
+                    if (tooltip) {
+                        tooltip.style.display = 'block';
+                        tooltipName.textContent = obj.userData.name;
+                        tooltipType.textContent = obj.userData.type;
+                        
+                        if (tooltipRisk) {
+                            tooltipRisk.textContent = obj.userData.riskLevel || '';
+                            tooltipRisk.className = `tooltip-tag risk-tag risk-${obj.userData.riskBadge || 'tactical'}`;
+                        }
+                        
+                        tooltipTime.textContent = obj.userData.time;
+                        tooltipDetail.textContent = obj.userData.detail;
+                    }
+                    if (container) container.style.cursor = 'pointer';
+                }
+            } else {
                 if (hoveredSprite) {
                     hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
-                    hoveredSprite.material.opacity = 1.0;
-                }
-                hoveredSprite = obj;
-                // Ampliar halo al enfocar
-                hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale * 1.5);
-                hoveredSprite.material.color.setHex(0xffffff); // Destella en blanco al focus
-                hoveredSprite.material.opacity = 1.0;
-                
-                if(tooltip) {
-                    tooltip.style.display = 'block';
-                    tooltipName.textContent = obj.userData.name;
-                    tooltipType.textContent = obj.userData.type;
-                    
-                    if (tooltipRisk) {
-                        tooltipRisk.textContent = obj.userData.riskLevel || '';
-                        tooltipRisk.className = `tooltip-tag risk-tag risk-${obj.userData.riskBadge || 'tactical'}`;
+                    const match = skills.find(s => s.name === hoveredSprite.userData.name);
+                    if (match) hoveredSprite.material.color.setHex(match.color);
+                    hoveredSprite = null;
+                    if (tooltip) {
+                        tooltip.style.display = 'none';
                     }
-                    
-                    tooltipTime.textContent = obj.userData.time;
-                    tooltipDetail.textContent = obj.userData.detail;
+                    if (container) container.style.cursor = 'grab';
                 }
-                container.style.cursor = 'pointer';
-            }
-        } else {
-            if (hoveredSprite && !tooltipPinned) {
-                hoveredSprite.scale.setScalar(hoveredSprite.userData.baseScale);
-                
-                // Restaurar color nativo
-                const match = skills.find(s => s.name === hoveredSprite.userData.name);
-                if(match) hoveredSprite.material.color.setHex(match.color);
-                
-                hoveredSprite = null;
-                if(tooltip && !tooltipPinned) {
-                    tooltip.style.display = 'none';
-                }
-                container.style.cursor = 'grab';
             }
         }
 
         renderer.render(scene, camera);
     }
 
-    window.addEventListener('resize', () => {
-        if(container.clientWidth > 0 && container.clientHeight > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        }
+    window.addEventListener('resize', updateSizeAndAspect);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(updateSizeAndAspect, 150);
     });
 
     animate();
