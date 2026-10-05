@@ -32,3 +32,11 @@ function exportCV() {
 
 function exportColorCV() { exportCV(); }
 function exportBWCV() { exportCV(); }
+function exportToPDF() { exportCV(); }
+function exportHarvardCV() { exportCV(); }
+
+window.exportCV = exportCV;
+window.exportToPDF = exportToPDF;
+window.exportHarvardCV = exportHarvardCV;
+window.exportColorCV = exportColorCV;
+window.exportBWCV = exportBWCV;

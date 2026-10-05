@@ -3141,3 +3141,224 @@ path.gauge-fill-affection {
 .author-panel-body .tech-vitals {
     margin-top: 0.25rem;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   EXPORT BANNER — Premium Glassmorphic CTA Section
+   ══════════════════════════════════════════════════════════════ */
+
+.export-banner {
+    margin-top: 3rem;
+    padding: 2rem 2.25rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* Animated gradient border glow */
+.export-banner::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(
+        135deg,
+        var(--accent-primary),
+        var(--accent-cyan),
+        var(--accent-pink),
+        var(--accent-primary)
+    );
+    background-size: 300% 300%;
+    animation: export-border-glow 6s ease infinite;
+    z-index: -1;
+    opacity: 0.55;
+    filter: blur(3px);
+}
+
+.export-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 41, 59, 0.88) 0%,
+        rgba(15, 23, 42, 0.94) 100%
+    );
+    z-index: -1;
+}
+
+@keyframes export-border-glow {
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
+}
+
+.export-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.export-banner h2 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.export-banner h2 i {
+    -webkit-text-fill-color: var(--accent-primary);
+    margin-right: 0.35rem;
+    filter: drop-shadow(0 0 6px rgba(150, 95, 212, 0.5));
+}
+
+.export-banner > .export-flex > div:first-child > p:first-of-type {
+    color: var(--text-secondary);
+    font-size: 0.91rem;
+    line-height: 1.5;
+}
+
+/* Feature badge chips */
+.export-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+}
+
+.export-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.28rem 0.65rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.export-chip i { font-size: 0.66rem; }
+
+.export-chip.chip-ats {
+    color: var(--accent-green);
+    border-color: rgba(16, 185, 129, 0.25);
+    background: rgba(16, 185, 129, 0.08);
+}
+
+.export-chip.chip-pdf {
+    color: var(--accent-amber);
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.export-chip.chip-text {
+    color: var(--accent-cyan);
+    border-color: rgba(34, 211, 238, 0.25);
+    background: rgba(34, 211, 238, 0.08);
+}
+
+.export-chip.chip-harvard {
+    color: var(--accent-pink);
+    border-color: rgba(244, 114, 182, 0.25);
+    background: rgba(244, 114, 182, 0.08);
+}
+
+/* Info hint below chips */
+.export-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.76rem;
+    color: var(--accent-cyan);
+    margin-top: 0.6rem;
+    opacity: 0.72;
+    transition: opacity 0.3s;
+}
+
+.export-banner:hover .export-hint { opacity: 1; }
+
+/* Action buttons column */
+.export-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.export-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.6rem;
+    min-width: 200px;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, #2d2d6b 0%, #4a4a9c 50%, #5b5bc4 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow:
+        0 4px 15px rgba(45, 45, 107, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.export-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+}
+
+.export-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 28px rgba(45, 45, 107, 0.55),
+        0 0 15px rgba(91, 91, 196, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.export-btn:hover i { transform: translateY(2px); }
+
+.export-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 2px 12px rgba(45, 45, 107, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .export-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .export-features { justify-content: flex-start; }
+
+    .export-buttons {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .export-btn { flex: 1; min-width: 160px; }
+}
+
+/* Hide export banner in print — only the ats-metadata div prints */
+@media print {
+    .export-banner { display: none !important; }
+}

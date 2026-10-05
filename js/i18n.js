@@ -11,6 +11,9 @@ const translations = {
         subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
+        export_pdf: "Exportar CV Harvard",
+        export_pdf_short: "CV Harvard",
+        export_harvard: "Formato Harvard",
 
         // Sección Telemetría Operativa
         vitals_title: "Telemetría Operativa / Status",
@@ -92,6 +95,9 @@ const translations = {
         subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
+        export_pdf: "Export Harvard CV",
+        export_pdf_short: "Harvard CV",
+        export_harvard: "Harvard Format",
 
         vitals_title: "Operational Telemetry / Status",
         vitals_desc: "Operational availability, asset reliability, and advanced analytical and technological capabilities",
@@ -390,9 +396,21 @@ function initI18n() {
     const lang = detectLang();
     applyTranslations(lang);
 
-    window.setLang = (l) => applyTranslations(l);
+    window.setLang = (l) => {
+        window.currentLang = l;
+        applyTranslations(l);
+    };
     window.currentLang = lang;
     window.translations = translations;
+
+    window.toggleLang = function() {
+        const next = (window.currentLang === 'es') ? 'en' : 'es';
+        window.setLang(next);
+        const btnDesktop = document.getElementById('lang-toggle');
+        const btnMobile = document.getElementById('lang-toggle-mobile');
+        if (btnDesktop) btnDesktop.textContent = next === 'es' ? 'ES / EN' : 'EN / ES';
+        if (btnMobile) btnMobile.textContent = next === 'es' ? 'ES/EN' : 'EN/ES';
+    };
 }
 
 if (document.readyState === 'loading') {

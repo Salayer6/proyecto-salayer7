@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -701,6 +702,34 @@ tailwind.config = {
     </div>
   </main>
 
+  <!-- ── Export Harvard Banner ── -->
+  <section class="export-banner max-w-7xl mx-auto w-full px-6 mb-6 web-only" id="export-harvard-banner">
+    <div class="export-flex">
+      <div>
+        <h2><i class="fa-solid fa-file-pdf"></i> Ignacio Salas Vega — CV Técnico Mantenimiento &amp; Confiabilidad 2026</h2>
+        <p>Documento técnico optimizado para faena minera, empresas contratistas y sistemas ATS.</p>
+        <div class="export-features">
+          <span class="export-chip chip-ats"><i class="fa-solid fa-robot"></i> ATS Ready</span>
+          <span class="export-chip chip-pdf"><i class="fa-solid fa-file-pdf"></i> PDF Nativo</span>
+          <span class="export-chip chip-text"><i class="fa-solid fa-font"></i> Texto Seleccionable</span>
+          <span class="export-chip chip-harvard"><i class="fa-solid fa-helmet-safety"></i> Estándar Minería / Harvard</span>
+        </div>
+        <p class="export-hint">
+          <i class="fa-solid fa-circle-info"></i> Selecciona "Guardar como PDF" en la ventana de impresión para generar el CV Técnico formal.
+        </p>
+      </div>
+      <div class="export-buttons">
+        <a href="https://linkedin.com/in/salayerignaciosalas" target="_blank" rel="noopener noreferrer"
+           class="export-btn" style="background:linear-gradient(135deg,#005885,#0077b5,#009dde);text-decoration:none;">
+          <i class="fa-brands fa-linkedin"></i> Contactar vía LinkedIn
+        </a>
+        <button class="export-btn" onclick="exportToPDF()" id="btn-export-harvard" aria-label="Descargar CV Técnico en formato Harvard">
+          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="export_pdf">Descargar CV Técnico</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Footer ── -->
   <footer class="border-t border-outline-variant/40 py-4 px-6">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -931,6 +960,25 @@ tailwind.config = {
     <footer class="py-4 text-center">
       <p class="font-label-code text-label-code text-text-muted" data-i18n="footer_copy">© 2025 Ignacio Salas Vega</p>
     </footer>
+
+    <!-- Mobile Export Harvard Banner -->
+    <section class="export-banner mx-4 mb-6 web-only" id="export-harvard-banner-mobile">
+      <div class="export-flex" style="flex-direction:column;gap:1rem;">
+        <div>
+          <h2 style="font-size:1.1rem;"><i class="fa-solid fa-file-pdf"></i> CV Técnico — Harvard 2026</h2>
+          <p style="font-size:0.82rem;">Optimizado para ATS · Minería y Contratos.</p>
+          <div class="export-features">
+            <span class="export-chip chip-ats"><i class="fa-solid fa-robot"></i> ATS</span>
+            <span class="export-chip chip-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</span>
+            <span class="export-chip chip-harvard"><i class="fa-solid fa-helmet-safety"></i> Harvard</span>
+          </div>
+          <p class="export-hint"><i class="fa-solid fa-circle-info"></i> Guardar como PDF en la ventana de impresión.</p>
+        </div>
+        <button class="export-btn" onclick="exportToPDF()" style="width:100%;min-width:0;" aria-label="Descargar CV Harvard">
+          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="export_pdf_short">CV Harvard</span>
+        </button>
+      </div>
+    </section>
   </main>
 </div>
 
