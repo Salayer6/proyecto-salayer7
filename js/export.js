@@ -25,11 +25,6 @@ function exportCV() {
                 margin: 0;
             }
             @media print {
-                html, body {
-                    margin: 0 !important;
-                    padding: 12mm 15mm !important;
-                    background: #ffffff !important;
-                }
                 header:not(.cv-header), footer, .export-banner, .web-only {
                     display: none !important;
                 }
