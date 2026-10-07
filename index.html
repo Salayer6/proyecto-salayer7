@@ -231,7 +231,7 @@ tailwind.config = {
     <h2 class="cv-section-title">Formacion Academica &amp; Especializaciones</h2>
     <div class="cv-entry">
       <div class="cv-entry-head">
-        <div class="cv-entry-main"><span class="cv-job-title">&#9733; Introduccion a la Sustentabilidad</span><span class="cv-company">PUC Chile (Intercambio ING 2045)</span></div>
+        <div class="cv-entry-main"><span class="cv-job-title">&#9733; Introduccion a la Sustentabilidad</span><span class="cv-company">PUC Chile · Abordaje de Crisis climatica</span></div>
         <div class="cv-entry-side"><span class="cv-dates">Diciembre de 2017</span></div>
       </div>
     </div>
@@ -1006,7 +1006,7 @@ function renderEduGrid() {
 
 // ── Formación Complementaria — Mostrar todo ───────────────────────────────────
 const COMP_ITEMS = [
-  { date:'Diciembre de 2017', title:'Introducción a la Sustentabilidad', sub:'PUC Chile · Intercambio ING 2045', featured: true },
+  { date:'Diciembre de 2017', title:'Introducción a la Sustentabilidad', sub:'PUC Chile · Abordaje de Crisis climática', link:'https://desarrollosustentable.uc.cl/cursos/sustentabilidad/', featured: true },
   { date:'Ene 2026', title:'Fundamentos de Project Management', sub:'Platzi · Planificación, WBS, gestión ágil y predictiva' },
   { date:'Nov 2025', title:'Slack para Comunicación Online', sub:'Platzi · Colaboración efectiva y canales de trabajo' },
   { date:'May 2026', title:'Prompt Engineering & GenAI', sub:'Platzi · Optimización de prompts y modelos LLM' },
@@ -1028,9 +1028,11 @@ function renderCompGrid() {
       </div>
       <h3 class="font-headline-sm text-headline-sm text-text-primary mt-1 flex items-center gap-1.5">
         ${it.featured ? '<i class="fa-solid fa-star text-amber-300/90 text-xs shrink-0"></i>' : ''}
-        <span>${it.title}</span>
+        ${it.link ? `<a href="${it.link}" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors inline-flex items-center gap-1.5 group"><span>${it.title}</span><i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-50 group-hover:opacity-100 transition-opacity"></i></a>` : `<span>${it.title}</span>`}
       </h3>
-      <p class="font-body-sm text-body-sm text-text-muted mt-0.5">${it.sub}</p>
+      <p class="font-body-sm text-body-sm text-text-muted mt-0.5">
+        ${it.link ? `<a href="${it.link}" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">${it.sub}</a>` : it.sub}
+      </p>
     </div>`).join('');
   const grid = document.getElementById('comp-grid');
   if (grid) grid.innerHTML = cardsHtml;
