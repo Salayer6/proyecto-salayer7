@@ -1072,7 +1072,8 @@ const EDU_ITEMS = [
     sub:'Consejo de Competencias Mineras (CCM) · Geotecnia, Mantención, Planificación · Reglamento de Seguridad Minera',
     link:'Diploma%20Curso%20Activa%20tu%20talento%20minero.pdf',
     img:'diploma_extracted.png',
-    badges: ['Minería 4.0', 'Geotecnia', 'Mantención', 'Planificación', 'Reglamento Seg. Minera']
+    badges: ['Minería 4.0', 'Geotecnia', 'Mantención', 'Planificación', 'Reglamento Seg. Minera'],
+    fullWidth: true
   },
   { date:'2025',        title:'Oracle Primavera P6', sub:'Udemy · CPM, Look-Ahead, Last Planner' },
   { date:'2025',        title:'Data Engineer Path (12 cursos)', sub:'Platzi · PostgreSQL, Spark, Databricks, GCP' },
@@ -1084,7 +1085,7 @@ const EDU_ITEMS = [
 
 function renderEduGrid() {
   const cardsHtml = EDU_ITEMS.map(it => `
-    <div class="p-4 rounded-lg bg-surface-elevated border ${it.img ? 'border-telemetry-cyan/40 bg-telemetry-cyan/[0.02]' : 'border-outline-variant/40'} hover:border-primary/40 transition-colors">
+    <div class="p-4 rounded-lg bg-surface-elevated border ${it.img ? 'border-telemetry-cyan/40 bg-telemetry-cyan/[0.02]' : 'border-outline-variant/40'} hover:border-primary/40 transition-colors ${it.fullWidth ? 'col-span-full md:col-span-2' : ''}">
       <div class="flex items-center justify-between gap-2">
         <div class="flex items-center gap-2">
           <span class="font-label-code text-label-code text-telemetry-cyan">${it.date}</span>
@@ -1105,7 +1106,7 @@ function renderEduGrid() {
       </div>` : ''}
       ${it.img ? `
       <div class="mt-3 flex items-center gap-3 p-2 rounded-lg bg-surface-base/60 border border-outline-variant/40 hover:border-telemetry-cyan/40 transition-colors cursor-pointer group/thumb" onclick="openDiplomaModal()">
-        <div class="w-16 aspect-[1123/807] rounded overflow-hidden border border-outline-variant/70 shrink-0 shadow-sm bg-surface-base">
+        <div class="w-16 sm:w-20 aspect-[1123/807] rounded overflow-hidden border border-outline-variant/70 shrink-0 shadow-sm bg-surface-base">
           <img src="${it.img}" alt="Diploma ${it.title}" class="w-full h-full object-cover group-hover/thumb:scale-105 transition-transform">
         </div>
         <div class="flex-1 min-w-0">
