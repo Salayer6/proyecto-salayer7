@@ -291,7 +291,7 @@ if (container) {
             riskLevel: "ESTRUCTURAL · ENTORNO", 
             riskBadge: "structural",
             time: "Operaciones", 
-            detail: "Comprensión integral de faena, logística pesada, seguridad industrial y normativas del sector minero.", 
+            detail: "Comprensión integral de faena, logística pesada, seguridad industrial, Reglamento de Seguridad Minera y normativas del sector. Especialización CCM en Geotecnia, Mantención y Planificación.", 
             vector: [-0.7, 0.7], 
             dist: 185, 
             color: 0xffb74d, 
