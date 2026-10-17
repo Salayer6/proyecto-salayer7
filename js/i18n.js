@@ -29,14 +29,14 @@ const translations = {
         // Perfil y Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "Sobre Ignacio",
-        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autatrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital.",
-        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autatrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital. Mi perfil integra la rigurosidad técnica operacional con el control de gestión estratégico. Me enfoco en optimizar KPIs operacionales, garantizar la continuidad operativa en faena/planta e implementar soluciones tecnológicas que incrementan la disponibilidad de flota, reducen costos de ciclo de vida y modernizan las operaciones industriales.",
+        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital.",
+        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital. Mi perfil integra la rigurosidad técnica operacional con el control de gestión estratégico. Me enfoco en optimizar KPIs operacionales, garantizar la continuidad operativa en faena/planta e implementar soluciones tecnológicas que incrementan la disponibilidad de flota, reducen costos de ciclo de vida y modernizan las operaciones industriales.",
         profile_location: "Santiago, Chile",
         status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
 
         hero_label: "Perfil Técnico Profesional",
         hero_headline: "Mantenimiento<br/><span class=\"text-primary\">Electro-Mecánico</span><br/>&amp; Confiabilidad",
-        hero_sub: "Ingeniero en Mecánica Automotriz y Autotrónica con Diplomado FEN en Control de Gestión. Orientado a KPIs operativos, continuidad de faena y transformación digital de operaciones.",
+        hero_sub: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Orientado a KPIs operacionales, continuidad operativa y transformación digital de operaciones.",
         hero_cta: "Contáctame",
         hero_cta2: "Ver Experiencia",
 
@@ -154,14 +154,14 @@ const translations = {
         // Profile & Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "About Ignacio",
-        profile_summary: "Automotive & Autatronics Engineer with a Postgraduate Diploma in Management Control (FEN), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation.",
-        profile_desc: "Automotive & Autatronics Engineer with a Postgraduate Diploma in Management Control (FEN), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation. My background bridges technical operational rigor with strategic business control. I focus on optimizing operational KPIs, ensuring site continuity, and implementing technology-driven solutions that improve fleet availability, lower operating costs, and modernize maintenance management.",
+        profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation.",
+        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation. My background bridges technical operational rigor with strategic business control. I focus on optimizing operational KPIs, ensuring site continuity, and implementing technology-driven solutions that improve fleet availability, lower operating costs, and modernize maintenance management.",
         profile_location: "Santiago, Chile",
         status_available: "AVAILABLE · ACTIVE SEARCH",
 
         hero_label: "Technical Professional Profile",
         hero_headline: "Electro-Mechanical<br/><span class=\"text-primary\">Maintenance</span><br/>&amp; Reliability",
-        hero_sub: "Automotive and Autatronics Engineer with FEN Postgraduate Diploma in Management Control. Focused on operational KPIs, site continuity, and digital transformation of operations.",
+        hero_sub: "Automotive and Autotronics Engineer with FEN-UCHILE Postgraduate Diploma in Management Control. Focused on operational KPIs, site continuity, and digital transformation of operations.",
         hero_cta: "Contact Me",
         hero_cta2: "View Experience",
 
@@ -411,13 +411,13 @@ function applyTranslations(lang) {
         if (currentTitle.includes('Conductor') || isConductorPage) {
             document.title = "Ignacio Salas Vega | Bilingual Professional Driver & Fleet Logistics";
         } else {
-            document.title = "Ignacio Salas Vega | Management Controller, Reliability & DataOps";
+            document.title = "Ignacio Salas Vega | Fleet Electro-Mechanical Maintenance, Asset Reliability & Management Control";
         }
     } else if (activeLang === 'es') {
         if (currentTitle.includes('Driver') || isConductorPage) {
             document.title = "Ignacio Salas Vega | Conductor Profesional & Logística";
         } else {
-            document.title = "Ignacio Salas Vega | Controller de Gestión & Data Operations";
+            document.title = "Ignacio Salas Vega | Mantenimiento Electromecánico de Flotas, Confiabilidad de Activos & Control de Gestión";
         }
     }
 
