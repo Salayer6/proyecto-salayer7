@@ -18,8 +18,8 @@ const translations = {
         export_harvard: "Formato Harvard",
 
         // Títulos y Subtítulos
-        subtitle: "Mantenimiento Electromecánico de Flotas & Confiabilidad de Activos | Transformación Digital | Control de Gestión (FEN-UCHILE) & KPIs Operacionales",
-        subtitle_controller: "Mantenimiento Electromecánico de Flotas & Confiabilidad de Activos | Transformación Digital | Control de Gestión (FEN-UCHILE) & KPIs Operacionales",
+        subtitle: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Power BI | Control de Gestión (FEN-UCHILE) & KPIs",
+        subtitle_controller: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Power BI | Control de Gestión (FEN-UCHILE) & KPIs",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
         contact_email_label: "Email",
@@ -30,7 +30,7 @@ const translations = {
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "Sobre Ignacio",
         profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital.",
-        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital. Mi perfil integra la rigurosidad técnica operacional con el control de gestión estratégico. Me enfoco en optimizar KPIs operacionales, garantizar la continuidad operativa en faena/planta e implementar soluciones tecnológicas que incrementan la disponibilidad de flota, reducen costos de ciclo de vida y modernizan las operaciones industriales.",
+        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional. Mi formación técnica en Autotrónica me permite diagnosticar y resolver fallas electromecánicas complejas en terreno, mientras que mi especialización en la FEN-UCHILE me permite traducir la operación en KPIs financieros y control de OPEX. Cuento con experiencia en garantizar la continuidad operativa en faena, reducir tiempos de parada no programada (downtime) y liderar la digitalización de procesos. Integro herramientas como SAP PM, plataformas CMMS/EAM, Power BI y análisis de telemetría (CANbus/OBD-II) para estructurar planes preventivos/predictivos e incrementar la disponibilidad de la flota.",
         profile_location: "Santiago, Chile",
         status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
 
@@ -256,8 +256,8 @@ const translations = {
         export_harvard: "Harvard Format",
 
         // Titles & Subtitles
-        subtitle: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Digital Transformation | Management Control & Operational KPIs",
-        subtitle_controller: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Digital Transformation | Management Control & Operational KPIs",
+        subtitle: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Power BI | Management Control (FEN-UCHILE) & KPIs",
+        subtitle_controller: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Power BI | Management Control (FEN-UCHILE) & KPIs",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
         contact_email_label: "Email",
@@ -268,7 +268,7 @@ const translations = {
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "About Ignacio",
         profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation.",
-        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation. My background bridges technical operational rigor with strategic business control. I focus on optimizing operational KPIs, ensuring site continuity, and implementing technology-driven solutions that improve fleet availability, lower operating costs, and modernize maintenance management.",
+        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control. My Autotronics engineering background enables me to perform complex electro-mechanical diagnostics, while my FEN-UCHILE diploma empowers me to align field maintenance with corporate financial KPIs and OPEX control. I bring proven experience in maintaining site continuity, minimizing unplanned downtime, and driving operational digital transformation. I leverage tools such as SAP PM, CMMS/EAM platforms, Power BI, and telematics analytics (CANbus/OBD-II) to transition operations toward data-driven, predictive maintenance models.",
         profile_location: "Santiago, Chile",
         status_available: "AVAILABLE · ACTIVE SEARCH",
 
