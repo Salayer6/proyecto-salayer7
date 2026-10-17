@@ -18,8 +18,8 @@ const translations = {
         export_harvard: "Formato Harvard",
 
         // Títulos y Subtítulos
-        subtitle: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
-        subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
+        subtitle: "Mantenimiento Electromecánico de Flotas & Confiabilidad de Activos | Transformación Digital | Control de Gestión (FEN-UCHILE) & KPIs Operacionales",
+        subtitle_controller: "Mantenimiento Electromecánico de Flotas & Confiabilidad de Activos | Transformación Digital | Control de Gestión (FEN-UCHILE) & KPIs Operacionales",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
         contact_email_label: "Email",
@@ -29,8 +29,8 @@ const translations = {
         // Perfil y Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "Sobre Ignacio",
-        profile_summary: "Especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital.",
-        profile_desc: "Ingeniero en Mecánica Automotriz y Autotrónica con postgrado en Control de Gestión (Diplomado FEN Universidad de Chile), especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital. Cuento con experiencia comprobable en gestión de órdenes de trabajo (ERP MAXIMO / SAP) y ejecución de planes preventivos/correctivos para equipamiento crítico, complementada con liderazgo técnico en Grupo MSUS (SadhanaCore y Prisma Digital) desarrollando soluciones de Business Intelligence (Power BI, DAX), analítica avanzada (SQL, Python), automatización de procesos (n8n, IA Generativa) y planificación técnica (Oracle Primavera P6). Orientado a la optimización de KPIs operativos (Disponibilidad, MTBF, MTTR), continuidad operacional y riguroso cumplimiento de normativas de seguridad (SSOMA).",
+        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autatrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital.",
+        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autatrónica, con Diplomado en Control de Gestión (FEN-UCHILE), especializado en la convergencia entre el mantenimiento electromecánico de flotas, la confiabilidad de activos y la transformación digital. Mi perfil integra la rigurosidad técnica operacional con el control de gestión estratégico. Me enfoco en optimizar KPIs operacionales, garantizar la continuidad operativa en faena/planta e implementar soluciones tecnológicas que incrementan la disponibilidad de flota, reducen costos de ciclo de vida y modernizan las operaciones industriales.",
         profile_location: "Santiago, Chile",
         status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
 
@@ -143,8 +143,8 @@ const translations = {
         export_harvard: "Harvard Format",
 
         // Titles & Subtitles
-        subtitle: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
-        subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
+        subtitle: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Digital Transformation | Management Control & Operational KPIs",
+        subtitle_controller: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Digital Transformation | Management Control & Operational KPIs",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
         contact_email_label: "Email",
@@ -154,8 +154,8 @@ const translations = {
         // Profile & Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "About Ignacio",
-        profile_summary: "Specializing in the convergence of fleet electro-mechanical maintenance, asset reliability, and digital transformation.",
-        profile_desc: "Automotive and Autatronics Engineer with postgraduate studies in Management Control (FEN Universidad de Chile), specializing in the intersection between electro-mechanical fleet maintenance, asset reliability, and digital transformation. Proven track record managing work orders in ERP systems (MAXIMO / SAP) and executing preventive/corrective maintenance plans for critical equipment, paired with technical leadership at Grupo MSUS (SadhanaCore and Prisma Digital) building Business Intelligence solutions (Power BI, DAX), advanced analytics (SQL, Python), process automation (n8n, Generative AI), and project planning (Oracle Primavera P6). Focused on operational KPI optimization (Availability, MTBF, MTTR), service continuity, and strict compliance with SSOMA industrial safety standards.",
+        profile_summary: "Automotive & Autatronics Engineer with a Postgraduate Diploma in Management Control (FEN), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation.",
+        profile_desc: "Automotive & Autatronics Engineer with a Postgraduate Diploma in Management Control (FEN), specialized in the convergence of electro-mechanical fleet maintenance, asset reliability, and digital transformation. My background bridges technical operational rigor with strategic business control. I focus on optimizing operational KPIs, ensuring site continuity, and implementing technology-driven solutions that improve fleet availability, lower operating costs, and modernize maintenance management.",
         profile_location: "Santiago, Chile",
         status_available: "AVAILABLE · ACTIVE SEARCH",
 
@@ -373,12 +373,12 @@ function detectLang() {
         const params = new URLSearchParams(window.location.search);
         const urlLang = (params.get('lang') || '').toLowerCase().trim();
         if (urlLang && translations[urlLang]) return urlLang;
-    } catch (e) {}
+    } catch (e) { }
 
     try {
         const stored = localStorage.getItem('portfolio_lang');
         if (stored && translations[stored]) return stored;
-    } catch (e) {}
+    } catch (e) { }
 
     const nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase().split('-')[0];
     const supported = ['es', 'en', 'de', 'ja', 'ru'];
@@ -447,16 +447,16 @@ function initI18n() {
 
     applyTranslations(lang);
 
-    window.setLang = function(l) {
+    window.setLang = function (l) {
         const target = translations[l] ? l : 'es';
         window.currentLang = target;
         try {
             localStorage.setItem('portfolio_lang', target);
-        } catch (e) {}
+        } catch (e) { }
         applyTranslations(target);
     };
 
-    window.toggleLang = function() {
+    window.toggleLang = function () {
         const next = (window.currentLang === 'es') ? 'en' : 'es';
         window.setLang(next);
     };
