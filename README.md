@@ -7,7 +7,7 @@
 
 ## 🎯 Perfil Estratégico
 
-Profesional con formación en **Ingeniería Automotriz (Duoc UC)** y especialización en **Control de Gestión (FEN Universidad de Chile)**. Mi enfoque fusiona la disciplina operativa y de mantenimiento de procesos con **Business Intelligence (Power BI, DAX, Power Query)**, arquitecturas de datos y **automatización con IA Generativa**.
+Profesional con formación en **Ingeniería Automotriz (Duoc UC)** y especialización en **Control de Gestión (FEN Universidad de Chile)**. Consultor de confiabilidad y controller de mantenimiento para **operadores de flotas, contratistas mineros y firmas logísticas** que buscan un especialista fraccional o part-time para maximizar la disponibilidad de sus activos y controlar el OPEX. Mi enfoque fusiona la disciplina operativa y de mantenimiento de procesos con **Business Intelligence (Power BI, DAX, Power Query)**, arquitecturas de datos y **automatización con IA Generativa**.
 
 ### Capacidades Diferenciadoras:
 - **Control de Gestión & KPIs:** Modelado presupuestario, diseño de indicadores de desempeño y análisis de desviaciones de plazos y costos.
