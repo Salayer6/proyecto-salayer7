@@ -1,26 +1,53 @@
 /**
  * i18n.js — Internacionalización del Portfolio de Ignacio Salas Vega
- * Idiomas soportados: es (base), en, de, ja, ru
- * Auto-detecta idioma del navegador; fallback a español.
+ * Idiomas soportados: es (base), en (completo), de, ja, ru
+ * Detección jerárquica: URL (?lang=xx) -> localStorage -> navigator.language -> fallback (es)
  */
 
 const translations = {
     es: {
-        // Headers & Titles
-        subtitle: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
-        subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
-        subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
-        contact_title: "Información de contacto",
+        // Navegación
+        nav_headline: "Ing. Mecánico Automotriz",
+        nav_profile: "Perfil",
+        nav_experience: "Experiencia",
+        nav_education: "Formación",
+        nav_skills: "Skills",
+        nav_contact: "Contacto",
         export_pdf: "Descargar CV",
         export_pdf_short: "Descargar CV",
         export_harvard: "Formato Harvard",
 
-        // Sección Telemetría Operativa
+        // Títulos y Subtítulos
+        subtitle: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
+        subtitle_controller: "Ingeniero en Mecánica Automotriz y Autotrónica | Mantenimiento Electro-Mecánico, Confiabilidad & Data Operations",
+        subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
+        contact_title: "Información de contacto",
+        contact_email_label: "Email",
+        contact_phone_label: "Teléfono",
+        cv_summary_title: "Resumen Profesional",
+
+        // Perfil y Hero
+        profile_name: "Ignacio Antonio<br/>Salas Vega",
+        profile_title: "Sobre Ignacio",
+        profile_summary: "Especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital.",
+        profile_desc: "Ingeniero en Mecánica Automotriz y Autotrónica con postgrado en Control de Gestión (Diplomado FEN Universidad de Chile), especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital. Cuento con experiencia comprobable en gestión de órdenes de trabajo (ERP MAXIMO / SAP) y ejecución de planes preventivos/correctivos para equipamiento crítico, complementada con liderazgo técnico en Grupo MSUS (SadhanaCore y Prisma Digital) desarrollando soluciones de Business Intelligence (Power BI, DAX), analítica avanzada (SQL, Python), automatización de procesos (n8n, IA Generativa) y planificación técnica (Oracle Primavera P6). Orientado a la optimización de KPIs operativos (Disponibilidad, MTBF, MTTR), continuidad operacional y riguroso cumplimiento de normativas de seguridad (SSOMA).",
+        profile_location: "Santiago, Chile",
+        status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
+
+        hero_label: "Perfil Técnico Profesional",
+        hero_headline: "Mantenimiento<br/><span class=\"text-primary\">Electro-Mecánico</span><br/>&amp; Confiabilidad",
+        hero_sub: "Ingeniero en Mecánica Automotriz y Autotrónica con Diplomado FEN en Control de Gestión. Orientado a KPIs operativos, continuidad de faena y transformación digital de operaciones.",
+        hero_cta: "Contáctame",
+        hero_cta2: "Ver Experiencia",
+
+        // Métricas de Perfil / Vitals
         vitals_title: "Telemetría Operativa / Status",
         vitals_desc: "Disponibilidad operacional, confiabilidad de activos y capacidades analíticas y tecnológicas",
-
-        // Medidores — nombres
+        gauges_title: "Métricas de Perfil",
         gauge_availability: "Disponibilidad Operacional",
+        gauge_data_stack: "Stack Data &amp; BI",
+        gauge_management: "Control de Gestión",
+        gauge_english: "Inglés Técnico",
         gauge_terminal: "Seguridad & SSOMA",
         gauge_analytics: "Control de Gestión",
         gauge_automation: "Python & DataOps",
@@ -31,41 +58,64 @@ const translations = {
         gauge_bilingual: "Inglés Técnico",
         gauge_alignment: "Continuidad Operativa",
 
-        // Medidores — descripciones
-        desc_immediate: "Terreno & Remoto",
-        desc_connected: "Normativas & PTS",
-        desc_methodology: "FEN U. Chile / KPIs",
-        desc_auto: "Scripts & n8n",
-        desc_executive: "Power BI & Tabulares",
-        desc_cpm: "Ruta Crítica & WBS",
-        desc_prompting: "Prompt Engineering",
-        desc_engineering: "Flotas Críticas",
-        desc_fluent: "Nivel Certificado",
-        desc_optimal: "Tecnología & Activos",
+        telem_years: "Años exp.",
+        telem_fleet: "Equipos gestionados",
+        telem_certs: "Certificaciones",
+        skills_title: "Competencias Clave",
 
-        // Mapa de skills — leyenda
+        // Experiencia Profesional
+        exp_title: "Trayectoria Profesional",
+        exp1_title: "Growth Hacking Developer &amp; Controller de Gestión",
+        exp1_b1: "Dashboards directivos en Power BI (DAX), modelos en Airtable e integración de IA Generativa para Mercado Público.",
+        exp1_b2: "Arquitectura de solución agencial inteligente (Vercel + Claude + n8n) para monitoreo de licitaciones.",
+        exp1_b3: "Auditorías SEO &amp; GA4, automatización de flujos operativos.",
+        exp1_date: "Jun 2024 – Actual",
+
+        exp2_title: "Técnico Mantenimiento Electro-Mecánico de Flotas",
+        exp2_b1: "Planes de mantenimiento preventivo y correctivo para más de 200 equipos electro-mecánicos críticos.",
+        exp2_b2: "Administración de OT y ciclo de vida de repuestos vía ERP MAXIMO.",
+        exp2_b3: "Diagnóstico técnico de fallas en sistemas eléctricos, mecánicos e hidráulicos.",
+        exp2_date: "Feb 2019 – Feb 2020",
+
+        exp3_title: "Técnico Mecánico – SALFA (Salinas y Fabres)",
+        exp3_b1: "Pautas de mantenimiento preventivo: frenos, suspensión, dirección, transmisiones.",
+        exp3_b2: "Diagnóstico electrónico y resolución sistemática de fallas.",
+        exp3_date: "2015",
+
+        // Formación & Educación
+        edu_title: "Formación &amp; Certificaciones",
+        edu_comp_title: "Formación Complementaria &amp; Especializada",
+        specialized_title: "Formación autónoma complementaria",
+
+        // Mapa 3D & Leyenda
+        map_title: "Mapa 3D de Habilidades",
+        map_hint: "Arrastra para orbitar",
+        map_hint_mobile: "Toca y arrastra · Pellizca para zoom",
         skillmap_title: "Radar de Habilidades & Criticidad",
         skillmap_desc: "Medidor radial de criticidad · <strong>Centro:</strong> Alta criticidad e intervenciones de alto riesgo operacional (ej. Mantención Electro-Mecánica, ERP MAXIMO, P6) → <strong>Periferia:</strong> Habilidades tácticas y estructurales continuas.",
         legend_soft: "Habilidades Blandas",
         legend_hybrid: "Híbridas",
         legend_hard: "Habilidades Duras",
 
-        // Mapa — hint
-        map_hint: "Arrastra para orbitar",
+        // Footer
+        footer_copy: "© 2025 Ignacio Salas Vega · Todos los derechos reservados",
+        footer_status: "Sistema Operativo",
 
-        // Perfil estratégico — Controller / Sobre Ignacio
-        author_kicker: "Sobre el candidato",
-        profile_title: "Sobre Ignacio",
-        profile_desc: "Ingeniero en Mecánica Automotriz y Autotrónica con postgrado en Control de Gestión (Diplomado FEN Universidad de Chile), especializado en la convergencia entre mantenimiento electro-mecánico de flotas, confiabilidad de activos y transformación digital. Cuento con experiencia comprobable en gestión de órdenes de trabajo (ERP MAXIMO / SAP) y ejecución de planes preventivos/correctivos para equipamiento crítico, complementada con liderazgo técnico en Grupo MSUS (SadhanaCore y Prisma Digital) desarrollando soluciones de Business Intelligence (Power BI, DAX), analítica avanzada (SQL, Python), automatización de procesos (n8n, IA Generativa) y planificación técnica (Oracle Primavera P6). Orientado a la optimización de KPIs operativos (Disponibilidad, MTBF, MTTR), continuidad operacional y riguroso cumplimiento de normativas de seguridad (SSOMA).",
-        
         // Perfil Conductor Profesional
         profile_title_conductor: "Perfil Profesional de Conducción & Logística",
         profile_desc_conductor: "Conductor profesional bilingüe (Español nativo, Inglés C2) con licencias A2, A4, B y C sin anotaciones. Amplia experiencia en logística de distribución urbana de alimentos cárnicos en la ciudad de Santiago (<strong>Susaron</strong>), traslado bilingüe de dignatarios y autoridades VIP en los <strong>Juegos Panamericanos y Parapanamericanos Santiago 2023</strong>, y transporte privado de pasajeros alcanzando la categoría máxima <strong>Nivel Platino en Uber</strong>. Titulado de <strong>Ingeniería en Mecánica Automotriz y Autotrónica (Duoc UC)</strong>, lo que otorga un respaldo técnico único en diagnóstico preventivo, física de operación, gestión de flotas y seguridad vial.",
 
-        exp_title: "Trayectoria Profesional",
-        specialized_title: "Formación autónoma complementaria",
+        // Badges Conductor
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Bilingüe",
+        tech_uber: "Nivel Platino",
+        tech_panam: "Dignatarios 2023",
+        tech_susaron: "Carga Cárnica Susaron",
+        tech_mech: "Ing. Duoc UC",
+        tech_safety: "Conducción Defensiva",
+        tech_fleet: "IBM Maximo",
 
-        // Tech Vitals — Controller / Minería
+        // Badges Controller
         tech_p6: "Planificación & CPM",
         tech_pbi: "Dashboards & KPIs",
         tech_excel: "Avanzado / Modelado",
@@ -77,32 +127,52 @@ const translations = {
         tech_bash: "CLI & Scripts",
         tech_r: "Analítica Inferencial",
         tech_js: "Integraciones & DOM",
-        tech_html: "Arquitectura Web",
-
-        // Tech Vitals — Conductor
-        tech_license: "A2 / A4 / B / C",
-        tech_english: "C2 Bilingüe",
-        tech_uber: "Nivel Platino",
-        tech_panam: "Dignatarios 2023",
-        tech_susaron: "Carga Cárnica Susaron",
-        tech_mech: "Ing. Duoc UC",
-        tech_safety: "Conducción Defensiva",
-        tech_fleet: "IBM Maximo",
+        tech_html: "Arquitectura Web"
     },
 
     en: {
-        subtitle: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
-        subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
-        subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
-        contact_title: "Contact Information",
+        // Navigation
+        nav_headline: "Automotive Mech. Eng.",
+        nav_profile: "Profile",
+        nav_experience: "Experience",
+        nav_education: "Education",
+        nav_skills: "Skills",
+        nav_contact: "Contact",
         export_pdf: "Download CV",
         export_pdf_short: "Download CV",
         export_harvard: "Harvard Format",
 
+        // Titles & Subtitles
+        subtitle: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
+        subtitle_controller: "Automotive & Autatronics Engineer | Electro-Mechanical Maintenance, Reliability & Data Operations",
+        subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
+        contact_title: "Contact Information",
+        contact_email_label: "Email",
+        contact_phone_label: "Phone",
+        cv_summary_title: "Professional Summary",
+
+        // Profile & Hero
+        profile_name: "Ignacio Antonio<br/>Salas Vega",
+        profile_title: "About Ignacio",
+        profile_summary: "Specializing in the convergence of fleet electro-mechanical maintenance, asset reliability, and digital transformation.",
+        profile_desc: "Automotive and Autatronics Engineer with postgraduate studies in Management Control (FEN Universidad de Chile), specializing in the intersection between electro-mechanical fleet maintenance, asset reliability, and digital transformation. Proven track record managing work orders in ERP systems (MAXIMO / SAP) and executing preventive/corrective maintenance plans for critical equipment, paired with technical leadership at Grupo MSUS (SadhanaCore and Prisma Digital) building Business Intelligence solutions (Power BI, DAX), advanced analytics (SQL, Python), process automation (n8n, Generative AI), and project planning (Oracle Primavera P6). Focused on operational KPI optimization (Availability, MTBF, MTTR), service continuity, and strict compliance with SSOMA industrial safety standards.",
+        profile_location: "Santiago, Chile",
+        status_available: "AVAILABLE · ACTIVE SEARCH",
+
+        hero_label: "Technical Professional Profile",
+        hero_headline: "Electro-Mechanical<br/><span class=\"text-primary\">Maintenance</span><br/>&amp; Reliability",
+        hero_sub: "Automotive and Autatronics Engineer with FEN Postgraduate Diploma in Management Control. Focused on operational KPIs, site continuity, and digital transformation of operations.",
+        hero_cta: "Contact Me",
+        hero_cta2: "View Experience",
+
+        // Profile Metrics / Vitals
         vitals_title: "Operational Telemetry / Status",
         vitals_desc: "Operational availability, asset reliability, and advanced analytical and technological capabilities",
-
+        gauges_title: "Profile Metrics",
         gauge_availability: "Operational Availability",
+        gauge_data_stack: "Data &amp; BI Stack",
+        gauge_management: "Management Control",
+        gauge_english: "Technical English",
         gauge_terminal: "Safety & SSOMA",
         gauge_analytics: "Management Control",
         gauge_automation: "Python & DataOps",
@@ -113,34 +183,64 @@ const translations = {
         gauge_bilingual: "Technical English",
         gauge_alignment: "Operational Continuity",
 
-        desc_immediate: "Field & Remote",
-        desc_connected: "Safe Work Procedures",
-        desc_methodology: "FEN U. Chile / KPIs",
-        desc_auto: "Scripts & n8n",
-        desc_executive: "Power BI & Tabulars",
-        desc_cpm: "Critical Path & WBS",
-        desc_prompting: "Prompt Engineering",
-        desc_engineering: "Critical Fleets",
-        desc_fluent: "Certified Level",
-        desc_optimal: "Tech & Asset Reliability",
+        telem_years: "Years exp.",
+        telem_fleet: "Managed units",
+        telem_certs: "Certifications",
+        skills_title: "Core Competencies",
 
+        // Professional Experience
+        exp_title: "Professional Experience",
+        exp1_title: "Growth Hacking Developer &amp; Management Controller",
+        exp1_b1: "Executive dashboards in Power BI (DAX), Airtable data models, and Generative AI integration for Public Procurement.",
+        exp1_b2: "Intelligent agentic architecture (Vercel + Claude + n8n) for automated tender monitoring.",
+        exp1_b3: "SEO &amp; GA4 audits, end-to-end operational workflow automation.",
+        exp1_date: "Jun 2024 – Present",
+
+        exp2_title: "Fleet Electro-Mechanical Maintenance Technician",
+        exp2_b1: "Preventive and corrective maintenance programs for 200+ mission-critical electro-mechanical equipment units.",
+        exp2_b2: "Work order (WO) administration and spare parts lifecycle management via IBM MAXIMO ERP.",
+        exp2_b3: "Technical fault diagnostics across electrical, mechanical, and hydraulic systems.",
+        exp2_date: "Feb 2019 – Feb 2020",
+
+        exp3_title: "Mechanical Technician – SALFA (Salinas y Fabres)",
+        exp3_b1: "Preventive maintenance protocols: braking systems, suspension, steering, and transmissions.",
+        exp3_b2: "Electronic diagnostics and systematic fault resolution.",
+        exp3_date: "2015",
+
+        // Education
+        edu_title: "Education &amp; Certifications",
+        edu_comp_title: "Specialized &amp; Complementary Training",
+        specialized_title: "Complementary & Specialized Training",
+
+        // 3D Map & Legend
+        map_title: "3D Skills Radar Map",
+        map_hint: "Drag to orbit",
+        map_hint_mobile: "Touch &amp; drag · Pinch to zoom",
         skillmap_title: "Skills & Criticality Radar",
         skillmap_desc: "Radial criticality meter · <strong>Center:</strong> High criticality & operational precision tasks (e.g. Electro-Mechanical Maint., ERP MAXIMO, P6) → <strong>Periphery:</strong> Continuous tactical and structural skills.",
         legend_soft: "Soft Skills",
         legend_hybrid: "Hybrid",
         legend_hard: "Hard Skills",
 
-        map_hint: "Drag to orbit",
-        author_kicker: "About the candidate",
-        profile_title: "About Ignacio",
-        profile_desc: "Automotive and Autatronics Engineer with postgraduate studies in Management Control (FEN Universidad de Chile), specializing in the intersection between electro-mechanical fleet maintenance, asset reliability, and digital transformation. Proven track record managing work orders in ERP systems (MAXIMO / SAP) and executing preventive/corrective maintenance plans for critical equipment, paired with technical leadership at Grupo MSUS (SadhanaCore and Prisma Digital) building Business Intelligence solutions (Power BI, DAX), advanced analytics (SQL, Python), process automation (n8n, Generative AI), and project planning (Oracle Primavera P6). Focused on operational KPI optimization (Availability, MTBF, MTTR), service continuity, and strict compliance with SSOMA industrial safety standards.",
-        
+        // Footer
+        footer_copy: "© 2025 Ignacio Salas Vega · All rights reserved",
+        footer_status: "System Operational",
+
+        // Professional Driver Profile
         profile_title_conductor: "Professional Driving & Logistics Profile",
         profile_desc_conductor: "Bilingual professional driver (Native Spanish, C2 English) holding Chilean professional licenses A2, A4, B, and C with clean record. Extensive experience in urban cold-chain distribution of meat products in Santiago (<strong>Susaron</strong>), bilingual dignitary and VIP delegation transport during the Santiago 2023 Pan American and Parapan American Games, and top-rated private passenger transport achieving <strong>Uber Platinum Status</strong>. Holds a B.S. in Automotive Mechanical Engineering from Duoc UC.",
 
-        exp_title: "Professional Background",
-        specialized_title: "Complementary & Specialized Training",
+        // Driver Badges
+        tech_license: "A2 / A4 / B / C",
+        tech_english: "C2 Bilingual",
+        tech_uber: "Platinum Rank",
+        tech_panam: "Dignitaries 2023",
+        tech_susaron: "Susaron Cold Cargo",
+        tech_mech: "Eng. Duoc UC",
+        tech_safety: "Defensive Driving",
+        tech_fleet: "IBM Maximo",
 
+        // Controller Badges
         tech_p6: "Planning & CPM",
         tech_pbi: "Dashboards & KPIs",
         tech_excel: "Advanced / Modeling",
@@ -152,16 +252,7 @@ const translations = {
         tech_bash: "CLI & Scripts",
         tech_r: "Inferential Analytics",
         tech_js: "Integrations & DOM",
-        tech_html: "Web Architecture",
-
-        tech_license: "A2 / A4 / B / C",
-        tech_english: "C2 Bilingual",
-        tech_uber: "Platinum Rank",
-        tech_panam: "Dignitaries 2023",
-        tech_susaron: "Susaron Cold Cargo",
-        tech_mech: "Eng. Duoc UC",
-        tech_safety: "Defensive Driving",
-        tech_fleet: "IBM Maximo",
+        tech_html: "Web Architecture"
     },
 
     de: {
@@ -169,61 +260,26 @@ const translations = {
         subtitle_controller: "Controller mit Kenntnissen in Prompt Engineering & Data Engineering",
         subtitle_conductor: "Zweisprachiger Berufskraftfahrer | Führerschein A2 / A4 / B / C | VIP & Logistik",
         contact_title: "Kontaktinformationen",
-
-        vitals_title: "Vitaldaten / Status",
-        vitals_desc: "Biomechanische Betriebsbedingungen und Basisinfrastruktur",
-
-        gauge_basic_food: "Grundversorgung",
-        gauge_homeostasis: "Homöostase",
-        gauge_shelter: "Unterkunft",
-        gauge_terminal: "Terminal",
-        gauge_mental: "Geistige Gesundheit",
-        gauge_coffee: "Kaffee / Coke",
-        gauge_superior_food: "Gehobene Küche",
-        gauge_affection: "Zuneigung & Freizeit",
-        gauge_rest: "Schlaf & Gewohnheiten",
-        gauge_higher: "Höhere Verbindung",
-
-        desc_attention: "Aufmerksamkeit erforderlich",
-        desc_optimal: "Optimales System",
-        desc_improvable: "Verbesserungsfähig",
-        desc_connected: "Verbunden & Stabil",
-        desc_controlled: "Unter Kontrolle",
-        desc_critical: "Kritische Reserve",
-        desc_adequate: "Ausreichend",
-        desc_deficit: "Interaktionsdefizit",
-        desc_developing: "In Entwicklung",
-        desc_tuned: "Abgestimmt",
-
-        skillmap_title: "Fähigkeiten- & Kritikalitätsradar",
-        skillmap_desc: "Radialer Kritikalitätsmesser · <strong>Zentrum:</strong> Hochrisiko- & kurzzeitige Präzisionsaufgaben (z. B. SQL-Queries, P6-Steuerung) → <strong>Peripherie:</strong> Kontinuierliche taktische und strukturelle Fähigkeiten.",
-        legend_soft: "Soziale Kompetenzen",
-        legend_hybrid: "Hybrid",
-        legend_hard: "Fachkompetenzen",
-
-        map_hint: "Ziehen zum Navigieren",
-        author_kicker: "Über den Autor",
+        contact_email_label: "E-Mail",
+        contact_phone_label: "Telefon",
+        export_pdf: "CV Herunterladen",
+        export_pdf_short: "CV Herunterladen",
+        nav_headline: "Kfz-Mechatronikingenieur",
+        nav_profile: "Profil",
+        nav_experience: "Erfahrung",
+        nav_education: "Ausbildung",
+        nav_skills: "Skills",
+        nav_contact: "Kontakt",
         profile_title: "Über Ignacio",
-        profile_desc: "Ich bin <strong>Ignacio Salas</strong>, Management Controller &amp; Data Operations bei <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). Mein Alltag besteht darin, operative Prozessdisziplin mit der Entwicklung disruptiver KI-Lösungen zu verbinden. Ich bin darauf spezialisiert, interne KI-Apps zu entwickeln, um Aufgaben zu automatisieren und Innovationen im Team voranzutreiben. Ich glaube fest daran, dass Technologie der beste Verbündete der Strategie ist. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Vernetzen Sie sich auf LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
-        
-        profile_title_conductor: "Berufskraftfahrer & Logistik Profil",
-        profile_desc_conductor: "Zweisprachiger Berufskraftfahrer (Spanisch Muttersprache, Englisch C2) mit Führerscheinen A2, A4, B und C. Erfahrung in der Fleischwarenlogistik bei <strong>Susaron</strong> (Santiago), VIP-Diplomatentransport bei den Panamerikanischen Spielen 2023 und <strong>Uber Platin Status</strong>.",
-
+        gauges_title: "Profilmetriken",
         exp_title: "Beruflicher Werdegang",
-        specialized_title: "Zusatzqualifikationen & Fachausbildung",
-
-        tech_excel: "Fortgeschritten",
-        tech_bq: "Liest & Debuggt",
-        tech_m: "Führt aus",
-        tech_dax: "Zeigt",
-        tech_py: "Studiert ML+PyTorch",
-        tech_bash: "Autodidakt",
-        tech_js: "Versteht",
-        tech_genai: "Avantgarde",
-        tech_pbi: "Produziert",
-        tech_html: "Verwaltet",
-        tech_r: "Nicht erforderlich",
-
+        edu_title: "Ausbildung & Zertifizierungen",
+        edu_comp_title: "Zusatzqualifikationen",
+        map_title: "3D-Fähigkeitenradar",
+        map_hint: "Ziehen zum Navigieren",
+        footer_status: "Betriebsbereit",
+        profile_title_conductor: "Berufskraftfahrer & Logistik Profil",
+        profile_desc_conductor: "Zweisprachiger Berufskraftfahrer (Spanisch Muttersprache, Englisch C2) mit Führerscheinen A2, A4, B und C.",
         tech_license: "A2 / A4 / B / C",
         tech_english: "C2 Zweisprachig",
         tech_uber: "Platin Status",
@@ -231,7 +287,7 @@ const translations = {
         tech_susaron: "Kühltransport Susaron",
         tech_mech: "Ing. Duoc UC",
         tech_safety: "Defensives Fahren",
-        tech_fleet: "IBM Maximo",
+        tech_fleet: "IBM Maximo"
     },
 
     ja: {
@@ -239,60 +295,26 @@ const translations = {
         subtitle_controller: "Controller (Prompt Engineering & Data Engineering 技能保有)",
         subtitle_conductor: "バイリンガルプロドライバー | 免許 A2 / A4 / B / C | VIP要人輸送 & 配送物流",
         contact_title: "連絡先情報",
-
-        vitals_title: "バイタルサイン / ステータス",
-        vitals_desc: "生体力学的な稼働状態と基本インフラ",
-
-        gauge_basic_food: "基本的な食事",
-        gauge_homeostasis: "ホメオスタシス",
-        gauge_shelter: "住居 / 避難所",
-        gauge_terminal: "ターミナル",
-        gauge_mental: "メンタルヘルス",
-        gauge_coffee: "コーヒー / Coke",
-        gauge_superior_food: "上質な食事",
-        gauge_affection: "愛情 & 娯楽",
-        gauge_rest: "休息 & 習慣",
-        gauge_higher: "高次の繋がり",
-
-        desc_attention: "要注意",
-        desc_optimal: "最適状態",
-        desc_improvable: "改善可能",
-        desc_connected: "接続済・安定",
-        desc_controlled: "制御下",
-        desc_critical: "危機的残量",
-        desc_adequate: "適切",
-        desc_deficit: "交流不足",
-        desc_developing: "開発中",
-        desc_tuned: "チューニング済",
-
-        skillmap_title: "スキル・重要度レーダー",
-        skillmap_desc: "放射状重要度メーター · <strong>中心部:</strong> 高リスク・短時間精密作業（SQLクエリ変更、P6工程管理等） → <strong>周辺部:</strong> 継続的戦術・基盤スキル。",
-        legend_soft: "ソフトスキル",
-        legend_hybrid: "ハイブリッド",
-        legend_hard: "ハードスキル",
-
-        author_kicker: "著者について",
+        contact_email_label: "メール",
+        contact_phone_label: "電話番号",
+        export_pdf: "CVダウンロード",
+        export_pdf_short: "CVダウンロード",
+        nav_headline: "自動車工学エンジニア",
+        nav_profile: "プロフィール",
+        nav_experience: "職歴",
+        nav_education: "学歴・資格",
+        nav_skills: "スキル",
+        nav_contact: "連絡先",
         profile_title: "イグナシオについて",
-        profile_desc: "私は<strong>イグナシオ・サラス</strong>、Grupo MSUS（SadhanaCore / Prisma Digital）のマネジメントコントローラー兼データオペレーション担当です。日々の業務は、業務プロセスの規律と革新的なAIソリューション開発の融合です。タスクを自動化しチームのイノベーションを加速する社内AIアプリの構築を専門としています。テクノロジーこそが戦略の最良のパートナーであると確信しています。<a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> LinkedInでつながる <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
-
-        profile_title_conductor: "プロドライバー & 流通物流プロフィール",
-        profile_desc_conductor: "プロフェッショナルバイリンガルドライバー（スペイン語母国語、英語C2）。A2、A4、B、Cプロ運転免許を保有。サンティアゴでの精肉配送物流（<strong>Susaron</strong>）、2023年パンアメリカン競技大会でのVIP・要人バイリンガル輸送、および**Uberプラチナレベル**の実績を保有。Duoc UCの自動車機械工学士号を有し、車両整備・防衛運転に精通。",
-
+        gauges_title: "プロフィール指標",
         exp_title: "職歴",
-        specialized_title: "補足教育および専門トレーニング",
-
-        tech_excel: "上級",
-        tech_bq: "読み取り・デバッグ",
-        tech_m: "実行",
-        tech_dax: "表示",
-        tech_py: "ML+PyTorchを学習中",
-        tech_bash: "独学",
-        tech_js: "理解",
-        tech_genai: "アバンギャルド",
-        tech_pbi: "作成",
-        tech_html: "管理",
-        tech_r: "不要",
-
+        edu_title: "学歴 & 資格",
+        edu_comp_title: "専門トレーニング",
+        map_title: "3Dスキルレーダー",
+        map_hint: "ドラッグして回転",
+        footer_status: "稼働中",
+        profile_title_conductor: "プロドライバー & 流通物流プロフィール",
+        profile_desc_conductor: "プロフェッショナルバイリンガルドライバー（スペイン語母国語、英語C2）。A2、A4、B、C運転免許保有。",
         tech_license: "A2 / A4 / B / C",
         tech_english: "C2 バイリンガル",
         tech_uber: "プラチナレベル",
@@ -300,7 +322,7 @@ const translations = {
         tech_susaron: "Susaron 精肉配送",
         tech_mech: "Duoc UC 機械工学",
         tech_safety: "防衛運転",
-        tech_fleet: "IBM Maximo",
+        tech_fleet: "IBM Maximo"
     },
 
     ru: {
@@ -308,61 +330,26 @@ const translations = {
         subtitle_controller: "Controller с навыками Prompt Engineering и Data Engineering",
         subtitle_conductor: "Двуязычный профессиональный водитель | Права A2 / A4 / B / C | Транспорт VIP & Логистика",
         contact_title: "Контактная информация",
-
-        vitals_title: "Жизненные показатели / Статус",
-        vitals_desc: "Биомеханические рабочие условия и базовая инфраструктура",
-
-        gauge_basic_food: "Базовое питание",
-        gauge_homeostasis: "Гомеостаз",
-        gauge_shelter: "Жильё / Укрытие",
-        gauge_terminal: "Терминал",
-        gauge_mental: "Психическое здоровье",
-        gauge_coffee: "Кофе / Coke",
-        gauge_superior_food: "Полноценное питание",
-        gauge_affection: "Общение & Досуг",
-        gauge_rest: "Отдых & Привычки",
-        gauge_higher: "Высшая связь",
-
-        desc_attention: "Требует внимания",
-        desc_optimal: "Оптимальная система",
-        desc_improvable: "Можно улучшить",
-        desc_connected: "Подключено & Стабильно",
-        desc_controlled: "Под контролем",
-        desc_critical: "Критический запас",
-        desc_adequate: "Достаточно",
-        desc_deficit: "Дефицит общения",
-        desc_developing: "В разработке",
-        desc_tuned: "Настроено",
-
-        skillmap_title: "Радар навыков и критичности",
-        skillmap_desc: "Радиальный измеритель критичности · <strong>Центр:</strong> Высокорисковые и краткосрочные точечные задачи (напр. правка SQL-запросов, контроль P6) → <strong>Периферия:</strong> Непрерывные тактические и структурные навыки.",
-        legend_soft: "Гибкие навыки",
-        legend_hybrid: "Гибридные",
-        legend_hard: "Жёсткие навыки",
-
-        map_hint: "Тяните для вращения",
-        author_kicker: "Об авторе",
+        contact_email_label: "Эл. почта",
+        contact_phone_label: "Телефон",
+        export_pdf: "Скачать резюме",
+        export_pdf_short: "Скачать резюме",
+        nav_headline: "Инженер автомеханики",
+        nav_profile: "Профиль",
+        nav_experience: "Опыт",
+        nav_education: "Образование",
+        nav_skills: "Навыки",
+        nav_contact: "Контакты",
         profile_title: "Об Игнасио",
-        profile_desc: "Я <strong>Игнасио Салас</strong>, Management Controller &amp; Data Operations в <strong>Grupo MSUS</strong> (SadhanaCore / Prisma Digital). Моя повседневная работа заключается в объединении тактической дисциплины процессов с разработкой прорывных ИИ-решений. Я специализируюсь на создании внутренних ИИ-приложений для автоматизации задач и стимулирования инноваций в команде. Я искренне верю, что технологии — лучший союзник стратегии. <a href='https://linkedin.com/in/salayerignaciosalas' target='_blank' rel='noopener noreferrer' class='author-linkedin-cta'><i class='fa-brands fa-linkedin'></i> Связаться в LinkedIn <i class='fa-solid fa-arrow-up-right-from-square' style='font-size: 0.75em; margin-left: 2px;'></i></a>",
-
-        profile_title_conductor: "Профиль Профессионального Водителя и Логиста",
-        profile_desc_conductor: "Двуязычный профессиональный водитель (испанский родной, английский C2) с правами A2, A4, B и C. Опыт городской логистики доставки мясных продуктов в Сантьяго (<strong>Susaron</strong>), сопровождения дипломатов и VIP-делегаций на Панамериканских играх 2023 и статус <strong>Uber Платина</strong>. Инженер по автомобильной механике (Duoc UC).",
-
+        gauges_title: "Метрики профиля",
         exp_title: "Профессиональный путь",
-        specialized_title: "Дополнительное и специальное образование",
-
-        tech_excel: "Продвинутый",
-        tech_bq: "Читает и отлаживает",
-        tech_m: "Выполняет",
-        tech_dax: "Показывает",
-        tech_py: "Изучает ML+PyTorch",
-        tech_bash: "Самоучка",
-        tech_js: "Понимает",
-        tech_genai: "Авангард",
-        tech_pbi: "Производит",
-        tech_html: "Администрирует",
-        tech_r: "Не требуется",
-
+        edu_title: "Образование и сертификаты",
+        edu_comp_title: "Дополнительное образование",
+        map_title: "3D радар навыков",
+        map_hint: "Тяните для вращения",
+        footer_status: "Система активна",
+        profile_title_conductor: "Профиль Профессионального Водителя и Логиста",
+        profile_desc_conductor: "Двуязычный профессиональный водитель (испанский родной, английский C2) с правами A2, A4, B и C.",
         tech_license: "A2 / A4 / B / C",
         tech_english: "C2 Двуязычный",
         tech_uber: "Статус Платина",
@@ -370,46 +357,108 @@ const translations = {
         tech_susaron: "Мясная логистика Susaron",
         tech_mech: "Индж. Duoc UC",
         tech_safety: "Защитное вождение",
-        tech_fleet: "IBM Maximo",
+        tech_fleet: "IBM Maximo"
     }
 };
 
+/**
+ * Detecta el idioma inicial según:
+ * 1. Parámetro URL ?lang=xx
+ * 2. Preferencia guardada en localStorage ('portfolio_lang')
+ * 3. Idioma del navegador
+ * 4. Fallback a 'es'
+ */
 function detectLang() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const urlLang = (params.get('lang') || '').toLowerCase().trim();
+        if (urlLang && translations[urlLang]) return urlLang;
+    } catch (e) {}
+
+    try {
+        const stored = localStorage.getItem('portfolio_lang');
+        if (stored && translations[stored]) return stored;
+    } catch (e) {}
+
     const nav = (navigator.language || navigator.userLanguage || 'es').toLowerCase().split('-')[0];
     const supported = ['es', 'en', 'de', 'ja', 'ru'];
     return supported.includes(nav) ? nav : 'es';
 }
 
+/**
+ * Aplica las traducciones a todos los elementos del DOM marcados con [data-i18n]
+ */
 function applyTranslations(lang) {
-    const t = translations[lang] || translations['es'];
+    const activeLang = translations[lang] ? lang : 'es';
+    const t = translations[activeLang];
+    const fallback = translations['es'];
+
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) {
+        if (t && t[key] !== undefined) {
             el.innerHTML = t[key];
+        } else if (fallback && fallback[key] !== undefined) {
+            el.innerHTML = fallback[key];
         }
     });
 
-    document.documentElement.lang = lang;
+    document.documentElement.lang = activeLang;
+
+    // Actualizar títulos de documento dinámicamente si aplica
+    const currentTitle = document.title || '';
+    const isConductorPage = (window.location && window.location.pathname) ? window.location.pathname.includes('conductor') : false;
+    if (activeLang === 'en') {
+        if (currentTitle.includes('Conductor') || isConductorPage) {
+            document.title = "Ignacio Salas Vega | Bilingual Professional Driver & Fleet Logistics";
+        } else {
+            document.title = "Ignacio Salas Vega | Management Controller, Reliability & DataOps";
+        }
+    } else if (activeLang === 'es') {
+        if (currentTitle.includes('Driver') || isConductorPage) {
+            document.title = "Ignacio Salas Vega | Conductor Profesional & Logística";
+        } else {
+            document.title = "Ignacio Salas Vega | Controller de Gestión & Data Operations";
+        }
+    }
+
+    // Actualizar textos de los botones de conmutación
+    const btnDesktop = document.getElementById('lang-toggle');
+    const btnMobile = document.getElementById('lang-toggle-mobile');
+    if (btnDesktop) {
+        btnDesktop.textContent = activeLang === 'es' ? 'ES / EN' : 'EN / ES';
+        btnDesktop.setAttribute('aria-label', activeLang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+    }
+    if (btnMobile) {
+        btnMobile.textContent = activeLang === 'es' ? 'ES/EN' : 'EN/ES';
+        btnMobile.setAttribute('aria-label', activeLang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+    }
+
+    // Notificar a otros módulos (gráficos, radar 3D, etc.)
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: activeLang } }));
 }
 
+/**
+ * Inicializa el subsistema de internacionalización
+ */
 function initI18n() {
     const lang = detectLang();
-    applyTranslations(lang);
-
-    window.setLang = (l) => {
-        window.currentLang = l;
-        applyTranslations(l);
-    };
     window.currentLang = lang;
     window.translations = translations;
+
+    applyTranslations(lang);
+
+    window.setLang = function(l) {
+        const target = translations[l] ? l : 'es';
+        window.currentLang = target;
+        try {
+            localStorage.setItem('portfolio_lang', target);
+        } catch (e) {}
+        applyTranslations(target);
+    };
 
     window.toggleLang = function() {
         const next = (window.currentLang === 'es') ? 'en' : 'es';
         window.setLang(next);
-        const btnDesktop = document.getElementById('lang-toggle');
-        const btnMobile = document.getElementById('lang-toggle-mobile');
-        if (btnDesktop) btnDesktop.textContent = next === 'es' ? 'ES / EN' : 'EN / ES';
-        if (btnMobile) btnMobile.textContent = next === 'es' ? 'ES/EN' : 'EN/ES';
     };
 }
 
