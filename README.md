@@ -51,7 +51,7 @@ La gestión rigurosa de proyectos articula tres ingredientes esenciales, alinead
 | **BI & Analytics** | Power BI (DAX, M / Power Query), Tableau, Excel Avanzado (Modelado, Solver), GA4 |
 | **Data Engineering** | BigQuery, SQL (PostgreSQL, SQL Server), MongoDB, Apache Spark, Databricks, Apache Airflow |
 | **AI & Programación** | Python (Pandas, PyTorch básico), R Studio (Tidyverse, ggplot2), Bash / Linux, GenAI Prompt Engineering |
-| **Control & Gestión** | Oracle Primavera P6, Fundamentos de Project Management, Product Owner (Scrum), Slack Colaborativo, IBM Maximo, Control de Gestión (FEN U. de Chile), Lean / Agile, PMBOK |
+| **Control & Gestión** | Oracle Primavera P6, Fundamentos de Project Management, Product Owner (Scrum), Slack Colaborativo, ERP (Gestión de Activos), Control de Gestión (FEN U. de Chile), Lean / Agile, PMBOK |
 | **Operación & Logística** | Conducción profesional (Licencias A2 / A4 / B / C), Gestión de flotas, Inglés Bilingüe C2 |
 
 ---

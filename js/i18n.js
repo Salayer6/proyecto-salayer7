@@ -18,8 +18,8 @@ const translations = {
         export_harvard: "Formato Harvard",
 
         // Títulos y Subtítulos
-        subtitle: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Power BI | Control de Gestión (FEN-UCHILE) & KPIs",
-        subtitle_controller: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Power BI | Control de Gestión (FEN-UCHILE) & KPIs",
+        subtitle: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Dashboards/Analytics | Control de Gestión (FEN-UCHILE) & KPIs",
+        subtitle_controller: "Mantenimiento Electromecánico de Flotas & Confiabilidad | Telemetría, SAP PM & Dashboards/Analytics | Control de Gestión (FEN-UCHILE) & KPIs",
         subtitle_conductor: "Conductor Profesional Bilingüe | Licencias A2 / A4 / B / C | Traslado Ejecutivo & Logística de Distribución",
         contact_title: "Información de contacto",
         contact_email_label: "Email",
@@ -29,14 +29,14 @@ const translations = {
         // Perfil y Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "Sobre Ignacio",
-        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Diagnostico fallas electromecánicas en terreno, estructuro planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — utilizando ERP MAXIMO, Power BI y diagnóstico electrónico.",
-        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional. Mi formación técnica en Autotrónica me permite diagnosticar y resolver fallas electromecánicas complejas en terreno, mientras que mi especialización en la FEN-UCHILE me permite traducir la operación en KPIs financieros y control de OPEX. Cuento con experiencia en garantizar la continuidad operativa en faena, reducir tiempos de parada no programada (downtime) y liderar la digitalización de procesos. Utilizo ERP MAXIMO para la gestión de órdenes de trabajo y ciclo de vida de activos, Power BI para el control de KPIs operacionales y métricas MTBF/MTTR, y herramientas de diagnóstico electrónico para estructurar planes preventivos/predictivos e incrementar la disponibilidad de la flota.",
+        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE) y más de 8 años de trayectoria en mantenimiento electromecánico de flotas en los sectores logístico, industrial y minero. Diagnostico fallas complejas en terreno, estructuro planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — con ERP, Dashboards/Analytics y diagnóstico electrónico — para que mis clientes reduzcan downtime no planificado y tomen decisiones de mantenimiento basadas en datos.",
+        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Con más de 8 años de trayectoria profesional en los sectores logístico, industrial y minero, ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional. Mi formación técnica en Autotrónica me permite diagnosticar y resolver fallas electromecánicas complejas en terreno, mientras que mi especialización en la FEN-UCHILE me permite traducir la operación en KPIs financieros y control de OPEX. Cuento con experiencia probada en garantizar la continuidad operativa en faena, reducir tiempos de parada no programada (downtime) y liderar la digitalización de procesos. Utilizo ERP para la gestión de órdenes de trabajo y ciclo de vida de activos, Dashboards/Analytics para el control de KPIs operacionales y métricas MTBF/MTTR, y herramientas de diagnóstico electrónico para estructurar planes preventivos/predictivos. El resultado para mis clientes: mayor disponibilidad de flota, menor costo por falla y decisiones de mantenimiento respaldadas por datos.",
         profile_location: "Santiago, Chile",
         status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
 
         hero_label: "Perfil Técnico Profesional",
         hero_headline: "Mantenimiento<br/><span class=\"text-primary\">Electro-Mecánico</span><br/>&amp; Confiabilidad",
-        hero_sub: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de mantenimiento electromecánico de flotas y confiabilidad de activos: diagnostico fallas en terreno, lidero planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — operando con ERP MAXIMO, Power BI y diagnóstico electrónico.",
+        hero_sub: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). +8 años en mantenimiento electromecánico de flotas en sectores logístico, industrial y minero. Diagnostico fallas en terreno, lidero planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — con ERP, Dashboards/Analytics y diagnóstico electrónico — para reducir downtime y maximizar la disponibilidad operativa.",
         hero_cta: "Contáctame",
         hero_cta2: "Ver Experiencia",
 
@@ -83,7 +83,7 @@ const translations = {
         exp2_title: "Técnico Mantenimiento Electro-Mecánico de Flotas",
         exp2_company: "Royal America (Multitecnica S.A. · Cliente Walmart)",
         exp2_b1: "Planes de mantenimiento preventivo y correctivo para más de 200 equipos electro-mecánicos críticos.",
-        exp2_b2: "Administración de OT y ciclo de vida de repuestos vía ERP MAXIMO.",
+        exp2_b2: "Administración de OT y ciclo de vida de repuestos vía ERP.",
         exp2_b3: "Diagnóstico técnico de fallas en sistemas eléctricos, mecánicos e hidráulicos.",
         exp2_date: "Feb 2019 – Feb 2020",
 
@@ -119,7 +119,7 @@ const translations = {
 
         cv_exp2_dates: "Febrero 2019 - Febrero 2020",
         cv_exp2_b1: "Ejecución de <strong>planes de mantenimiento preventivo y correctivo</strong> para flotas electro-mecánicas críticas (más de 200 equipos operativos).",
-        cv_exp2_b2: "Administración del flujo de trabajo, ciclo de vida de repuestos y <strong>órdenes de trabajo (OT) a través del ERP MAXIMO</strong>.",
+        cv_exp2_b2: "Administración del flujo de trabajo, ciclo de vida de repuestos y <strong>órdenes de trabajo (OT) a través del ERP</strong>.",
         cv_exp2_b3: "<strong>Diagnóstico técnico</strong> de fallas complejas en sistemas eléctricos, mecánicos e hidráulicos para maximizar la <strong>disponibilidad de flota</strong>.",
 
         cv_exp_piamonte_b1: "Inspección técnica inicial, recepción y diagnóstico de requerimientos de mantenimiento express.",
@@ -191,7 +191,7 @@ const translations = {
         cond_exp3_desc: "Prestación de servicio de transporte privado de pasajeros alcanzando la categoría máxima <strong>Nivel Platino</strong>.<br>• <strong>Conducción segura e intachable:</strong> Registro 100% libre de accidentes y libre de multas o infracciones de tránsito durante toda la trayectoria activa.<br>• Registro de alta satisfacción y calificación promedio sobresaliente otorgada por los usuarios.<br>• Mantenimiento técnico preventivo, higiene rigurosa del vehículo y atención ejecutiva personalizada.",
         cond_exp4_date: "Febrero 2019 - Febrero 2020",
         cond_exp4_title: "Técnico de Mantención de Vehículos 100% Eléctricos CROWN",
-        cond_exp4_desc: "Control y mantenimiento preventivo de flota industrial eléctrica mediante <strong>IBM Maximo</strong>. Operación técnica y maniobrabilidad de equipos pesados de logística.",
+        cond_exp4_desc: "Control y mantenimiento preventivo de flota industrial eléctrica mediante <strong>ERP</strong> y Dashboards/Analytics. Operación técnica y maniobrabilidad de equipos pesados de logística.",
         cond_exp5_date: "Marzo 2023 - Septiembre 2023",
         cond_exp5_title: "Analista de Apoyo Administrativo &amp; Control Vial",
         cond_exp5_desc: "Gestión integral de bodega central e insumos viales.",
@@ -205,7 +205,7 @@ const translations = {
         map_hint: "Arrastra para orbitar",
         map_hint_mobile: "Toca y arrastra · Pellizca para zoom",
         skillmap_title: "Radar de Habilidades & Criticidad",
-        skillmap_desc: "Medidor radial de criticidad · <strong>Centro:</strong> Alta criticidad e intervenciones de alto riesgo operacional (ej. Mantención Electro-Mecánica, ERP MAXIMO, P6) → <strong>Periferia:</strong> Habilidades tácticas y estructurales continuas.",
+        skillmap_desc: "Medidor radial de criticidad · <strong>Centro:</strong> Alta criticidad e intervenciones de alto riesgo operacional (ej. Mantención Electro-Mecánica, ERP, Power BI, P6) → <strong>Periferia:</strong> Habilidades tácticas y estructurales continuas.",
         legend_soft: "Habilidades Blandas",
         legend_hybrid: "Híbridas",
         legend_hard: "Habilidades Duras",
@@ -226,7 +226,7 @@ const translations = {
         tech_susaron: "Carga Cárnica Susaron",
         tech_mech: "Ing. Duoc UC",
         tech_safety: "Conducción Defensiva",
-        tech_fleet: "IBM Maximo",
+        tech_fleet: "ERP",
 
         // Badges Controller
         tech_p6: "Planificación & CPM",
@@ -256,8 +256,8 @@ const translations = {
         export_harvard: "Harvard Format",
 
         // Titles & Subtitles
-        subtitle: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Power BI | Management Control (FEN-UCHILE) & KPIs",
-        subtitle_controller: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Power BI | Management Control (FEN-UCHILE) & KPIs",
+        subtitle: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Dashboards/Analytics | Management Control (FEN-UCHILE) & KPIs",
+        subtitle_controller: "Fleet Electro-Mechanical Maintenance & Asset Reliability | Telematics, SAP PM & Dashboards/Analytics | Management Control (FEN-UCHILE) & KPIs",
         subtitle_conductor: "Bilingual Professional Driver | Class A2 / A4 / B / C | VIP Dignitary Transport & Logistics",
         contact_title: "Contact Information",
         contact_email_label: "Email",
@@ -267,14 +267,14 @@ const translations = {
         // Profile & Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "About Ignacio",
-        profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I diagnose complex electro-mechanical failures on-site, design preventive/predictive maintenance plans, and translate operations into financial KPIs and OPEX control — using ERP MAXIMO, Power BI, and electronic diagnostics.",
-        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control. My Autotronics engineering background enables me to perform complex electro-mechanical diagnostics, while my FEN-UCHILE diploma empowers me to align field maintenance with corporate financial KPIs and OPEX control. I bring proven experience in maintaining site continuity, minimizing unplanned downtime, and driving operational digital transformation. I use ERP MAXIMO for work order management and asset lifecycle tracking, Power BI to monitor operational KPIs and MTBF/MTTR metrics, and electronic diagnostics to structure preventive/predictive maintenance plans and improve fleet availability.",
+        profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE) and 8+ years of hands-on experience in fleet electro-mechanical maintenance across the logistics, industrial, and mining sectors. I diagnose complex failures on-site, design preventive/predictive maintenance plans, and translate operations into financial KPIs and OPEX control — using ERP, Dashboards/Analytics, and electronic diagnostics — so my clients can reduce unplanned downtime and make data-driven maintenance decisions.",
+        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). With 8+ years of professional experience across the logistics, industrial, and mining sectors, I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control. My Autotronics engineering background enables me to perform complex electro-mechanical diagnostics on-site, while my FEN-UCHILE diploma empowers me to align field maintenance with corporate financial KPIs and OPEX control. I bring proven experience in maintaining site continuity, minimizing unplanned downtime, and driving operational digital transformation. I use ERP for work order management and asset lifecycle tracking, Dashboards/Analytics to monitor operational KPIs and MTBF/MTTR metrics, and electronic diagnostics to structure preventive/predictive maintenance plans. The result for my clients: higher fleet availability, lower cost per failure, and maintenance decisions backed by data.",
         profile_location: "Santiago, Chile",
         status_available: "AVAILABLE · ACTIVE SEARCH",
 
         hero_label: "Technical Professional Profile",
         hero_headline: "Electro-Mechanical<br/><span class=\"text-primary\">Maintenance</span><br/>&amp; Reliability",
-        hero_sub: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver fleet electro-mechanical maintenance and asset reliability services: diagnosing failures on-site, leading preventive/predictive maintenance plans, and aligning operations with corporate financial KPIs and OPEX targets — leveraging ERP MAXIMO, Power BI, and electronic diagnostics.",
+        hero_sub: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). 8+ years in fleet electro-mechanical maintenance across logistics, industrial, and mining sectors. I diagnose failures on-site, lead preventive/predictive maintenance plans, and align operations with financial KPIs and OPEX targets — using ERP, Dashboards/Analytics, and electronic diagnostics — to reduce downtime and maximize operational availability.",
         hero_cta: "Contact Me",
         hero_cta2: "View Experience",
 
@@ -321,7 +321,7 @@ const translations = {
         exp2_title: "Fleet Electro-Mechanical Maintenance Technician",
         exp2_company: "Royal America (Multitecnica S.A. · Walmart Client)",
         exp2_b1: "Preventive and corrective maintenance programs for 200+ mission-critical electro-mechanical equipment units.",
-        exp2_b2: "Work order (WO) administration and spare parts lifecycle management via IBM MAXIMO ERP.",
+        exp2_b2: "Work order (WO) administration and spare parts lifecycle management via ERP.",
         exp2_b3: "Technical fault diagnostics across electrical, mechanical, and hydraulic systems.",
         exp2_date: "Feb 2019 – Feb 2020",
 
@@ -357,7 +357,7 @@ const translations = {
 
         cv_exp2_dates: "February 2019 – February 2020",
         cv_exp2_b1: "Execution of <strong>preventive and corrective maintenance programs</strong> for critical electro-mechanical fleets (200+ operational units).",
-        cv_exp2_b2: "Workflow administration, spare parts lifecycle management, and <strong>work orders (WO) through IBM MAXIMO ERP</strong>.",
+        cv_exp2_b2: "Workflow administration, spare parts lifecycle management, and <strong>work orders (WO) through ERP</strong>.",
         cv_exp2_b3: "<strong>Technical fault diagnostics</strong> across complex electrical, mechanical, and hydraulic systems to maximize <strong>fleet availability</strong>.",
 
         cv_exp_piamonte_b1: "Initial technical vehicle inspection, service reception, and diagnostic assessment for express maintenance.",
@@ -429,7 +429,7 @@ const translations = {
         cond_exp3_desc: "Top-rated private passenger transportation service achieving the highest tier: <strong>Platinum Status</strong>.<br>• <strong>Accident-free &amp; clean record:</strong> 100% spotless driving record with zero traffic violations or accidents throughout active service.<br>• Outstanding customer satisfaction ratings.<br>• Preventive vehicle maintenance, rigorous sanitation, and personalized executive courtesy.",
         cond_exp4_date: "February 2019 - February 2020",
         cond_exp4_title: "100% Electric CROWN Vehicle Maintenance Technician",
-        cond_exp4_desc: "Preventive maintenance and fleet control for electric industrial machinery via <strong>IBM Maximo</strong>. Technical operation and maneuvering of heavy logistics equipment.",
+        cond_exp4_desc: "Preventive maintenance and fleet control for electric industrial machinery via <strong>ERP</strong> and Dashboards/Analytics. Technical operation and maneuvering of heavy logistics equipment.",
         cond_exp5_date: "March 2023 - September 2023",
         cond_exp5_title: "Administrative Support &amp; Traffic Control Analyst",
         cond_exp5_desc: "Comprehensive warehouse and traffic infrastructure materials management.",
@@ -443,7 +443,7 @@ const translations = {
         map_hint: "Drag to orbit",
         map_hint_mobile: "Touch &amp; drag · Pinch to zoom",
         skillmap_title: "Skills & Criticality Radar",
-        skillmap_desc: "Radial criticality meter · <strong>Center:</strong> High criticality & operational precision tasks (e.g. Electro-Mechanical Maint., ERP MAXIMO, P6) → <strong>Periphery:</strong> Continuous tactical and structural skills.",
+        skillmap_desc: "Radial criticality meter · <strong>Center:</strong> High criticality & operational precision tasks (e.g. Electro-Mechanical Maint., ERP, Power BI, P6) → <strong>Periphery:</strong> Continuous tactical and structural skills.",
         legend_soft: "Soft Skills",
         legend_hybrid: "Hybrid",
         legend_hard: "Hard Skills",
@@ -464,7 +464,7 @@ const translations = {
         tech_susaron: "Susaron Cold Cargo",
         tech_mech: "Eng. Duoc UC",
         tech_safety: "Defensive Driving",
-        tech_fleet: "IBM Maximo",
+        tech_fleet: "ERP",
 
         // Controller Badges
         tech_p6: "Planning & CPM",
@@ -513,7 +513,7 @@ const translations = {
         tech_susaron: "Kühltransport Susaron",
         tech_mech: "Ing. Duoc UC",
         tech_safety: "Defensives Fahren",
-        tech_fleet: "IBM Maximo"
+        tech_fleet: "ERP"
     },
 
     ja: {
@@ -548,7 +548,7 @@ const translations = {
         tech_susaron: "Susaron 精肉配送",
         tech_mech: "Duoc UC 機械工学",
         tech_safety: "防衛運転",
-        tech_fleet: "IBM Maximo"
+        tech_fleet: "ERP"
     },
 
     ru: {
@@ -583,7 +583,7 @@ const translations = {
         tech_susaron: "Мясная логистика Susaron",
         tech_mech: "Индж. Duoc UC",
         tech_safety: "Защитное вождение",
-        tech_fleet: "IBM Maximo"
+        tech_fleet: "ERP"
     }
 };
 
