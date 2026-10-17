@@ -29,14 +29,14 @@ const translations = {
         // Perfil y Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "Sobre Ignacio",
-        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional.",
-        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional. Mi formación técnica en Autotrónica me permite diagnosticar y resolver fallas electromecánicas complejas en terreno, mientras que mi especialización en la FEN-UCHILE me permite traducir la operación en KPIs financieros y control de OPEX. Cuento con experiencia en garantizar la continuidad operativa en faena, reducir tiempos de parada no programada (downtime) y liderar la digitalización de procesos. Integro herramientas como SAP PM, plataformas CMMS/EAM, Power BI y análisis de telemetría (CANbus/OBD-II) para estructurar planes preventivos/predictivos e incrementar la disponibilidad de la flota.",
+        profile_summary: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Diagnostico fallas electromecánicas en terreno, estructuro planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — utilizando ERP MAXIMO, Power BI y diagnóstico electrónico.",
+        profile_desc: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional. Mi formación técnica en Autotrónica me permite diagnosticar y resolver fallas electromecánicas complejas en terreno, mientras que mi especialización en la FEN-UCHILE me permite traducir la operación en KPIs financieros y control de OPEX. Cuento con experiencia en garantizar la continuidad operativa en faena, reducir tiempos de parada no programada (downtime) y liderar la digitalización de procesos. Utilizo ERP MAXIMO para la gestión de órdenes de trabajo y ciclo de vida de activos, Power BI para el control de KPIs operacionales y métricas MTBF/MTTR, y herramientas de diagnóstico electrónico para estructurar planes preventivos/predictivos e incrementar la disponibilidad de la flota.",
         profile_location: "Santiago, Chile",
         status_available: "DISPONIBLE · BÚSQUEDA ACTIVA",
 
         hero_label: "Perfil Técnico Profesional",
         hero_headline: "Mantenimiento<br/><span class=\"text-primary\">Electro-Mecánico</span><br/>&amp; Confiabilidad",
-        hero_sub: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de gestión integral de mantenimiento de flotas, ingeniería de confiabilidad de activos y optimización del control presupuestario operacional.",
+        hero_sub: "Ingeniero en Maquinaria, Vehículos Automotores y Autotrónica con Diplomado en Control de Gestión (FEN-UCHILE). Ofrezco servicios de mantenimiento electromecánico de flotas y confiabilidad de activos: diagnostico fallas en terreno, lidero planes preventivos/predictivos y traduzco la operación en KPIs financieros y control de OPEX — operando con ERP MAXIMO, Power BI y diagnóstico electrónico.",
         hero_cta: "Contáctame",
         hero_cta2: "Ver Experiencia",
 
@@ -48,7 +48,7 @@ const translations = {
         gauge_data_stack: "Stack Data &amp; BI",
         gauge_management: "Control de Gestión",
         gauge_english: "Inglés Técnico",
-        gauge_terminal: "Seguridad & SSOMA",
+        gauge_terminal: "Reglamento de Seguridad Minera",
         gauge_analytics: "Control de Gestión",
         gauge_automation: "Python & DataOps",
         gauge_powerbi: "BI & SQL Dashboards",
@@ -267,14 +267,14 @@ const translations = {
         // Profile & Hero
         profile_name: "Ignacio Antonio<br/>Salas Vega",
         profile_title: "About Ignacio",
-        profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control.",
-        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control. My Autotronics engineering background enables me to perform complex electro-mechanical diagnostics, while my FEN-UCHILE diploma empowers me to align field maintenance with corporate financial KPIs and OPEX control. I bring proven experience in maintaining site continuity, minimizing unplanned downtime, and driving operational digital transformation. I leverage tools such as SAP PM, CMMS/EAM platforms, Power BI, and telematics analytics (CANbus/OBD-II) to transition operations toward data-driven, predictive maintenance models.",
+        profile_summary: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I diagnose complex electro-mechanical failures on-site, design preventive/predictive maintenance plans, and translate operations into financial KPIs and OPEX control — using ERP MAXIMO, Power BI, and electronic diagnostics.",
+        profile_desc: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control. My Autotronics engineering background enables me to perform complex electro-mechanical diagnostics, while my FEN-UCHILE diploma empowers me to align field maintenance with corporate financial KPIs and OPEX control. I bring proven experience in maintaining site continuity, minimizing unplanned downtime, and driving operational digital transformation. I use ERP MAXIMO for work order management and asset lifecycle tracking, Power BI to monitor operational KPIs and MTBF/MTTR metrics, and electronic diagnostics to structure preventive/predictive maintenance plans and improve fleet availability.",
         profile_location: "Santiago, Chile",
         status_available: "AVAILABLE · ACTIVE SEARCH",
 
         hero_label: "Technical Professional Profile",
         hero_headline: "Electro-Mechanical<br/><span class=\"text-primary\">Maintenance</span><br/>&amp; Reliability",
-        hero_sub: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver specialized services in fleet maintenance management, asset reliability engineering, and operational budget control.",
+        hero_sub: "Automotive & Autotronics Engineer with a Postgraduate Diploma in Management Control (FEN-UCHILE). I deliver fleet electro-mechanical maintenance and asset reliability services: diagnosing failures on-site, leading preventive/predictive maintenance plans, and aligning operations with corporate financial KPIs and OPEX targets — leveraging ERP MAXIMO, Power BI, and electronic diagnostics.",
         hero_cta: "Contact Me",
         hero_cta2: "View Experience",
 
@@ -286,7 +286,7 @@ const translations = {
         gauge_data_stack: "Data &amp; BI Stack",
         gauge_management: "Management Control",
         gauge_english: "Technical English",
-        gauge_terminal: "Safety & SSOMA",
+        gauge_terminal: "Mining Safety Regulations",
         gauge_analytics: "Management Control",
         gauge_automation: "Python & DataOps",
         gauge_powerbi: "BI & SQL Dashboards",
